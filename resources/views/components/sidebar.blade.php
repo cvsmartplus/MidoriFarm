@@ -17,44 +17,48 @@
                     <span>Dashboard</span>
                 </a>
                 <ul class="sidebar-submenu">
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('index') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> AI</a>
-                    </li>
+                    </li> --}}
+
                     <li>
-                        <!-- opsi ke-1 pemilihan dashboard, yang 6 table bisa untuk 10 sensor IoT (tambah 4 table lagi), Finance juga bisa diambil langsung atau diganti dari line chart -->
-                    <a href="{{ route('index2') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> CRM</a>
+                    <!-- opsi ke-1 pemilihan dashboard, yang 6 table bisa untuk 10 sensor IoT (tambah 4 table lagi), Finance juga bisa diambil langsung atau diganti dari line chart -->
+                    <a href="{{ route('index2') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Dashboard (Opt 1)</a>
                     </li>
-                    <li>
+
+                    {{-- <li>
                     <a href="{{ route('index3') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> eCommerce</a>
-                    </li>
-                    <li>
+                    </li> --}}
+                    {{-- <li>
                     <a href="{{ route('index4') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Cryptocurrency</a>
-                    </li>
+                    </li> --}}
+
                     <!-- opsi ke-1 pemilihan fitur IoT,4 table nya bisa untuk 10 sensor IoT tambah 6 table juga, bagian revenue statistics bisa dijadiin fitur si Iot nya seperti
                      suhu tanah,kelembapan tanah, level tanah dan lain lain.
                      bagian most location juga bisa dijadiin fitur IoT nya, nama negara diganti jadi level tanah kelembapan tanah, progress barnya bisa dijadiin realtime gitu -->
                     <li>
-                    <a href="{{ route('index5') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> Investment</a>
+                    <a href="{{ route('index5') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> IoT (Opt 1)</a> 
                     </li>
+
                     <!-- cocok untuk fitur buy and sell, ambil bagian average enrollment rate atau pilih line chart with data labels, dan zoomable chart di chart -->
                     <li>
-                    <a href="{{ route('index6') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> LMS</a>
+                    <a href="{{ route('index6') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Buy & Sell</a>
                     </li>
                     <!-- OPSI KE-2 --pemilihan fitur IoT,trending bids bisa untuk riwayat IoT atau apalah bebas,dibagian trending NFTs nya bisa buat monitoring IoT kayak cctv satpam di film film
-                     kan banyak tuh. -->
+                    kan banyak tuh. -->
                     <li>
-                    <a href="{{ route('index7') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> NFT & Gaming</a>
+                    <a href="{{ route('index7') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> IoT (Opt 2)</a>
                     </li>
                     <!-- opsi ke-2 pemilihan dashboard, untuk sensor IoT juga sama bisa tambah 6 table lagi,bagian finance juga bisa diambil langsung  di bagian earning statistic -->
                     <li>
-                    <a href="{{ route('index8') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Medical</a>
+                    <a href="{{ route('index8') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Dashboard (Opt 2)</a>
                     </li>
-                    <li>
+                    {{-- <li>
                     <a href="{{ route('index9') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Analytics</a>
-                    </li>
-                    <li>
+                    </li> --}}
+                    {{-- <li>
                     <a href="{{ route('index10') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> POS & Inventory </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
             <li class="sidebar-menu-group-title">Application</li>
