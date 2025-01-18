@@ -197,6 +197,7 @@
                 </div>
             </div>
         </div>
+        <!-- Dari sini -->
         <div class="col-sm-6">
             <div class="card p-0 overflow-hidden position-relative radius-12">
                 <div class="card-header py-16 px-24 bg-base border border-end-0 border-start-0 border-top-0">
@@ -234,6 +235,8 @@
                 </div>
             </div>
         </div>
+        <!-- sampai sini -->
+        <!-- dari sini -->
         <div class="col-sm-6">
             <div class="card p-0 overflow-hidden position-relative radius-12">
                 <div class="card-header py-16 px-24 bg-base border border-end-0 border-start-0 border-top-0">
@@ -276,6 +279,7 @@
                 </div>
             </div>
         </div>
+        <!-- sampai sini -->
         <div class="col-sm-12">
             <div class="card p-0 overflow-hidden position-relative radius-12">
                 <div class="card-header py-16 px-24 bg-base border border-end-0 border-start-0 border-top-0">

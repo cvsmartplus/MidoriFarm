@@ -18,6 +18,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- ambil yang ini -->
                 <div class="col-md-6">
                     <div class="card h-100 p-0">
                         <div class="card-header border-bottom bg-base py-16 px-24">
@@ -28,6 +29,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- ambil yang ini -->
                 <div class="col-md-6">
                     <div class="card h-100 p-0">
                         <div class="card-header border-bottom bg-base py-16 px-24">

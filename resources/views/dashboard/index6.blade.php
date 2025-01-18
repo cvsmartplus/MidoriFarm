@@ -288,6 +288,7 @@
 @endphp
 
 @section('content')
+<!-- dari sini -->
 
     <div class="row gy-4 mb-24">
         <!-- ======================= First Row Cards Start =================== -->
@@ -439,7 +440,7 @@
             </div>
         </div>
         <!-- ======================= First Row Cards End =================== -->
-
+<!-- sampai sini -->
         <!-- ================== Second Row Cards Start ======================= -->
         <!-- Top Categories Card Start -->
         <div class="col-xxl-4 col-md-6">

@@ -301,7 +301,7 @@
  @endphp
 
 @section('content')
-
+                    <!-- dari sini -->
             <div class="row gy-4">
                 <div class="col-xxxl-9">
                     <div class="row gy-4">
@@ -381,8 +381,8 @@
                                 </div>
                             </div>
                         </div>
-
-
+                        <!-- sampai sini -->
+                        <!-- dari sini -->
                         <!-- Earning Statistic -->
                         <div class="col-xxl-12">
                             <div class="card h-100">
@@ -416,7 +416,7 @@
                             </div>
                         </div>
                         <!-- Earning Statistic -->
-
+                        <!-- sampai sini -->
                         <!-- Patient Visited by Depertment -->
                         <div class="col-xxl-6">
                             <div class="card h-100">

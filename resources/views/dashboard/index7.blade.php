@@ -406,6 +406,7 @@
                     </div>
                 </div>
 
+                     <!-- dari sini -->
                 <div class="col-12">
                     <h6 class="mb-16">Trending Bids</h6>
                     <div class="row gy-4">
@@ -491,7 +492,9 @@
                         <!-- Dashboard Widget End -->
                     </div>
                 </div>
+                <!-- sampai sini -->
 
+                <!-- dari sini(All art music dan lain lain jangan di hapus dulu) -->
                 <div class="col-12">
                     <div class="mb-16 mt-8 d-flex flex-wrap justify-content-between gap-16">
                         <h6 class="mb-0">Trending NFTs</h6>
@@ -1017,7 +1020,7 @@
                     </div>
 
                 </div>
-
+                <!-- sampai sini -->
                 <div class="col-12">
                     <div class="card h-100">
                         <div class="card-body p-24">

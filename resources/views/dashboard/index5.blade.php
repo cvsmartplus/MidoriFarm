@@ -6,7 +6,7 @@
 @endphp
 
 @section('content')
-
+<!-- dari sini -->
             <div class="row gy-4">
 
                 <!-- Dashboard Widget Start -->
@@ -116,6 +116,8 @@
                     </div>
                 </div>
                 <!-- Dashboard Widget End -->
+                
+                <!-- sampai sini -->
 
                 <!-- Revenue Statistics Start -->
                 <div class="col-xxl-8">
@@ -202,6 +204,8 @@
                     </div>
                 </div>
                 <!-- Statistics End -->
+                 
+                <!-- hapus tombol plus minus, hapus peta  -->
 
                 <!-- Most Location Start -->
                 <div class="col-xxl-3">

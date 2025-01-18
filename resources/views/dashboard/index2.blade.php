@@ -6,7 +6,7 @@
 @endphp
 
 @section('content')
-
+<!-- dari sini (Fitur IoT) -->
     <div class="row gy-4">
         <div class="col-xxl-8">
             <div class="row gy-4">
@@ -145,6 +145,7 @@
 
             </div>
         </div>
+        <!-- sampai sini -->
         <!-- Revenue Growth start -->
         <div class="col-xxl-4">
             <div class="card h-100 radius-8 border">

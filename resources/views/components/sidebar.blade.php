@@ -21,6 +21,7 @@
                         <a href="{{ route('index') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> AI</a>
                     </li>
                     <li>
+                        <!-- opsi ke-1 pemilihan dashboard, yang 6 table bisa untuk 10 sensor IoT (tambah 4 table lagi), Finance juga bisa diambil langsung atau diganti dari line chart -->
                     <a href="{{ route('index2') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> CRM</a>
                     </li>
                     <li>
@@ -29,15 +30,22 @@
                     <li>
                     <a href="{{ route('index4') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Cryptocurrency</a>
                     </li>
+                    <!-- opsi ke-1 pemilihan fitur IoT,4 table nya bisa untuk 10 sensor IoT tambah 6 table juga, bagian revenue statistics bisa dijadiin fitur si Iot nya seperti
+                     suhu tanah,kelembapan tanah, level tanah dan lain lain.
+                     bagian most location juga bisa dijadiin fitur IoT nya, nama negara diganti jadi level tanah kelembapan tanah, progress barnya bisa dijadiin realtime gitu -->
                     <li>
                     <a href="{{ route('index5') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> Investment</a>
                     </li>
+                    <!-- cocok untuk fitur buy and sell, ambil bagian average enrollment rate atau pilih line chart with data labels, dan zoomable chart di chart -->
                     <li>
                     <a href="{{ route('index6') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> LMS</a>
                     </li>
+                    <!-- OPSI KE-2 --pemilihan fitur IoT,trending bids bisa untuk riwayat IoT atau apalah bebas,dibagian trending NFTs nya bisa buat monitoring IoT kayak cctv satpam di film film
+                     kan banyak tuh. -->
                     <li>
                     <a href="{{ route('index7') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> NFT & Gaming</a>
                     </li>
+                    <!-- opsi ke-2 pemilihan dashboard, untuk sensor IoT juga sama bisa tambah 6 table lagi,bagian finance juga bisa diambil langsung  di bagian earning statistic -->
                     <li>
                     <a href="{{ route('index8') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Medical</a>
                     </li>
@@ -74,6 +82,7 @@
                     <span>Kanban</span>
                 </a>
             </li>
+            <!-- cocok untuk fitur hutang piutang dan fitur barang seperti dibagian preview untuk detail transaksi dan edit untuk mengedit produk, bagian add new saja yang dihapus -->
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
@@ -165,6 +174,7 @@
                     <li>
                        <a  href="{{ route('card') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Card</a>
                     </li>
+                    <!-- cocok untuk fitur article, cms dan lain sebagainya. ( ambil yang carousel with pagination dan carousel with progress) -->
                     <li>
                         <a  href="{{ route('carousel') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Carousel</a>
                     </li>
@@ -269,6 +279,7 @@
                     <span>Widgets</span>
                 </a>
             </li>
+            <!-- cocok untuk fitur customer & supplier, hapus fitur user grid -->
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
@@ -290,6 +301,7 @@
                 </ul>
             </li>
 
+              <!-- cocok untuk fitur user & riwayat -->
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <i class="ri-user-settings-line text-xl me-6 d-flex w-auto"></i>
@@ -336,6 +348,7 @@
                     <span>Pricing</span>
                 </a>
             </li>
+            <!-- cocok untuk fitur article jangan dihapus semuanya -->
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <i class="ri-news-line text-xl me-6 d-flex w-auto"></i>

@@ -3,7 +3,7 @@
     $title='Role & Access';
     $subTitle = 'Role & Access';
 @endphp
-
+<!-- untuk mengetahui posisi/divisi si user sebagai apa -->
 @section('content')
 
     <div class="card h-100 p-0 radius-12">

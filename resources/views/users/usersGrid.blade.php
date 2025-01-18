@@ -8,7 +8,7 @@
                         });
                 </script>';
 @endphp
-
+<!-- hapus fitur ini -->
 @section('content')
 
             <div class="card h-100 p-0 radius-12">
