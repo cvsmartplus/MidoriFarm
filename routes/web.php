@@ -8,13 +8,17 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ComponentpageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormsController;
-use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\FinanceGoodsController;
+use App\Http\Controllers\FinanceLoansController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\RoleandaccessController;
 use App\Http\Controllers\CryptocurrencyController;
+
+
+
 
 Route::controller(DashboardController::class)->group(function () {
     Route::get('/', 'index')->name('index');
@@ -117,7 +121,7 @@ Route::prefix('dashboard')->group(function () {
 });
 
 // Forms
-Route::prefix('forms')->group(function () {
+Route::prefix('Forms')->group(function () {
     Route::controller(FormsController::class)->group(function () {
         Route::get('/form-layout', 'formLayout')->name('formLayout');
         Route::get('/form-validation', 'formValidation')->name('formValidation');
@@ -127,12 +131,22 @@ Route::prefix('forms')->group(function () {
 });
 
 // invoice/invoiceList
-Route::prefix('invoice')->group(function () {
-    Route::controller(InvoiceController::class)->group(function () {
-        Route::get('/invoice-add', 'invoiceAdd')->name('invoiceAdd');
-        Route::get('/invoice-edit', 'invoiceEdit')->name('invoiceEdit');
-        Route::get('/invoice-list', 'invoiceList')->name('invoiceList');
-        Route::get('/invoice-preview', 'invoicePreview')->name('invoicePreview');
+Route::prefix('FinanceGoods')->group(function () {
+    Route::controller(FinanceGoodsController::class)->group(function () {
+        Route::get('/FinanceGoods', 'FinanceGoods')->name('FinanceGoods');
+        Route::get('/goods-edit', 'goodsEdit')->name('goodsEdit');
+        Route::get('/goods-list', 'goodsList')->name('goodsList');
+        Route::get('/goods-preview', 'goodsPreview')->name('goodsPreview');
+    });
+}); 
+
+// invoice/LoansList
+Route::prefix('FinanceLoans')->group(function () {
+    Route::controller(FinanceLoansController::class)->group(function () {
+        // Route::get('/FinanceLoans', 'FinanceLoans')->name('FinanceLoans');
+        Route::get('/Loans-edit', 'LoansEdit')->name('LoansEdit');
+        Route::get('/Loans-list', 'LoansList')->name('LoansList');
+        Route::get('/Loans-preview', 'LoansPreview')->name('LoansPreview');
     });
 });
 

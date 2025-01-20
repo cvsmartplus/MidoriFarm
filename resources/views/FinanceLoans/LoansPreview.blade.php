@@ -2,7 +2,18 @@
 @php
     $title='Invoice List';
     $subTitle = 'Invoice List';
-    $script = ' <script src="' . asset('assets/js/invoice.js') . '"></script>';
+    $script = '<script>
+                    function printInvoice() {
+                        var printContents = document.getElementById("invoice").innerHTML;
+                        var originalContents = document.body.innerHTML;
+
+                        document.body.innerHTML = printContents;
+
+                        window.print();
+
+                        document.body.innerHTML = originalContents;
+                    }
+                </script>';
 @endphp
 
 @section('content')
@@ -10,9 +21,21 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex flex-wrap align-items-center justify-content-end gap-2">
-                        <button type="button" class="btn btn-sm btn-primary-600 radius-8 d-inline-flex align-items-center gap-1">
-                            <iconify-icon icon="simple-line-icons:check" class="text-xl"></iconify-icon>
-                            Save
+                        <a href="javascript:void(0)" class="btn btn-sm btn-primary-600 radius-8 d-inline-flex align-items-center gap-1">
+                            <iconify-icon icon="pepicons-pencil:paper-plane" class="text-xl"></iconify-icon>
+                            Send Invoice
+                        </a>
+                        <a href="javascript:void(0)" class="btn btn-sm btn-warning radius-8 d-inline-flex align-items-center gap-1">
+                            <iconify-icon icon="solar:download-linear" class="text-xl"></iconify-icon>
+                            Download
+                        </a>
+                        <a href="javascript:void(0)" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
+                            <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
+                            Edit
+                        </a>
+                        <button type="button" class="btn btn-sm btn-danger radius-8 d-inline-flex align-items-center gap-1" onclick="printInvoice()">
+                            <iconify-icon icon="basil:printer-outline" class="text-xl"></iconify-icon>
+                            Print
                         </button>
                     </div>
                 </div>
@@ -20,25 +43,18 @@
                     <div class="row justify-content-center" id="invoice">
                         <div class="col-lg-8">
                             <div class="shadow-4 border radius-8">
-                                <div class="p-20 border-bottom">
-                                    <div class="row justify-content-between g-3">
-                                        <div class="col-sm-4">
-                                            <h3 class="text-xl">Invoice #3492</h3>
-                                            <p class="mb-1 text-sm">Date Issued: <span class="editable text-decoration-underline">25/08/2020</span> <span class="text-success-main">
-                                                    <iconify-icon icon="mage:edit"></iconify-icon>
-                                                </span></p>
-                                            <p class="mb-0 text-sm">Date Due: <span class="editable text-decoration-underline">29/08/2020</span> <span class="text-success-main">
-                                                    <iconify-icon icon="mage:edit"></iconify-icon>
-                                                </span></p>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <img src="{{ asset('assets/images/logo.png') }}" alt="image" class="mb-8">
-                                            <p class="mb-1 text-sm">4517 Washington Ave. Manchester, Kentucky 39495</p>
-                                            <p class="mb-0 text-sm">random@gmail.com, +1 543 2198</p>
-                                        </div>
+                                <div class="p-20 d-flex flex-wrap justify-content-between gap-3 border-bottom">
+                                    <div>
+                                        <h3 class="text-xl">Invoice #3492</h3>
+                                        <p class="mb-1 text-sm">Date Issued: 25/08/2020</p>
+                                        <p class="mb-0 text-sm">Date Due: 29/08/2020</p>
+                                    </div>
+                                    <div>
+                                        <img src="{{ asset('assets/images/logo.png') }}" alt="image" class="mb-8">
+                                        <p class="mb-1 text-sm">4517 Washington Ave. Manchester, Kentucky 39495</p>
+                                        <p class="mb-0 text-sm">random@gmail.com, +1 543 2198</p>
                                     </div>
                                 </div>
-
                                 <div class="py-28 px-20">
                                     <div class="d-flex flex-wrap justify-content-between align-items-end gap-3">
                                         <div>
@@ -47,21 +63,15 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>Name</td>
-                                                        <td class="ps-8">: <span class="editable text-decoration-underline">Will Marthas</span> <span class="text-success-main">
-                                                                <iconify-icon icon="mage:edit"></iconify-icon>
-                                                            </span></td>
+                                                        <td class="ps-8">:Will Marthas</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Address</td>
-                                                        <td class="ps-8">: <span class="editable text-decoration-underline">4517 Washington Ave.USA</span> <span class="text-success-main">
-                                                                <iconify-icon icon="mage:edit"></iconify-icon>
-                                                            </span></td>
+                                                        <td class="ps-8">:4517 Washington Ave.USA</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Phone number</td>
-                                                        <td class="ps-8">: <span class="editable text-decoration-underline">+1 543 2198</span> <span class="text-success-main">
-                                                                <iconify-icon icon="mage:edit"></iconify-icon>
-                                                            </span></td>
+                                                        <td class="ps-8">:+1 543 2198</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -88,7 +98,7 @@
 
                                     <div class="mt-24">
                                         <div class="table-responsive scroll-sm">
-                                            <table class="table bordered-table text-sm" id="invoice-table">
+                                            <table class="table bordered-table text-sm">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col" class="text-sm">SL.</th>
@@ -96,8 +106,7 @@
                                                         <th scope="col" class="text-sm">Qty</th>
                                                         <th scope="col" class="text-sm">Units</th>
                                                         <th scope="col" class="text-sm">Unit Price</th>
-                                                        <th scope="col" class="text-sm">Price</th>
-                                                        <th scope="col" class="text-center text-sm">Action</th>
+                                                        <th scope="col" class="text-end text-sm">Price</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -107,12 +116,7 @@
                                                         <td>5</td>
                                                         <td>PC</td>
                                                         <td>$200</td>
-                                                        <td>$1000.00</td>
-                                                        <td class="text-center">
-                                                            <button type="button" class="remove-row">
-                                                                <iconify-icon icon="ic:twotone-close" class="text-danger-main text-xl"></iconify-icon>
-                                                            </button>
-                                                        </td>
+                                                        <td class="text-end">$1000.00</td>
                                                     </tr>
                                                     <tr>
                                                         <td>02</td>
@@ -120,12 +124,7 @@
                                                         <td>5</td>
                                                         <td>PC</td>
                                                         <td>$200</td>
-                                                        <td>$1000.00</td>
-                                                        <td class="text-center">
-                                                            <button type="button" class="remove-row">
-                                                                <iconify-icon icon="ic:twotone-close" class="text-danger-main text-xl"></iconify-icon>
-                                                            </button>
-                                                        </td>
+                                                        <td class="text-end">$1000.00</td>
                                                     </tr>
                                                     <tr>
                                                         <td>03</td>
@@ -133,12 +132,7 @@
                                                         <td>5</td>
                                                         <td>PC</td>
                                                         <td>$200</td>
-                                                        <td>$1000.00</td>
-                                                        <td class="text-center">
-                                                            <button type="button" class="remove-row">
-                                                                <iconify-icon icon="ic:twotone-close" class="text-danger-main text-xl"></iconify-icon>
-                                                            </button>
-                                                        </td>
+                                                        <td class="text-end">$1000.00</td>
                                                     </tr>
                                                     <tr>
                                                         <td>04</td>
@@ -146,25 +140,12 @@
                                                         <td>5</td>
                                                         <td>PC</td>
                                                         <td>$200</td>
-                                                        <td>$1000.00</td>
-                                                        <td class="text-center">
-                                                            <button type="button" class="remove-row">
-                                                                <iconify-icon icon="ic:twotone-close" class="text-danger-main text-xl"></iconify-icon>
-                                                            </button>
-                                                        </td>
+                                                        <td class="text-end">$1000.00</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
-
-                                        <div>
-                                            <button type="button" id="addRow" class="btn btn-sm btn-primary-600 radius-8 d-inline-flex align-items-center gap-1">
-                                                <iconify-icon icon="simple-line-icons:plus" class="text-xl"></iconify-icon>
-                                                Add New
-                                            </button>
-                                        </div>
-
-                                        <div class="d-flex flex-wrap justify-content-between gap-3 mt-24">
+                                        <div class="d-flex flex-wrap justify-content-between gap-3">
                                             <div>
                                                 <p class="text-sm mb-0"><span class="text-primary-light fw-semibold">Sales By:</span> Jammal</p>
                                                 <p class="text-sm mb-0">Thanks for your business</p>

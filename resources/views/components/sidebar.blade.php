@@ -47,7 +47,7 @@
                     </li>
                     <!-- opsi ke-2 pemilihan dashboard, untuk sensor IoT juga sama bisa tambah 6 table lagi,bagian finance juga bisa diambil langsung  di bagian earning statistic -->
                     <li>
-                    <a href="{{ route('index8') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Medical</a>
+                    <a href="{{ route('index8') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Dashboard</a>
                     </li>
                     <li>
                     <a href="{{ route('index9') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Analytics</a>
@@ -86,20 +86,37 @@
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
-                    <span>Invoice</span>
+                    <span>Finance (goods)</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                    <a href="{{ route('invoiceList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> List</a>
+                    <a href="{{ route('goodsList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> List</a>
                     </li>
                     <li>
-                    <a href="{{ route('invoicePreview') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Preview</a>
+                    <a href="{{ route('goodsPreview') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Preview</a>
+                    </li>
+                    
+                    <li>
+                    <a href="{{ route('goodsEdit') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a  href="javascript:void(0)"
+                    <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
+                    <span>Finance (Loans)</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                    <a href="{{ route('LoansList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Loan List</a>
                     </li>
                     <li>
-                    <a href="{{ route('invoiceAdd') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add new</a>
+                    <a href="{{ route('LoansPreview') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Preview</a>
                     </li>
+                    
                     <li>
-                    <a href="{{ route('invoiceEdit') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
+                    <a href="{{ route('LoansEdit') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
                     </li>
                 </ul>
             </li>

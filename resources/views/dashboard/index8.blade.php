@@ -301,88 +301,601 @@
  @endphp
 
 @section('content')
+
+ <div class="col-xxl-3 col-lg-4 col-sm-6">
+                    <div class="card h-100 p-0 radius-12 overflow-hidden">
+                        <div class="card-body p-24">
+                            <a  href="{{ route('blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
+                                <img src="{{ asset('assets/images/blog/blog1.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="mt-20">
+                                <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
+                                    <a  href="blog-details" class="px-20 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
+                                    <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
+                                        <i class="ri-calendar-2-line"></i>
+                                        Jan 17, 2024
+                                    </div>
+                                </div>
+                                <h6 class="mb-16">
+                                    <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Discover Endless Possibilities in Real Estate Live Your Best Life in a</a>
+                                </h6>
+                                <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                                <a  href="{{ route('blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
+                                    Read More
+                                    <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                    <div class="card h-100 p-0 radius-12 overflow-hidden">
+                        <div class="card-body p-24">
+                            <a  href="{{ route('blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
+                                <img src="{{ asset('assets/images/blog/blog2.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="mt-20">
+                                <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
+                                    <a  href="blog-details" class="px-20 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Hiring</a>
+                                    <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
+                                        <i class="ri-calendar-2-line"></i>
+                                        Jan 17, 2024
+                                    </div>
+                                </div>
+                                <h6 class="mb-16">
+                                    <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Turn Your Real Estate Dreams Into Reality Embrace the Real Estate</a>
+                                </h6>
+                                <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                                <a  href="{{ route('blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
+                                    Read More
+                                    <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                    <div class="card h-100 p-0 radius-12 overflow-hidden">
+                        <div class="card-body p-24">
+                            <a  href="{{ route('blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
+                                <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="mt-20">
+                                <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
+                                    <a  href="blog-details" class="px-20 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
+                                    <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
+                                        <i class="ri-calendar-2-line"></i>
+                                        Jan 17, 2024
+                                    </div>
+                                </div>
+                                <h6 class="mb-16">
+                                    <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Your satisfaction is our top the best priority</a>
+                                </h6>
+                                <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                                <a  href="{{ route('blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
+                                    Read More
+                                    <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     <!-- dari sini -->
-            <div class="row gy-4">
-                <div class="col-xxxl-9">
-                    <div class="row gy-4">
-                        <div class="col-xxl-3 col-xl-4 col-sm-6">
-                            <div class="card p-3 shadow-2 radius-8 h-100 bg-gradient-end-6">
-                                <div class="card-body p-0">
-                                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
-
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span class="mb-0 w-48-px h-48-px bg-cyan-100 text-cyan-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
-                                                <i class="ri-group-fill"></i>
-                                            </span>
-                                            <div>
-                                                <h6 class="fw-semibold mb-2">650</h6>
-                                                <span class="fw-medium text-secondary-light text-sm">Doctors</span>
+                    <div class="col-12">
+                    <div class="mb-16 mt-8 d-flex flex-wrap justify-content-between gap-16">
+                        <h6 class="mb-0">Monitoring</h6>
+                        <ul class="nav button-tab nav-pills mb-16 gap-12" id="pills-tab-three" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-semibold text-secondary-light rounded-pill px-20 py-6 border border-neutral-300 active" id="pills-button-all-tab" data-bs-toggle="pill" data-bs-target="#pills-button-all" type="button" role="tab" aria-controls="pills-button-all" aria-selected="false" tabindex="-1">All</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-semibold text-secondary-light rounded-pill px-20 py-6 border border-neutral-300" id="pills-button-art-tab" data-bs-toggle="pill" data-bs-target="#pills-button-art" type="button" role="tab" aria-controls="pills-button-art" aria-selected="false" tabindex="-1">Art</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-semibold text-secondary-light rounded-pill px-20 py-6 border border-neutral-300" id="pills-button-music-tab" data-bs-toggle="pill" data-bs-target="#pills-button-music" type="button" role="tab" aria-controls="pills-button-music" aria-selected="false" tabindex="-1">Music</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-semibold text-secondary-light rounded-pill px-20 py-6 border border-neutral-300" id="pills-button-utility-tab" data-bs-toggle="pill" data-bs-target="#pills-button-utility" type="button" role="tab" aria-controls="pills-button-utility" aria-selected="true">Utility</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-semibold text-secondary-light rounded-pill px-20 py-6 border border-neutral-300" id="pills-button-fashion-tab" data-bs-toggle="pill" data-bs-target="#pills-button-fashion" type="button" role="tab" aria-controls="pills-button-fashion" aria-selected="true">Fashion</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="pills-tab-threeContent">
+                        <div class="tab-pane fade show active" id="pills-button-all" role="tabpanel" aria-labelledby="pills-button-all-tab" tabindex="0">
+                            <div class="row g-3">
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img1.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">Sensor tanah</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img1.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">View here</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="text-sm mb-0"> <span class="text-cyan-600">4</span> Doctors joined this week</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-xl-4 col-sm-6">
-                            <div class="card p-3 shadow-2 radius-8 h-100 bg-gradient-end-4">
-                                <div class="card-body p-0">
-                                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
-
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span class="mb-0 w-48-px h-48-px bg-lilac-100 text-lilac-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
-                                                <i class="ri-award-fill"></i>
-                                            </span>
-                                            <div>
-                                                <h6 class="fw-semibold mb-2">570</h6>
-                                                <span class="fw-medium text-secondary-light text-sm">Staffs</span>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img2.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light"> Sensor udara</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img2.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">View here</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="text-sm mb-0"> <span class="text-lilac-600">8</span> Staffs on vacation</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-xl-4 col-sm-6">
-                            <div class="card p-3 shadow-2 radius-8 h-100 bg-gradient-end-1">
-                                <div class="card-body p-0">
-                                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
-
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span class="mb-0 w-48-px h-48-px bg-primary-100 text-primary-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
-                                                <i class="ri-group-fill"></i>
-                                            </span>
-                                            <div>
-                                                <h6 class="fw-semibold mb-2">15,750</h6>
-                                                <span class="fw-medium text-secondary-light text-sm">Patients</span>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">Sensor Air</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img3.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">View here</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="text-sm mb-0"> <span class="text-primary-600">170</span>New patients admitted</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-xl-4 col-sm-6">
-                            <div class="card p-3 shadow-2 radius-8 h-100 bg-gradient-end-1">
-                                <div class="card-body p-0">
-                                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
-
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span class="mb-0 w-48-px h-48-px bg-success-100 text-success-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
-                                                <i class="ri-wallet-3-fill"></i>
-                                            </span>
-                                            <div>
-                                                <h6 class="fw-semibold mb-2">$42,400</h6>
-                                                <span class="fw-medium text-secondary-light text-sm">Pharmacies </span>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img4.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">Sensor Suara</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img4.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                           
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">View here</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="text-sm mb-0"> <span class="text-success-600">60,000 </span> Medicine on reserve</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- sampai sini -->
-                        <!-- dari sini -->
+                        <div class="tab-pane fade" id="pills-button-art" role="tabpanel" aria-labelledby="pills-button-art-tab" tabindex="0">
+                            <div class="row g-3">
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img1.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">Fantastic Alien</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img1.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img2.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img2.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img3.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img4.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img4.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-button-music" role="tabpanel" aria-labelledby="pills-button-music-tab" tabindex="0">
+                            <div class="row g-3">
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img1.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">Fantastic Alien</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img1.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img2.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img2.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img3.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img4.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img4.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-button-utility" role="tabpanel" aria-labelledby="pills-button-utility-tab" tabindex="0">
+                            <div class="row g-3">
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img1.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">Fantastic Alien</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img1.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img2.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img2.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img3.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img4.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img4.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-button-fashion" role="tabpanel" aria-labelledby="pills-button-fashion-tab" tabindex="0">
+                            <div class="row g-3">
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img1.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">Fantastic Alien</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img1.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img2.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img2.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img3.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                                    <div class="nft-card bg-base radius-16 overflow-hidden">
+                                        <div class="radius-16 overflow-hidden">
+                                            <img src="{{ asset('assets/images/nft/nft-img4.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="p-10">
+                                            <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <img src="{{ asset('assets/images/nft/nft-user-img4.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
+                                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
+                                            </div>
+                                            <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
+                                                <span class="text-sm text-secondary-light fw-medium">Price:
+                                                    <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
+                                                </span>
+                                                <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
+                                                <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
+                                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                 </div>
+
+                        
+
+                       
+
                         <!-- Earning Statistic -->
                         <div class="col-xxl-12">
                             <div class="card h-100">
@@ -400,14 +913,14 @@
                                     <ul class="d-flex flex-wrap align-items-center justify-content-center my-3 gap-3">
                                         <li class="d-flex align-items-center gap-2">
                                             <span class="w-12-px h-8-px rounded-pill bg-primary-600"></span>
-                                            <span class="text-secondary-light text-sm fw-semibold">New Patient:
-                                                <span class="text-primary-light fw-bold">50</span>
+                                            <span class="text-secondary-light text-sm fw-semibold">Buy:
+                                                <span class="text-primary-light fw-bold">500$</span>
                                             </span>
                                         </li>
                                         <li class="d-flex align-items-center gap-2">
                                             <span class="w-12-px h-8-px rounded-pill bg-warning-600"></span>
-                                            <span class="text-secondary-light text-sm fw-semibold">Old Patient:
-                                                <span class="text-primary-light fw-bold"> 500</span>
+                                            <span class="text-secondary-light text-sm fw-semibold">Sell:
+                                                <span class="text-primary-light fw-bold"> 5000$</span>
                                             </span>
                                         </li>
                                     </ul>
@@ -416,145 +929,105 @@
                             </div>
                         </div>
                         <!-- Earning Statistic -->
-                        <!-- sampai sini -->
-                        <!-- Patient Visited by Depertment -->
-                        <div class="col-xxl-6">
-                            <div class="card h-100">
-                                <div class="card-header">
-                                    <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                                        <h6 class="mb-2 fw-bold text-lg mb-0">Patient Visited by Depertment</h6>
+
+                        <!-- Trending Bids -->
+                        <div class="col-12">
+                    <h6 class="mb-16">Statistik</h6>
+                    <div class="row gy-4">
+                        <!-- Dashboard Widget Start -->
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-3">
+                                <div class="card-body p-0">
+                                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
+                                        <div class="d-flex align-items-center flex-wrap gap-16">
+                                            <span class="mb-0 w-40-px h-40-px bg-primary-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
+                                                <iconify-icon icon="flowbite:users-group-solid" class="icon"></iconify-icon>
+                                            </span>
+
+                                            <div class="flex-grow-1">
+                                                <h6 class="fw-semibold mb-0">24,000</h6>
+                                                <span class="fw-medium text-secondary-light text-md">Artworks</span>
+                                                <p class="text-sm mb-0 d-flex align-items-center flex-wrap gap-12 mt-12">
+                                                    <span class="bg-success-focus px-6 py-2 rounded-2 fw-medium text-success-main text-sm d-flex align-items-center gap-8">
+                                                        +168.001%
+                                                        <i class="ri-arrow-up-line"></i>
+                                                    </span> This week
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card-body p-24 d-flex align-items-center gap-16">
-                                    <div id="radialMultipleBar"></div>
-                                    <ul class="d-flex flex-column gap-12">
-                                        <li>
-                                            <span class="text-lg">Cardiology: <span class="text-primary-600 fw-semibold">80%</span> </span>
-                                        </li>
-                                        <li>
-                                            <span class="text-lg">Psychiatry: <span class="text-warning-600 fw-semibold">40%</span> </span>
-                                        </li>
-                                        <li>
-                                            <span class="text-lg">Pediatrics: <span class="text-success-600 fw-semibold">10%</span> </span>
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
+                        <!--     Widget End -->
+
+                        <!-- Dashboard Widget Start -->
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
+                                        <div class="d-flex align-items-center flex-wrap gap-16">
+                                            <span class="mb-0 w-40-px h-40-px bg-primary-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
+                                                <iconify-icon icon="flowbite:users-group-solid" class="icon"></iconify-icon>
+                                            </span>
+
+                                            <div class="flex-grow-1">
+                                                <h6 class="fw-semibold mb-0">82,000</h6>
+                                                <span class="fw-medium text-secondary-light text-md">Auction</span>
+                                                <p class="text-sm mb-0 d-flex align-items-center flex-wrap gap-12 mt-12">
+                                                    <span class="bg-danger-focus px-6 py-2 rounded-2 fw-medium text-danger-main text-sm d-flex align-items-center gap-8">
+                                                        +168.001%
+                                                        <i class="ri-arrow-down-line"></i>
+                                                    </span> This week
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Dashboard Widget End -->
+
+                        <!-- Dashboard Widget Start -->
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-2">
+                                <div class="card-body p-0">
+                                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
+                                        <div class="d-flex align-items-center flex-wrap gap-16">
+                                            <span class="mb-0 w-40-px h-40-px bg-primary-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
+                                                <iconify-icon icon="flowbite:users-group-solid" class="icon"></iconify-icon>
+                                            </span>
+
+                                            <div class="flex-grow-1">
+                                                <h6 class="fw-semibold mb-0">800</h6>
+                                                <span class="fw-medium text-secondary-light text-md">Creators</span>
+                                                <p class="text-sm mb-0 d-flex align-items-center flex-wrap gap-12 mt-12">
+                                                    <span class="bg-success-focus px-6 py-2 rounded-2 fw-medium text-success-main text-sm d-flex align-items-center gap-8">
+                                                        +168.001%
+                                                        <i class="ri-arrow-up-line"></i>
+                                                    </span> This week
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Dashboard Widget End -->
+                    </div>
+                </div>
+                        <!-- Trending Bids -->
+
+                        <!-- Patient Visited by Depertment -->
+                        
                         <!-- Patient Visited by Depertment -->
 
                         <!-- Patient Visit By Gender -->
-                        <div class="col-xxl-6">
-                            <div class="card h-100">
-                                <div class="card-header">
-                                    <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                                        <h6 class="mb-2 fw-bold text-lg mb-0">Patient Visit By Gender</h6>
-                                        <select class="form-select form-select-sm w-auto bg-base border-0 text-secondary-light">
-                                            <option>This Month</option>
-                                            <option>This Week</option>
-                                            <option>This Year</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="card-body p-24">
-                                    <ul class="d-flex flex-wrap align-items-center justify-content-center my-3 gap-3">
-                                        <li class="d-flex align-items-center gap-2">
-                                            <span class="w-12-px h-8-px rounded-pill bg-warning-600"></span>
-                                            <span class="text-secondary-light text-sm fw-semibold">Male:
-                                                <span class="text-primary-light fw-bold">200</span>
-                                            </span>
-                                        </li>
-                                        <li class="d-flex align-items-center gap-2">
-                                            <span class="w-12-px h-8-px rounded-pill bg-success-600"></span>
-                                            <span class="text-secondary-light text-sm fw-semibold">Female:
-                                                <span class="text-primary-light fw-bold"> 450</span>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <div id="paymentStatusChart" class="margin-16-minus y-value-left"></div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <!-- Patient Visit By Gender -->
 
                         <!-- Top performance Start -->
-                        <div class="col-xxl-4">
-                            <div class="card">
-                                <div class="card-header border-bottom">
-                                    <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                                        <h6 class="mb-2 fw-bold text-lg mb-0">Doctors List</h6>
-                                        <a  href="javascript:void(0)" class="text-primary-600 hover-text-primary d-flex align-items-center gap-1">
-                                            View All
-                                            <iconify-icon icon="solar:alt-arrow-right-linear" class="icon"></iconify-icon>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex flex-column gap-24">
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/doctor-img1.png') }}" alt="" class="w-40-px h-40-px rounded-circle flex-shrink-0 me-12 overflow-hidden">
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0">Dr. Davis</h6>
-                                                    <span class="text-sm text-secondary-light fw-medium">Cardiology</span>
-                                                </div>
-                                            </div>
-                                            <span class="bg-success-focus text-success-main px-10 py-4 radius-8 fw-medium text-sm">Available</span>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/doctor-img2.png') }}" alt="" class="w-40-px h-40-px rounded-circle flex-shrink-0 me-12 overflow-hidden">
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0">Dr. Riead</h6>
-                                                    <span class="text-sm text-secondary-light fw-medium">Orthopedics</span>
-                                                </div>
-                                            </div>
-                                            <span class="bg-success-focus text-success-main px-10 py-4 radius-8 fw-medium text-sm">Available</span>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/doctor-img3.png') }}" alt="" class="w-40-px h-40-px rounded-circle flex-shrink-0 me-12 overflow-hidden">
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0">Albert Flores</h6>
-                                                    <span class="text-sm text-secondary-light fw-medium">Ophthalmology</span>
-                                                </div>
-                                            </div>
-                                            <span class="bg-danger-focus text-danger-main px-10 py-4 radius-8 fw-medium text-sm">Not Available</span>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/doctor-img4.png') }}" alt="" class="w-40-px h-40-px rounded-circle flex-shrink-0 me-12 overflow-hidden">
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0">Dr. Smith</h6>
-                                                    <span class="text-sm text-secondary-light fw-medium">Cardiology</span>
-                                                </div>
-                                            </div>
-                                            <span class="bg-success-focus text-success-main px-10 py-4 radius-8 fw-medium text-sm">Available</span>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/doctor-img6.png') }}" alt="" class="w-40-px h-40-px rounded-circle flex-shrink-0 me-12 overflow-hidden">
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0">Dr. Johnson</h6>
-                                                    <span class="text-sm text-secondary-light fw-medium">Cardiology</span>
-                                                </div>
-                                            </div>
-                                            <span class="bg-danger-focus text-danger-main px-10 py-4 radius-8 fw-medium text-sm">Not Available</span>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/doctor-img5.png') }}" alt="" class="w-40-px h-40-px rounded-circle flex-shrink-0 me-12 overflow-hidden">
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0">Dr. Martinez</h6>
-                                                    <span class="text-sm text-secondary-light fw-medium">Cardiology</span>
-                                                </div>
-                                            </div>
-                                            <span class="bg-success-focus text-success-main px-10 py-4 radius-8 fw-medium text-sm">Available</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <!-- Top performance End -->
 
                         <div class="col-xxl-8">
@@ -668,226 +1141,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xxl-12 col-xl-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                                        <h6 class="mb-2 fw-bold text-lg mb-0">Available Treatments</h6>
-                                        <a  href="javascript:void(0)" class="text-primary-600 hover-text-primary d-flex align-items-center gap-1">
-                                            View All
-                                            <iconify-icon icon="solar:alt-arrow-right-linear" class="icon"></iconify-icon>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center justify-content-between gap-3 mb-24">
-                                        <div class="d-flex align-items-center gap-12">
-                                            <div class="w-40-px h-40-px rounded-circle flex-shrink-0 bg-info-50 d-flex justify-content-center align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/treatment-icon1.png') }}" alt="" class="">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="text-md mb-0 fw-normal">Psychiatry</h6>
-                                                <span class="text-sm text-secondary-light fw-normal">57 Doctors</span>
-                                            </div>
-                                        </div>
-                                        <span class="text-secondary-light">08:45 AM</span>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between gap-3 mb-24">
-                                        <div class="d-flex align-items-center gap-12">
-                                            <div class="w-40-px h-40-px rounded-circle flex-shrink-0 bg-success-50 d-flex justify-content-center align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/treatment-icon2.png') }}" alt="" class="">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="text-md mb-0 fw-normal">Orthopedic</h6>
-                                                <span class="text-sm text-secondary-light fw-normal">85 Doctors</span>
-                                            </div>
-                                        </div>
-                                        <span class="text-secondary-light">08:45 AM</span>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between gap-3 mb-24">
-                                        <div class="d-flex align-items-center gap-12">
-                                            <div class="w-40-px h-40-px rounded-circle flex-shrink-0 bg-lilac-50 d-flex justify-content-center align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/treatment-icon3.png') }}" alt="" class="">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="text-md mb-0 fw-normal">Cardiology</h6>
-                                                <span class="text-sm text-secondary-light fw-normal">60 Doctors</span>
-                                            </div>
-                                        </div>
-                                        <span class="text-secondary-light">08:45 AM</span>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between gap-3 mb-24">
-                                        <div class="d-flex align-items-center gap-12">
-                                            <div class="w-40-px h-40-px rounded-circle flex-shrink-0 bg-warning-50 d-flex justify-content-center align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/treatment-icon4.png') }}" alt="" class="">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="text-md mb-0 fw-normal">Pediatrics</h6>
-                                                <span class="text-sm text-secondary-light fw-normal">120 Doctors</span>
-                                            </div>
-                                        </div>
-                                        <span class="text-secondary-light">08:45 AM</span>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between gap-3 mb-24">
-                                        <div class="d-flex align-items-center gap-12">
-                                            <div class="w-40-px h-40-px rounded-circle flex-shrink-0 bg-danger-50 d-flex justify-content-center align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/treatment-icon5.png') }}" alt="" class="">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="text-md mb-0 fw-normal">Neurology </h6>
-                                                <span class="text-sm text-secondary-light fw-normal">25 Doctors</span>
-                                            </div>
-                                        </div>
-                                        <span class="text-secondary-light">08:45 AM</span>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between gap-3 mb-0">
-                                        <div class="d-flex align-items-center gap-12">
-                                            <div class="w-40-px h-40-px rounded-circle flex-shrink-0 bg-primary-50 d-flex justify-content-center align-items-center">
-                                                <img src="{{ asset('assets/images/home-eight/treatment-icon6.png') }}" alt="" class="">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="text-md mb-0 fw-normal">Gastroenterology</h6>
-                                                <span class="text-sm text-secondary-light fw-normal">95 Doctors</span>
-                                            </div>
-                                        </div>
-                                        <span class="text-secondary-light">08:45 AM</span>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-12 col-xl-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                                        <h6 class="mb-2 fw-bold text-lg mb-0">Health Reports Document</h6>
-                                        <a  href="javascript:void(0)" class="text-primary-600 hover-text-primary d-flex align-items-center gap-1">
-                                            View All
-                                            <iconify-icon icon="solar:alt-arrow-right-linear" class="icon"></iconify-icon>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex flex-column gap-24">
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center gap-12">
-                                                <div class="flex-shrink-0">
-                                                    <img src="{{ asset('assets/images/home-eight/icon-pdf.png') }}" alt="" class="">
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0 fw-normal">Checkup Result.pdf</h6>
-                                                    <span class="text-xs text-secondary-light fw-normal">2.5mb</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex-align gap-12">
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-danger-100 text-danger-600 bg-hover-danger-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-delete-bin-5-line"></i>
-                                                </button>
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-success-100 text-success-600 bg-hover-success-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-download-2-fill"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center gap-12">
-                                                <div class="flex-shrink-0">
-                                                    <img src="{{ asset('assets/images/home-eight/icon-text.png') }}" alt="" class="">
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0 fw-normal">Checkup Result.doc</h6>
-                                                    <span class="text-xs text-secondary-light fw-normal">2mb</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex-align gap-12">
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-danger-100 text-danger-600 bg-hover-danger-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-delete-bin-5-line"></i>
-                                                </button>
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-success-100 text-success-600 bg-hover-success-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-download-2-fill"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center gap-12">
-                                                <div class="flex-shrink-0">
-                                                    <img src="{{ asset('assets/images/home-eight/icon-pdf.png') }}" alt="" class="">
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0 fw-normal">Prescription.pdf</h6>
-                                                    <span class="text-xs text-secondary-light fw-normal">3mb</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex-align gap-12">
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-danger-100 text-danger-600 bg-hover-danger-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-delete-bin-5-line"></i>
-                                                </button>
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-success-100 text-success-600 bg-hover-success-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-download-2-fill"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center gap-12">
-                                                <div class="flex-shrink-0">
-                                                    <img src="{{ asset('assets/images/home-eight/icon-text.png') }}" alt="" class="">
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0 fw-normal">Xray Result.doc</h6>
-                                                    <span class="text-xs text-secondary-light fw-normal">3mb</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex-align gap-12">
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-danger-100 text-danger-600 bg-hover-danger-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-delete-bin-5-line"></i>
-                                                </button>
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-success-100 text-success-600 bg-hover-success-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-download-2-fill"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center gap-12">
-                                                <div class="flex-shrink-0">
-                                                    <img src="{{ asset('assets/images/home-eight/icon-pdf.png') }}" alt="" class="">
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0 fw-normal">Glucose Level Report.pdf</h6>
-                                                    <span class="text-xs text-secondary-light fw-normal">3mb</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex-align gap-12">
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-danger-100 text-danger-600 bg-hover-danger-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-delete-bin-5-line"></i>
-                                                </button>
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-success-100 text-success-600 bg-hover-success-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-download-2-fill"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                            <div class="d-flex align-items-center gap-12">
-                                                <div class="flex-shrink-0">
-                                                    <img src="{{ asset('assets/images/home-eight/icon-text.png') }}" alt="" class="">
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h6 class="text-md mb-0 fw-normal">Checkup Result.doc</h6>
-                                                    <span class="text-xs text-secondary-light fw-normal">2mb</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex-align gap-12">
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-danger-100 text-danger-600 bg-hover-danger-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-delete-bin-5-line"></i>
-                                                </button>
-                                                <button type="button" class="w-32-px h-32-px d-inline-flex justify-content-center align-items-center bg-success-100 text-success-600 bg-hover-success-600 text-hover-white text-md rounded-circle">
-                                                    <i class="ri-download-2-fill"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                      
+                        
                     </div>
                 </div>
             </div>
