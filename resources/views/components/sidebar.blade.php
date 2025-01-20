@@ -17,71 +17,97 @@
                     <span>Dashboard</span>
                 </a>
                 <ul class="sidebar-submenu">
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('index') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> AI</a>
-                    </li>
+                    </li> --}}
+
                     <li>
-                        <!-- opsi ke-1 pemilihan dashboard, yang 6 table bisa untuk 10 sensor IoT (tambah 4 table lagi), Finance juga bisa diambil langsung atau diganti dari line chart -->
-                    <a href="{{ route('index2') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> CRM</a>
+                    <!-- opsi ke-1 pemilihan dashboard, yang 6 table bisa untuk 10 sensor IoT (tambah 4 table lagi), Finance juga bisa diambil langsung atau diganti dari line chart -->
+                    <a href="{{ route('index2') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Dashboard (Opt 1)</a>
                     </li>
-                    <li>
+
+                    {{-- <li>
                     <a href="{{ route('index3') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> eCommerce</a>
-                    </li>
-                    <li>
+                    </li> --}}
+                    {{-- <li>
                     <a href="{{ route('index4') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Cryptocurrency</a>
-                    </li>
+                    </li> --}}
+
                     <!-- opsi ke-1 pemilihan fitur IoT,4 table nya bisa untuk 10 sensor IoT tambah 6 table juga, bagian revenue statistics bisa dijadiin fitur si Iot nya seperti
                      suhu tanah,kelembapan tanah, level tanah dan lain lain.
                      bagian most location juga bisa dijadiin fitur IoT nya, nama negara diganti jadi level tanah kelembapan tanah, progress barnya bisa dijadiin realtime gitu -->
                     <li>
-                    <a href="{{ route('index5') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> Investment</a>
+                    <a href="{{ route('index5') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> IoT (Opt 1)</a> 
                     </li>
+
                     <!-- cocok untuk fitur buy and sell, ambil bagian average enrollment rate atau pilih line chart with data labels, dan zoomable chart di chart -->
                     <li>
-                    <a href="{{ route('index6') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> LMS</a>
+                    <a href="{{ route('index6') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Buy & Sell</a>
                     </li>
                     <!-- OPSI KE-2 --pemilihan fitur IoT,trending bids bisa untuk riwayat IoT atau apalah bebas,dibagian trending NFTs nya bisa buat monitoring IoT kayak cctv satpam di film film
-                     kan banyak tuh. -->
+                    kan banyak tuh. -->
                     <li>
-                    <a href="{{ route('index7') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> NFT & Gaming</a>
+                    <a href="{{ route('index7') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> IoT (Opt 2)</a>
                     </li>
                     <!-- opsi ke-2 pemilihan dashboard, untuk sensor IoT juga sama bisa tambah 6 table lagi,bagian finance juga bisa diambil langsung  di bagian earning statistic -->
                     <li>
+<<<<<<< HEAD
                     <a href="{{ route('index8') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Dashboard</a>
+=======
+                    <a href="{{ route('index8') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Dashboard (Opt 2)</a>
+>>>>>>> 326d885b954c2038a89c788fdbe46008875ddc3d
                     </li>
-                    <li>
+                    {{-- <li>
                     <a href="{{ route('index9') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Analytics</a>
+                    </li> --}}
+                    {{-- <li>
+                    <a href="{{ route('index10') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> POS & Inventory </a>
+                    </li> --}}
+                </ul>
+            </li>
+            <!-- cocok untuk fitur article jangan dihapus semuanya -->
+            <li class="dropdown">
+                <a  href="javascript:void(0)">
+                    <i class="ri-news-line text-xl me-6 d-flex w-auto"></i>
+                    <span>Blog</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a  href="{{ route('blog') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Blog</a>
                     </li>
                     <li>
-                    <a href="{{ route('index10') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> POS & Inventory </a>
+                        <a  href="{{ route('blogDetails') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Blog Details</a>
+                    </li>
+                    <li>
+                        <a  href="{{ route('addBlog') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add Blog</a>
                     </li>
                 </ul>
             </li>
-            <li class="sidebar-menu-group-title">Application</li>
-            <li>
+            <li class="sidebar-menu-group-title">Owner</li>
+            {{-- <li>
                   <a href="{{ route('email') }}">
                     <iconify-icon icon="mage:email" class="menu-icon"></iconify-icon>
                     <span>Email</span>
                 </a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a href="{{ route('chatMessage') }}">
                     <iconify-icon icon="bi:chat-dots" class="menu-icon"></iconify-icon>
                     <span>Chat</span>
                 </a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a href="{{ route('calendar') }}">
                     <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
                     <span>Calendar</span>
                 </a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a href="{{ route('kanban') }}">
                     <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
                     <span>Kanban</span>
                 </a>
-            </li>
+            </li> --}}
             <!-- cocok untuk fitur hutang piutang dan fitur barang seperti dibagian preview untuk detail transaksi dan edit untuk mengedit produk, bagian add new saja yang dihapus -->
             <li class="dropdown">
                 <a  href="javascript:void(0)">
@@ -111,16 +137,58 @@
                     <li>
                     <a href="{{ route('LoansList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Loan List</a>
                     </li>
+<<<<<<< HEAD
                     <li>
                     <a href="{{ route('LoansPreview') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Preview</a>
                     </li>
                     
+=======
+                    {{-- <li>
+                    <a href="{{ route('invoiceAdd') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add new</a>
+                    </li> --}}
+>>>>>>> 326d885b954c2038a89c788fdbe46008875ddc3d
                     <li>
                     <a href="{{ route('LoansEdit') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
                     </li>
                 </ul>
             </li>
+            <!-- cocok untuk fitur customer & supplier, hapus fitur user grid -->
             <li class="dropdown">
+                <a  href="javascript:void(0)">
+                    <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
+                    <span>Customer & Supplier</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a  href="{{ route('usersList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Users List</a>
+                    </li>
+                    {{-- <li>
+                        <a  href="{{ route('usersGrid') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
+                    </li> --}}
+                    <li>
+                        <a  href="{{ route('addUser') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add User</a>
+                    </li>
+                    <li>
+                        <a  href="{{ route('viewProfile') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> View Profile</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- cocok untuk fitur user & riwayat -->
+            <li class="dropdown">
+                <a  href="javascript:void(0)">
+                    <i class="ri-user-settings-line text-xl me-6 d-flex w-auto"></i>
+                    <span>Role & Access</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a  href="{{ route('roleAaccess') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Role & Access</a>
+                    </li>
+                    <li>
+                        <a  href="{{ route('assignRole') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Assign Role</a>
+                    </li>
+                </ul>
+            </li>
+            {{-- <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <i class="ri-robot-2-line text-xl me-6 d-flex w-auto"></i>
                     <span>Ai Application</span>
@@ -142,9 +210,9 @@
                         <a href="{{ route('videoGenerator') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> Video Generator</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
-            <li class="dropdown">
+            {{-- <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <i class="ri-btc-line text-xl me-6 d-flex w-auto"></i>
                     <span>Crypto Currency</span>
@@ -163,10 +231,28 @@
                     <a  href="{{ route('portfolio') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Portfolios</a>
                     </li>
                 </ul>
+            </li> --}}
+            <li class="sidebar-menu-group-title">Web Admin</li>
+            <li class="dropdown">
+                <a  href="javascript:void(0)">
+                    <iconify-icon icon="simple-line-icons:vector" class="menu-icon"></iconify-icon>
+                    <span>User Authentication</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a  href="{{ route('signin') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Sign In</a>
+                    </li>
+                    <li>
+                        <a  href="{{ route('signup') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Sign Up</a>
+                    </li>
+                    <li>
+                        <a  href="{{ route('forgotPassword') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Forgot Password</a>
+                    </li>
+                </ul>
             </li>
 
             <li class="sidebar-menu-group-title">UI Elements</li>
-
+            {{-- ELEMENTS BUAT DEVELOPMENT --}}
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
@@ -296,121 +382,52 @@
                     <span>Widgets</span>
                 </a>
             </li>
-            <!-- cocok untuk fitur customer & supplier, hapus fitur user grid -->
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
-                    <span>Users</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a  href="{{ route('usersList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Users List</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('usersGrid') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('addUser') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add User</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('viewProfile') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> View Profile</a>
-                    </li>
-                </ul>
-            </li>
 
-              <!-- cocok untuk fitur user & riwayat -->
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <i class="ri-user-settings-line text-xl me-6 d-flex w-auto"></i>
-                    <span>Role & Access</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a  href="{{ route('roleAaccess') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Role & Access</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('assignRole') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Assign Role</a>
-                    </li>
-                </ul>
-            </li>
+            
 
-            <li class="sidebar-menu-group-title">Application</li>
-
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="simple-line-icons:vector" class="menu-icon"></iconify-icon>
-                    <span>Authentication</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a  href="{{ route('signin') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Sign In</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('signup') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Sign Up</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('forgotPassword') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Forgot Password</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
+            <li class="sidebar-menu-group-title">Server Maintenance</li>
+            
+            
+            {{-- <li>
                 <a  href="{{ route('gallery') }}">
                     <iconify-icon icon="solar:gallery-wide-linear" class="menu-icon"></iconify-icon>
                     <span>Gallery</span>
                 </a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a  href="{{ route('pricing') }}">
                     <iconify-icon icon="hugeicons:money-send-square" class="menu-icon"></iconify-icon>
                     <span>Pricing</span>
                 </a>
-            </li>
-            <!-- cocok untuk fitur article jangan dihapus semuanya -->
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <i class="ri-news-line text-xl me-6 d-flex w-auto"></i>
-                    <span>Blog</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a  href="{{ route('blog') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Blog</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('blogDetails') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Blog Details</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('addBlog') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add Blog</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a  href="{{ route('testimonials') }}">
                     <i class="ri-star-line text-xl me-6 d-flex w-auto"></i>
                     <span>Testimonial</span>
                 </a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a  href="{{ route('faq') }}">
                     <iconify-icon icon="mage:message-question-mark-round" class="menu-icon"></iconify-icon>
                     <span>FAQs</span>
                 </a>
-            </li>
-            <li>
-                <a  href="{{ route('error') }}">
-                    <iconify-icon icon="streamline:straight-face" class="menu-icon"></iconify-icon>
-                    <span>404</span>
-                </a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a  href="{{ route('termsCondition') }}">
                     <iconify-icon icon="octicon:info-24" class="menu-icon"></iconify-icon>
                     <span>Terms & Conditions</span>
                 </a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a  href="{{ route('comingSoon') }}">
                     <i class="ri-rocket-line text-xl me-6 d-flex w-auto"></i>
                     <span>Coming Soon</span>
+                </a>
+            </li> --}}
+            <li>
+                <a  href="{{ route('error') }}">
+                    <iconify-icon icon="streamline:straight-face" class="menu-icon"></iconify-icon>
+                    <span>404</span>
                 </a>
             </li>
             <li>
@@ -425,7 +442,7 @@
                     <span>Blank Page</span>
                 </a>
             </li>
-            <li class="dropdown">
+            {{-- <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="icon-park-outline:setting-two" class="menu-icon"></iconify-icon>
                     <span>Settings</span>
@@ -453,7 +470,7 @@
                         <a  href="{{ route('paymentGateway') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Payment Gateway</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </aside>
