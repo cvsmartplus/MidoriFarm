@@ -359,7 +359,8 @@
                     var chart = new ApexCharts(document.querySelector("#userOverviewDonutChart"), options);
                     chart.render();
                     // ================================ Users Overview Donut chart End ================================ 
-                    </script>';
+                    </script>'
+                    
 @endphp
 
 @section('content')

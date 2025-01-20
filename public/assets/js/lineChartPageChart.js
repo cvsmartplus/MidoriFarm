@@ -587,4 +587,6 @@
     var chart = new ApexCharts(document.querySelector("#gradientLineChart"), options);
     chart.render();
   // =========================== Gradient Line Chart End ===============================
-
+  
+  
+                  

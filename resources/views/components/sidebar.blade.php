@@ -53,9 +53,9 @@
                     <li>
                     <a href="{{ route('index8') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Dashboard (Opt 2)</a>
                     </li>
-                    {{-- <li>
+                     <li>
                     <a href="{{ route('index9') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Analytics</a>
-                    </li> --}}
+                    </li> 
                     {{-- <li>
                     <a href="{{ route('index10') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> POS & Inventory </a>
                     </li> --}}
