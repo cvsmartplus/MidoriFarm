@@ -23,8 +23,8 @@
 
                     <li>
                     <!-- opsi ke-1 pemilihan dashboard, yang 6 table bisa untuk 10 sensor IoT (tambah 4 table lagi), Finance juga bisa diambil langsung atau diganti dari line chart -->
-                    <a href="{{ route('index2') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Dashboard (Opt 1)</a>
-                    </li>
+                    {{-- <a href="{{ route('index2') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Dashboard (Opt 1)</a>
+                    </li> --}}
 
                     {{-- <li>
                     <a href="{{ route('index3') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> eCommerce</a>
@@ -51,11 +51,11 @@
                     </li>
                     <!-- opsi ke-2 pemilihan dashboard, untuk sensor IoT juga sama bisa tambah 6 table lagi,bagian finance juga bisa diambil langsung  di bagian earning statistic -->
                     <li>
-                    <a href="{{ route('index8') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Dashboard (Opt 2)</a>
+                    <a href="{{ route('index8') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Dashboard</a>
                     </li>
                      <li>
-                    <a href="{{ route('index9') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Analytics</a>
-                    </li> 
+                    {{-- <a href="{{ route('index9') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Analytics</a>
+                    </li>  --}}
                     {{-- <li>
                     <a href="{{ route('index10') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> POS & Inventory </a>
                     </li> --}}
