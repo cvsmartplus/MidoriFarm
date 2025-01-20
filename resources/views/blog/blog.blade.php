@@ -8,7 +8,7 @@
 
             <div class="row gy-4">
                
-                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                {{-- <div class="col-xxl-3 col-lg-4 col-sm-6">
                     <div class="card h-100 p-0 radius-12 overflow-hidden">
                         <div class="card-body p-24">
                             <a  href="{{ route('blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
@@ -33,10 +33,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Style Two -->
-                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                {{-- <div class="col-xxl-3 col-lg-4 col-sm-6">
                     <div class="card h-100 p-0 radius-12 overflow-hidden">
                         <div class="card-body p-0">
                             <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
@@ -119,6 +119,118 @@
                             </div>
                         </div>
                     </div>
+                </div> --}}
+                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                    <div class="card h-100 p-0 radius-12 overflow-hidden">
+                        <div class="card-body p-0">
+                            <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
+                                <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="p-20">
+                                <h6 class="mb-16">
+                                    <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
+                                </h6>
+                                <p class="text-line-3 text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                                <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-6">
+                                    <div class="d-flex align-items-center gap-8">
+                                        <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
+                                        <div class="d-flex flex-column">
+                                            <h6 class="text-sm mb-0">John Doe</h6>
+                                            <span class="text-xs text-neutral-500">1 day ago</span>
+                                        </div>
+                                    </div>
+                                    <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                    <div class="card h-100 p-0 radius-12 overflow-hidden">
+                        <div class="card-body p-0">
+                            <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
+                                <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="p-20">
+                                <h6 class="mb-16">
+                                    <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
+                                </h6>
+                                <p class="text-line-3 text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                                <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-6">
+                                    <div class="d-flex align-items-center gap-8">
+                                        <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
+                                        <div class="d-flex flex-column">
+                                            <h6 class="text-sm mb-0">John Doe</h6>
+                                            <span class="text-xs text-neutral-500">1 day ago</span>
+                                        </div>
+                                    </div>
+                                    <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                    <div class="card h-100 p-0 radius-12 overflow-hidden">
+                        <div class="card-body p-0">
+                            <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
+                                <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="p-20">
+                                <h6 class="mb-16">
+                                    <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
+                                </h6>
+                                <p class="text-line-3 text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                                <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-6">
+                                    <div class="d-flex align-items-center gap-8">
+                                        <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
+                                        <div class="d-flex flex-column">
+                                            <h6 class="text-sm mb-0">John Doe</h6>
+                                            <span class="text-xs text-neutral-500">1 day ago</span>
+                                        </div>
+                                    </div>
+                                    <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                    <div class="card h-100 p-0 radius-12 overflow-hidden">
+                        <div class="card-body p-0">
+                            <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
+                                <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="p-20">
+                                <h6 class="mb-16">
+                                    <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
+                                </h6>
+                                <p class="text-line-3 text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                                <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-6">
+                                    <div class="d-flex align-items-center gap-8">
+                                        <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
+                                        <div class="d-flex flex-column">
+                                            <h6 class="text-sm mb-0">John Doe</h6>
+                                            <span class="text-xs text-neutral-500">1 day ago</span>
+                                        </div>
+                                    </div>
+                                    <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-xxl-3 col-lg-4 col-sm-6">
                     <div class="card h-100 p-0 radius-12 overflow-hidden">
@@ -150,7 +262,7 @@
                 </div>
 
                 <!-- Style Three -->
-                <div class="col-xxl-3 col-lg-4 col-sm-6">
+                {{-- <div class="col-xxl-3 col-lg-4 col-sm-6">
                     <div class="card h-100 p-0 radius-12 overflow-hidden">
                         <div class="card-body p-24">
                             <h6 class="mb-16">
@@ -301,7 +413,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
             

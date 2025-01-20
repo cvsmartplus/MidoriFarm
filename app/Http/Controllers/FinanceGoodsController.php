@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 
 class FinanceGoodsController extends Controller
 {
-    public function FinanceGoods(){
-
+    public function goodsEdit(){
         return view('FinanceGoods/goodsEdit');
     }
     public function goodsList() {

@@ -42,7 +42,7 @@
 
 @section('content')
             <div class="row gy-4">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="card mt-24">
                         <div class="card-header border-bottom">
                             <h6 class="text-xl mb-0">Add New Post</h6>
@@ -151,7 +151,7 @@
                 <div class="col-lg-4">
                     <div class="d-flex flex-column gap-24">
                         <!-- Latest Blog -->
-                        <div class="card">
+                        {{-- <div class="card">
                             <div class="card-header border-bottom">
                                 <h6 class="text-xl mb-0">Latest Posts</h6>
                             </div>
@@ -234,7 +234,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>            
