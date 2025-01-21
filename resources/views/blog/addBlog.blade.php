@@ -43,7 +43,7 @@
 @section('content')
             <div class="row gy-4">
                 <div class="col-lg-12">
-                    <div class="card mt-24">
+                    <div class="card">
                         <div class="card-header border-bottom">
                             <h6 class="text-xl mb-0">Add New Post</h6>
                         </div>
