@@ -302,147 +302,153 @@
 
 @section('content')
 
-    <div class="row">
-    <div class="col-xxl-3 col-lg-4 col-sm-6 mb-16">
+<div class="row gy-4">
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
         <div class="card h-100 p-0 radius-12 overflow-hidden">
-            <div class="card-body p-24">
-                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
-                    <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+            <div class="card-body p-0">
+                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
+                    <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                 </a>
-                <div class="mt-20">
-                    <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
-                        <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
-                        <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
-                            <i class="ri-calendar-2-line"></i>
-                            Jan 17, 2024
-                        </div>
-                    </div>
+                <div class="p-20">
                     <h6 class="mb-16">
-                        <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Your satisfaction is our top the best priority</a>
+                        <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
                     </h6>
-                    <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
-                    <a  href="{{ route('blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
-                        Read More
-                        <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
-                    </a>
+                    <p class="text-line-3 text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                    <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-6">
+                        <div class="d-flex align-items-center gap-8">
+                            <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
+                            <div class="d-flex flex-column">
+                                <h6 class="text-sm mb-0">John Doe</h6>
+                                <span class="text-xs text-neutral-500">1 day ago</span>
+                            </div>
+                        </div>
+                        <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
+                            Read More
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-xxl-3 col-lg-4 col-sm-6 mb-16
-    ">
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
         <div class="card h-100 p-0 radius-12 overflow-hidden">
-            <div class="card-body p-24">
-                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
-                    <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+            <div class="card-body p-0">
+                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
+                    <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                 </a>
-                <div class="mt-20">
-                    <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
-                        <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
-                        <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
-                            <i class="ri-calendar-2-line"></i>
-                            Jan 17, 2024
-                        </div>
-                    </div>
+                <div class="p-20">
                     <h6 class="mb-16">
-                        <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Your satisfaction is our top the best priority</a>
+                        <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
                     </h6>
-                    <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
-                    <a  href="{{ route('blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
-                        Read More
-                        <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
-                    </a>
+                    <p class="text-line-3 text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                    <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-6">
+                        <div class="d-flex align-items-center gap-8">
+                            <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
+                            <div class="d-flex flex-column">
+                                <h6 class="text-sm mb-0">John Doe</h6>
+                                <span class="text-xs text-neutral-500">1 day ago</span>
+                            </div>
+                        </div>
+                        <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
+                            Read More
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-xxl-3 col-lg-4 col-sm-6 mb-16
-    ">
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
         <div class="card h-100 p-0 radius-12 overflow-hidden">
-            <div class="card-body p-24">
-                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
-                    <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+            <div class="card-body p-0">
+                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
+                    <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                 </a>
-                <div class="mt-20">
-                    <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
-                        <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
-                        <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
-                            <i class="ri-calendar-2-line"></i>
-                            Jan 17, 2024
-                        </div>
-                    </div>
+                <div class="p-20">
                     <h6 class="mb-16">
-                        <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Your satisfaction is our top the best priority</a>
+                        <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
                     </h6>
-                    <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
-                    <a  href="{{ route('blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
-                        Read More
-                        <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
-                    </a>
+                    <p class="text-line-3 text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                    <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-6">
+                        <div class="d-flex align-items-center gap-8">
+                            <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
+                            <div class="d-flex flex-column">
+                                <h6 class="text-sm mb-0">John Doe</h6>
+                                <span class="text-xs text-neutral-500">1 day ago</span>
+                            </div>
+                        </div>
+                        <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
+                            Read More
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-xxl-3 col-lg-4 col-sm-6 mb-16
-    ">
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
         <div class="card h-100 p-0 radius-12 overflow-hidden">
-            <div class="card-body p-24">
-                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
-                    <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+            <div class="card-body p-0">
+                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
+                    <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                 </a>
-                <div class="mt-20">
-                    <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
-                        <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
-                        <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
-                            <i class="ri-calendar-2-line"></i>
-                            Jan 17, 2024
-                        </div>
-                    </div>
+                <div class="p-20">
                     <h6 class="mb-16">
-                        <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Your satisfaction is our top the best priority</a>
+                        <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
                     </h6>
-                    <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
-                    <a  href="{{ route('blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
-                        Read More
-                        <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
-                    </a>
+                    <p class="text-line-3 text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                    <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-6">
+                        <div class="d-flex align-items-center gap-8">
+                            <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
+                            <div class="d-flex flex-column">
+                                <h6 class="text-sm mb-0">John Doe</h6>
+                                <span class="text-xs text-neutral-500">1 day ago</span>
+                            </div>
+                        </div>
+                        <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
+                            Read More
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    {{-- <div class="col-xxl-3 col-lg-4 col-sm-6 mb-16
-    ">
+    <div class="col-xxl-3 col-lg-4 col-sm-6">
         <div class="card h-100 p-0 radius-12 overflow-hidden">
-            <div class="card-body p-24">
-                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
-                    <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+            <div class="card-body p-0">
+                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
+                    <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                 </a>
-                <div class="mt-20">
-                    <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
-                        <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
-                        <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
-                            <i class="ri-calendar-2-line"></i>
-                            Jan 17, 2024
-                        </div>
-                    </div>
+                <div class="p-20">
                     <h6 class="mb-16">
-                        <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Your satisfaction is our top the best priority</a>
+                        <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
                     </h6>
-                    <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
-                    <a  href="{{ route('blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
-                        Read More
-                        <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
-                    </a>
+                    <p class="text-line-3 text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                    <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-6">
+                        <div class="d-flex align-items-center gap-8">
+                            <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
+                            <div class="d-flex flex-column">
+                                <h6 class="text-sm mb-0">John Doe</h6>
+                                <span class="text-xs text-neutral-500">1 day ago</span>
+                            </div>
+                        </div>
+                        <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
+                            Read More
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> --}}
     </div>
+</div>
 
     <!-- dari sini -->
     <div class="col-12">
     <div class="mb-16 mt-8 d-flex flex-wrap justify-content-between gap-16">
-        <h6 class="mb-0">Monitoring</h6>
+        <h6 class="my-4s">Monitoring</h6>
         {{-- <ul class="nav button-tab nav-pills mb-16 gap-12" id="pills-tab-three" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link fw-semibold text-secondary-light rounded-pill px-20 py-6 border border-neutral-300 active" id="pills-button-all-tab" data-bs-toggle="pill" data-bs-target="#pills-button-all" type="button" role="tab" aria-controls="pills-button-all" aria-selected="false" tabindex="-1">All</button>

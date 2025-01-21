@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-24">
+            {{-- <div class="card mt-24">
                 <div class="card-header border-bottom">
                     <h6 class="text-xl mb-0">Comments</h6>
                 </div>
@@ -178,7 +178,7 @@
                         <button type="submit" class="btn btn-primary-600 radius-8">Submit</button>
                     </form>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <!-- Sidebar Start -->
