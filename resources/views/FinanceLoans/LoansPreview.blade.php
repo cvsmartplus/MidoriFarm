@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
     $title='Invoice List';
-    $subTitle = 'Invoice List';
+    $subTitle = 'Debt List';
     $script = '<script>
                     function printInvoice() {
                         var printContents = document.getElementById("invoice").innerHTML;
@@ -112,43 +112,43 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>01</td>
-                                                        <td>Apple's Shoes</td>
+                                                        <td>Kentang</td>
                                                         <td>5</td>
-                                                        <td>PC</td>
-                                                        <td>$200</td>
-                                                        <td class="text-end">$1000.00</td>
+                                                        <td>Tons</td>
+                                                        <td>Rp200.000</td>
+                                                        <td class="text-end">Rp1.000.000</td>
                                                     </tr>
                                                     <tr>
                                                         <td>02</td>
-                                                        <td>Apple's Shoes</td>
+                                                        <td>Kentang</td>
                                                         <td>5</td>
-                                                        <td>PC</td>
-                                                        <td>$200</td>
-                                                        <td class="text-end">$1000.00</td>
+                                                        <td>Tons</td>
+                                                        <td>Rp200.000</td>
+                                                        <td class="text-end">Rp1.000.000</td>
                                                     </tr>
                                                     <tr>
                                                         <td>03</td>
-                                                        <td>Apple's Shoes</td>
+                                                        <td>Kentang</td>
                                                         <td>5</td>
-                                                        <td>PC</td>
-                                                        <td>$200</td>
-                                                        <td class="text-end">$1000.00</td>
+                                                        <td>Tons</td>
+                                                        <td>Rp200.000</td>
+                                                        <td class="text-end">Rp1.000.000</td>
                                                     </tr>
                                                     <tr>
                                                         <td>04</td>
-                                                        <td>Apple's Shoes</td>
+                                                        <td>Kentang</td>
                                                         <td>5</td>
-                                                        <td>PC</td>
-                                                        <td>$200</td>
-                                                        <td class="text-end">$1000.00</td>
+                                                        <td>Tons</td>
+                                                        <td>Rp200.000</td>
+                                                        <td class="text-end">Rp1.000.000</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                         <div class="d-flex flex-wrap justify-content-between gap-3">
                                             <div>
-                                                <p class="text-sm mb-0"><span class="text-primary-light fw-semibold">Sales By:</span> Jammal</p>
-                                                <p class="text-sm mb-0">Thanks for your business</p>
+                                                <p class="text-sm mb-0"><span class="text-primary-light fw-semibold">Sales By:</span> SmartPlus</p>
+                                                <p class="text-sm mb-0">Thanks for your business!</p>
                                             </div>
                                             <div>
                                                 <table class="text-sm">
@@ -156,13 +156,13 @@
                                                         <tr>
                                                             <td class="pe-64">Subtotal:</td>
                                                             <td class="pe-16">
-                                                                <span class="text-primary-light fw-semibold">$4000.00</span>
+                                                                <span class="text-primary-light fw-semibold">Rp4.000.000</span>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td class="pe-64">Discount:</td>
                                                             <td class="pe-16">
-                                                                <span class="text-primary-light fw-semibold">$0.00</span>
+                                                                <span class="text-primary-light fw-semibold">Rp0</span>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -176,7 +176,7 @@
                                                                 <span class="text-primary-light fw-semibold">Total:</span>
                                                             </td>
                                                             <td class="pe-16 pt-4">
-                                                                <span class="text-primary-light fw-semibold">$1690</span>
+                                                                <span class="text-primary-light fw-semibold">Rp4.000.000</span>
                                                             </td>
                                                         </tr>
                                                     </tbody>

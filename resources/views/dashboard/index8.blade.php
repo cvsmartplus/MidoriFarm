@@ -1,8 +1,158 @@
 @extends('layout.layout')
 @php
-    $title='Dashboard';
-    $subTitle = 'Medical';
+    $title='Belanda';
+   
     $script = '<script>
+                    // ===================== Revenue Chart Start =============================== 
+                    function createChartTwo(chartId, color1, color2) {
+                        var options = {
+                            series: [{
+                                name: "series1",
+                                data: [6, 20, 15, 48, 28, 55, 28, 52, 25, 32, 15, 25]
+                            }, {
+                                name: "series2",
+                                data: [0, 8, 4, 36, 16, 42, 16, 40, 12, 24, 4, 12]
+                            }],
+                            legend: {
+                                show: false
+                            },
+                            chart: {
+                                type: "area",
+                                width: "100%",
+                                height: 150,
+                                toolbar: {
+                                    show: false
+                                },
+                                padding: {
+                                    left: 0,
+                                    right: 0,
+                                    top: 0,
+                                    bottom: 0
+                                }
+                            },
+                            dataLabels: {
+                                enabled: false
+                            },
+                            stroke: {
+                                curve: "smooth",
+                                width: 3,
+                                colors: [color1, color2], // Use two colors for the lines
+                                lineCap: "round"
+                            },
+                            grid: {
+                                show: true,
+                                borderColor: "#D1D5DB",
+                                strokeDashArray: 1,
+                                position: "back",
+                                xaxis: {
+                                    lines: {
+                                        show: false
+                                    }
+                                },
+                                yaxis: {
+                                    lines: {
+                                        show: true
+                                    }
+                                },
+                                row: {
+                                    colors: undefined,
+                                    opacity: 0.5
+                                },
+                                column: {
+                                    colors: undefined,
+                                    opacity: 0.5
+                                },
+                                padding: {
+                                    top: -20,
+                                    right: 0,
+                                    bottom: -10,
+                                    left: 0
+                                },
+                            },
+                            fill: {
+                                type: "gradient",
+                                colors: [color1, color2], // Use two colors for the gradient
+                                // gradient: {
+                                //     shade: "light",
+                                //     type: "vertical",
+                                //     shadeIntensity: 0.5,
+                                //     gradientToColors: [`${color1}`, `${color2}00`], // Bottom gradient colors with transparency
+                                //     inverseColors: false,
+                                //     opacityFrom: .6,
+                                //     opacityTo: 0.3,
+                                //     stops: [0, 100],
+                                // },
+                                gradient: {
+                                    shade: "light",
+                                    type: "vertical",
+                                    shadeIntensity: 0.5,
+                                    gradientToColors: [undefined, `${color2}00`], // Apply transparency to both colors
+                                    inverseColors: false,
+                                    opacityFrom: [0.4, 0.6], // Starting opacity for both colors
+                                    opacityTo: [0.3, 0.3], // Ending opacity for both colors
+                                    stops: [0, 100],
+                                },
+                            },
+                            // markers: {
+                            //     colors: [color1, color2], // Use two colors for the markers
+                            //     strokeWidth: 3,
+                            //     size: 0,
+                            //     hover: {
+                            //         size: 10
+                            //     }
+                            // },
+
+                            markers: {
+                                colors: [color1, color2],
+                                strokeWidth: 2,
+                                size: 0,
+                                hover: {
+                                    size: 8
+                                }
+                            },
+
+                            xaxis: {
+                                labels: {
+                                    show: false
+                                },
+                                categories: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
+                                tooltip: {
+                                    enabled: false
+                                },
+                                labels: {
+                                    formatter: function(value) {
+                                        return value;
+                                    },
+                                    style: {
+                                        fontSize: "14px"
+                                    }
+                                }
+                            },
+                            yaxis: {
+                                labels: {
+                                    formatter: function(value) {
+                                        return "$" + value + "k";
+                                    },
+                                    style:{
+                                        fontSize: "14px"
+                                    }
+                                },
+                            },
+                            tooltip: {
+                                x: {
+                                    format: "dd/MM/yy HH:mm"
+                                }
+                            }
+                        };
+
+                        var chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
+                        chart.render();
+                    }
+
+                    createChartTwo("revenueChart", "#CD20F9", "#6593FF");
+                    // ===================== Revenue Chart End =============================== 
+                    
+    
                     // ===================== Average Enrollment Rate Start =============================== 
                     function createChartTwo(chartId, color1, color2) {
                         var options = {
@@ -319,12 +469,12 @@
                         <div class="d-flex align-items-center gap-8">
                             <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
                             <div class="d-flex flex-column">
-                                <h6 class="text-sm mb-0">John Doe</h6>
-                                <span class="text-xs text-neutral-500">1 day ago</span>
+                                <h6 class="text-sm mb-0">Agan</h6>
+                                <span class="text-xs text-neutral-500">1 Hari yang lalu</span>
                             </div>
                         </div>
                         <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
-                            Read More
+                            Lebih Lanjut
                         </a>
                     </div>
                 </div>
@@ -347,12 +497,12 @@
                         <div class="d-flex align-items-center gap-8">
                             <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
                             <div class="d-flex flex-column">
-                                <h6 class="text-sm mb-0">John Doe</h6>
-                                <span class="text-xs text-neutral-500">1 day ago</span>
+                                <h6 class="text-sm mb-0">Agan</h6>
+                                <span class="text-xs text-neutral-500">1 Hari yang lalu</span>
                             </div>
                         </div>
                         <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
-                            Read More
+                            Lebih Lanjut
                         </a>
                     </div>
                 </div>
@@ -375,12 +525,12 @@
                         <div class="d-flex align-items-center gap-8">
                             <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
                             <div class="d-flex flex-column">
-                                <h6 class="text-sm mb-0">John Doe</h6>
-                                <span class="text-xs text-neutral-500">1 day ago</span>
+                                <h6 class="text-sm mb-0">Agan</h6>
+                                <span class="text-xs text-neutral-500">1 Hari yang lalu</span>
                             </div>
                         </div>
                         <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
-                            Read More
+                            Lebih Lanjut
                         </a>
                     </div>
                 </div>
@@ -403,12 +553,12 @@
                         <div class="d-flex align-items-center gap-8">
                             <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
                             <div class="d-flex flex-column">
-                                <h6 class="text-sm mb-0">John Doe</h6>
-                                <span class="text-xs text-neutral-500">1 day ago</span>
+                                <h6 class="text-sm mb-0">Agan</h6>
+                                <span class="text-xs text-neutral-500">1 Hari yang lalu</span>
                             </div>
                         </div>
                         <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
-                            Read More
+                            Lebih Lanjut
                         </a>
                     </div>
                 </div>
@@ -431,12 +581,12 @@
                         <div class="d-flex align-items-center gap-8">
                             <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
                             <div class="d-flex flex-column">
-                                <h6 class="text-sm mb-0">John Doe</h6>
-                                <span class="text-xs text-neutral-500">1 day ago</span>
+                                <h6 class="text-sm mb-0">Agan</h6>
+                                <span class="text-xs text-neutral-500">1 Hari yang lalu</span>
                             </div>
                         </div>
                         <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
-                            Read More
+                            Lebih Lanjut
                         </a>
                     </div>
                 </div>
@@ -489,7 +639,7 @@
                             </div> --}}
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">View here</a>
+                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
                     </div>
@@ -508,7 +658,7 @@
                             
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">View here</a>
+                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
                     </div>
@@ -527,7 +677,7 @@
                             
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">View here</a>
+                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
                     </div>
@@ -546,7 +696,7 @@
                             
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">View here</a>
+                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
                     </div>
@@ -957,38 +1107,53 @@
 
     </div>
 
-    <!-- Earning Statistic -->
-    <div class="col-xxl-12">
-        <div class="card h-100">
-            <div class="card-header">
-                <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                    <h6 class="mb-2 fw-bold text-lg mb-0">Earning Statistic</h6>
-                    <select class="form-select form-select-sm w-auto bg-base border-0 text-secondary-light">
-                        <option>This Month</option>
-                        <option>This Week</option>
-                        <option>This Year</option>
-                    </select>
+    <!-- revenue -->
+    
+                     
+            <div class="col-xxl-6">
+            <div class="card h-100">
+                <div class="card-body p-24 mb-8">
+                    <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
+                        <h6 class="mb-2 fw-bold text-lg mb-0">Statistik Pendapatan</h6>
+                        <select class="form-select form-select-sm w-auto bg-base border text-secondary-light">
+                            <option>Pertahun</option>
+                            <option>Perbulan</option>
+                            <option>Perminggu</option>
+                            <option>Hari Ini</option>
+                        </select>
+                    </div>
+                    <ul class="d-flex flex-wrap align-items-center justify-content-center my-3 gap-24">
+                        <li class="d-flex flex-column gap-1">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="w-8-px h-8-px rounded-pill bg-primary-600"></span>
+                                <span class="text-secondary-light text-sm fw-semibold">Untung </span>
+                            </div>
+                            <div class="d-flex align-items-center gap-8">
+                                <h6 class="mb-0"> Rp425.337.000</h6>
+                                <span class="text-success-600 d-flex align-items-center gap-1 text-sm fw-bolder">
+                                    10%
+                                    <i class="ri-arrow-up-s-fill d-flex"></i>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="d-flex flex-column gap-1">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="w-8-px h-8-px rounded-pill bg-lilac-600"></span>
+                                <span class="text-secondary-light text-sm fw-semibold">Rugi </span>
+                            </div>
+                            <div class="d-flex align-items-center gap-8">
+                                <h6 class="mb-0"> Rp294.464.160</h6>
+                                <span class="text-danger-600 d-flex align-items-center gap-1 text-sm fw-bolder">
+                                    10%
+                                    <i class="ri-arrow-down-s-fill d-flex"></i>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div id="revenueChart" class="apexcharts-tooltip-style-1"></div>
                 </div>
             </div>
-            <div class="card-body p-24">
-                <ul class="d-flex flex-wrap align-items-center justify-content-center my-3 gap-3">
-                    <li class="d-flex align-items-center gap-2">
-                        <span class="w-12-px h-8-px rounded-pill bg-primary-600"></span>
-                        <span class="text-secondary-light text-sm fw-semibold">Buy:
-                            <span class="text-primary-light fw-bold">500$</span>
-                        </span>
-                    </li>
-                    <li class="d-flex align-items-center gap-2">
-                        <span class="w-12-px h-8-px rounded-pill bg-warning-600"></span>
-                        <span class="text-secondary-light text-sm fw-semibold">Sell:
-                            <span class="text-primary-light fw-bold"> 5000$</span>
-                        </span>
-                    </li>
-                </ul>
-                <div id="enrollmentChart" class="apexcharts-tooltip-style-1"></div>
-            </div>
         </div>
-    </div>
     <!-- Earning Statistic -->
 
                     <!-- Trending Bids -->

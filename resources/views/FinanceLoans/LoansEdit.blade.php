@@ -1,7 +1,7 @@
-@extends('layout.layout')
+@extends(view: 'layout.layout')
 @php
     $title='Invoice List';
-    $subTitle = 'Invoice List';
+    $subTitle = 'Loans For You';
     $script = ' <script src="' . asset('assets/js/invoice.js') . '"></script>';
 @endphp
 

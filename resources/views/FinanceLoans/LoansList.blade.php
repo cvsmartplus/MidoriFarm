@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
-    $title='Invoice List';
-    $subTitle = 'Invoice List';
+    $title='Loans For You';
+    $subTitle = 'Loans List';
 @endphp
 
 @section('content')
@@ -26,28 +26,22 @@
                     </div>
                     <div class="d-flex flex-wrap align-items-center gap-3">
                         <select class="form-select form-select-sm w-auto">
-                            <option>Satatus</option>
+                            <option>Status</option>
                             <option>Paid</option>
                             <option>Pending</option>
                         </select>
-                        <a  href="{{ route('LoansList') }}" class="btn btn-sm btn-primary-600"><i class="ri-add-line"></i> Create Invoice</a>
+                        <a  href="{{ route('LoansList') }}" class="btn btn-sm btn-primary-600"><i class="ri-add-line"></i> Add New</a>
                     </div>
                 </div>
                 <div class="card-body">
                     <table class="table bordered-table mb-0">
                         <thead>
                             <tr>
-                                <th scope="col">
-                                    <div class="form-check style-check d-flex align-items-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkAll">
-                                        <label class="form-check-label" for="checkAll">
-                                            S.L
-                                        </label>
-                                    </div>
-                                </th>
+                                
                                 <th scope="col">Invoice</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Issued Date</th>
+                                <th scope="col">Debt Date</th>
+                                <th scope="col">Due Date</th>
                                 <th scope="col">Amount</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Action</th>
@@ -55,14 +49,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
-                                    <div class="form-check style-check d-flex align-items-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="check1">
-                                        <label class="form-check-label" for="check1">
-                                            01
-                                        </label>
-                                    </div>
-                                </td>
+                               
                                 <td><a  href="javascript:void(0)" class="text-primary-600">#526534</a></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -71,6 +58,7 @@
                                     </div>
                                 </td>
                                 <td>25 Jan 2024</td>
+                                <td> 30 Jan 2025</td>
                                 <td>$200.00</td>
                                 <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
                                 <td>
@@ -86,14 +74,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <div class="form-check style-check d-flex align-items-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="check2">
-                                        <label class="form-check-label" for="check2">
-                                            02
-                                        </label>
-                                    </div>
-                                </td>
+                                
                                 <td><a  href="javascript:void(0)" class="text-primary-600">#696589</a></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -102,7 +83,8 @@
                                     </div>
                                 </td>
                                 <td>25 Jan 2024</td>
-                                <td>$200.00</td>
+                                <td> 30 Jan 2025</td>
+                                <td>$200.00</td>                      
                                 <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
                                 <td>
                                     <a  href="javascript:void(0)" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
@@ -117,14 +99,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <div class="form-check style-check d-flex align-items-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="check3">
-                                        <label class="form-check-label" for="check3">
-                                            03
-                                        </label>
-                                    </div>
-                                </td>
+                               
                                 <td><a  href="javascript:void(0)" class="text-primary-600">#256584</a></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -133,6 +108,7 @@
                                     </div>
                                 </td>
                                 <td>10 Feb 2024</td>
+                                <td> 15 Feb 2025</td>
                                 <td>$200.00</td>
                                 <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
                                 <td>
@@ -148,14 +124,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <div class="form-check style-check d-flex align-items-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="check4">
-                                        <label class="form-check-label" for="check4">
-                                            04
-                                        </label>
-                                    </div>
-                                </td>
+                               
                                 <td><a  href="javascript:void(0)" class="text-primary-600">#526587</a></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -164,6 +133,7 @@
                                     </div>
                                 </td>
                                 <td>10 Feb 2024</td>
+                                <td> 15 Feb 2025</td>
                                 <td>$150.00</td>
                                 <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
                                 <td>
@@ -179,14 +149,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <div class="form-check style-check d-flex align-items-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="check5">
-                                        <label class="form-check-label" for="check5">
-                                            05
-                                        </label>
-                                    </div>
-                                </td>
+                                
                                 <td><a  href="javascript:void(0)" class="text-primary-600">#105986</a></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -195,6 +158,7 @@
                                     </div>
                                 </td>
                                 <td>15 March 2024</td>
+                                <td> 20 March 2025</td>
                                 <td>$150.00</td>
                                 <td> <span class="bg-warning-focus text-warning-main px-24 py-4 rounded-pill fw-medium text-sm">Pending</span> </td>
                                 <td>
@@ -210,14 +174,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <div class="form-check style-check d-flex align-items-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="check6">
-                                        <label class="form-check-label" for="check6">
-                                            06
-                                        </label>
-                                    </div>
-                                </td>
+                                
                                 <td><a  href="javascript:void(0)" class="text-primary-600">#526589</a></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -226,6 +183,7 @@
                                     </div>
                                 </td>
                                 <td>15 March 2024</td>
+                                <td> 20 March 2025</td>
                                 <td>$150.00</td>
                                 <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
                                 <td>
@@ -241,14 +199,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <div class="form-check style-check d-flex align-items-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="check7">
-                                        <label class="form-check-label" for="check7">
-                                            07
-                                        </label>
-                                    </div>
-                                </td>
+                                
                                 <td><a  href="javascript:void(0)" class="text-primary-600">#526520</a></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -257,6 +208,7 @@
                                     </div>
                                 </td>
                                 <td>27 April 2024</td>
+                                <td> 1 May 2025</td>
                                 <td>$250.00</td>
                                 <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
                                 <td>
@@ -272,14 +224,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <div class="form-check style-check d-flex align-items-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="check8">
-                                        <label class="form-check-label" for="check8">
-                                            08
-                                        </label>
-                                    </div>
-                                </td>
+                                
                                 <td><a  href="javascript:void(0)" class="text-primary-600">#256584</a></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -288,6 +233,7 @@
                                     </div>
                                 </td>
                                 <td>27 April 2024</td>
+                                <td> 1 May 2025</td>
                                 <td>$250.00</td>
                                 <td> <span class="bg-warning-focus text-warning-main px-24 py-4 rounded-pill fw-medium text-sm">Pending</span> </td>
                                 <td>
@@ -303,14 +249,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <div class="form-check style-check d-flex align-items-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="check9">
-                                        <label class="form-check-label" for="check9">
-                                            09
-                                        </label>
-                                    </div>
-                                </td>
+                                
                                 <td><a  href="javascript:void(0)" class="text-primary-600">#200257</a></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -319,6 +258,7 @@
                                     </div>
                                 </td>
                                 <td>30 April 2024</td>
+                                <td> 6 May 2025</td>
                                 <td>$250.00</td>
                                 <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
                                 <td>
@@ -334,14 +274,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <div class="form-check style-check d-flex align-items-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="check110">
-                                        <label class="form-check-label" for="check110">
-                                            10
-                                        </label>
-                                    </div>
-                                </td>
+                                
                                 <td><a  href="javascript:void(0)" class="text-primary-600">#526525</a></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -350,6 +283,7 @@
                                     </div>
                                 </td>
                                 <td>30 April 2024</td>
+                                <td> 6 May 2025</td>
                                 <td>$250.00</td>
                                 <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
                                 <td>
