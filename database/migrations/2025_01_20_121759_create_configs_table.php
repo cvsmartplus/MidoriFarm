@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('configs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('device_id');
+            $table->string('name_sensor');
+            $table->double('low_treshold');
+            $table->double('high_treshold');
+            $table->timestamp('updated_at');
         });
     }
 

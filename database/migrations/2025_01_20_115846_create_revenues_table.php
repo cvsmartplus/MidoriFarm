@@ -14,6 +14,13 @@ return new class extends Migration
         Schema::create('revenues', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_sale')->references('id')->on('sales');
+            $table->foreignid('id_user')->references('id')->on('users');
+            $table->date('date');
+            $table->integer('total_price');
+            $table->integer('total_discount');
+            $table->integer('revenue');
+
         });
     }
 

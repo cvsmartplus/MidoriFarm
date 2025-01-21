@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('air_sensors', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->float('air_temperature');
+            $table->float('air_humidity');
+            $table->float('uv');
+            $table->float('rain');
+            $table->float('gas');
         });
     }
 

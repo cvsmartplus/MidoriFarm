@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('water_sensors', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->float('water_ph');
+            $table->float('water_temperature');
+            $table->float('water_tds');
+            $table->float('water_level');
         });
     }
 

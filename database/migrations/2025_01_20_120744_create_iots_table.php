@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('iots', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_water')->references('id')->on('water_sensors');
+            $table->foreignId('id_dirt')->references('id')->on('dirt_sensors');
+            $table->foreignId('id_air')->references('id')->on('air_sensors');
         });
     }
 

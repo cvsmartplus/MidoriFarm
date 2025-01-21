@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('outdebts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_costumer')->references('id')->on('costumers');
+            $table->decimal('amount');
+            $table->bool('status');
+            $table->date('date');
+            $table->date('due_date');
         });
     }
 

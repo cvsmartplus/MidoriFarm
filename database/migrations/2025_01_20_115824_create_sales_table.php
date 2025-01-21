@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_product')->references('id')->on('products');
+            $table->foreignId('id_costumer')->references('id')->on('costumers');
+            $table->integer('quantity');
+            $table->integer('subtotal');
+            $table->integer('discount');
         });
     }
 

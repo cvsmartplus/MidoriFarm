@@ -16,9 +16,9 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name_product');
             $table->integer('purchase');
-            $table->integer('stok');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->integer('stock');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
     }
 
