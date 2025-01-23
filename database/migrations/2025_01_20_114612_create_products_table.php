@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name_product', '255');
+            $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
+            $table->string('name_product', 255);
             $table->integer('cost_price');
             $table->integer('selling_price');
             $table->integer('stock');

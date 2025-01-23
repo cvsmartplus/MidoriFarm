@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name', '255');
+            $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
+            $table->string('name', 255);
             $table->text('address');
-            $table->string('email', '255');
-            $table->string('phone_number', '20');
+            $table->string('email', 255);
+            $table->string('phone_number', 20);
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });

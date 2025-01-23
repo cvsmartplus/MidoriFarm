@@ -16,11 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->integer('name');
             $table->integer('address');
-            $table->foreignId('id_user')->references('id')->on('users');
-            $table->foreignId('id_revenue')->references('id')->on('revenues');
-            $table->foreignId('id_expense')->references('id')->on('expenses');
-            $table->foreignId('id_indebts')->references('id')->on('indebts');
-            $table->foreignId('id_outdebts')->references('id')->on('outdebts');
+            $table->bool('status');
         });
     }
 

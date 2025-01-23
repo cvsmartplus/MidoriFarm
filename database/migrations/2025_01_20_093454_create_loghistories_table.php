@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->string('action');
             $table->string('module');
             $table->text('details');
             $table->string('ip_address');
-            
+
         });
     }
 

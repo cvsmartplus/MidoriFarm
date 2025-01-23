@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->foreignId('id_buy')->references('id')->on('buys');
             $table->foreignId('id_user')->references('id')->on('users');
             $table->date('date');

@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('title');
-            $table->string('slug');
+            $table->string('title', 255);
+            $table->string('slug', 255);
             $table->text('content');
-            $table->foreignId('categori-id')->references('id')->on('categories');
-            $table->foreignId('user_id')->references('id')->on('users');
-            $table->string('thumbnail');
-            $table->string('status');
+            $table->foreignId('category-id')->references('id')->on('categories');
+            $table->integer('author_id');
+            $table->string('thumbnail', 255);
+            $table->string('tags', 255);
+            $table->string('status', 50);
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });

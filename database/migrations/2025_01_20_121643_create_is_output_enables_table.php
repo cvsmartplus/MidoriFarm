@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('is_output_enables', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->bool('pump_waters');
             $table->bool('pump_waterdrops');
             $table->timestamp('updated_at');
