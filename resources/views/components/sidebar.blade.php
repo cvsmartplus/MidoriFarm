@@ -37,7 +37,7 @@
                      suhu tanah,kelembapan tanah, level tanah dan lain lain.
                      bagian most location juga bisa dijadiin fitur IoT nya, nama negara diganti jadi level tanah kelembapan tanah, progress barnya bisa dijadiin realtime gitu -->
                     <li>
-                    <a href="{{ route('index5') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> IoT (Opt 1)</a> 
+                    <a href="{{ route('index5') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> IoT (Opt 1)</a>
                     </li>
 
                     <!-- cocok untuk fitur buy and sell, ambil bagian average enrollment rate atau pilih line chart with data labels, dan zoomable chart di chart -->
@@ -71,15 +71,15 @@
                     <li>
                         <a  href="{{ route('blog') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Artikel</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a  href="{{ route('blogDetails') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Detail Artikel</a>
-                    </li>
+                    </li> --}}
                     <li>
-                        <a  href="{{ route('addBlog') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Tambah Artikel</a>
+                        <a  href="{{ route('addBlog') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Tambah Artikel</a>
                     </li>
                 </ul>
             </li>
-            <li class="sidebar-menu-group-title">Owner</li>
+            <li class="sidebar-menu-group-title">Pemilik</li>
             {{-- <li>
                   <a href="{{ route('email') }}">
                     <iconify-icon icon="mage:email" class="menu-icon"></iconify-icon>
@@ -104,10 +104,10 @@
                     <span>Kanban</span>
                 </a>
             </li> --}}
-            
+
             <li class="dropdown">
                 <a  href="javascript:void(0)">
-                    <iconify-icon icon="lsicon:goods-filled" class="menu-icon"></iconify-icon> 
+                    <iconify-icon icon="lsicon:goods-filled" class="menu-icon"></iconify-icon>
                     <span>Barang - Barang</span>
                 </a>
                 <ul class="sidebar-submenu">
@@ -117,7 +117,7 @@
                     <li>
                     <a href="{{ route('goodsPreview') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Pratinjau</a>
                     </li>
-                    
+
                     <li>
                     <a href="{{ route('goodsEdit') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
                     </li>
@@ -136,7 +136,7 @@
                     <li>
                     <a href="{{ route('LoansPreview') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Pratinjau</a>
                     </li>
-                    
+
                     <li>
                     <a href="{{ route('LoansEdit') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
                     </li>
@@ -264,9 +264,9 @@
                 </ul>
             </li>
 
-            <!-- <li class="sidebar-menu-group-title">UI Elements</li> -->
+            <li class="sidebar-menu-group-title">UI Elements</li>
             {{-- ELEMENTS BUAT DEVELOPMENT --}}
-            <!-- <li class="dropdown">
+            <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
                     <span>Components</span>
@@ -290,7 +290,7 @@
                     <li>
                        <a  href="{{ route('card') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Card</a>
                     </li>
-                   
+
                     <li>
                         <a  href="{{ route('carousel') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Carousel</a>
                     </li>
@@ -394,13 +394,13 @@
                     <iconify-icon icon="fe:vector" class="menu-icon"></iconify-icon>
                     <span>Widgets</span>
                 </a>
-            </li> -->
-                     
-            
+            </li>
+
+
 
             <li class="sidebar-menu-group-title">Server Maintenance</li>
-            
-            
+
+
             {{-- <li>
                 <a  href="{{ route('gallery') }}">
                     <iconify-icon icon="solar:gallery-wide-linear" class="menu-icon"></iconify-icon>

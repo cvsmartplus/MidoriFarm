@@ -1,10 +1,10 @@
 <footer class="d-footer">
     <div class="row align-items-center justify-content-between">
         <div class="col-auto">
-            <p class="mb-0">© 2024 WowDash. All Rights Reserved.</p>
+            <p class="mb-0">© 2025 CV SmartPlus. Hak Cipta Dilindungi.</p>
         </div>
         <div class="col-auto">
-            <p class="mb-0">Made by <span class="text-primary-600">pixcelsthemes</span></p>
+            <p class="mb-0">Dibuat oleh <span class="text-primary-600">PPLG SMKN 1 Karawang</span></p>
         </div>
     </div>
 </footer>

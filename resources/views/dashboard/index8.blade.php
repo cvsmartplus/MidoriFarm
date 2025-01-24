@@ -1,9 +1,10 @@
 @extends('layout.layout')
 @php
-    $title='Belanda';
-   
-    $script = '<script>
-                    // ===================== Revenue Chart Start =============================== 
+    $title='Beranda';' <script></script>';
+
+    $script = '<script src="' . asset('assets/js/homeFiveChart.js') . '"></script>';
+    $script .= '<script>
+                    // ===================== Revenue Chart Start ===============================
                     function createChartTwo(chartId, color1, color2) {
                         var options = {
                             series: [{
@@ -115,146 +116,6 @@
                                 labels: {
                                     show: false
                                 },
-                                categories: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
-                                tooltip: {
-                                    enabled: false
-                                },
-                                labels: {
-                                    formatter: function(value) {
-                                        return value;
-                                    },
-                                    style: {
-                                        fontSize: "14px"
-                                    }
-                                }
-                            },
-                            yaxis: {
-                                labels: {
-                                    formatter: function(value) {
-                                        return "$" + value + "k";
-                                    },
-                                    style:{
-                                        fontSize: "14px"
-                                    }
-                                },
-                            },
-                            tooltip: {
-                                x: {
-                                    format: "dd/MM/yy HH:mm"
-                                }
-                            }
-                        };
-
-                        var chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
-                        chart.render();
-                    }
-
-                    createChartTwo("revenueChart", "#CD20F9", "#6593FF");
-                    // ===================== Revenue Chart End =============================== 
-                    
-    
-                    // ===================== Average Enrollment Rate Start =============================== 
-                    function createChartTwo(chartId, color1, color2) {
-                        var options = {
-                            series: [{
-                                name: "series1",
-                                data: [48, 35, 55, 32, 48, 30, 55, 50, 57]
-                            }, {
-                                name: "series2",
-                                data: [12, 20, 15, 26, 22, 60, 40, 48, 25]
-                            }],
-                            legend: {
-                                show: false
-                            },
-                            chart: {
-                                type: "area",
-                                width: "100%",
-                                height: 270,
-                                toolbar: {
-                                    show: false
-                                },
-                                padding: {
-                                    left: 0,
-                                    right: 0,
-                                    top: 0,
-                                    bottom: 0
-                                }
-                            },
-                            dataLabels: {
-                                enabled: false
-                            },
-                            stroke: {
-                                curve: "smooth",
-                                width: 3,
-                                colors: [color1, color2], // Use two colors for the lines
-                                lineCap: "round"
-                            },
-                            grid: {
-                                show: true,
-                                borderColor: "#D1D5DB",
-                                strokeDashArray: 1,
-                                position: "back",
-                                xaxis: {
-                                    lines: {
-                                        show: false
-                                    }
-                                },
-                                yaxis: {
-                                    lines: {
-                                        show: true
-                                    }
-                                },
-                                row: {
-                                    colors: undefined,
-                                    opacity: 0.5
-                                },
-                                column: {
-                                    colors: undefined,
-                                    opacity: 0.5
-                                },
-                                padding: {
-                                    top: -20,
-                                    right: 0,
-                                    bottom: -10,
-                                    left: 0
-                                },
-                            },
-                            fill: {
-                                type: "gradient",
-                                colors: [color1, color2], // Use two colors for the gradient
-                                // gradient: {
-                                //     shade: "light",
-                                //     type: "vertical",
-                                //     shadeIntensity: 0.5,
-                                //     gradientToColors: [`${color1}`, `${color2}00`], // Bottom gradient colors with transparency
-                                //     inverseColors: false,
-                                //     opacityFrom: .6,
-                                //     opacityTo: 0.3,
-                                //     stops: [0, 100],
-                                // },
-                                gradient: {
-                                    shade: "light",
-                                    type: "vertical",
-                                    shadeIntensity: 0.5,
-                                    gradientToColors: [undefined, `${color2}00`], // Apply transparency to both colors
-                                    inverseColors: false,
-                                    opacityFrom: [0.4, 0.6], // Starting opacity for both colors
-                                    opacityTo: [0.3, 0.3], // Ending opacity for both colors
-                                    stops: [0, 100],
-                                },
-                            },
-                            markers: {
-                                colors: [color1, color2], // Use two colors for the markers
-                                strokeWidth: 3,
-                                size: 0,
-                                hover: {
-                                    size: 10
-                                }
-                            },
-                            xaxis: {
-                                labels: {
-                                    show: false
-                                },
                                 categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                                 tooltip: {
                                     enabled: false
@@ -271,7 +132,7 @@
                             yaxis: {
                                 labels: {
                                     formatter: function(value) {
-                                        return "$" + value + "k";
+                                        return "Rp" + value + "m";
                                     },
                                     style: {
                                         fontSize: "14px"
@@ -289,165 +150,10 @@
                         chart.render();
                     }
 
-                    createChartTwo("enrollmentChart", "#487FFF", "#FF9F29");
-                    // ===================== Average Enrollment Rate End =============================== 
-
-
-                    // ================================ User Activities Donut chart End ================================ 
-                    var options = {
-                        series: [30, 25],
-                        colors: ["#FF9F29", "#45B369"],
-                        labels: ["Female", "Male"],
-                        legend: {
-                            show: false
-                        },
-                        chart: {
-                            type: "donut",
-                            height: 260,
-                            sparkline: {
-                                enabled: true // Remove whitespace
-                            },
-                            margin: {
-                                top: 0,
-                                right: 0,
-                                bottom: 0,
-                                left: 0
-                            },
-                            padding: {
-                                top: 0,
-                                right: 0,
-                                bottom: 0,
-                                left: 0
-                            }
-                        },
-                        stroke: {
-                            width: 0,
-                        },
-                        dataLabels: {
-                            enabled: false
-                        },
-                        responsive: [{
-                            breakpoint: 480,
-                            options: {
-                                chart: {
-                                    width: 200
-                                },
-                                legend: {
-                                    position: "bottom"
-                                }
-                            }
-                        }],
-                    };
-
-                    var chart = new ApexCharts(document.querySelector("#statisticsDonutChart"), options);
-                    chart.render();
-                    // ================================ User Activities Donut chart End ================================ 
-
-
-                    // ================================ Client Payment Status chart End ================================ 
-                    var options = {
-                        series: [{
-                            name: "Net Profit",
-                            data: [44, 100, 40, 56, 30, 58, 50]
-                        }, {
-                            name: "Free Cash",
-                            data: [60, 120, 60, 90, 50, 95, 90]
-                        }],
-                        colors: ["#45B369", "#FF9F29"],
-                        labels: ["Active", "New", "Total"],
-
-                        legend: {
-                            show: false
-                        },
-                        chart: {
-                            type: "bar",
-                            height: 260,
-                            toolbar: {
-                                show: false
-                            },
-                        },
-                        grid: {
-                            show: true,
-                            borderColor: "#D1D5DB",
-                            strokeDashArray: 4, // Use a number for dashed style
-                            position: "back",
-                        },
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 4,
-                                columnWidth: 8,
-                            },
-                        },
-                        dataLabels: {
-                            enabled: false
-                        },
-                        states: {
-                            hover: {
-                                filter: {
-                                    type: "none"
-                                }
-                            }
-                        },
-                        stroke: {
-                            show: true,
-                            width: 0,
-                            colors: ["transparent"]
-                        },
-                        xaxis: {
-                            categories: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
-                        },
-                        fill: {
-                            opacity: 1,
-                            width: 18,
-                        },
-                    };
-
-                    var chart = new ApexCharts(document.querySelector("#paymentStatusChart"), options);
-                    chart.render();
-                    // ================================ Client Payment Status chart End ================================ 
-
-                    // ================================= Multiple Radial Bar Chart Start =============================
-                    var options = {
-                        series: [80, 40, 10],
-                        chart: {
-                            height: 300,
-                            type: "radialBar",
-                        },
-                        colors: ["#3D7FF9", "#ff9f29", "#16a34a"],
-                        stroke: {
-                            lineCap: "round",
-                        },
-                        plotOptions: {
-                            radialBar: {
-                                hollow: {
-                                    size: "10%", // Adjust this value to control the bar width
-                                },
-                                dataLabels: {
-                                    name: {
-                                        fontSize: "16px",
-                                    },
-                                    value: {
-                                        fontSize: "16px",
-                                    },
-                                    // total: {
-                                    //     show: true,
-                                    //     formatter: function (w) {
-                                    //         return "82%"
-                                    //     }
-                                    // }
-                                },
-                                track: {
-                                    margin: 20, // Space between the bars
-                                }
-                            }
-                        },
-                        labels: ["Cardiology", "Psychiatry", "Pediatrics"],
-                    };
-
-                    var chart = new ApexCharts(document.querySelector("#radialMultipleBar"), options);
-                    chart.render();
-                    // ================================= Multiple Radial Bar Chart End =============================
+                    createChartTwo("revenueChart", "#CD20F9", "#6593FF");
+                    // ===================== Revenue Chart End ===============================
                     </script>';
+
  @endphp
 
 @section('content')
@@ -456,35 +162,7 @@
     <div class="col-xxl-3 col-lg-4 col-sm-6">
         <div class="card h-100 p-0 radius-12 overflow-hidden">
             <div class="card-body p-0">
-                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
-                    <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
-                </a>
-                <div class="p-20">
-                    <h6 class="mb-16">
-                        <a  href="{{ route('blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
-                    </h6>
-                    <p class="text-line-3 text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
-                    <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
-                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-6">
-                        <div class="d-flex align-items-center gap-8">
-                            <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="w-40-px h-40-px rounded-circle object-fit-cover">
-                            <div class="d-flex flex-column">
-                                <h6 class="text-sm mb-0">Agan</h6>
-                                <span class="text-xs text-neutral-500">1 Hari yang lalu</span>
-                            </div>
-                        </div>
-                        <a  href="{{ route('blogDetails') }}" class="btn btn-sm btn-primary-600 d-flex align-items-center gap-1 text-xs px-8 py-6">
-                            Lebih Lanjut
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xxl-3 col-lg-4 col-sm-6">
-        <div class="card h-100 p-0 radius-12 overflow-hidden">
-            <div class="card-body p-0">
-                <a  href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
+                <a href="{{ route('blogDetails') }}" class="w-100 max-h-266-px radius-0 overflow-hidden">
                     <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                 </a>
                 <div class="p-20">
@@ -596,7 +274,7 @@
 </div>
 
     <!-- dari sini -->
-    <div class="col-12">
+    <div class="col-xxl-12">
     <div class="mb-16 mt-8 d-flex flex-wrap justify-content-between gap-16">
         <h6 class="my-4s">Monitoring</h6>
         {{-- <ul class="nav button-tab nav-pills mb-16 gap-12" id="pills-tab-three" role="tablist">
@@ -638,7 +316,7 @@
                                 <span class="text-sm fw-semibold text-primary-600">$4,224.96</span>
                             </div> --}}
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
-                                
+
                                 <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
@@ -655,9 +333,9 @@
                                 <img src="{{ asset('assets/images/nft/nft-user-img2.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
                                 <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
                             </div>
-                            
+
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
-                                
+
                                 <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
@@ -674,9 +352,9 @@
                                 <img src="{{ asset('assets/images/nft/nft-user-img3.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
                                 <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
                             </div>
-                            
+
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
-                                
+
                                 <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
@@ -693,9 +371,9 @@
                                 <img src="{{ asset('assets/images/nft/nft-user-img4.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
                                 <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
                             </div>
-                            
+
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
-                                
+
                                 <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
@@ -1106,11 +784,51 @@
     </div>
 
     </div>
+<!-- Revenue Statistics Start -->
+<div class="col-xxl-12 my-16">
+    <div class="card h-100 radius-8 border-0">
+        <div class="card-body p-24">
+            <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
+                <div>
+                    <h6 class="mb-2 fw-bold text-lg">Revenue Statistics</h6>
+                    <span class="text-sm fw-medium text-secondary-light">Yearly earning overview</span>
+                </div>
+                <div class="">
+                    <select class="form-select form-select-sm w-auto bg-base border text-secondary-light">
+                        <option>Yearly</option>
+                        <option>Monthly</option>
+                        <option>Weekly</option>
+                        <option>Today</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mt-24 mb-24 d-flex flex-wrap">
+                <div class="me-40">
+                    <span class="text-secondary-light text-sm mb-1">Income</span>
+                    <div class="">
+                        <h6 class="fw-semibold d-inline-block mb-0">Rp26.201</h6>
+                        <span class="text-success-main fw-bold d-inline-flex align-items-center gap-1">10% <iconify-icon icon="iconamoon:arrow-up-2-fill" class="icon"></iconify-icon> </span>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-secondary-light text-sm mb-1">Expenses</span>
+                    <div class="">
+                        <h6 class="fw-semibold d-inline-block mb-0">Rp18.120</h6>
+                        <span class="text-danger-main fw-bold d-inline-flex align-items-center gap-1">10% <iconify-icon icon="iconamoon:arrow-down-2-fill" class="icon"></iconify-icon> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="upDownBarchart"></div>
+
+        </div>
+    </div>
+</div>
+<!-- Revenue Statistics End -->
 
     <!-- revenue -->
-    
-                     
-            <div class="col-xxl-6">
+            <div class="col-xxl-12">
             <div class="card h-100">
                 <div class="card-body p-24 mb-8">
                     <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
@@ -1155,11 +873,10 @@
             </div>
         </div>
     <!-- Earning Statistic -->
-
                     <!-- Trending Bids -->
                     <div class="col-12">
                     <h6 class="my-16">Statistik</h6>
-                    <div class="row gy-4 mb-16"> 
+                    <div class="row gy-4 mb-16">
                         <!-- Dashboard Widget Start -->
                         <div class="col-lg-4 col-sm-6">
                             <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-3">
@@ -1168,7 +885,7 @@
                                         <div class="d-flex align-items-center flex-wrap gap-16">
                                             <span class="mb-0 w-40-px h-40-px bg-primary-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
                                                 <iconify-icon icon="flowbite:users-group-solid" class="icon"></iconify-icon>
-                                            </span> 
+                                            </span>
                                             <div class="flex-grow-1">
                                                 <h6 class="fw-semibold mb-0">24,000</h6>
                                                 <span class="fw-medium text-secondary-light text-md">Artworks</span>
