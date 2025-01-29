@@ -12,8 +12,8 @@
                     <a href="{{ route('index') }}" class="mb-40 max-w-290-px">
                         <img src="{{ asset('assets/images/logo.png') }}" alt="">
                     </a>
-                    <h4 class="mb-12">Sign In to your Account</h4>
-                    <p class="mb-32 text-secondary-light text-lg">Welcome back! please enter your detail</p>
+                    <h4 class="mb-12">Masuk Ke Akun Anda</h4>
+                    <p class="mb-32 text-secondary-light text-lg">Selamat Datang Kembali!</p>
                 </div>
                 <form action="#">
                     <div class="icon-field mb-16">
@@ -27,20 +27,20 @@
                             <span class="icon top-50 translate-middle-y">
                                 <iconify-icon icon="solar:lock-password-outline"></iconify-icon>
                             </span>
-                            <input type="password" class="form-control h-56-px bg-neutral-50 radius-12" id="your-password" placeholder="Password">
+                            <input type="password" class="form-control h-56-px bg-neutral-50 radius-12" id="your-password" placeholder="Kata Sandi">
                         </div>
                         <span class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 top-50 translate-middle-y me-16 text-secondary-light" data-toggle="#your-password"></span>
                     </div>
                     <div class="">
                         <div class="d-flex justify-content-between gap-2">
                             <div class="form-check style-check d-flex align-items-center">
-                                <input class="form-check-input border border-neutral-300" type="checkbox" value="" id="remeber">
-                                <label class="form-check-label" for="remember">Remember me</label>
+                                <input class="form-check-input border border-neutral-300" type="checkbox" value="" id="remember">
+                                <label class="form-check-label" for="remember">Ingat Saya</label>
                             </div>
-                            <a href="javascript:void(0)" class="text-primary-600 fw-medium">Forgot Password?</a>
+                            <a href="javascript:void(0)" class="text-primary-600 fw-medium">Lupa kata sandi?</a>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32">Sign In</button>
+                    <button type="submit" class="btn btn-primary text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32">Masuk</button>
                 </form>
             </div>
         </div>
