@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('id_product')->references('id')->on('product');
             $table->foreignId('id_asset')->references('id')->on('assets');
-            $table->foreignId('id_costumer')->references('id')->on('costumers');
+            $table->foreignId('id_supplier')->references('id')->on('suppliers');
             $table->integer('quintity');
             $table->integer('subtotal');
         });

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('green_houses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('name');
-            $table->integer('address');
+            $table->string('name', 255);
+            $table->text('location');
             $table->bool('status');
         });
     }

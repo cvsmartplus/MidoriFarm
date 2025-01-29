@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('foto_profile')->nullable();
             $table->string('password');
+            $table->string('role');
+            $table->foreignId('id_greenhouse')->references('id')->on('green_houses')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -25,6 +28,7 @@ return new class extends Migration
             $table->string('email')->primary();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
 
         Schema::create('sessions', function (Blueprint $table) {

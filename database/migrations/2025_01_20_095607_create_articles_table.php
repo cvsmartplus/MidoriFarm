@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('thumbnail', 255);
             $table->string('tags', 255);
             $table->string('status', 50);
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
     }
 
