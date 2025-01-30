@@ -21,8 +21,6 @@ return new class extends Migration
             $table->integer('stock');
             $table->foreignId('id_category')->references('id')->on('category_products');
             $table->integer('discount');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
         });
     }
 

@@ -18,8 +18,6 @@ return new class extends Migration
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->double('low_treshold');
             $table->double('high_treshold');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
         });
     }
 

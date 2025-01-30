@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string('name_product', 255);
             $table->integer('purchase');
             $table->integer('stock');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
         });
     }
 
