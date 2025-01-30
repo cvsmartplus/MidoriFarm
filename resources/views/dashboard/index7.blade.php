@@ -383,279 +383,91 @@
 @endphp
 
 @section('content')
-
     <div class="row gy-4">
-        <div class="col-xxl-8">
-            <div class="row gy-4">
-                <div class="col-12">
-                    <div class="nft-promo-card card radius-12 overflow-hidden position-relative z-1">
-                        <img src="{{ asset('assets/images/nft/nft-gradient-bg.png') }}" class="position-absolute start-0 top-0 w-100 h-100 z-n1" alt="">
-                        <div class="nft-promo-card__inner d-flex align-items-center">
-                            <div class="nft-promo-card__thumb w-100">
-                                <img src="{{ asset('assets/images/nft/nf-card-img.png') }}" alt="" class="w-100 h-100 object-fit-cover">
-                            </div>
-                            <div class="flex-grow-1">
-                                <h4 class="mb-16 text-white">Discover The Largest NFTs Marketplace</h4>
-                                <p class="text-white text-md">The largest NFT (Non-Fungible Token) marketplace is OpenSea. Established in 2017, OpenSea has grown to become the leading platform for buying, selling, and trading digital assets,</p>
-                                <div class="d-flex align-items-center flex-wrap mt-24 gap-16">
-                                    <a  href="#" class="btn rounded-pill border br-white text-white radius-8 px-32 py-11 hover-bg-white text-hover-neutral-900">Explore</a>
-                                    <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-28 py-11">Create Now</a>
+        <div class="col-12 mb-16">
+            <div class="row gy-4 mb-16">
+                <!-- Dashboard Widget Start -->
+                <div class="col-lg-4 col-sm-6">
+                    <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-3">
+                        <div class="card-body p-0">
+                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
+                                <div class="d-flex align-items-center flex-wrap gap-16">
+                                    <span class="mb-0 w-40-px h-40-px bg-primary-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
+                                        <iconify-icon icon="flowbite:users-group-solid" class="icon"></iconify-icon>
+                                    </span>
+                                    <div class="flex-grow-1">
+                                        <h6 class="fw-semibold mb-0">24,000</h6>
+                                        <span class="fw-medium text-secondary-light text-md">Artworks</span>
+                                        <p class="text-sm mb-0 d-flex align-items-center flex-wrap gap-12 mt-12">
+                                            <span class="bg-success-focus px-6 py-2 rounded-2 fw-medium text-success-main text-sm d-flex align-items-center gap-8">
+                                                +168.001%
+                                                <i class="ri-arrow-up-line"></i>
+                                            </span> This week
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!--     Widget End -->
 
-                     <!-- dari sini -->
-               
-                <!-- sampai sini -->
-
-                <!-- dari sini(All art music dan lain lain jangan di hapus dulu) -->
-                
-                <!-- sampai sini -->
-                <div class="col-12">
-                    <div class="card h-100">
-                        <div class="card-body p-24">
-                            <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between mb-20">
-                                <h6 class="mb-2 fw-bold text-lg mb-0">Recent Bid</h6>
-                                <select class="form-select form-select-sm w-auto bg-base border text-secondary-light rounded-pill">
-                                    <option>All Items </option>
-                                    <option>New Item</option>
-                                    <option>Trending Item</option>
-                                    <option>Old Item</option>
-                                </select>
-                            </div>
-                            <div class="table-responsive scroll-sm">
-                                <div class="table-responsive scroll-sm">
-                                    <table class="table bordered-table sm-table mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Items </th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Your Offer </th>
-                                                <th scope="col">Recent Offer</th>
-                                                <th scope="col">Time Left</th>
-                                                <th scope="col" class="text-center">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold">Spanky & Friends</h6>
-                                                            <span class="text-sm text-secondary-light fw-normal">Owned by ABC</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>1.44 ETH</td>
-                                                <td>3.053 ETH</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-offer-img1.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold text-primary-light">1.44.00 ETH</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>2h 5m 40s</td>
-                                                <td>
-                                                    <div class="d-inline-flex align-items-center gap-12">
-                                                        <button type="button" class="text-xl text-success-600"><i class="ri-edit-line"></i></button>
-                                                        <button type="button" class="text-xl text-danger-600 remove-btn"><i class="ri-delete-bin-6-line"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-items-img2.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold">Nike Air Shoe</h6>
-                                                            <span class="text-sm text-secondary-light fw-normal">Owned by ABC</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>1.44 ETH</td>
-                                                <td>3.053 ETH</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-offer-img2.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold text-primary-light">1.44.00 ETH</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>2h 5m 40s</td>
-                                                <td>
-                                                    <div class="d-inline-flex align-items-center gap-12">
-                                                        <button type="button" class="text-xl text-success-600"><i class="ri-edit-line"></i></button>
-                                                        <button type="button" class="text-xl text-danger-600 remove-btn"><i class="ri-delete-bin-6-line"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-items-img3.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold">Woman Dresses</h6>
-                                                            <span class="text-sm text-secondary-light fw-normal">Owned by ABC</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>1.44 ETH</td>
-                                                <td>3.053 ETH</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-offer-img3.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold text-primary-light">1.44.00 ETH</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>2h 5m 40s</td>
-                                                <td>
-                                                    <div class="d-inline-flex align-items-center gap-12">
-                                                        <button type="button" class="text-xl text-success-600"><i class="ri-edit-line"></i></button>
-                                                        <button type="button" class="text-xl text-danger-600 remove-btn"><i class="ri-delete-bin-6-line"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-items-img4.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold">Smart Watch</h6>
-                                                            <span class="text-sm text-secondary-light fw-normal">Owned by ABC</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>1.44 ETH</td>
-                                                <td>3.053 ETH</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-offer-img4.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold text-primary-light">1.44.00 ETH</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>2h 5m 40s</td>
-                                                <td>
-                                                    <div class="d-inline-flex align-items-center gap-12">
-                                                        <button type="button" class="text-xl text-success-600"><i class="ri-edit-line"></i></button>
-                                                        <button type="button" class="text-xl text-danger-600 remove-btn"><i class="ri-delete-bin-6-line"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-items-img5.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold">Hoodie Rose</h6>
-                                                            <span class="text-sm text-secondary-light fw-normal">Owned by ABC</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>1.44 ETH</td>
-                                                <td>3.053 ETH</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-offer-img5.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold text-primary-light">1.44.00 ETH</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>2h 5m 40s</td>
-                                                <td>
-                                                    <div class="d-inline-flex align-items-center gap-12">
-                                                        <button type="button" class="text-xl text-success-600"><i class="ri-edit-line"></i></button>
-                                                        <button type="button" class="text-xl text-danger-600 remove-btn"><i class="ri-delete-bin-6-line"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-items-img6.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold">Hoodie Rose</h6>
-                                                            <span class="text-sm text-secondary-light fw-normal">Owned by ABC</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>1.44 ETH</td>
-                                                <td>3.053 ETH</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-offer-img6.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold text-primary-light">1.44.00 ETH</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>2h 5m 40s</td>
-                                                <td>
-                                                    <div class="d-inline-flex align-items-center gap-12">
-                                                        <button type="button" class="text-xl text-success-600"><i class="ri-edit-line"></i></button>
-                                                        <button type="button" class="text-xl text-danger-600 remove-btn"><i class="ri-delete-bin-6-line"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-items-img2.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold">Hoodie Rose</h6>
-                                                            <span class="text-sm text-secondary-light fw-normal">Owned by ABC</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>1.44 ETH</td>
-                                                <td>3.053 ETH</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="{{ asset('assets/images/nft/nft-offer-img7.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                                        <div class="flex-grow-1">
-                                                            <h6 class="text-md mb-0 fw-semibold text-primary-light">1.44.00 ETH</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>2h 5m 40s</td>
-                                                <td>
-                                                    <div class="d-inline-flex align-items-center gap-12">
-                                                        <button type="button" class="text-xl text-success-600"><i class="ri-edit-line"></i></button>
-                                                        <button type="button" class="text-xl text-danger-600 remove-btn"><i class="ri-delete-bin-6-line"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
+                <!-- Dashboard Widget Start -->
+                <div class="col-lg-4 col-sm-6">
+                    <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-5">
+                        <div class="card-body p-0">
+                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
+                                <div class="d-flex align-items-center flex-wrap gap-16">
+                                    <span class="mb-0 w-40-px h-40-px bg-primary-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
+                                        <iconify-icon icon="flowbite:users-group-solid" class="icon"></iconify-icon>
+                                    </span>
+                                    <div class="flex-grow-1">
+                                        <h6 class="fw-semibold mb-0">82,000</h6>
+                                        <span class="fw-medium text-secondary-light text-md">Auction</span>
+                                        <p class="text-sm mb-0 d-flex align-items-center flex-wrap gap-12 mt-12">
+                                            <span class="bg-danger-focus px-6 py-2 rounded-2 fw-medium text-danger-main text-sm d-flex align-items-center gap-8">
+                                                +168.001%
+                                                <i class="ri-arrow-down-line"></i>
+                                            </span>This week</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Dashboard Widget End -->
+
+                <!-- Dashboard Widget Start -->
+                <div class="col-lg-4 col-sm-6">
+                    <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-2">
+                        <div class="card-body p-0">
+                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
+                                <div class="d-flex align-items-center flex-wrap gap-16">
+                                    <span class="mb-0 w-40-px h-40-px bg-primary-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center rounded-circle h6 mb-0">
+                                        <iconify-icon icon="flowbite:users-group-solid" class="icon"></iconify-icon>
+                                    </span>
+                                    <div class="flex-grow-1">
+                                        <h6 class="fw-semibold mb-0">800</h6>
+                                        <span class="fw-medium text-secondary-light text-md">Creators</span>
+                                        <p class="text-sm mb-0 d-flex align-items-center flex-wrap gap-12 mt-12">
+                                            <span class="bg-success-focus px-6 py-2 rounded-2 fw-medium text-success-main text-sm d-flex align-items-center gap-8">
+                                                +168.001%
+                                                <i class="ri-arrow-up-line"></i>
+                                            </span> This week
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dashboard Widget End -->
             </div>
         </div>
-
-        <div class="col-xxl-4">
+        <div class="container-fluid">
             <div class="row gy-4">
-                <div class="col-xxl-12 col-md-6">
+                <div class="col-xxl-8 col-md-6">
                     <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
                             <h6 class="fw-bold text-lg mb-0">ETH Price</h6>
@@ -678,7 +490,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-12 col-md-6">
+                <div class="col-xxl-4 col-md-6">
                     <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
                             <h6 class="fw-bold text-lg mb-0">Statistics</h6>
@@ -705,7 +517,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-12 col-md-6">
+            </div>
+        </div>
+        <div class="container-fluid gy-4">
+            <div class="row gy-4">
+                <div class="col-xxl-4 col-md-6">
                     <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
                             <h6 class="fw-bold text-lg mb-0">Featured Creators</h6>
@@ -760,7 +576,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-12 col-md-6">
+                <div class="col-xxl-8 col-md-6">
                     <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
                             <h6 class="fw-bold text-lg mb-0">Featured Creators</h6>
@@ -825,7 +641,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 @endsection

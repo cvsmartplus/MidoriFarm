@@ -955,7 +955,7 @@
                         </div>
                         <!-- Dashboard Widget End -->
                     </div>
-                </div>
+                    </div>
                         <div class="col-xxl-12">
                             <div class="card h-100">
                                 <div class="card-header border-bottom bg-base py-16 px-24 d-flex align-items-center justify-content-between">

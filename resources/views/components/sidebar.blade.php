@@ -36,9 +36,9 @@
                     <!-- opsi ke-1 pemilihan fitur IoT,4 table nya bisa untuk 10 sensor IoT tambah 6 table juga, bagian revenue statistics bisa dijadiin fitur si Iot nya seperti
                      suhu tanah,kelembapan tanah, level tanah dan lain lain.
                      bagian most location juga bisa dijadiin fitur IoT nya, nama negara diganti jadi level tanah kelembapan tanah, progress barnya bisa dijadiin realtime gitu -->
-                    <li>
+                    {{-- <li>
                     <a href="{{ route('index5') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> IoT (Opt 1)</a>
-                    </li>
+                    </li> --}}
 
                     <!-- cocok untuk fitur buy and sell, ambil bagian average enrollment rate atau pilih line chart with data labels, dan zoomable chart di chart -->
                     <li>
@@ -47,7 +47,7 @@
                     <!-- OPSI KE-2 --pemilihan fitur IoT,trending bids bisa untuk riwayat IoT atau apalah bebas,dibagian trending NFTs nya bisa buat monitoring IoT kayak cctv satpam di film film
                     kan banyak tuh. -->
                     <li>
-                    <a href="{{ route('index7') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> IoT (Opt 2)</a>
+                    <a href="{{ route('index7') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Sensor </a>
                     </li>
                     <!-- opsi ke-2 pemilihan dashboard, untuk sensor IoT juga sama bisa tambah 6 table lagi,bagian finance juga bisa diambil langsung  di bagian earning statistic -->
                     <li>
