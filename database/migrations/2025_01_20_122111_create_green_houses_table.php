@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name', 255);
             $table->text('location');
-            $table->bool('status');
+            $table->boolean('status');
         });
     }
 

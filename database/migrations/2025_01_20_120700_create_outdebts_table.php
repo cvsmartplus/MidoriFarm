@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->foreignId('id_costumer')->references('id')->on('costumers');
             $table->decimal('amount');
-            $table->bool('status');
+            $table->boolean('status');
             $table->date('date');
             $table->date('due_date');
 

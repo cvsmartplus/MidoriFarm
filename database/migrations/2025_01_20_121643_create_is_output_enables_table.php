@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
-            $table->bool('pump_waters');
-            $table->bool('pump_waterdrops');
+            $table->boolean('pump_waters');
+            $table->boolean('pump_waterdrops');
             $table->timestamp('updated_at');
         });
     }
