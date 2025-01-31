@@ -10,7 +10,6 @@
     <div class="container">
         <div class="row justify-content-center gy-4">
             <div class="row gy-4">
-                {{-- pakai card yang ini, contoh jadinya nanti bisa diganti --}}
                 <!-- Mulai dari tabel pertama hingga kesepuluh, ulangi block kode ini sebanyak 10 kali -->
                 <div class="col-xxl-6 col-md-6 col-sm-6">
                     <div class="card p-3 shadow-2 radius-8 border input-form-light h-100 bg-gradient-end-1">
@@ -32,7 +31,6 @@
                     </div>
                 </div>
                 <!-- Block kode di atas ulangi sebanyak 10 kali untuk total 10 tabel -->
-                
                 <div class="col-xxl-6 col-md-6 col-sm-6">
                     <div class="card p-3 shadow-2 radius-8 border input-form-light h-100 bg-gradient-end-1">
                         <div class="card-body p-0">

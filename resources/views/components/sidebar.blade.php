@@ -41,13 +41,13 @@
                     </li> --}}
 
                     <!-- cocok untuk fitur buy and sell, ambil bagian average enrollment rate atau pilih line chart with data labels, dan zoomable chart di chart -->
-                    <li>
+                    {{-- <li>
                     <a href="{{ route('index6') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Jual & Beli</a>
-                    </li>
+                    </li> --}}
                     <!-- OPSI KE-2 --pemilihan fitur IoT,trending bids bisa untuk riwayat IoT atau apalah bebas,dibagian trending NFTs nya bisa buat monitoring IoT kayak cctv satpam di film film
                     kan banyak tuh. -->
                     <li>
-                    <a href="{{ route('index7') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Sensor </a>
+                    <a href="{{ route('index7') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Sensor</a>
                     </li>
                     <!-- opsi ke-2 pemilihan dashboard, untuk sensor IoT juga sama bisa tambah 6 table lagi,bagian finance juga bisa diambil langsung  di bagian earning statistic -->
                     <li>
@@ -64,8 +64,8 @@
             <!-- cocok untuk fitur article jangan dihapus semuanya -->
             <li class="dropdown">
                 <a  href="javascript:void(0)">
-                    <i class="ri-news-line text-xl me-6 d-flex w-auto"></i>
-                    <span>Artikel</span>
+                    <iconify-icon icon="ri-news-line" class="menu-icon"></iconify-icon>
+                    <span> Artikel</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
@@ -189,7 +189,7 @@
             <!-- cocok untuk fitur user & riwayat -->
             <li class="dropdown">
                 <a  href="javascript:void(0)">
-                    <i class="ri-user-settings-line text-xl me-6 d-flex w-auto"></i>
+                    <iconify-icon icon="ri-user-settings-line" class="menu-icon"></iconify-icon>
                     <span> Manajemen Akses </span>
                 </a>
                 <ul class="sidebar-submenu">
