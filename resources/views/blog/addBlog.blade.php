@@ -116,8 +116,7 @@
 
                                             <!-- Editor start -->
                                             <div id="editor">
-                                                <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga</p>
-                                                <p><br></p>
+                                                
                                             </div>
                                             <!-- Edit End -->
                                         </div>

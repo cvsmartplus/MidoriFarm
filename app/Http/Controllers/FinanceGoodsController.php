@@ -9,8 +9,8 @@ class FinanceGoodsController extends Controller
     public function goodsEdit(){
         return view('FinanceGoods/goodsEdit');
     }
-    public function goodsList() {
-        return view('FinanceGoods/goodsList');
+    public function produkBarang() {
+        return view('FinanceGoods/produkBarang');
     }
     public function goodsPreview() {
         return view('FinanceGoods/goodsPreview');

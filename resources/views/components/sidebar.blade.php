@@ -47,11 +47,11 @@
                     <!-- OPSI KE-2 --pemilihan fitur IoT,trending bids bisa untuk riwayat IoT atau apalah bebas,dibagian trending NFTs nya bisa buat monitoring IoT kayak cctv satpam di film film
                     kan banyak tuh. -->
                     <li>
-                    <a href="{{ route('index7') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Sensor</a>
+                    <a href="{{ route('sensor') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Sensor</a>
                     </li>
                     <!-- opsi ke-2 pemilihan dashboard, untuk sensor IoT juga sama bisa tambah 6 table lagi,bagian finance juga bisa diambil langsung  di bagian earning statistic -->
                     <li>
-                    <a href="{{ route('index8') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Utama</a>
+                    <a href="{{ route('index') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Utama</a>
                     </li>
                      <li>
                     {{-- <a href="{{ route('index9') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Analytics</a>
@@ -108,11 +108,11 @@
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="lsicon:goods-filled" class="menu-icon"></iconify-icon>
-                    <span>Barang - Barang</span>
+                    <span>Produk & Barang</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                    <a href="{{ route('goodsList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Daftar Produk/Barang</a>
+                    <a href="{{ route('produkBarang') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Daftar Produk & Barang</a>
                     </li>
                     <li>
                     <a href="{{ route('goodsPreview') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Pratinjau</a>
@@ -152,14 +152,11 @@
                     <li>
                         <a  href="{{ route('usersList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Daftar Pelanggan</a>
                     </li>
-                    {{-- <li>
-                        <a  href="{{ route('usersGrid') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
-                    </li> --}}
                     <li>
                         <a  href="{{ route('addUser') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Tambah Akses</a>
                     </li>
                     <li>
-                        <a  href="{{ route('viewProfile') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> View Profile</a>
+                        <a  href="{{ route('viewProfileCustomer') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> View Profile</a>
                     </li>
                 </ul>
             </li>
@@ -172,16 +169,16 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="{{ route('usersList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Daftar Pelanggan</a>
+                        <a  href="{{ route('supplierList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Daftar Pelanggan</a>
                     </li>
                     {{-- <li>
                         <a  href="{{ route('usersGrid') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
                     </li> --}}
                     <li>
-                        <a  href="{{ route('addUser') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Tambah Akses</a>
+                        <a  href="{{ route('addSupplier') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Tambah Akses</a>
                     </li>
                     <li>
-                        <a  href="{{ route('viewProfile') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> View Profile</a>
+                        <a  href="{{ route('viewProfileSupplier') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> View Profile</a>
                     </li>
                 </ul>
             </li>

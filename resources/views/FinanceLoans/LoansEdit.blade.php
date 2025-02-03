@@ -1,4 +1,4 @@
-@extends(view: 'layout.layout')
+@extends('layout.layout')
 @php
     $title='Invoice List';
     $subTitle = 'Loans For You';
@@ -6,7 +6,6 @@
 @endphp
 
 @section('content')
-
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex flex-wrap align-items-center justify-content-end gap-2">

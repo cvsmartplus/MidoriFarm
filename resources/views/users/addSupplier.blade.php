@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
-    $title='Add User';
-    $subTitle = 'Add User';
+    $title='Supplier';
+    $subTitle = 'Add Supplier';
     $script = '<script>
                     // ================== Image Upload Js Start ===========================
                     function readURL(input) {

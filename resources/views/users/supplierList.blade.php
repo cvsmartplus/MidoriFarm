@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
-    $title='Daftar Pengguna';
-    $subTitle = 'Daftar Pengguna';
+    $title='Supplier';
+    $subTitle = 'Supplier List';
     $script ='<script>
                         $(".remove-item-btn").on("click", function() {
                             $(this).closest("tr").addClass("d-none")

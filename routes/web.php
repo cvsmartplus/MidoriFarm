@@ -104,21 +104,19 @@ Route::prefix('componentspage')->group(function () {
 });
 
 // Dashboard
-Route::prefix('dashboard')->group(function () {
-    Route::controller(DashboardController::class)->group(function () {
-        Route::get('/index', 'index')->name('index');
-        Route::get('/index2', 'index2')->name('index2');
-        Route::get('/index3', 'index3')->name('index3');
-        Route::get('/index4', 'index4')->name('index4');
-        Route::get('/index5','index5')->name('index5');
-        Route::get('/index6','index6')->name('index6');
-        Route::get('/index7','index7')->name('index7');
-        Route::get('/index8','index8')->name('index8');
-        Route::get('/index9','index9')->name('index9');
-        Route::get('/index10','index10')->name('index10');
-        Route::get('/wallet','wallet')->name('wallet');
-    });
-});
+Route::controller(DashboardController::class)->group(function () {
+    // Route::get('/index', 'index')->name('index');
+    Route::get('/index2', 'index2')->name('index2');
+    Route::get('/index3', 'index3')->name('index3');
+    Route::get('/index4', 'index4')->name('index4');
+    Route::get('/index5','index5')->name('index5');
+    Route::get('/index6','index6')->name('index6');
+    Route::get('/sensor','sensor')->name('sensor');
+    Route::get('/index8','index8')->name('index8');
+    Route::get('/index9','index9')->name('index9');
+    Route::get('/index10','index10')->name('index10');
+    Route::get('/wallet','wallet')->name('wallet');
+}); 
 
 // Forms
 Route::prefix('Forms')->group(function () {
@@ -135,7 +133,7 @@ Route::prefix('FinanceGoods')->group(function () {
     Route::controller(FinanceGoodsController::class)->group(function () {
         Route::get('/FinanceGoods', 'FinanceGoods')->name('FinanceGoods');
         Route::get('/goods-edit', 'goodsEdit')->name('goodsEdit');
-        Route::get('/goods-list', 'goodsList')->name('goodsList');
+        Route::get('/produkbarang', 'produkBarang')->name('produkBarang');
         Route::get('/goods-preview', 'goodsPreview')->name('goodsPreview');
     });
 }); 
@@ -172,23 +170,22 @@ Route::prefix('table')->group(function () {
 });
 
 // Users
-Route::prefix('users')->group(function () {
     Route::controller(UsersController::class)->group(function () {
         Route::get('/add-user', 'addUser')->name('addUser');
-        Route::get('/users-grid', 'usersGrid')->name('usersGrid');
+        Route::get('/add-supplier', 'addSupplier')->name('addSupplier');
         Route::get('/users-list', 'usersList')->name('usersList');
-        Route::get('/view-profile', 'viewProfile')->name('viewProfile');
+        Route::get('/supplier-list', 'supplierList')->name('supplierList');
+        Route::get('/view-profile-customer', 'viewProfileCustomer')->name('viewProfileCustomer');
+        Route::get('/view-profile-supplier', 'viewProfileSupplier')->name('viewProfileSupplier');
     });
-});
 
 // Users
-Route::prefix('blog')->group(function () {
     Route::controller(BlogController::class)->group(function () {
         Route::get('/addBlog', 'addBlog')->name('addBlog');
         Route::get('/blog', 'blog')->name('blog');
         Route::get('/blogDetails', 'blogDetails')->name('blogDetails');
     });
-});
+
 
 // Users
 Route::prefix('roleandaccess')->group(function () {
