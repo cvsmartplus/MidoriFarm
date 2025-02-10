@@ -21,8 +21,27 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([
-            UserSeeder::class
-
+            GreenHouseSeeder::class,
+            UserSeeder::class,
+            CategorySeeder::class,
+            SensorSeeder::class,
+            SupplierSeeder::class,
+            CustomerSeeder::class,
+            CategoryProductSeeder::class,
+            ProductSeeder::class,
+            AssetSeeder::class,
+            ArticleSeeder::class,
+            LogHistorySeeder::class,
+            SaleSeeder::class,
+            RevenueSeeder::class,
+            BuySeeder::class,
+            ExpensSeeder::class,
+            IndebtSeeder::class,
+            OutdebtSeeder::class,
+            IotSeeder::class,
+            NotificationSeeder::class,
+            IsOutputEnableSeeder::class,
+            SensorConfigSeeder::class,
         ]);
     }
 }

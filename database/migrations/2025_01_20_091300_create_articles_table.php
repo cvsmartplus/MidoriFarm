@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title', 255);
             $table->string('slug', 255);
             $table->text('content');
-            $table->foreignId('category-id')->references('id')->on('categories');
+            $table->foreignId('category_id')->references('id')->on('categories');
             $table->integer('author_id');
             $table->string('thumbnail', 255);
             $table->string('tags', 255);

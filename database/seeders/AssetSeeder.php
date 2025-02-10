@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class AssetSeeder extends Seeder
 {
@@ -12,6 +14,18 @@ class AssetSeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = Faker::create();
+        for ($i = 0; $i < 10; $i++) {
         //
+        DB::table('assets')->insert([
+            'id_greenhouse' => 1,
+            'name_product' => $faker->word,
+            'purchase' => $faker->dateTimeBetween('-2 years', 'now')->format('Y-m-d'),
+            'stock' => $faker->randomFloat(1, 100),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        }
     }
 }
