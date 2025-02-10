@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
     $title='Dashboard';
-    $subTitle = 'NFT & Gaming';
+    $subTitle = 'Internet Of Things';
     $script = '<script>
                 // ===================== Average Enrollment Rate Start =============================== 
                 function createChartTwo(chartId, color1, color2) {
@@ -385,9 +385,8 @@
 @section('content')
     <div class="row gy-4">
         <div class="col-12 mb-16">
-            <div class="row gy-4 mb-16">
-                <!-- Dashboard Widget Start -->
-                <div class="col-lg-4 col-sm-6">
+            <div class="row gy-4 mb-8">
+                <div class="col-lg-4 col-sm-4">
                     <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-3">
                         <div class="card-body p-0">
                             <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
@@ -396,8 +395,8 @@
                                         <iconify-icon icon="flowbite:users-group-solid" class="icon"></iconify-icon>
                                     </span>
                                     <div class="flex-grow-1">
-                                        <h6 class="fw-semibold mb-0">24,000</h6>
-                                        <span class="fw-medium text-secondary-light text-md">Artworks</span>
+                                        <h6 class="fw-semibold text-xl">Total Green House</h6>
+                                        <span class="fw-medium text-secondary-light text-xl">3</span>
                                         <p class="text-sm mb-0 d-flex align-items-center flex-wrap gap-12 mt-12">
                                             <span class="bg-success-focus px-6 py-2 rounded-2 fw-medium text-success-main text-sm d-flex align-items-center gap-8">
                                                 +168.001%
@@ -410,10 +409,7 @@
                         </div>
                     </div>
                 </div>
-                <!--     Widget End -->
-
-                <!-- Dashboard Widget Start -->
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-4">
                     <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-5">
                         <div class="card-body p-0">
                             <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
@@ -422,8 +418,8 @@
                                         <iconify-icon icon="flowbite:users-group-solid" class="icon"></iconify-icon>
                                     </span>
                                     <div class="flex-grow-1">
-                                        <h6 class="fw-semibold mb-0">82,000</h6>
-                                        <span class="fw-medium text-secondary-light text-md">Auction</span>
+                                        <h6 class="fw-semibold text-xl">Total Sensor</h6>
+                                        <span class="fw-medium text-secondary-light text-lg">15</span>
                                         <p class="text-sm mb-0 d-flex align-items-center flex-wrap gap-12 mt-12">
                                             <span class="bg-danger-focus px-6 py-2 rounded-2 fw-medium text-danger-main text-sm d-flex align-items-center gap-8">
                                                 +168.001%
@@ -436,10 +432,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Dashboard Widget End -->
-
-                <!-- Dashboard Widget Start -->
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-4">
                     <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-2">
                         <div class="card-body p-0">
                             <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
@@ -448,8 +441,8 @@
                                         <iconify-icon icon="flowbite:users-group-solid" class="icon"></iconify-icon>
                                     </span>
                                     <div class="flex-grow-1">
-                                        <h6 class="fw-semibold mb-0">800</h6>
-                                        <span class="fw-medium text-secondary-light text-md">Creators</span>
+                                        <h6 class="fw-semibold text-xl">Total Notifikasi</h6>
+                                        <span class="fw-medium text-secondary-light text-md">50</span>
                                         <p class="text-sm mb-0 d-flex align-items-center flex-wrap gap-12 mt-12">
                                             <span class="bg-success-focus px-6 py-2 rounded-2 fw-medium text-success-main text-sm d-flex align-items-center gap-8">
                                                 +168.001%
@@ -462,7 +455,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Dashboard Widget End -->
             </div>
         </div>
         <div class="container-fluid">
@@ -470,7 +462,7 @@
                 <div class="col-xxl-8 col-md-6">
                     <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                            <h6 class="fw-bold text-lg mb-0">ETH Price</h6>
+                            <h6 class="fw-bold text-lg mb-0">Pemantauan Perangkat IOT</h6>
                             <select class="form-select form-select-sm w-auto bg-base border text-secondary-light rounded-pill">
                                 <option>November </option>
                                 <option>December</option>
@@ -493,7 +485,7 @@
                 <div class="col-xxl-4 col-md-6">
                     <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                            <h6 class="fw-bold text-lg mb-0">Statistics</h6>
+                            <h6 class="fw-bold text-lg mb-0">Lokasi Green House</h6>
                             <a  href="javascript:void(0)" class="text-primary-600 hover-text-primary d-flex align-items-center gap-1">
                                 View All
                                 <iconify-icon icon="solar:alt-arrow-right-linear" class="icon"></iconify-icon>
@@ -521,10 +513,10 @@
         </div>
         <div class="container-fluid gy-4">
             <div class="row gy-4">
-                <div class="col-xxl-4 col-md-6">
+                <div class="col-xxl-6 col-md-6">
                     <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                            <h6 class="fw-bold text-lg mb-0">Featured Creators</h6>
+                            <h6 class="fw-bold text-lg mb-0">Notifikasi Terakhir</h6>
                             <a  href="javascript:void(0)" class="text-primary-600 hover-text-primary d-flex align-items-center gap-1">
                                 View All
                                 <iconify-icon icon="solar:alt-arrow-right-linear" class="icon"></iconify-icon>
@@ -543,7 +535,7 @@
                             </div>
                             <div class="mt-24">
                                 <div class="row gy-3">
-                                    <div class="col-sm-6 col-xs-6">
+                                    <div class="col-xxl-6 col-sm-6 col-xs-6">
                                         <div class="nft-card bg-base radius-16 overflow-hidden shadow-4">
                                             <div class="radius-16 overflow-hidden">
                                                 <img src="{{ asset('assets/images/nft/featured-creator1.png') }}" alt="" class="w-100 h-100 object-fit-cover">
@@ -557,7 +549,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-xs-6">
+                                    <div class="col-xxl-6 col-sm-6 col-xs-6">
                                         <div class="nft-card bg-base radius-16 overflow-hidden shadow-4">
                                             <div class="radius-16 overflow-hidden">
                                                 <img src="{{ asset('assets/images/nft/featured-creator2.png') }}" alt="" class="w-100 h-100 object-fit-cover">
@@ -576,7 +568,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-8 col-md-6">
+                <div class="col-xxl-6 col-md-6">
                     <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
                             <h6 class="fw-bold text-lg mb-0">Featured Creators</h6>

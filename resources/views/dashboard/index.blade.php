@@ -163,68 +163,52 @@
     <div class="tab-content" id="pills-tab-threeContent">
         <div class="tab-pane fade show active" id="pills-button-all" role="tabpanel" aria-labelledby="pills-button-all-tab" tabindex="0">
             <div class="row mb-24 g-3">
-                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                <div class="col-xxl-3 col-sm-3 col-xs-3">
                     <div class="nft-card bg-base radius-16 overflow-hidden">
                         <div class="radius-16 overflow-hidden">
                             <img src="{{ asset('assets/images/nft/nft-img1.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                         </div>
                         <div class="p-10">
                             <h6 class="text-md fw-bold text-primary-light">Sensor tanah</h6>
-                            <div class="d-flex align-items-center gap-8">
-                                <img src="{{ asset('assets/images/nft/nft-user-img1.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
-                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
-                            </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                <div class="col-xxl-3 col-sm-3 col-xs-3">
                     <div class="nft-card bg-base radius-16 overflow-hidden">
                         <div class="radius-16 overflow-hidden">
                             <img src="{{ asset('assets/images/nft/nft-img2.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                         </div>
                         <div class="p-10">
                             <h6 class="text-md fw-bold text-primary-light"> Sensor udara</h6>
-                            <div class="d-flex align-items-center gap-8">
-                                <img src="{{ asset('assets/images/nft/nft-user-img2.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
-                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
-                            </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                <div class="col-xxl-3 col-sm-3 col-xs-3">
                     <div class="nft-card bg-base radius-16 overflow-hidden">
                         <div class="radius-16 overflow-hidden">
                             <img src="{{ asset('assets/images/nft/nft-img3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                         </div>
                         <div class="p-10">
                             <h6 class="text-md fw-bold text-primary-light">Sensor Air</h6>
-                            <div class="d-flex align-items-center gap-8">
-                                <img src="{{ asset('assets/images/nft/nft-user-img3.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
-                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
-                            </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-sm-6 col-xs-6">
+                <div class="col-xxl-3 col-sm-3 col-xs-3">
                     <div class="nft-card bg-base radius-16 overflow-hidden">
                         <div class="radius-16 overflow-hidden">
                             <img src="{{ asset('assets/images/nft/nft-img4.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                         </div>
                         <div class="p-10">
                             <h6 class="text-md fw-bold text-primary-light">Sensor Suara</h6>
-                            <div class="d-flex align-items-center gap-8">
-                                <img src="{{ asset('assets/images/nft/nft-user-img4.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
-                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
-                            </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
@@ -242,10 +226,6 @@
                         </div>
                         <div class="p-10">
                             <h6 class="text-md fw-bold text-primary-light">Fantastic Alien</h6>
-                            <div class="d-flex align-items-center gap-8">
-                                <img src="{{ asset('assets/images/nft/nft-user-img1.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
-                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
-                            </div>
                             <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
                                 <span class="text-sm text-secondary-light fw-medium">Price:
                                     <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
@@ -266,10 +246,6 @@
                         </div>
                         <div class="p-10">
                             <h6 class="text-md fw-bold text-primary-light">New Figures</h6>
-                            <div class="d-flex align-items-center gap-8">
-                                <img src="{{ asset('assets/images/nft/nft-user-img2.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
-                                <span class="text-sm text-secondary-light fw-medium">Watson Kristin</span>
-                            </div>
                             <div class="mt-10 d-flex align-items-center justify-content-between gap-8 flex-wrap">
                                 <span class="text-sm text-secondary-light fw-medium">Price:
                                     <span class="text-sm text-primary-light fw-semibold">1.44 ETH</span>
