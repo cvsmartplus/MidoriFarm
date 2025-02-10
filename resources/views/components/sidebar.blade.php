@@ -17,48 +17,14 @@
                     <span>Beranda</span>
                 </a>
                 <ul class="sidebar-submenu">
-                    {{-- <li>
-                        <a href="{{ route('index') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> AI</a>
-                    </li> --}}
-
                     <li>
-                    <!-- opsi ke-1 pemilihan dashboard, yang 6 table bisa untuk 10 sensor IoT (tambah 4 table lagi), Finance juga bisa diambil langsung atau diganti dari line chart -->
-                    {{-- <a href="{{ route('index2') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Dashboard (Opt 1)</a>
-                    </li> --}}
-
-                    {{-- <li>
-                    <a href="{{ route('index3') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> eCommerce</a>
-                    </li> --}}
-                    {{-- <li>
-                    <a href="{{ route('index4') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Cryptocurrency</a>
-                    </li> --}}
-
-                    <!-- opsi ke-1 pemilihan fitur IoT,4 table nya bisa untuk 10 sensor IoT tambah 6 table juga, bagian revenue statistics bisa dijadiin fitur si Iot nya seperti
-                     suhu tanah,kelembapan tanah, level tanah dan lain lain.
-                     bagian most location juga bisa dijadiin fitur IoT nya, nama negara diganti jadi level tanah kelembapan tanah, progress barnya bisa dijadiin realtime gitu -->
-                    {{-- <li>
-                    <a href="{{ route('index5') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> IoT (Opt 1)</a>
-                    </li> --}}
-
-                    <!-- cocok untuk fitur buy and sell, ambil bagian average enrollment rate atau pilih line chart with data labels, dan zoomable chart di chart -->
-                    {{-- <li>
-                    <a href="{{ route('index6') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Jual & Beli</a>
-                    </li> --}}
-                    <!-- OPSI KE-2 --pemilihan fitur IoT,trending bids bisa untuk riwayat IoT atau apalah bebas,dibagian trending NFTs nya bisa buat monitoring IoT kayak cctv satpam di film film
-                    kan banyak tuh. -->
-                    <li>
-                    <a href="{{ route('sensor') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Sensor</a>
+                        <a href="{{ route('index') }}"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon> 
+                            Utama</a>
                     </li>
-                    <!-- opsi ke-2 pemilihan dashboard, untuk sensor IoT juga sama bisa tambah 6 table lagi,bagian finance juga bisa diambil langsung  di bagian earning statistic -->
                     <li>
-                    <a href="{{ route('index') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Utama</a>
+                        <a href="{{ route('sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
+                            IOT</a>
                     </li>
-                     <li>
-                    {{-- <a href="{{ route('index9') }}"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Analytics</a>
-                    </li>  --}}
-                    {{-- <li>
-                    <a href="{{ route('index10') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> POS & Inventory </a>
-                    </li> --}}
                 </ul>
             </li>
             <!-- cocok untuk fitur article jangan dihapus semuanya -->
@@ -69,42 +35,17 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="{{ route('blog') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Artikel</a>
+                        <a  href="{{ route('blog') }}"><iconify-icon icon="mdi:book-outline" class="menu-icon"></iconify-icon> Artikel</a>
                     </li>
                     {{-- <li>
                         <a  href="{{ route('blogDetails') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Detail Artikel</a>
                     </li> --}}
                     <li>
-                        <a  href="{{ route('addBlog') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Tambah Artikel</a>
+                        <a  href="{{ route('addBlog') }}"><iconify-icon icon="mdi:book-plus-outline" class="menu-icon"></iconify-icon> Buat Artikel</a>
                     </li>
                 </ul>
             </li>
             <li class="sidebar-menu-group-title">Pemilik</li>
-            {{-- <li>
-                  <a href="{{ route('email') }}">
-                    <iconify-icon icon="mage:email" class="menu-icon"></iconify-icon>
-                    <span>Email</span>
-                </a>
-            </li> --}}
-            {{-- <li>
-                <a href="{{ route('chatMessage') }}">
-                    <iconify-icon icon="bi:chat-dots" class="menu-icon"></iconify-icon>
-                    <span>Chat</span>
-                </a>
-            </li> --}}
-            {{-- <li>
-                <a href="{{ route('calendar') }}">
-                    <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
-                    <span>Calendar</span>
-                </a>
-            </li> --}}
-            {{-- <li>
-                <a href="{{ route('kanban') }}">
-                    <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
-                    <span>Kanban</span>
-                </a>
-            </li> --}}
-
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="lsicon:goods-filled" class="menu-icon"></iconify-icon>
@@ -112,14 +53,10 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                    <a href="{{ route('produkBarang') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Daftar Produk & Barang</a>
+                    <a href="{{ route('produkBarang') }}"><iconify-icon icon="lsicon:goods-search-outline" class="menu-icon"></iconify-icon> Daftar Barang</a>
                     </li>
                     <li>
-                    <a href="{{ route('goodsPreview') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Pratinjau</a>
-                    </li>
-
-                    <li>
-                    <a href="{{ route('goodsEdit') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
+                    <a href="{{ route('goodsPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
                     </li>
                 </ul>
             </li>
@@ -127,74 +64,60 @@
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="tabler:coin-filled" class="menu-icon"></iconify-icon>
-                    <span>Hutang - Piutang</span>
+                    <span>Hutang-Piutang</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                    <a href="{{ route('LoansList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Daftar Hutang</a>
+                    <a href="{{ route('LoansList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Hutang</a>
                     </li>
                     <li>
-                    <a href="{{ route('LoansPreview') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Pratinjau</a>
+                    <a href="{{ route('LoansPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
                     </li>
-
                     <li>
-                    <a href="{{ route('LoansEdit') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
-                    </li>
                 </ul>
             </li>
             <!-- cocok untuk fitur customer & supplier, hapus fitur user grid -->
             <li class="dropdown">
-                <a  href="javascript:void(0)">
+                <a href="javascript:void(0)">
                     <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
                     <span>Pelanggan</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="{{ route('usersList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Daftar Pelanggan</a>
+                        <a href="{{ route('usersList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Pelanggan</a>
                     </li>
                     <li>
-                        <a  href="{{ route('addUser') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Tambah Akses</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('viewProfileCustomer') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> View Profile</a>
+                        <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon> Aktivitas Pelanggan (Coming Soon)</a>
                     </li>
                 </ul>
             </li>
 
             <!-- Pemasok start -->
             <li class="dropdown">
-                <a  href="javascript:void(0)">
+                <a href="javascript:void(0)">
                     <iconify-icon icon="game-icons:hand-truck" class="menu-icon"></iconify-icon>
                     <span>Pemasok</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="{{ route('supplierList') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Daftar Pelanggan</a>
+                        <a  href="{{ route('supplierList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Pelanggan</a>
                     </li>
                     {{-- <li>
                         <a  href="{{ route('usersGrid') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
                     </li> --}}
-                    <li>
-                        <a  href="{{ route('addSupplier') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Tambah Akses</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('viewProfileSupplier') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> View Profile</a>
-                    </li>
                 </ul>
             </li>
-            <!-- Pemasok end -->
-            <!-- cocok untuk fitur user & riwayat -->
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="ri-user-settings-line" class="menu-icon"></iconify-icon>
-                    <span> Manajemen Akses </span>
+                    <span>Manajemen Akses</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="{{ route('roleAaccess') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Role & Access</a>
+                        <a  href="{{ route('roleAaccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
                     </li>
                     <li>
-                        <a  href="{{ route('assignRole') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Beri Akses</a>
+                        <a  href="{{ route('assignRole') }}"><iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon> Beri Akses</a>
                     </li>
                 </ul>
             </li>
