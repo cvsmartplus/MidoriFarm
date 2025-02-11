@@ -20,7 +20,7 @@ class AssetSeeder extends Seeder
         DB::table('assets')->insert([
             'id_greenhouse' => 1,
             'name_product' => $faker->word,
-            'purchase' => $faker->dateTimeBetween('-2 years', 'now')->format('Y-m-d'),
+            'purchase' => $faker->numberBetween(1, 100),
             'stock' => $faker->randomFloat(1, 100),
             'created_at' => now(),
             'updated_at' => now(),
