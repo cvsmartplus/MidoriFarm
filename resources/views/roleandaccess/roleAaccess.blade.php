@@ -8,7 +8,7 @@
                     });
                </script>';
 @endphp
-
+<!-- mengidentifikasi atau mengedit si  user posisi nya sebagai apa -->
 @section('content')
 
 <div class="card h-100 p-0 radius-12">

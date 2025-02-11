@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
-    $title='Users Grid';
-    $subTitle = 'Users Grid';
+    $title='Daftar Pengguna';
+    $subTitle = 'Daftar Pengguna';
     $script ='<script>
                         $(".remove-item-btn").on("click", function() {
                             $(this).closest("tr").addClass("d-none")

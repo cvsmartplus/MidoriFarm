@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-24">
+            {{-- <div class="card mt-24">
                 <div class="card-header border-bottom">
                     <h6 class="text-xl mb-0">Comments</h6>
                 </div>
@@ -178,7 +178,7 @@
                         <button type="submit" class="btn btn-primary-600 radius-8">Submit</button>
                     </form>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <!-- Sidebar Start -->
@@ -186,7 +186,7 @@
             <div class="d-flex flex-column gap-24">
 
                 <!-- Search -->
-                <div class="card">
+                {{-- <div class="card">
                     <div class="card-header border-bottom">
                         <h6 class="text-xl mb-0">Search Here</h6>
                     </div>
@@ -196,7 +196,7 @@
                             <iconify-icon icon="ion:search-outline" class="icon position-absolute positioned-icon top-50 translate-middle-y"></iconify-icon>
                         </form>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Latest Blog -->
                 <div class="card">
@@ -252,7 +252,7 @@
                 </div>
 
                 <!-- Category -->
-                <div class="card">
+                {{-- <div class="card">
                     <div class="card-header border-bottom">
                         <h6 class="text-xl mb-0">Tags</h6>
                     </div>
@@ -280,7 +280,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Tags -->
                 <div class="card">

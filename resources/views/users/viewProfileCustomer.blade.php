@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
-    $title='View Profile';
-    $subTitle = 'View Profile';
+    $title='Profil';
+    $subTitle = 'Profil';
     $script ='<script>
                     // ======================== Upload Image Start =====================
                     function readURL(input) {

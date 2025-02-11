@@ -70,7 +70,7 @@
                                             </select>
                                         </div>
                                         <div class="mb-20">
-                                            <label for="desig" class="form-label fw-semibold text-primary-light text-sm mb-8">Designation <span class="text-danger-600">*</span> </label>
+                                            <label for="design" class="form-label fw-semibold text-primary-light text-sm mb-8">Designation <span class="text-danger-600">*</span> </label>
                                             <select class="form-control radius-8 form-select" id="desig">
                                                 <option>Enter Designation Title </option>
                                                 <option>Enter Designation Title One </option>

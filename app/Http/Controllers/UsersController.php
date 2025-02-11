@@ -10,19 +10,27 @@ class UsersController extends Controller
     {
         return view('users/addUser');
     }
-    
-    public function usersGrid()
+    public function addSupplier()
     {
-        return view('users/usersGrid');
+        return view('users/addSupplier');
     }
-
+    
     public function usersList()
     {
         return view('users/usersList');
     }
-    
-    public function viewProfile()
+    public function supplierList()
     {
-        return view('users/viewProfile');
+        return view('users/supplierList');
+    }
+    
+    public function viewProfileCustomer()
+    {
+        return view('users/viewProfileCustomer');
+    }
+
+    public function viewProfileSupplier()
+    {
+        return view('users/viewProfileSupplier');
     }
 }

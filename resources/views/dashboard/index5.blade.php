@@ -6,11 +6,11 @@
 @endphp
 
 @section('content')
-
+<!-- dari sini -->
             <div class="row gy-4">
 
                 <!-- Dashboard Widget Start -->
-                <div class="col-xxl-3 col-sm-6">
+                {{-- <div class="col-xxl-3 col-sm-6">
                     <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-3">
                         <div class="card-body p-0">
                             <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
@@ -33,11 +33,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Dashboard Widget End -->
 
                 <!-- Dashboard Widget Start -->
-                <div class="col-xxl-3 col-sm-6">
+                {{-- <div class="col-xxl-3 col-sm-6">
                     <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-2">
                         <div class="card-body p-0">
                             <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
@@ -60,11 +60,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Dashboard Widget End -->
 
                 <!-- Dashboard Widget Start -->
-                <div class="col-xxl-3 col-sm-6">
+                {{-- <div class="col-xxl-3 col-sm-6">
                     <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-5">
                         <div class="card-body p-0">
                             <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
@@ -87,11 +87,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Dashboard Widget End -->
 
                 <!-- Dashboard Widget Start -->
-                <div class="col-xxl-3 col-sm-6">
+                {{-- <div class="col-xxl-3 col-sm-6">
                     <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-4">
                         <div class="card-body p-0">
                             <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
@@ -114,54 +114,56 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Dashboard Widget End -->
 
-                <!-- Revenue Statistics Start -->
-                <div class="col-xxl-8">
-                    <div class="card h-100 radius-8 border-0">
-                        <div class="card-body p-24">
-                            <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                                <div>
-                                    <h6 class="mb-2 fw-bold text-lg">Revenue Statistics</h6>
-                                    <span class="text-sm fw-medium text-secondary-light">Yearly earning overview</span>
-                                </div>
-                                <div class="">
-                                    <select class="form-select form-select-sm w-auto bg-base border text-secondary-light">
-                                        <option>Yearly</option>
-                                        <option>Monthly</option>
-                                        <option>Weekly</option>
-                                        <option>Today</option>
-                                    </select>
-                                </div>
-                            </div>
+                <!-- sampai sini -->
 
-                            <div class="mt-24 mb-24 d-flex flex-wrap">
-                                <div class="me-40">
-                                    <span class="text-secondary-light text-sm mb-1">Income</span>
-                                    <div class="">
-                                        <h6 class="fw-semibold d-inline-block mb-0">$26,201</h6>
-                                        <span class="text-success-main fw-bold d-inline-flex align-items-center gap-1">10% <iconify-icon icon="iconamoon:arrow-up-2-fill" class="icon"></iconify-icon> </span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="text-secondary-light text-sm mb-1">Expenses</span>
-                                    <div class="">
-                                        <h6 class="fw-semibold d-inline-block mb-0">$18,120</h6>
-                                        <span class="text-danger-main fw-bold d-inline-flex align-items-center gap-1">10% <iconify-icon icon="iconamoon:arrow-down-2-fill" class="icon"></iconify-icon> </span>
-                                    </div>
-                                </div>
-                            </div>
+<!-- Revenue Statistics Start -->
+<div class="col-xxl-12">
+    <div class="card h-100 radius-8 border-0">
+        <div class="card-body p-24">
+            <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
+                <div>
+                    <h6 class="mb-2 fw-bold text-lg">Revenue Statistics</h6>
+                    <span class="text-sm fw-medium text-secondary-light">Yearly earning overview</span>
+                </div>
+                <div class="">
+                    <select class="form-select form-select-sm w-auto bg-base border text-secondary-light">
+                        <option>Yearly</option>
+                        <option>Monthly</option>
+                        <option>Weekly</option>
+                        <option>Today</option>
+                    </select>
+                </div>
+            </div>
 
-                            <div id="upDownBarchart"></div>
-
-                        </div>
+            <div class="mt-24 mb-24 d-flex flex-wrap">
+                <div class="me-40">
+                    <span class="text-secondary-light text-sm mb-1">Income</span>
+                    <div class="">
+                        <h6 class="fw-semibold d-inline-block mb-0">$26,201</h6>
+                        <span class="text-success-main fw-bold d-inline-flex align-items-center gap-1">10% <iconify-icon icon="iconamoon:arrow-up-2-fill" class="icon"></iconify-icon> </span>
                     </div>
                 </div>
-                <!-- Revenue Statistics End -->
+                <div>
+                    <span class="text-secondary-light text-sm mb-1">Expenses</span>
+                    <div class="">
+                        <h6 class="fw-semibold d-inline-block mb-0">$18,120</h6>
+                        <span class="text-danger-main fw-bold d-inline-flex align-items-center gap-1">10% <iconify-icon icon="iconamoon:arrow-down-2-fill" class="icon"></iconify-icon> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="upDownBarchart"></div>
+
+        </div>
+    </div>
+</div>
+<!-- Revenue Statistics End -->
 
                 <!-- Statistics Start -->
-                <div class="col-xxl-4">
+                {{-- <div class="col-xxl-4">
                     <div class="card h-100 radius-8 border-0">
                         <div class="card-body p-24">
                             <h6 class="mb-2 fw-bold text-lg">Statistic</h6>
@@ -200,11 +202,13 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Statistics End -->
 
+                <!-- hapus tombol plus minus, hapus peta  -->
+
                 <!-- Most Location Start -->
-                <div class="col-xxl-3">
+                {{-- <div class="col-xxl-3">
                     <div class="card radius-8 border-0">
 
                         <div class="card-body">
@@ -292,11 +296,11 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Most Location End -->
 
                 <!-- My portfolio Start -->
-                <div class="col-xxl-3">
+                {{-- <div class="col-xxl-3">
                     <div class="card h-100 radius-8 border-0">
                         <div class="card-body p-24">
                             <h6 class="mb-2 fw-bold text-lg">My Portfolio</h6>
@@ -324,11 +328,11 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- My portfolio End -->
 
                 <!-- Latest Investments Start -->
-                <div class="col-xxl-6">
+                {{-- <div class="col-xxl-6">
                     <div class="card h-100">
                         <div class="card-body p-24">
                             <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between mb-20">
@@ -461,11 +465,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Latest Investments End -->
 
                 <!-- Notice board Start -->
-                <div class="col-xxl-4">
+                {{-- <div class="col-xxl-4">
                     <div class="card h-100">
                         <div class="card-body p-24">
                             <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between mb-20">
@@ -505,11 +509,11 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Notice board End -->
 
                 <!-- Total Transactions Start -->
-                <div class="col-xxl-4">
+                {{-- <div class="col-xxl-4">
                     <div class="card h-100">
                         <div class="card-body p-24">
                             <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between mb-20">
@@ -537,11 +541,11 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Total Transactions End -->
 
                 <!-- Project Status Start -->
-                <div class="col-xxl-4">
+                {{-- <div class="col-xxl-4">
                     <div class="card h-100">
                         <div class="card-body p-24">
                             <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between mb-20">
@@ -646,7 +650,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Project Status End -->
 
             </div>
