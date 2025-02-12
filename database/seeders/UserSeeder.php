@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
             'name' => $faker->name,
             'email' => $faker->unique()->safeEmail,
             'password' => Hash::make('password'),
-            'role' => 'Farmer',
+            'role' => 'farmer',
             'id_greenhouse' => 1,
             'created_at' => now(),
             'updated_at' => now(),

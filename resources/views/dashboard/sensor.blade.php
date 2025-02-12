@@ -146,229 +146,6 @@
                 });
                 // ===================== Delete Table Item End =============================== 
 
-
-                // ================================ Area chart Start ================================ 
-                function createChart(chartId, chartColor) {
-
-                    let currentYear = new Date().getFullYear();
-
-                    var options = {
-                        series: [{
-                            name: "series1",
-                            data: [0, 10, 8, 25, 15, 26, 13, 35, 15, 39, 16, 46, 42],
-                        }, ],
-                        chart: {
-                            type: "area",
-                            width: 164,
-                            height: 72,
-
-                            sparkline: {
-                                enabled: true // Remove whitespace
-                            },
-
-                            toolbar: {
-                                show: false
-                            },
-                            padding: {
-                                left: 0,
-                                right: 0,
-                                top: 0,
-                                bottom: 0
-                            }
-                        },
-                        dataLabels: {
-                            enabled: false
-                        },
-                        stroke: {
-                            curve: "smooth",
-                            width: 2,
-                            colors: [chartColor],
-                            lineCap: "round"
-                        },
-                        grid: {
-                            show: true,
-                            borderColor: "transparent",
-                            strokeDashArray: 0,
-                            position: "back",
-                            xaxis: {
-                                lines: {
-                                    show: false
-                                }
-                            },
-                            yaxis: {
-                                lines: {
-                                    show: false
-                                }
-                            },
-                            row: {
-                                colors: undefined,
-                                opacity: 0.5
-                            },
-                            column: {
-                                colors: undefined,
-                                opacity: 0.5
-                            },
-                            padding: {
-                                top: -3,
-                                right: 0,
-                                bottom: 0,
-                                left: 0
-                            },
-                        },
-                        fill: {
-                            type: "gradient",
-                            colors: [chartColor], // Set the starting color (top color) here
-                            gradient: {
-                                shade: "light", // Gradient shading type
-                                type: "vertical", // Gradient direction (vertical)
-                                shadeIntensity: 0.5, // Intensity of the gradient shading
-                                gradientToColors: [`${chartColor}00`], // Bottom gradient color (with transparency)
-                                inverseColors: false, // Do not invert colors
-                                opacityFrom: .8, // Starting opacity
-                                opacityTo: 0.3, // Ending opacity
-                                stops: [0, 100],
-                            },
-                        },
-                        // Customize the circle marker color on hover
-                        markers: {
-                            colors: [chartColor],
-                            strokeWidth: 2,
-                            size: 0,
-                            hover: {
-                                size: 8
-                            }
-                        },
-                        xaxis: {
-                            labels: {
-                                show: false
-                            },
-                            categories: [`Jan ${currentYear}`, `Feb ${currentYear}`, `Mar ${currentYear}`, `Apr ${currentYear}`, `May ${currentYear}`, `Jun ${currentYear}`, `Jul ${currentYear}`, `Aug ${currentYear}`, `Sep ${currentYear}`, `Oct ${currentYear}`, `Nov ${currentYear}`, `Dec ${currentYear}`],
-                            tooltip: {
-                                enabled: false,
-                            },
-                        },
-                        yaxis: {
-                            labels: {
-                                show: false
-                            }
-                        },
-                        tooltip: {
-                            x: {
-                                format: "dd/MM/yy HH:mm"
-                            },
-                        },
-                    };
-
-                    var chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
-                    chart.render();
-                }
-
-                // Call the function for each chart with the desired ID and color
-                createChart("areaChart", "#FF9F29");
-                // ================================ Area chart End ================================ 
-
-
-                // ================================ Bar chart Start ================================ 
-                var options = {
-                    series: [{
-                        name: "Sales",
-                        data: [{
-                            x: "Mon",
-                            y: 20,
-                        }, {
-                            x: "Tue",
-                            y: 40,
-                        }, {
-                            x: "Wed",
-                            y: 20,
-                        }, {
-                            x: "Thur",
-                            y: 30,
-                        }, {
-                            x: "Fri",
-                            y: 40,
-                        }, {
-                            x: "Sat",
-                            y: 35,
-                        }]
-                    }],
-                    chart: {
-                        type: "bar",
-                        width: 164,
-                        height: 80,
-                        sparkline: {
-                            enabled: true // Remove whitespace
-                        },
-                        toolbar: {
-                            show: false
-                        }
-                    },
-                    plotOptions: {
-                        bar: {
-                            borderRadius: 6,
-                            horizontal: false,
-                            columnWidth: 14,
-                        }
-                    },
-                    dataLabels: {
-                        enabled: false
-                    },
-                    states: {
-                        hover: {
-                            filter: {
-                                type: "none"
-                            }
-                        }
-                    },
-                    fill: {
-                        type: "gradient",
-                        colors: ["#E3E6E9"], // Set the starting color (top color) here
-                        gradient: {
-                            shade: "light", // Gradient shading type
-                            type: "vertical", // Gradient direction (vertical)
-                            shadeIntensity: 0.5, // Intensity of the gradient shading
-                            gradientToColors: ["#E3E6E9"], // Bottom gradient color (with transparency)
-                            inverseColors: false, // Do not invert colors
-                            opacityFrom: 1, // Starting opacity
-                            opacityTo: 1, // Ending opacity
-                            stops: [0, 100],
-                        },
-                    },
-                    grid: {
-                        show: false,
-                        borderColor: "#D1D5DB",
-                        strokeDashArray: 1, // Use a number for dashed style
-                        position: "back",
-                    },
-                    xaxis: {
-                        labels: {
-                            show: false // Hide y-axis labels
-                        },
-                        type: "category",
-                        categories: ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
-                    },
-                    yaxis: {
-                        labels: {
-                            show: false,
-                            formatter: function(value) {
-                                return (value / 1000).toFixed(0) + "k";
-                            }
-                        }
-                    },
-                    tooltip: {
-                        y: {
-                            formatter: function(value) {
-                                return value / 1000 + "k";
-                            }
-                        }
-                    }
-                };
-
-                var chart = new ApexCharts(document.querySelector("#dailyIconBarChart"), options);
-                chart.render();
-                // ================================ Bar chart End ================================ 
-
-
                 // ================================ Follow Btn Start ================================ 
                 $(".follow-btn").on("click", function() {
                     if ($(this).text() === "Follow") {
@@ -461,11 +238,108 @@
             <div class="row gy-4">
                 <div class="col-xxl-8 col-md-6">
                     <div class="card h-100">
+                        <div class="card-header d-flex align-items-center justify-content-between" style="border-bottom: none;">
+                            <div class="d-flex align-items-center">
+                                <h6 class="fw-bold text-lg mb-0">Pemantauan Perangkat IOT</h6>
+                                <!-- Nav tabs: panel navigasi dipindahkan ke header -->
+                                <ul class="nav nav-tabs ms-3" id="sensorTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="sensor1-tab" data-bs-toggle="tab" data-bs-target="#sensor1" type="button" role="tab" aria-controls="sensor1" aria-selected="true">Sensor Suhu</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="sensor2-tab" data-bs-toggle="tab" data-bs-target="#sensor2" type="button" role="tab" aria-controls="sensor2" aria-selected="false">Sensor Kelembaban</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="sensor3-tab" data-bs-toggle="tab" data-bs-target="#sensor3" type="button" role="tab" aria-controls="sensor3" aria-selected="false">Sensor Cahaya</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <!-- Tab panes: konten untuk setiap tab -->
+                            <div class="tab-content" id="sensorTabContent">
+                                <div class="tab-pane fade show active" id="sensor1" role="tabpanel" aria-labelledby="sensor1-tab">
+                                    <p>Data Sensor Suhu akan ditampilkan di sini.</p>
+                                </div>
+                                <div class="tab-pane fade" id="sensor2" role="tabpanel" aria-labelledby="sensor2-tab">
+                                    <p>Data Sensor Kelembaban akan ditampilkan di sini.</p>
+                                </div>
+                                <div class="tab-pane fade" id="sensor3" role="tabpanel" aria-labelledby="sensor3-tab">
+                                    <p>Data Sensor Cahaya akan ditampilkan di sini.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-xxl-4 col-md-6">
+                    <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                            <h6 class="fw-bold text-lg mb-0">Pemantauan Perangkat IOT</h6>
-                            <select class="form-select form-select-sm w-auto bg-base border text-secondary-light rounded-pill">
-                                <option>November </option>
-                                <option>December</option>
+                            <h6 class="fw-bold text-lg mb-0">Lokasi Green House</h6>
+                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d881.2124232847582!2d107.28624019522965!3d-6.2838345360442345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6982aca5fe0815%3A0xa7ea3fae1f54165b!2sSMK%20Negeri%201%20Karawang!5e0!3m2!1sid!2sid!4v1739171150060!5m2!1sid!2sid" width="100%" height="100%"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="container-fluid gy-4">
+            <div class="row gy-4">
+                <div class="col-xxl-4 col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
+                            <h6 class="fw-bold text-lg mb-0">Notifikasi Terakhir</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
+                                <div class="col">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <h6 class="text-md mb-0 fw-semibold">Suhu Air</h6>
+                                        <h6 class="text-sm text-secondary">10 menit yang lalu</h6>
+                                    </div>
+                                    <span class="text-sm text-secondary-light fw-normal">Suhu Air Menurun</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
+                                <div class="col">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <h6 class="text-md mb-0 fw-semibold">Kelembaban</h6>
+                                        <h6 class="text-sm text-secondary">20 menit yang lalu</h6>
+                                    </div>
+                                    <span class="text-sm text-secondary-light fw-normal">Kelembaban Tanah Menurun</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
+                                <div class="col">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <h6 class="text-md mb-0 fw-semibold">Cahaya</h6>
+                                        <h6 class="text-sm text-secondary">30 menit yang lalu</h6>
+                                    </div>
+                                    <span class="text-sm text-secondary-light fw-normal">Intensitas Cahaya Menurun</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
+                                <div class="col">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <h6 class="text-md mb-0 fw-semibold">Air</h6>
+                                        <h6 class="text-sm text-secondary">40 menit yang lalu</h6>
+                                    </div>
+                                    <span class="text-sm text-secondary-light fw-normal">Kualitas Air Menurun</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-xxl-8 col-md-8">
+                    <div class="card h-100">
+                        <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
+                            <h6 class="fw-bold text-lg mb-0">Riwayat Data Sensor</h6>
+                            <select class="form-select form-select-sm w-auto bg-base border-0 text-secondary-light">
                                 <option>January</option>
                                 <option>February</option>
                                 <option>March</option>
@@ -475,164 +349,19 @@
                                 <option>July</option>
                                 <option>August</option>
                                 <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
                             </select>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body pt-24">
                             <div id="enrollmentChart" class="apexcharts-tooltip-style-1 yaxies-more"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-4 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                            <h6 class="fw-bold text-lg mb-0">Lokasi Green House</h6>
-                            <a  href="javascript:void(0)" class="text-primary-600 hover-text-primary d-flex align-items-center gap-1">
-                                View All
-                                <iconify-icon icon="solar:alt-arrow-right-linear" class="icon"></iconify-icon>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center gap-1 justify-content-between mb-44">
-                                <div>
-                                    <h5 class="fw-semibold mb-12">145</h5>
-                                    <span class="text-secondary-light fw-normal text-xl">Total Art Sold</span>
-                                </div>
-                                <div id="dailyIconBarChart"></div>
-                            </div>
-                            <div class="d-flex align-items-center gap-1 justify-content-between">
-                                <div>
-                                    <h5 class="fw-semibold mb-12">750 ETH</h5>
-                                    <span class="text-secondary-light fw-normal text-xl">Total Earnings</span>
-                                </div>
-                                <div id="areaChart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-        <div class="container-fluid gy-4">
-            <div class="row gy-4">
-                <div class="col-xxl-6 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                            <h6 class="fw-bold text-lg mb-0">Notifikasi Terakhir</h6>
-                            <a  href="javascript:void(0)" class="text-primary-600 hover-text-primary d-flex align-items-center gap-1">
-                                View All
-                                <iconify-icon icon="solar:alt-arrow-right-linear" class="icon"></iconify-icon>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between gap-8 flex-wrap">
-                                <div class="d-flex align-items-center">
-                                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                    <div class="flex-grow-1">
-                                        <h6 class="text-md mb-0 fw-semibold">Theresa Webb</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">Owned by ABC</span>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-outline-primary-600 px-24 rounded-pill">Follow</button>
-                            </div>
-                            <div class="mt-24">
-                                <div class="row gy-3">
-                                    <div class="col-xxl-6 col-sm-6 col-xs-6">
-                                        <div class="nft-card bg-base radius-16 overflow-hidden shadow-4">
-                                            <div class="radius-16 overflow-hidden">
-                                                <img src="{{ asset('assets/images/nft/featured-creator1.png') }}" alt="" class="w-100 h-100 object-fit-cover">
-                                            </div>
-                                            <div class="p-12">
-                                                <h6 class="text-md fw-bold text-primary-light mb-12">New Figures</h6>
-                                                <div class="d-flex align-items-center gap-8">
-                                                    <img src="{{ asset('assets/images/nft/bitcoin.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
-                                                    <span class="text-sm text-secondary-light fw-medium">0.10 BTC</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xxl-6 col-sm-6 col-xs-6">
-                                        <div class="nft-card bg-base radius-16 overflow-hidden shadow-4">
-                                            <div class="radius-16 overflow-hidden">
-                                                <img src="{{ asset('assets/images/nft/featured-creator2.png') }}" alt="" class="w-100 h-100 object-fit-cover">
-                                            </div>
-                                            <div class="p-12">
-                                                <h6 class="text-md fw-bold text-primary-light mb-12">Abstrac Girl</h6>
-                                                <div class="d-flex align-items-center gap-8">
-                                                    <img src="{{ asset('assets/images/nft/bitcoin.png') }}" class="w-28-px h-28-px rounded-circle object-fit-cover" alt="">
-                                                    <span class="text-sm text-secondary-light fw-medium">0.10 BTC</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl-6 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                            <h6 class="fw-bold text-lg mb-0">Featured Creators</h6>
-                            <a  href="javascript:void(0)" class="text-primary-600 hover-text-primary d-flex align-items-center gap-1">
-                                View All
-                                <iconify-icon icon="solar:alt-arrow-right-linear" class="icon"></iconify-icon>
-                            </a>
-                        </div>
-                        <div class="card-body pt-24">
-                            <div class="d-flex align-items-center justify-content-between gap-8 flex-wrap mb-32">
-                                <div class="d-flex align-items-center">
-                                    <img src="{{ asset('assets/images/nft/creator-img1.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                    <div class="flex-grow-1">
-                                        <h6 class="text-md mb-0 fw-semibold">Theresa Webb</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">@wishon</span>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn bg-primary-600 border-primary-600 text-white px-24 rounded-pill follow-btn transition-2">Follow</button>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between gap-8 flex-wrap mb-32">
-                                <div class="d-flex align-items-center">
-                                    <img src="{{ asset('assets/images/nft/creator-img2.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                    <div class="flex-grow-1">
-                                        <h6 class="text-md mb-0 fw-semibold">Arlene McCoy</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">@nemccoy</span>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn bg-primary-600 border-primary-600 text-white px-24 rounded-pill follow-btn transition-2">Follow</button>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between gap-8 flex-wrap mb-32">
-                                <div class="d-flex align-items-center">
-                                    <img src="{{ asset('assets/images/nft/creator-img3.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                    <div class="flex-grow-1">
-                                        <h6 class="text-md mb-0 fw-semibold">Kathryn Murphy</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">@kathrynmur</span>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn bg-primary-600 border-primary-600 text-white px-24 rounded-pill follow-btn transition-2">Follow</button>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between gap-8 flex-wrap mb-32">
-                                <div class="d-flex align-items-center">
-                                    <img src="{{ asset('assets/images/nft/creator-img4.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                    <div class="flex-grow-1">
-                                        <h6 class="text-md mb-0 fw-semibold">Marvin McKinney</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">@marvinckin</span>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn bg-primary-600 border-primary-600 text-white px-24 rounded-pill follow-btn transition-2">Follow</button>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between gap-8 flex-wrap mb-0">
-                                <div class="d-flex align-items-center">
-                                    <img src="{{ asset('assets/images/nft/creator-img5.png') }}" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px rounded-circle me-12">
-                                    <div class="flex-grow-1">
-                                        <h6 class="text-md mb-0 fw-semibold">Dianne Russell</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">@dinne_r</span>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn bg-primary-600 border-primary-600 text-white px-24 rounded-pill follow-btn transition-2">Follow</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
 @endsection
