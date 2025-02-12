@@ -621,7 +621,7 @@
                     <span class="text-sm fw-medium text-secondary-light">Yearly earning overview</span>
                 </div>
                 <div class="">
-                    <select class="form-select form-select-sm w-auto bg-base border text-secondary-light">
+                    <select class="form-select form-select-sm w-auto bg-base border-0 text-secondary-light">
                         <option>Yearly</option>
                         <option>Monthly</option>
                         <option>Weekly</option>
@@ -741,7 +741,7 @@
         <div class="card-body p-24">
             <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
                 <h6 class="mb-2 fw-bold text-lg mb-0">Statistik Pendapatan</h6>
-                <select class="form-select form-select-sm w-auto bg-base border text-secondary-light">
+                <select class="form-select form-select-sm w-auto bg-base border-0 text-secondary-light">
                     <option>Pertahun</option>
                     <option>Perbulan</option>
                     <option>Perminggu</option>

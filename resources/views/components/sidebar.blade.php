@@ -4,9 +4,9 @@
     </button>
     <div>
         <a href="{{ route('index') }}" class="sidebar-logo">
-            <img src="{{ asset('assets/images/logo.png') }}" alt="site logo" class="light-logo">
-            <img src="{{ asset('assets/images/logo-light.png') }}" alt="site logo" class="dark-logo">
-            <img src="{{ asset('assets/images/logo-icon.png') }}" alt="site logo" class="logo-icon">
+            <img src="{{ asset('assets/images/pplg.png') }}" alt="site logo" class="light-logo">
+            <img src="{{ asset('assets/images/pplg.png') }}" alt="site logo" class="dark-logo">
+            <img src="{{ asset('assets/images/pplg.png') }}" alt="site logo" class="logo-icon">
         </a>
     </div>
     <div class="sidebar-menu-area">
@@ -27,7 +27,6 @@
                     </li>
                 </ul>
             </li>
-            <!-- cocok untuk fitur article jangan dihapus semuanya -->
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="ri-news-line" class="menu-icon"></iconify-icon>
@@ -37,9 +36,6 @@
                     <li>
                         <a  href="{{ route('blog') }}"><iconify-icon icon="mdi:book-outline" class="menu-icon"></iconify-icon> Artikel</a>
                     </li>
-                    {{-- <li>
-                        <a  href="{{ route('blogDetails') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Detail Artikel</a>
-                    </li> --}}
                     <li>
                         <a  href="{{ route('addBlog') }}"><iconify-icon icon="mdi:book-plus-outline" class="menu-icon"></iconify-icon> Buat Artikel</a>
                     </li>
@@ -100,7 +96,7 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="{{ route('supplierList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Pelanggan</a>
+                        <a  href="{{ route('supplierList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Pemasok</a>
                     </li>
                     {{-- <li>
                         <a  href="{{ route('usersGrid') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
