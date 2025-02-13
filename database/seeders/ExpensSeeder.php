@@ -16,7 +16,7 @@ class ExpensSeeder extends Seeder
     {
         $faker = Faker::create();
         //
-        DB::table('expens')->insert([
+        DB::table('expenses')->insert([
             'id_greenhouse' => 1,
             'id_buy' => $faker->numberBetween(1, 3),
             'id_user' => $faker->numberBetween(1,3),
@@ -25,12 +25,12 @@ class ExpensSeeder extends Seeder
         ]);
 
         for ($i = 0; $i < 10; $i++) {
-            DB::table('expens')->insert([
+            DB::table('expenses')->insert([
                 'id_greenhouse' => 1,
                 'id_buy' => $faker->numberBetween(1, 3),
                 'id_user' => $faker->numberBetween(1,3),
                 'date' => $faker->date,
-                'total_price' => $faker->randomFloat(2,0,100),
+                'total_price' => $faker->numberBetween(2, 100),
             ]);
         }
     }
