@@ -62,7 +62,8 @@ Route::prefix('aiapplication')->group(function () {
 Route::prefix('authentication')->group(function () {
     Route::controller(AuthenticationController::class)->group(function () {
         Route::get('/forgotpassword', 'forgotPassword')->name('forgotPassword');
-        Route::get('/signin', 'signin')->name('signin');
+        Route::get('/signin', [AuthenticationController::class, 'signin'])->name('signin');
+        Route::post('/signin', [AuthenticationController::class, '']);
         Route::get('/signup', 'signup')->name('signup');
     });
 });
@@ -116,7 +117,7 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('/index9','index9')->name('index9');
     Route::get('/index10','index10')->name('index10');
     Route::get('/wallet','wallet')->name('wallet');
-}); 
+});
 
 // Forms
 Route::prefix('Forms')->group(function () {
@@ -136,7 +137,7 @@ Route::prefix('FinanceGoods')->group(function () {
         Route::get('/produkbarang', 'produkBarang')->name('produkBarang');
         Route::get('/goods-preview', 'goodsPreview')->name('goodsPreview');
     });
-}); 
+});
 
 // invoice/LoansList
 Route::prefix('FinanceLoans')->group(function () {

@@ -15,23 +15,19 @@ class BuySeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
+        for ($i = 0; $i < 10; $i++) {
+            $id_product = $faker->numberBetween(1, 3);
+            $id_asset = $faker->numberBetween(1, 3);
+            $id_supplier = $faker->numberBetween(1, 3);
         //
         DB::table('buys')->insert([
-            'id_product' => $faker->numberBetween(1, 3),
-            'id_asset' => $faker->numberBetween(1, 3),
-            'id_supplier' => $faker->numberBetween(1, 3),
-            'quanity' => $faker->randomFloat(1, 100),
-            'subtotal' => $faker->randomFloat(2, 0, 1000),
+            'id_product' => $id_product,
+            'id_asset' => $id_asset,
+            'id_supplier' => $id_supplier,
+            'quantity' => $faker->numberBetween(1, 100),
+            'subtotal' => $faker->numberBetween(1, 100)
         ]);
 
-        for ($i = 0; $i < 10; $i++) {
-            DB::table('buys')->insert([
-                'id_product' => $faker->numberBetween(1, 3),
-                'id_asset' => $faker->numberBetween(1, 3),
-                'id_supplier' => $faker->numberBetween(1, 3),
-                'quanity' => $faker->randomFloat(1, 100),
-                'subtotal' => $faker->randomFloat(2, 0, 1000),
-            ]);
         }
     }
 }
