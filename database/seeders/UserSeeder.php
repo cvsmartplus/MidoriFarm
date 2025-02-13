@@ -5,7 +5,9 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\{
-    DB, Hash, };
+    DB,
+    Hash,
+};
 use Faker\Factory as Faker;
 
 class UserSeeder extends Seeder
@@ -47,12 +49,22 @@ class UserSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
+        DB::table('users')->insert([
+            'name' => $faker->name,
+            'email' => $faker->unique()->safeEmail,
+            'password' => Hash::make('012'),
+            'role' => 'akuntan',
+            'id_greenhouse' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
         for ($i = 0; $i < 10; $i++) {
             DB::table('users')->insert([
                 'name' => $faker->name,
                 'email' => $faker->unique()->safeEmail,
                 'password' => Hash::make('password'),
-                'role' => $faker->randomElement(['admin', 'owner', 'farmer']),
+                'role' => $faker->randomElement(['admin', 'owner', 'farmer', 'akuntan']),
                 'id_greenhouse' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),

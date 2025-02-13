@@ -45,14 +45,14 @@ class RoleAndPermissionSeeder extends Seeder
 
         $adminUser = User::create([
             'email' => 'admin@example.com',
-            'name' => 'Admin User',
+            'name' => 'Admin',
             'password' => bcrypt('password123'),
             'id_greenhouse' => 1,
         ]);
         $adminUser->assignRole('admin');
 
         $ownerUser = User::create([
-            'name' => 'Owner User',
+            'name' => 'Owner',
             'email' => 'owner@example.com',
             'password' => bcrypt('password123'),
             'id_greenhouse' => 1,
@@ -60,7 +60,7 @@ class RoleAndPermissionSeeder extends Seeder
         $ownerUser->assignRole('owner');
 
         $akuntanUser = User::create([
-            'name' => 'Akuntan User',
+            'name' => 'Akuntan',
             'email' => 'akuntan@example.com',
             'password' => bcrypt('password123'),
             'id_greenhouse' => 1,
@@ -68,7 +68,7 @@ class RoleAndPermissionSeeder extends Seeder
         $akuntanUser->assignRole('akuntan');
 
         $farmerUser = User::create([
-            'name' => 'Farmer User',
+            'name' => 'Farmer',
             'email' => 'farmer@example.com',
             'password' => bcrypt('password123'),
             'id_greenhouse' => 1,
