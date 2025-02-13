@@ -28,6 +28,12 @@ class GreenHouseSeeder extends Seeder
             'status' => 0, // 0 untuk 'Inactive'
         ]);
 
+        DB::table('green_houses')->insert([
+            'name' => 'Green House 3',
+            'location' => 'Location 3',
+            'status' => 1, // 0 untuk 'Inactive'
+        ]);
+
         for ($i = 0; $i < 10; $i++) {
             DB::table('green_houses')->insert([
                 'name' => $faker->company,

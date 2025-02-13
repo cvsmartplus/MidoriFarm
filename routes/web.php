@@ -19,9 +19,10 @@ use App\Http\Controllers\CryptocurrencyController;
 
 
 
-
-Route::controller(DashboardController::class)->group(function () {
-    Route::get('/', 'index')->name('index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::controller(DashboardController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+    });
 });
 
 Route::controller(HomeController::class)->group(function () {
@@ -63,7 +64,7 @@ Route::prefix('authentication')->group(function () {
     Route::controller(AuthenticationController::class)->group(function () {
         Route::get('/forgotpassword', 'forgotPassword')->name('forgotPassword');
         Route::get('/signin', [AuthenticationController::class, 'signin'])->name('signin');
-        Route::post('/signin', [AuthenticationController::class, '']);
+        Route::post('/signin', [AuthenticationController::class, 'signInPost']);
         Route::get('/signup', 'signup')->name('signup');
     });
 });
