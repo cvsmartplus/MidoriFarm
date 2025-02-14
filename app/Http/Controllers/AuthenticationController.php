@@ -14,7 +14,7 @@ class AuthenticationController extends Controller
 
     public function signIn()
     {
-        return view('authentication/signIn');
+        return view(view: '/signin');
     }
     public function signInPost(Request $request)
     {
