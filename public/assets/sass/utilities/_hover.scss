@@ -4,7 +4,7 @@
     .group-item {
       &:hover {
         .group-hover\:bg-#{$color}-#{$shade} {
-          background-color: var(--#{$color}-#{$shade}) !important;
+          background-color:   var(--#{$color}-#{$shade}) !important;
         }
       }
     }

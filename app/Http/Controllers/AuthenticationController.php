@@ -16,6 +16,7 @@ class AuthenticationController extends Controller
     {
         return view(view: '/signin');
     }
+<<<<<<< HEAD
     public function signInPost(Request $request)
     {
     $credentials = [
@@ -28,3 +29,6 @@ return redirect('/')->with('success','Login Berhasil');
 return back()->with('error', 'Email atau Password Salah');
 }
 }
+=======
+}
+>>>>>>> 8a967bf38d2c983c93cabc9c6f9c6daf360cf435
