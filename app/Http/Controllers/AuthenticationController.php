@@ -16,15 +16,4 @@ class AuthenticationController extends Controller
     {
         return view('authentication/signIn');
     }
-    public function signInPost(Request $request)
-    {
-    $credentials = [
-        'email' => $request->email,
-        'password' => $request->password
-    ];
-if (Auth::attempt($credentials)) {
-return redirect('/')->with('success','Login Berhasil');
-}
-return back()->with('error', 'Email atau Password Salah');
-}
 }

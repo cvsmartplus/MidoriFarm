@@ -282,8 +282,9 @@
   --purple-light-white: rgba(132, 90, 223, 0.25);
   --pink-light-white: rgba(250, 54, 230, 0.25);
   --base: #fff;
-  --brand: var(--primary-600);
-  --button-secondary: var(--primary-50);
+  --brand: #18A811;
+  --brand-2: #6EDB40;
+  --button-secondary: var(--brand-2);
   --black: var(--dark-2);
   --white: var(--base);
   --bg-color: var(--neutral-50);
@@ -298,7 +299,7 @@
 }
 
 [data-theme=dark] {
-  --button-secondary: var(--neutral-300);
+  --button-secondary: var(--brand-2);
   --black: var(--base);
   --white: var(--dark-2);
   --bg-color: var(--dark-1);
@@ -370,9 +371,9 @@ html {
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-secondary-light);
-  font-family: "Inter", sans-serif;
+  background-color: #EFFDE8;
+  color: #757575;
+  font-family: "Open Sans", Sans-serif;
   font-size: 1rem;
   padding: 0;
   margin: 0;
@@ -8558,22 +8559,22 @@ h6, .h6 {
   border-color: var(--primary-800) !important;
 }
 
-.btn-primary-600 {
-  background-color: var(--primary-600);
+.btn-brand-2 {
+  background-color: var(--brand-2);
   color: #fff;
-  border-color: var(--primary-600);
+  border-color: var(--brand-2);
 }
 
-.btn-primary-600:hover {
-  background-color: var(--primary-700);
+.btn-brand-2:hover {
+  background-color: var(--brand-2);
   color: #fff !important;
-  border-color: var(--primary-700);
+  border-color: var(--brand-2);
 }
 
-.btn-primary-600:active, .btn-primary-600:focus {
-  background-color: var(--primary-800) !important;
+.btn-brand-2:active, .btn-brand-2:focus {
+  background-color: var(--brand-2) !important;
   color: #fff !important;
-  border-color: var(--primary-800) !important;
+  border-color: var(--brand-2) !important;
 }
 
 .btn-primary-700 {
@@ -13272,7 +13273,8 @@ select option {
   border-radius: 16px;
   box-shadow: 0px 13px 30px 10px rgba(46, 45, 116, 0.05);
   padding: 16px;
-  background-color: var(--white);
+  background-color: #18A811;
+  color: white;
 }
 
 .dropdown-menu.to-top {
@@ -14667,7 +14669,7 @@ td.fc-header-center {
 .navbar-search input {
   width: 24.25rem;
   height: 2.5rem;
-  background-color: var(--neutral-50);
+  background-color: #FFFFFF;
   border: 1px solid var(--input-form-light);
   border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
@@ -14677,11 +14679,11 @@ td.fc-header-center {
   padding-block: 0.3125rem;
   padding-inline-start: 2.625rem;
   padding-inline-end: 1.25rem;
-  color: var(--text-primary-light);
+  color: #C9C9C9;
 }
 
 .navbar-search input:focus {
-  border-color: var(--brand);
+  border-color: #25CB1C;
 }
 
 .navbar-search .icon {
@@ -15023,8 +15025,8 @@ td.fc-header-center {
   }
 }
 .sidebar-menu .sidebar-submenu li.active-page a {
-  background-color: var(--button-secondary);
-  color: var(--text-primary-light);
+  background-color: #6EDB40;
+  color: #FFFFFF;
 }
 
 .sidebar-menu .sidebar-submenu li a {

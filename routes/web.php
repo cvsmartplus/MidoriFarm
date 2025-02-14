@@ -19,10 +19,8 @@ use App\Http\Controllers\CryptocurrencyController;
 
 
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::controller(DashboardController::class)->group(function () {
-        Route::get('/', 'index')->name('index');
-    });
+Route::controller(DashboardController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
 });
 
 Route::controller(HomeController::class)->group(function () {
