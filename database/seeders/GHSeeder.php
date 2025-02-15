@@ -5,16 +5,14 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Faker\Factory as Faker;
 
-class GreenHouseSeeder extends Seeder
+class GHSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $faker = Faker::create();
         //
         DB::table('green_houses')->insert([
             'name' => 'Green House 1',
@@ -28,11 +26,17 @@ class GreenHouseSeeder extends Seeder
             'status' => 0, // 0 untuk 'Inactive'
         ]);
 
+        DB::table('green_houses')->insert([
+            'name' => 'Green House 3',
+            'location' => 'Location 3',
+            'status' => 1, // 0 untuk 'Inactive'
+        ]);
+
         for ($i = 0; $i < 10; $i++) {
             DB::table('green_houses')->insert([
-                'name' => $faker->company,
-                'location' => $faker->address,
-                'status' => $faker->randomElement([0, 1]),
+                'name' => fake()->company(),
+                'location' => fake()->address(),
+                'status' => fake()->randomElement([0, 1]),
             ]);
         }
     }

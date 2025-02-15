@@ -1,6 +1,6 @@
 @extends('layout.layout')
 @php
-    $title='Beranda';
+    $title='Selamat Datang, ' . Auth::user()->name . ''; 
     $subTitle='Utama'; 
 
     $script = '<script src="' . asset('assets/js/homeFiveChart.js') . '"></script>';
@@ -157,6 +157,7 @@
 
 @endphp
 
+
 @section('content')
 <!-- monitoring -->
 <div class="col-xxl-12">
@@ -171,7 +172,7 @@
                         <div class="p-10">
                             <h6 class="text-md fw-bold text-primary-light">Sensor tanah</h6>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
                     </div>
@@ -184,7 +185,7 @@
                         <div class="p-10">
                             <h6 class="text-md fw-bold text-primary-light"> Sensor udara</h6>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
                     </div>
@@ -197,7 +198,7 @@
                         <div class="p-10">
                             <h6 class="text-md fw-bold text-primary-light">Sensor Air</h6>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
                     </div>
@@ -210,7 +211,7 @@
                         <div class="p-10">
                             <h6 class="text-md fw-bold text-primary-light">Sensor Suara</h6>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Lihat Disini</a>
                             </div>
                         </div>
                     </div>
@@ -234,7 +235,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -254,7 +255,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -278,7 +279,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -302,7 +303,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -330,7 +331,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -354,7 +355,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -378,7 +379,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -402,7 +403,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -430,7 +431,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -454,7 +455,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -478,7 +479,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -502,7 +503,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -530,7 +531,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -554,7 +555,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -578,7 +579,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -602,7 +603,7 @@
                             </div>
                             <div class="d-flex align-items-center flex-wrap mt-12 gap-8">
                                 <a  href="#" class="btn rounded-pill border text-neutral-500 border-neutral-500 radius-8 px-12 py-6 bg-hover-neutral-500 text-hover-white flex-grow-1">History</a>
-                                <a  href="#" class="btn rounded-pill btn-primary-600 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
+                                <a  href="#" class="btn rounded-pill btn-brand-2 radius-8 px-12 py-6 flex-grow-1">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -621,7 +622,7 @@
                     <span class="text-sm fw-medium text-secondary-light">Yearly earning overview</span>
                 </div>
                 <div class="">
-                    <select class="form-select form-select-sm w-auto bg-base border text-secondary-light">
+                    <select class="form-select form-select-sm w-auto bg-base border-0 text-secondary-light">
                         <option>Yearly</option>
                         <option>Monthly</option>
                         <option>Weekly</option>
@@ -658,7 +659,7 @@
 <div class="col-xxl-12 my-24">
     <div class="row">
         <!-- Dashboard Widget Start -->
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-4">
             <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-3">
                 <div class="card-body p-0">
                     <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
@@ -683,7 +684,7 @@
         </div>
         <!--     Widget End -->
         <!-- Dashboard Widget Start -->
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-4">
             <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-5">
                 <div class="card-body p-0">
                     <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
@@ -708,7 +709,7 @@
         </div>
         <!-- Dashboard Widget End -->
         <!-- Dashboard Widget Start -->
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-4">
             <div class="card px-24 py-16 shadow-none radius-12 border h-100 bg-gradient-start-2">
                 <div class="card-body p-0">
                     <div class="d-flex flex-wrap align-items-center justify-content-between gap-1">
@@ -741,7 +742,7 @@
         <div class="card-body p-24">
             <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
                 <h6 class="mb-2 fw-bold text-lg mb-0">Statistik Pendapatan</h6>
-                <select class="form-select form-select-sm w-auto bg-base border text-secondary-light">
+                <select class="form-select form-select-sm w-auto bg-base border-0 text-secondary-light">
                     <option>Pertahun</option>
                     <option>Perbulan</option>
                     <option>Perminggu</option>

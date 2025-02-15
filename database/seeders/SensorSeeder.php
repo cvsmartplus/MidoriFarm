@@ -37,6 +37,7 @@ DB::table('sensors')->insert([
     'name' => $faker->word,
     'type' => $type,
     'unit' => $unit,
+    'created_at' => now(),
 ]);
 
         for ($i = 0; $i < 10; $i++) {
@@ -61,6 +62,7 @@ DB::table('sensors')->insert([
     'name' => $faker->word,
     'type' => $type,
     'unit' => $unit,
+    'created_at' => now(),
 ]);
         }
     }

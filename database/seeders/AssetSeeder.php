@@ -21,7 +21,7 @@ class AssetSeeder extends Seeder
             'id_greenhouse' => 1,
             'name_product' => $faker->word,
             'purchase' => $faker->numberBetween(1, 100),
-            'stock' => $faker->randomFloat(1, 100),
+            'stock' => $faker->numberBetween(1, 10000),
             'created_at' => now(),
             'updated_at' => now(),
         ]);

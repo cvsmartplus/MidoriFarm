@@ -1,27 +1,39 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AiapplicationController;
-use App\Http\Controllers\AuthenticationController;
-use App\Http\Controllers\ChartController;
-use App\Http\Controllers\ComponentpageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\FormsController;
-use App\Http\Controllers\FinanceGoodsController;
-use App\Http\Controllers\FinanceLoansController;
-use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\FinanceGoodsController;
+use App\Http\Controllers\FinanceLoansController;
+use App\Http\Controllers\ComponentpageController;
 use App\Http\Controllers\RoleandaccessController;
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CryptocurrencyController;
 
+Route::middleware('auth')->group(function () {
+    Route::prefix( "admin")->group(function () {
+        Route::controller(DashboardController::class)->group(function () {;
+            Route::get('/', 'index')->name('index');
+            Route::get('/sensor','sensor')->name('sensor');
+        });
+    });
+});
 
 
-
-Route::controller(DashboardController::class)->group(function () {
-    Route::get('/', 'index')->name('index');
+Route::prefix('authentication')->group(function () {
+    Route::controller(AuthenticationController::class)->group(function () {
+        Route::get('/forgotpassword', 'forgotPassword')->name('forgotPassword');
+        Route::get('/login',  'loginPage')->name('login');
+        Route::post('/login',  'loginPost')->name('loginPost');
+        Route::get('/logout',  'logout')->name('logout');
+        Route::get('/signup', 'signup')->name('signup');
+    });
 });
 
 Route::controller(HomeController::class)->group(function () {
@@ -46,26 +58,18 @@ Route::controller(HomeController::class)->group(function () {
     });
 
     // aiApplication
-Route::prefix('aiapplication')->group(function () {
-    Route::controller(AiapplicationController::class)->group(function () {
-        Route::get('/codegenerator', 'codeGenerator')->name('codeGenerator');
-        Route::get('/codegeneratornew', 'codeGeneratorNew')->name('codeGeneratorNew');
-        Route::get('/imagegenerator','imageGenerator')->name('imageGenerator');
-        Route::get('/textgeneratornew','textGeneratorNew')->name('textGeneratorNew');
-        Route::get('/textgenerator','textGenerator')->name('textGenerator');
-        Route::get('/videogenerator','videoGenerator')->name('videoGenerator');
-        Route::get('/voicegenerator','voiceGenerator')->name('voiceGenerator');
-    });
-});
+// Route::prefix('aiapplication')->group(function () {
+//     Route::controller(AiapplicationController::class)->group(function () {
+//         Route::get('/codegenerator', 'codeGenerator')->name('codeGenerator');
+//         Route::get('/codegeneratornew', 'codeGeneratorNew')->name('codeGeneratorNew');
+//         Route::get('/imagegenerator','imageGenerator')->name('imageGenerator');
+//         Route::get('/textgeneratornew','textGeneratorNew')->name('textGeneratorNew');
+//         Route::get('/textgenerator','textGenerator')->name('textGenerator');
+//         Route::get('/videogenerator','videoGenerator')->name('videoGenerator');
+//         Route::get('/voicegenerator','voiceGenerator')->name('voiceGenerator');
+//     });
+// });
 
-// Authentication
-Route::prefix('authentication')->group(function () {
-    Route::controller(AuthenticationController::class)->group(function () {
-        Route::get('/forgotpassword', 'forgotPassword')->name('forgotPassword');
-        Route::get('/signin', 'signin')->name('signin');
-        Route::get('/signup', 'signup')->name('signup');
-    });
-});
 
 // chart
 Route::prefix('chart')->group(function () {
@@ -103,21 +107,6 @@ Route::prefix('componentspage')->group(function () {
     });
 });
 
-// Dashboard
-Route::controller(DashboardController::class)->group(function () {
-    // Route::get('/index', 'index')->name('index');
-    Route::get('/index2', 'index2')->name('index2');
-    Route::get('/index3', 'index3')->name('index3');
-    Route::get('/index4', 'index4')->name('index4');
-    Route::get('/index5','index5')->name('index5');
-    Route::get('/index6','index6')->name('index6');
-    Route::get('/sensor','sensor')->name('sensor');
-    Route::get('/index8','index8')->name('index8');
-    Route::get('/index9','index9')->name('index9');
-    Route::get('/index10','index10')->name('index10');
-    Route::get('/wallet','wallet')->name('wallet');
-}); 
-
 // Forms
 Route::prefix('Forms')->group(function () {
     Route::controller(FormsController::class)->group(function () {
@@ -136,7 +125,7 @@ Route::prefix('FinanceGoods')->group(function () {
         Route::get('/produkbarang', 'produkBarang')->name('produkBarang');
         Route::get('/goods-preview', 'goodsPreview')->name('goodsPreview');
     });
-}); 
+});
 
 // invoice/LoansList
 Route::prefix('FinanceLoans')->group(function () {

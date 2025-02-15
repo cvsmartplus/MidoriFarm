@@ -15,19 +15,36 @@
                     <h4 class="mb-12">Masuk Ke Akun Anda</h4>
                     <p class="mb-32 text-secondary-light text-lg">Selamat Datang Kembali!</p>
                 </div>
-                <form action="#">
+                <form action="{{route('loginPost')}}" method="POST">
+                    @csrf
+                    @if ($message = Session::get('error'))
+                        <div class="text-danger text-sm mb-2">
+                            {{ $message }}
+                        </div>
+                    @endif
+                    @if ($errors->all())
+                    <div class="text-danger text-sm mb-2">
+                        {{ $errors->first() }}
+                    </div>
+                    @endif
                     <div class="icon-field mb-16">
                         <span class="icon top-50 translate-middle-y">
                             <iconify-icon icon="mage:email"></iconify-icon>
                         </span>
-                        <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Email">
+                        <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" name="email" placeholder="Email" value="{{ old('email') }}">
+                        
                     </div>
+                    @if ($errors->all())
+                    <div class="text-danger text-sm mb-2">
+                        {{ $errors->first('password') }}
+                    </div>
+                    @endif
                     <div class="position-relative mb-20">
                         <div class="icon-field">
                             <span class="icon top-50 translate-middle-y">
                                 <iconify-icon icon="solar:lock-password-outline"></iconify-icon>
                             </span>
-                            <input type="password" class="form-control h-56-px bg-neutral-50 radius-12" id="your-password" placeholder="Kata Sandi">
+                            <input type="password" name="password" value="{{ old('password') }}" class="form-control h-56-px bg-neutral-50 radius-12" id="your-password" placeholder="Kata Sandi">
                         </div>
                         <span class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 top-50 translate-middle-y me-16 text-secondary-light" data-toggle="#your-password"></span>
                     </div>

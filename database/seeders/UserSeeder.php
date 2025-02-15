@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\{
-    DB, Hash, };
-use Faker\Factory as Faker;
-
+    DB,
+    Hash,
+};
 class UserSeeder extends Seeder
 {
     /**
@@ -15,44 +15,58 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Faker::create();
-
-        DB::table('users')->insert([
-            'name' => $faker->name,
-            'email' => $faker->unique()->safeEmail,
-            'password' => Hash::make('password'),
-            'role' => 'admin',
-            'id_greenhouse' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        DB::table('users')->insert([
-            'name' => $faker->name,
-            'email' => $faker->unique()->safeEmail,
-            'password' => Hash::make('password'),
-            'role' => 'user',
-            'id_greenhouse' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        DB::table('users')->insert([
-            'name' => $faker->name,
-            'email' => $faker->unique()->safeEmail,
-            'password' => Hash::make('password'),
-            'role' => 'Farmer',
-            'id_greenhouse' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
+        $userData = [
+            [
+                'name' => fake()->name(),
+                'email' => fake()->unique()->safeEmail,
+                'password' => Hash::make('123'),
+                'role' => 'admin',
+                'id_greenhouse' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => fake()->name(),
+                'email' => fake()->unique()->safeEmail(),
+                'password' => Hash::make('456'),
+                'role' => 'owner',
+                'id_greenhouse' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => fake()->name(),
+                'email' => fake()->unique()->safeEmail(),
+                'password' => Hash::make('789'),
+                'role' => 'petani',
+                'id_greenhouse' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => fake()->name(),
+                'email' => fake()->unique()->safeEmail(),
+                'password' => Hash::make('012'),
+                'role' => 'akuntan',
+                'id_greenhouse' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ];
+        
         for ($i = 0; $i < 10; $i++) {
+            $role = fake()->randomElement(['admin', 'owner', 'petani', 'akuntan']);
+            $password = match ($role) {
+                'admin' => Hash::make('123'),
+                'owner' => Hash::make('456'),
+                'petani' => Hash::make('789'),
+                'akuntan' => Hash::make('012'),
+            };
             DB::table('users')->insert([
-                'name' => $faker->name,
-                'email' => $faker->unique()->safeEmail,
-                'password' => Hash::make('password'),
-                'role' => $faker->randomElement(['admin', 'user', 'Farmer']),
+                'name' => fake()->name(),
+                'email' => fake()->unique()->safeEmail,
+                'password' => $password,
+                'role' => $role,
                 'id_greenhouse' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),

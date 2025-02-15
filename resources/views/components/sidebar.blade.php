@@ -4,9 +4,9 @@
     </button>
     <div>
         <a href="{{ route('index') }}" class="sidebar-logo">
-            <img src="{{ asset('assets/images/logo.png') }}" alt="site logo" class="light-logo">
-            <img src="{{ asset('assets/images/logo-light.png') }}" alt="site logo" class="dark-logo">
-            <img src="{{ asset('assets/images/logo-icon.png') }}" alt="site logo" class="logo-icon">
+            <img src="{{ asset('assets/images/pplg.png') }}" alt="site logo" class="light-logo">
+            <img src="{{ asset('assets/images/pplg.png') }}" alt="site logo" class="dark-logo">
+            <img src="{{ asset('assets/images/pplg.png') }}" alt="site logo" class="logo-icon">
         </a>
     </div>
     <div class="sidebar-menu-area">
@@ -27,7 +27,6 @@
                     </li>
                 </ul>
             </li>
-            <!-- cocok untuk fitur article jangan dihapus semuanya -->
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="ri-news-line" class="menu-icon"></iconify-icon>
@@ -37,9 +36,6 @@
                     <li>
                         <a  href="{{ route('blog') }}"><iconify-icon icon="mdi:book-outline" class="menu-icon"></iconify-icon> Artikel</a>
                     </li>
-                    {{-- <li>
-                        <a  href="{{ route('blogDetails') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Detail Artikel</a>
-                    </li> --}}
                     <li>
                         <a  href="{{ route('addBlog') }}"><iconify-icon icon="mdi:book-plus-outline" class="menu-icon"></iconify-icon> Buat Artikel</a>
                     </li>
@@ -91,7 +87,6 @@
                     </li>
                 </ul>
             </li>
-
             <!-- Pemasok start -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
@@ -100,7 +95,7 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="{{ route('supplierList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Pelanggan</a>
+                        <a  href="{{ route('supplierList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Pemasok</a>
                     </li>
                     {{-- <li>
                         <a  href="{{ route('usersGrid') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
@@ -121,50 +116,7 @@
                     </li>
                 </ul>
             </li>
-            {{-- <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <i class="ri-robot-2-line text-xl me-6 d-flex w-auto"></i>
-                    <span>Ai Application</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="{{ route('textGenerator') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Text Generator</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('codeGenerator') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Code Generator</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('imageGenerator') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Image Generator</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('voiceGenerator') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Voice Generator</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('videoGenerator') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> Video Generator</a>
-                    </li>
-                </ul>
-            </li> --}}
 
-            {{-- <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <i class="ri-btc-line text-xl me-6 d-flex w-auto"></i>
-                    <span>Crypto Currency</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="{{ route('wallet') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Wallet</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('marketplace') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Marketplace</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('marketplaceDetails') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Marketplace Details</a>
-                    </li>
-                    <li>
-                    <a  href="{{ route('portfolio') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Portfolios</a>
-                    </li>
-                </ul>
-            </li> --}}
             <li class="sidebar-menu-group-title">Web Admin</li>
             <li class="dropdown">
                 <a  href="javascript:void(0)">
@@ -173,7 +125,7 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="{{ route('signin') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Sign In</a>
+                        <a  href="{{ route('login') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Sign In</a>
                     </li>
                     <li>
                         <a  href="{{ route('signup') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Sign Up</a>
@@ -184,8 +136,8 @@
                 </ul>
             </li>
 
-            <li class="sidebar-menu-group-title">UI Elements</li>
             {{-- ELEMENTS BUAT DEVELOPMENT --}}
+            <li class="sidebar-menu-group-title">UI Elements</li>
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
@@ -202,13 +154,13 @@
                         <a  href="{{ route('button') }}"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> Button</a>
                     </li>
                     <li>
-                         <a  href="{{ route('dropdown') }}"><i class="ri-circle-fill circle-icon text-lilac-600 w-auto"></i> Dropdown</a>
+                        <a  href="{{ route('dropdown') }}"><i class="ri-circle-fill circle-icon text-lilac-600 w-auto"></i> Dropdown</a>
                     </li>
                     <li>
                         <a  href="{{ route('alert') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Alerts</a>
                     </li>
                     <li>
-                       <a  href="{{ route('card') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Card</a>
+                    <a  href="{{ route('card') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Card</a>
                     </li>
 
                     <li>
@@ -319,44 +271,12 @@
 
 
             <li class="sidebar-menu-group-title">Server Maintenance</li>
-
-
-            {{-- <li>
-                <a  href="{{ route('gallery') }}">
-                    <iconify-icon icon="solar:gallery-wide-linear" class="menu-icon"></iconify-icon>
-                    <span>Gallery</span>
-                </a>
-            </li> --}}
-            {{-- <li>
-                <a  href="{{ route('pricing') }}">
-                    <iconify-icon icon="hugeicons:money-send-square" class="menu-icon"></iconify-icon>
-                    <span>Pricing</span>
-                </a>
-            </li> --}}
-            {{-- <li>
+            <li>
                 <a  href="{{ route('testimonials') }}">
                     <i class="ri-star-line text-xl me-6 d-flex w-auto"></i>
                     <span>Testimonial</span>
                 </a>
-            </li> --}}
-            {{-- <li>
-                <a  href="{{ route('faq') }}">
-                    <iconify-icon icon="mage:message-question-mark-round" class="menu-icon"></iconify-icon>
-                    <span>FAQs</span>
-                </a>
-            </li> --}}
-            {{-- <li>
-                <a  href="{{ route('termsCondition') }}">
-                    <iconify-icon icon="octicon:info-24" class="menu-icon"></iconify-icon>
-                    <span>Terms & Conditions</span>
-                </a>
-            </li> --}}
-            {{-- <li>
-                <a  href="{{ route('comingSoon') }}">
-                    <i class="ri-rocket-line text-xl me-6 d-flex w-auto"></i>
-                    <span>Coming Soon</span>
-                </a>
-            </li> --}}
+            </li>
             <li>
                 <a  href="{{ route('error') }}">
                     <iconify-icon icon="streamline:straight-face" class="menu-icon"></iconify-icon>
@@ -375,7 +295,7 @@
                     <span>Blank Page</span>
                 </a>
             </li>
-            {{-- <li class="dropdown">
+            <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="icon-park-outline:setting-two" class="menu-icon"></iconify-icon>
                     <span>Settings</span>
@@ -403,7 +323,7 @@
                         <a  href="{{ route('paymentGateway') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Payment Gateway</a>
                     </li>
                 </ul>
-            </li> --}}
+            </li>
         </ul>
     </div>
 </aside>
