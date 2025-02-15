@@ -11,7 +11,6 @@ Use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
 
-    use HasRoles;
 
     
     use HasFactory, Notifiable;
@@ -25,6 +24,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'foto_profile',
+        'id_greenhouse',
+
+
     ];
 
     /**

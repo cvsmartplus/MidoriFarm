@@ -18,7 +18,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string(column: 'foto_profile')->nullable();
             $table->string('password');
-            $table->string('role');
+            // pake enum biar role nya fix (gabisa diganti ganti)
+            $table->enum('role', ['admin', 'owner', 'akuntan', 'petani']);
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses')->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -1,6 +1,6 @@
 @extends('layout.layout')
 @php
-    $title='Beranda';
+    $title='Selamat Datang, ' . Auth::user()->name . ''; 
     $subTitle='Utama'; 
 
     $script = '<script src="' . asset('assets/js/homeFiveChart.js') . '"></script>';
@@ -156,6 +156,7 @@
                     </script>';
 
 @endphp
+
 
 @section('content')
 <!-- monitoring -->

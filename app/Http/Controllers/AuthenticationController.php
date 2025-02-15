@@ -12,23 +12,34 @@ class AuthenticationController extends Controller
         return view('authentication/forgotPassword');
     }
 
-    public function signIn()
+    public function loginPage()
     {
-        return view(view: '/signin');
+        return view(view: 'authentication/login');
     }
-<<<<<<< HEAD
-    public function signInPost(Request $request)
+    public function loginPost(Request $request)
     {
-    $credentials = [
-        'email' => $request->email,
-        'password' => $request->password
-    ];
-if (Auth::attempt($credentials)) {
-return redirect('/')->with('success','Login Berhasil');
+        $request->validate([
+            'email'=> 'required',
+            'password'=> 'required',
+        ],[
+            'email.required' => 'Email Wajib Diisi!',
+            'password.required' => 'Password Wajib Diisi!',
+        ]);
+
+        $infologin = [
+            'email'=> $request->email,
+            'password'=> $request->password,
+        ];
+
+        if(Auth::attempt($infologin)) {
+            return redirect()->route('index');
+        }else {
+            return redirect()->route('login')->with('error', 'Email atau Password salah!')->withInput();
+        }
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }
-return back()->with('error', 'Email atau Password Salah');
-}
-}
-=======
-}
->>>>>>> 8a967bf38d2c983c93cabc9c6f9c6daf360cf435
