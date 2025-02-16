@@ -16,9 +16,9 @@ class SensorConfigSeeder extends Seeder
     {
         $faker = Faker::create();
         //
-        DB::table('sensor_configs')->insert([
+        DB::table('configs')->insert([
             'sensor_id' => $faker->numberBetween(1, 3),
-            'greenhouse_id' => $faker->numberBetween(1, 3),
+            'id_greenhouse' => $faker->numberBetween(1, 3),
             'low_treshold' => $faker->randomFloat(2, 0, 50),
             'high_treshold' => $faker->randomFloat(2, 50, 100),
             'created_at' => now(),
@@ -26,9 +26,9 @@ class SensorConfigSeeder extends Seeder
         ]);
 
         for ($i = 0; $i < 10; $i++) {
-            DB::table('sensor_configs')->insert([
+            DB::table('configs')->insert([
                 'sensor_id' => $faker->numberBetween(1, 3),
-                'greenhouse_id' => $faker->numberBetween(1, 3),
+                'id_greenhouse' => $faker->numberBetween(1, 3),
                 'low_treshold' => $faker->randomFloat(2, 0, 50),
                 'high_treshold' => $faker->randomFloat(2, 50, 100),
                 'created_at' => now(),

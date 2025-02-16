@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('id_product')->references('id')->on('products');
-            $table->foreignId('id_costumer')->references('id')->on('costumers');
+            $table->foreignId('id_customer')->references('id')->on('customers');
             $table->integer('quantity');
             $table->integer('subtotal');
             $table->integer('discount');

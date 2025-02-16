@@ -20,7 +20,7 @@ class OutdebtSeeder extends Seeder
             'id_greenhouse' => 1,
             'id_customer' => $faker->numberBetween(1, 3),
             'amount' => $faker->randomFloat(2, 10, 1000),
-            'status' => $faker->randomElement(['published', 'draft']),
+            'status' => $faker->numberBetween(0, 1),
             'date' => $faker->date,
             'due_date' => $faker->date,
         ]);
@@ -30,7 +30,7 @@ class OutdebtSeeder extends Seeder
                 'id_greenhouse' => 1,
                 'id_customer' => $faker->numberBetween(1, 3),
                 'amount' => $faker->randomFloat(2, 10, 1000),
-                'status' => $faker->randomElement(['published', 'draft']),
+                'status' => $faker->numberBetween(0, 1),
                 'date' => $faker->date,
                 'due_date' => $faker->date,
             ]);

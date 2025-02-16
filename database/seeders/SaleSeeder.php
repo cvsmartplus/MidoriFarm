@@ -17,11 +17,11 @@ class SaleSeeder extends Seeder
         $faker = Faker::create();
         for ($i = 0; $i < 10; $i++) {
             $id_product = $faker->numberBetween(1, 3);
-            $id_costumer = $faker->numberBetween(1, 3);
+            $id_customer = $faker->numberBetween(1, 3);
         //
         DB::table('sales')->insert([
             'id_product' => $id_product,
-            'id_costumer' => $id_costumer,
+            'id_customer' => $id_customer,
             'quantity' => $faker->numberBetween(1, 100),
             'subtotal' => $faker->numberBetween(2, 100),
             'discount' => $faker->numberBetween(2, 100)

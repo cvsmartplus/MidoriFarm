@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
-            $table->foreignId('id_costumer')->references('id')->on('costumers');
+            $table->foreignId('id_customer')->references('id')->on('customers');
             $table->decimal('amount');
             $table->boolean('status');
             $table->date('date');
