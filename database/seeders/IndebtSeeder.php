@@ -16,21 +16,21 @@ class IndebtSeeder extends Seeder
     {
         $faker = Faker::create();
         //
-        DB::table('indebt')->insert([
+        DB::table('indebts')->insert([
             'id_greenhouse' => 1,
             'id_supplier' => $faker->numberBetween(1, 3),
             'amount' => $faker->randomFloat(2, 0, 1000),
-            'status' => $faker->randomElement(['published', 'draft']),
+            'status' => $faker->numberBetween(0, 1),
             'date' => $faker->date,
             'due_date' => $faker->date,
         ]);
 
         for ($i = 0; $i < 10; $i++) {
-            DB::table('indebt')->insert([
+            DB::table('indebts')->insert([
                 'id_greenhouse' => 1,
                 'id_supplier' => $faker->numberBetween(1, 3),
                 'amount' => $faker->randomFloat(2, 0, 1000),
-                'status' => $faker->randomElement(['published', 'draft']),
+                'status' => $faker->numberBetween(0, 1),
                 'date' => $faker->date,
                 'due_date' => $faker->date,
             ]);

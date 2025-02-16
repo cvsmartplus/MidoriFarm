@@ -6,7 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class GHSeeder extends Seeder
+
+class GreenHouseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
