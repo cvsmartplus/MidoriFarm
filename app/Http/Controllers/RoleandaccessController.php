@@ -11,8 +11,8 @@ class RoleandaccessController extends Controller
         return view('roleandaccess/assignRole');
     }
     
-    public function roleAaccess()
+    public function roleAccess()
     {
-        return view('roleandaccess/roleAaccess');
+        return view('roleandaccess/roleAccess');
     }
 }

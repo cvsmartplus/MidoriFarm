@@ -49,14 +49,13 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                    <a href="{{ route('produkBarang') }}"><iconify-icon icon="lsicon:goods-search-outline" class="menu-icon"></iconify-icon> Daftar Barang</a>
+                    <a href="{{ route('barangList') }}"><iconify-icon icon="lsicon:goods-search-outline" class="menu-icon"></iconify-icon> Daftar Barang</a>
                     </li>
                     <li>
-                    <a href="{{ route('goodsPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
+                    <a href="{{ route('barangPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
                     </li>
                 </ul>
             </li>
-
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="tabler:coin-filled" class="menu-icon"></iconify-icon>
@@ -64,10 +63,10 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                    <a href="{{ route('LoansList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Hutang</a>
+                    <a href="{{ route('tagihanList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Hutang</a>
                     </li>
                     <li>
-                    <a href="{{ route('LoansPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
+                    <a href="{{ route('tagihanPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
                     </li>
                     <li>
                 </ul>
@@ -109,7 +108,21 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="{{ route('roleAaccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
+                        <a  href="{{ route('roleAccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
+                    </li>
+                    <li>
+                        <a  href="{{ route('assignRole') }}"><iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon> Beri Akses</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a  href="javascript:void(0)">
+                    <iconify-icon icon="carbon:report" class="menu-icon"></iconify-icon>
+                    <span>Pemasukan</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a  href="{{ route('roleAccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
                     </li>
                     <li>
                         <a  href="{{ route('assignRole') }}"><iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon> Beri Akses</a>
