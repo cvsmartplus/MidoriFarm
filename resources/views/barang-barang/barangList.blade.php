@@ -31,7 +31,7 @@
                             <option>Menipis</option>
                             <option>Habis</option>
                         </select>
-                        <a  href="{{ route('produkBarang') }}" class="btn btn-sm btn-primary-600"><i class="ri-add-line"></i> Create Invoice</a>
+                        <a  href="{{ route('barangList') }}" class="btn btn-sm btn-primary-600"><i class="ri-add-line"></i> Create Invoice</a>
                     </div>
                 </div>
                 <div class="card-body">
