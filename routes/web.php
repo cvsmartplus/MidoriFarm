@@ -16,6 +16,11 @@ use App\Http\Controllers\RoleandaccessController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CryptocurrencyController;
 
+Route::get('/', function () {
+    return auth()->check() ? redirect('/admin') : redirect('/login');
+});
+
+
 Route::middleware('auth')->group(function () {
     Route::prefix( "admin")->group(function () {
         Route::controller(DashboardController::class)->group(function () {;
@@ -26,14 +31,12 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::prefix('authentication')->group(function () {
-    Route::controller(AuthenticationController::class)->group(function () {
-        Route::get('/forgotpassword', 'forgotPassword')->name('forgotPassword');
-        Route::get('/login',  'loginPage')->name('login');
-        Route::post('/login',  'loginPost')->name('loginPost');
-        Route::get('/logout',  'logout')->name('logout');
-        Route::get('/signup', 'signup')->name('signup');
-    });
+Route::controller(AuthenticationController::class)->group(function () {
+    Route::get('/forgotpassword', 'forgotPassword')->name('forgotPassword');
+    Route::get('/login',  'loginPage')->name('login');
+    Route::post('/login',  'loginPost')->name('loginPost');
+    Route::post('/logout',  'logout')->name('logout');
+    Route::get('/signup', 'signup')->name('signup');
 });
 
 Route::controller(HomeController::class)->group(function () {

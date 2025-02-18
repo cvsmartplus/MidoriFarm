@@ -16,7 +16,7 @@ class CustomerSeeder extends Seeder
     {
         $faker = Faker::create();
         //
-        DB::table('costumers')->insert([
+        DB::table('customers')->insert([
             'id_greenhouse' => 1,
             'name'=> $faker->name,
             'address' => $faker->address,
@@ -28,7 +28,7 @@ class CustomerSeeder extends Seeder
 
         for($i = 0; $i < 10; $i++) {
 
-        DB::table('costumers')->insert([
+        DB::table('customers')->insert([
             'id_greenhouse' => 1,
             'name'=> $faker->name,
             'address' => $faker->address,
