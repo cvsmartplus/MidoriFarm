@@ -184,7 +184,7 @@ Route::prefix('table')->group(function () {
 Route::prefix('roleandaccess')->group(function () {
     Route::controller(RoleandaccessController::class)->group(function () {
         Route::get('/assignRole', 'assignRole')->name('assignRole');
-        Route::get('/roleAaccess', 'roleAaccess')->name('roleAaccess');
+        Route::get('/roleAccess', 'roleAccess')->name('roleAccess');
     });
 });
 
