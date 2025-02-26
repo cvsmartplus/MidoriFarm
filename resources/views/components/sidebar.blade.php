@@ -13,24 +13,22 @@
         <ul class="sidebar-menu" id="sidebar-menu">
             @if(Auth::check())
                 @if(Auth::check() && Auth::user()->role == 'admin')
-
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
-                    <span>Beranda</span>
-                </a>
-            </li>
-
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="{{ route('index') }}"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>
-                            Utama</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
-                            IOT</a>
-                    </li>
-                </ul>
+                <li class="dropdown">
+                    <a  href="javascript:void(0)">
+                        <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+                        <span>Beranda</span>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                            <a href="{{ route('index') }}"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>
+                                Utama</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
+                                IOT</a>
+                        </li>
+                    </ul>
+                </li>
             </li>
 
             <li class="dropdown">
