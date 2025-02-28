@@ -31,8 +31,7 @@
                         <span class="icon top-50 translate-middle-y">
                             <iconify-icon icon="mage:email"></iconify-icon>
                         </span>
-                        <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" name="email" placeholder="Email" value="{{ old('email') }}">
-                        
+                        <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" name="email" placeholder="Email" value="{{ old('email') }}" autocomplete="email">
                     </div>
                     @if ($errors->all())
                     <div class="text-danger text-sm mb-2">
@@ -44,9 +43,9 @@
                             <span class="icon top-50 translate-middle-y">
                                 <iconify-icon icon="solar:lock-password-outline"></iconify-icon>
                             </span>
-                            <input type="password" name="password" value="{{ old('password') }}" class="form-control h-56-px bg-neutral-50 radius-12" id="your-password" placeholder="Kata Sandi">
+                            <input type="password" name="password" value="{{ old('password') }}" class="form-control h-56-px bg-neutral-50 radius-12" id="password" placeholder="Kata Sandi" autocomplete="current-password">
                         </div>
-                        <span class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 top-50 translate-middle-y me-16 text-secondary-light" data-toggle="#your-password"></span>
+                        <button type="button" class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 top-50 translate-middle-y me-16 text-secondary-light" id="togglePassword"></button>
                     </div>
                     <div class="">
                         <div class="d-flex justify-content-between gap-2">
@@ -68,27 +67,18 @@
             </div>
         </div>
     </section>
-
-    @php
-        $script = '<script>
-            // ================== Password Show Hide Js Start ==========
-            function initializePasswordToggle(toggleSelector) {
-                $(toggleSelector).on("click", function() {
-                    $(this).toggleClass("ri-eye-off-line");
-                    var input = $($(this).attr("data-toggle"));
-                    if (input.attr("type") === "password") {
-                        input.attr("type", "text");
-                    } else {
-                        input.attr("type", "password");
-                    }
-                });
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const password = document.getElementById('password');
+            this.classList.toggle('ri-eye-line');
+            this.classList.toggle('ri-eye-off-line');
+            if (password.type === 'password') {
+                password.type = 'text';
+            } else {
+                password.type = 'password';
             }
-            // Call the function
-            initializePasswordToggle(".toggle-password");
-            // ========================= Password Show Hide Js End ===========================
-        </script>';
-    @endphp
-
+        });
+    </script>
     <x-script />
 </body>
 

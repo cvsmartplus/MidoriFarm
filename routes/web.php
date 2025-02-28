@@ -9,15 +9,20 @@ use App\Http\Controllers\FormsController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\SettingsController;
-use App\Http\Controllers\FinanceGoodsController;
-use App\Http\Controllers\FinanceLoansController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\TagihanController;
 use App\Http\Controllers\ComponentpageController;
 use App\Http\Controllers\RoleandaccessController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CryptocurrencyController;
 
+Route::get('/', function () {
+    return auth()->check() ? redirect('/admin') : redirect('/login');
+});
+
+
 Route::middleware('auth')->group(function () {
-    Route::prefix( "admin")->group(function () {
+    Route::prefix("admin")->group(function () {
         Route::controller(DashboardController::class)->group(function () {;
             Route::get('/', 'index')->name('index');
             Route::get('/sensor','sensor')->name('sensor');
@@ -26,14 +31,12 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::prefix('authentication')->group(function () {
-    Route::controller(AuthenticationController::class)->group(function () {
-        Route::get('/forgotpassword', 'forgotPassword')->name('forgotPassword');
-        Route::get('/login',  'loginPage')->name('login');
-        Route::post('/login',  'loginPost')->name('loginPost');
-        Route::get('/logout',  'logout')->name('logout');
-        Route::get('/signup', 'signup')->name('signup');
-    });
+Route::controller(AuthenticationController::class)->group(function () {
+    Route::get('/forgotpassword', 'forgotPassword')->name('forgotPassword');
+    Route::get('/login',  'loginPage')->name('login');
+    Route::post('/login',  'loginPost')->name('loginPost');
+    Route::post('/logout',  'logout')->name('logout');
+    Route::get('/signup', 'signup')->name('signup');
 });
 
 Route::controller(HomeController::class)->group(function () {
@@ -118,22 +121,23 @@ Route::prefix('Forms')->group(function () {
 });
 
 // invoice/invoiceList
-Route::prefix('FinanceGoods')->group(function () {
-    Route::controller(FinanceGoodsController::class)->group(function () {
-        Route::get('/FinanceGoods', 'FinanceGoods')->name('FinanceGoods');
-        Route::get('/goods-edit', 'goodsEdit')->name('goodsEdit');
-        Route::get('/produkbarang', 'produkBarang')->name('produkBarang');
-        Route::get('/goods-preview', 'goodsPreview')->name('goodsPreview');
+Route::prefix('barang')->group(function () {
+    Route::controller(BarangController::class)->group(function () {
+        Route::get('/barang', 'barang')->name('barang');
+        Route::get('/barang-edit', 'barangEdit')->name('barangEdit');
+        Route::get('/produkbarang', 'barangList')->name('barangList');
+        Route::get('/barang-preview', 'barangPreview')->name('barangPreview');
     });
 });
 
 // invoice/LoansList
-Route::prefix('FinanceLoans')->group(function () {
-    Route::controller(FinanceLoansController::class)->group(function () {
-        // Route::get('/FinanceLoans', 'FinanceLoans')->name('FinanceLoans');
-        Route::get('/Loans-edit', 'LoansEdit')->name('LoansEdit');
-        Route::get('/Loans-list', 'LoansList')->name('LoansList');
-        Route::get('/Loans-preview', 'LoansPreview')->name('LoansPreview');
+// invoice/tagihanList
+Route::prefix('tagihan')->group(function () {
+    Route::controller(TagihanController::class)->group(function () {
+        // Route::get('/tagihan', 'Financetagihan')->name('Financetagihan');
+        Route::get('/tagihan-edit', 'tagihanEdit')->name('tagihanEdit');
+        Route::get('/tagihan-list', 'tagihanList')->name('tagihanList');
+        Route::get('/tagihan-preview', 'tagihanPreview')->name('tagihanPreview');
     });
 });
 
@@ -180,7 +184,7 @@ Route::prefix('table')->group(function () {
 Route::prefix('roleandaccess')->group(function () {
     Route::controller(RoleandaccessController::class)->group(function () {
         Route::get('/assignRole', 'assignRole')->name('assignRole');
-        Route::get('/roleAaccess', 'roleAaccess')->name('roleAaccess');
+        Route::get('/roleAccess', 'roleAccess')->name('roleAccess');
     });
 });
 

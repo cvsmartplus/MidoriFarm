@@ -30,7 +30,7 @@
                             <option>Paid</option>
                             <option>Pending</option>
                         </select>
-                        <a  href="{{ route('LoansList') }}" class="btn btn-sm btn-primary-600"><i class="ri-add-line"></i> Add New</a>
+                        <a  href="{{ route('tagihanList') }}" class="btn btn-sm btn-primary-600"><i class="ri-add-line"></i> Add New</a>
                     </div>
                 </div>
                 <div class="card-body">

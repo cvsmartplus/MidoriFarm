@@ -29,7 +29,7 @@
                             <iconify-icon icon="solar:download-linear" class="text-xl"></iconify-icon>
                             Download
                         </a>
-                        <a href="{{route('goodsEdit')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
+                        <a href="{{route('barangEdit')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
                             <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
                             Edit
                         </a>

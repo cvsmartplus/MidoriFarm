@@ -11,22 +11,26 @@
     </div>
     <div class="sidebar-menu-area">
         <ul class="sidebar-menu" id="sidebar-menu">
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
-                    <span>Beranda</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="{{ route('index') }}"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon> 
-                            Utama</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
-                            IOT</a>
-                    </li>
-                </ul>
+            @if(Auth::check())
+                @if(Auth::check() && Auth::user()->role == 'admin')
+                <li class="dropdown">
+                    <a  href="javascript:void(0)">
+                        <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+                        <span>Beranda</span>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                            <a href="{{ route('index') }}"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>
+                                Utama</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
+                                IOT</a>
+                        </li>
+                    </ul>
+                </li>
             </li>
+
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="ri-news-line" class="menu-icon"></iconify-icon>
@@ -41,21 +45,22 @@
                     </li>
                 </ul>
             </li>
-            <li class="sidebar-menu-group-title">Pemilik</li>
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="lsicon:goods-filled" class="menu-icon"></iconify-icon>
-                    <span>Produk & Barang</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                    <a href="{{ route('produkBarang') }}"><iconify-icon icon="lsicon:goods-search-outline" class="menu-icon"></iconify-icon> Daftar Barang</a>
-                    </li>
-                    <li>
-                    <a href="{{ route('goodsPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
-                    </li>
-                </ul>
-            </li>
+
+                <li class="sidebar-menu-group-title">Pemilik</li>
+                <li class="dropdown">
+                    <a  href="javascript:void(0)">
+                        <iconify-icon icon="lsicon:goods-filled" class="menu-icon"></iconify-icon>
+                        <span>Produk & Barang</span>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                        <a href="{{ route('barangList') }}"><iconify-icon icon="lsicon:goods-search-outline" class="menu-icon"></iconify-icon> Daftar Barang</a>
+                        </li>
+                        <li>
+                        <a href="{{ route('barangPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
+                        </li>
+                    </ul>
+                </li>
 
             <li class="dropdown">
                 <a  href="javascript:void(0)">
@@ -64,14 +69,15 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                    <a href="{{ route('LoansList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Hutang</a>
+                    <a href="{{ route('tagihanList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Hutang</a>
                     </li>
                     <li>
-                    <a href="{{ route('LoansPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
+                    <a href="{{ route('tagihanPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
                     </li>
                     <li>
                 </ul>
             </li>
+
             <!-- cocok untuk fitur customer & supplier, hapus fitur user grid -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
@@ -87,6 +93,7 @@
                     </li>
                 </ul>
             </li>
+
             <!-- Pemasok start -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
@@ -102,6 +109,7 @@
                     </li> --}}
                 </ul>
             </li>
+
             <li class="dropdown">
                 <a  href="javascript:void(0)">
                     <iconify-icon icon="ri-user-settings-line" class="menu-icon"></iconify-icon>
@@ -109,7 +117,22 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="{{ route('roleAaccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
+                        <a  href="{{ route('roleAccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
+                    </li>
+                    <li>
+                        <a  href="{{ route('assignRole') }}"><iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon> Beri Akses</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a  href="javascript:void(0)">
+                    <iconify-icon icon="carbon:report" class="menu-icon"></iconify-icon>
+                    <span>Pemasukan</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a  href="{{ route('roleAccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
                     </li>
                     <li>
                         <a  href="{{ route('assignRole') }}"><iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon> Beri Akses</a>
@@ -268,8 +291,6 @@
                 </a>
             </li>
 
-
-
             <li class="sidebar-menu-group-title">Server Maintenance</li>
             <li>
                 <a  href="{{ route('testimonials') }}">
@@ -324,6 +345,172 @@
                     </li>
                 </ul>
             </li>
+
+                @elseif(Auth::user()->role == 'owner')
+                <li class="dropdown">
+                    <a  href="javascript:void(0)">
+                        <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+                        <span>Beranda</span>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                            <a href="{{ route('index') }}"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>
+                                Utama</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
+                                IOT</a>
+                        </li>
+                    </ul>
+                </li>
+            </li>
+
+                <li class="sidebar-menu-group-title">Pemilik</li>
+                <li class="dropdown">
+                    <a  href="javascript:void(0)">
+                        <iconify-icon icon="lsicon:goods-filled" class="menu-icon"></iconify-icon>
+                        <span>Produk & Barang</span>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                        <a href="{{ route('barangList') }}"><iconify-icon icon="lsicon:goods-search-outline" class="menu-icon"></iconify-icon> Daftar Barang</a>
+                        </li>
+                        <li>
+                        <a href="{{ route('barangPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a  href="javascript:void(0)">
+                        <iconify-icon icon="tabler:coin-filled" class="menu-icon"></iconify-icon>
+                        <span>Hutang-Piutang</span>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                        <a href="{{ route('tagihanList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Hutang</a>
+                        </li>
+                        <li>
+                        <a href="{{ route('tagihanPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
+                        </li>
+                        <li>
+                    </ul>
+                </li>
+
+                <!-- cocok untuk fitur customer & supplier, hapus fitur user grid -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)">
+                        <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
+                        <span>Pelanggan</span>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                            <a href="{{ route('usersList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Pelanggan</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon> Aktivitas Pelanggan (Coming Soon)</a>
+                        </li>
+                    </ul>
+                </li>
+
+    <!-- Pemasok start -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)">
+                        <iconify-icon icon="game-icons:hand-truck" class="menu-icon"></iconify-icon>
+                        <span>Pemasok</span>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                            <a  href="{{ route('supplierList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Pemasok</a>
+                        </li>
+                        {{-- <li>
+                            <a  href="{{ route('usersGrid') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
+                        </li> --}}
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a  href="javascript:void(0)">
+                        <iconify-icon icon="ri-user-settings-line" class="menu-icon"></iconify-icon>
+                        <span>Manajemen Akses</span>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                            <a  href="{{ route('roleAccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
+                        </li>
+                        <li>
+                            <a  href="{{ route('assignRole') }}"><iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon> Beri Akses</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a  href="javascript:void(0)">
+                        <iconify-icon icon="carbon:report" class="menu-icon"></iconify-icon>
+                        <span>Pemasukan</span>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                            <a  href="{{ route('roleAccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
+                        </li>
+                        <li>
+                            <a  href="{{ route('assignRole') }}"><iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon> Beri Akses</a>
+                        </li>
+                    </ul>
+                </li>
+
+                @elseif(Auth::user()->role == 'petani')
+                <li class="dropdown">
+                    <a  href="javascript:void(0)">
+                        <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+                        <span>Beranda</span>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                            <li>
+                                <a href="{{ route('sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
+                            IOT</a>
+                    </li>
+                </ul>
+            </li>
+            </li>
+
+            @elseif(Auth::user()->role == 'akuntan')
+            <li class="dropdown">
+                <a  href="javascript:void(0)">
+                    <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+                    <span>Beranda</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{{ route('index') }}"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>
+                            Utama</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
+                            IOT</a>
+                    </li>
+                </ul>
+            </li>
+        </li>
+
+            <li class="dropdown">
+                <a  href="javascript:void(0)">
+                    <iconify-icon icon="tabler:coin-filled" class="menu-icon"></iconify-icon>
+                    <span>Hutang-Piutang</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                    <a href="{{ route('tagihanList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Hutang</a>
+                    </li>
+                    <li>
+                    <a href="{{ route('tagihanPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
+                    </li>
+                    <li>
+                </ul>
+            </li>
+            @endif
+        @endif
         </ul>
     </div>
 </aside>

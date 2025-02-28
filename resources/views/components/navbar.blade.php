@@ -335,9 +335,11 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3" href="{{ route('logout') }}">
+                            <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                                <button class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3" type="submit">
                                     <iconify-icon icon="lucide:power" class="icon text-xl"></iconify-icon> Log Out
-                                </a>
+                            </button>
                             </li>
                         </ul>
                     </div>

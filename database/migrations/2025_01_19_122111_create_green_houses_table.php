@@ -15,8 +15,11 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name', 255);
+            $table->string('type_of_plant');
             $table->text('location');
             $table->boolean('status');
+            $table->decimal('longitude', 10, 7);
+            $table->decimal('altitude', 10, 7);
         });
     }
 

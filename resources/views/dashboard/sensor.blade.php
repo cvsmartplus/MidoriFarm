@@ -236,7 +236,7 @@
         </div>
         <div class="container-fluid">
             <div class="row gy-4">
-                <div class="col-xxl-8 col-md-6">
+                <div class="col-xxl-8 col-md-8">
                     <div class="card h-100">
                         <div class="card-header d-flex align-items-center justify-content-between" style="border-bottom: none;">
                             <div class="d-flex align-items-center">
@@ -271,9 +271,7 @@
                         </div>
                     </div>
                 </div>
-                
-                
-                <div class="col-xxl-4 col-md-6">
+                <div class="col-xxl-4 col-md-4">
                     <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
                             <h6 class="fw-bold text-lg mb-0">Lokasi Green House</h6>
