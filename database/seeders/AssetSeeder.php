@@ -16,12 +16,13 @@ class AssetSeeder extends Seeder
     {
         $faker = Faker::create();
         for ($i = 0; $i < 10; $i++) {
+            $id_cat_asset = $faker->numberBetween(1,3);
         //
         DB::table('assets')->insert([
             'id_greenhouse' => 1,
+            'id_cat_asset' => $id_cat_asset,
             'name_product' => $faker->word,
             'purchase' => $faker->numberBetween(1, 100),
-            'stock' => $faker->numberBetween(1, 10000),
             'created_at' => now(),
             'updated_at' => now(),
         ]);

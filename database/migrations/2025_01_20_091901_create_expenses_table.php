@@ -11,17 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('financials', function (Blueprint $table) {
+        Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('id_product')->references('id')->on('products');
-            $table->foreignId('id_asset')->references('id')->on('assets');
-            $table->foreignId('id_supplier')->references('id')->on('suppliers');
             $table->foreignId('id_user')->references('id')->on('users');
+            $table->foreignId('id_asset')->references('id')->on('assets');
+            $table->foreignId('id_cat_exp')->references('id')->on('category_expenses');
             $table->foreignId('id_category')->references('id')->on('categories');
-            $table->integer('quantity');
             $table->integer('subtotal');
-            $table->integer('total_price');
+            $table->string('description', 255);
             $table->date('date');
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('buys');
+        Schema::dropIfExists('expenses');
     }
 };

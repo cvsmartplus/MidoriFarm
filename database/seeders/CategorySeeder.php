@@ -16,6 +16,7 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
+        for ($i = 0; $i < 10; $i++) {
         //
         DB::table('categories')->insert([
             'name' => $faker->word,
@@ -23,14 +24,6 @@ class CategorySeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-
-        for ($i = 0; $i < 10; $i++) {
-            DB::table('categories')->insert([
-                'name' => $faker->word,
-                'description' => $faker->sentence,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
         }
     }
 }

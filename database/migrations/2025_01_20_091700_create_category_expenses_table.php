@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('green_houses', function (Blueprint $table) {
+        Schema::create('category_expenses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name', 255);
-            $table->string('type_of_plant');
-            $table->text('location');
-            $table->boolean('status');
-            $table->decimal('longitude', 10, 7);
-            $table->decimal('latitude', 10, 7);
+            $table->string('name_category');
+            $table->string('description');
         });
     }
 
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('green_houses');
+        Schema::dropIfExists('category_expenses');
     }
 };

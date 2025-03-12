@@ -15,45 +15,45 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $userData = [
-            [
-                'name' => fake()->name(),
-                'email' => fake()->unique()->safeEmail,
-                'password' => Hash::make('123'),
-                'role' => 'admin',
-                'id_greenhouse' => 1,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => fake()->name(),
-                'email' => fake()->unique()->safeEmail(),
-                'password' => Hash::make('456'),
-                'role' => 'owner',
-                'id_greenhouse' => 1,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => fake()->name(),
-                'email' => fake()->unique()->safeEmail(),
-                'password' => Hash::make('789'),
-                'role' => 'petani',
-                'id_greenhouse' => 1,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => fake()->name(),
-                'email' => fake()->unique()->safeEmail(),
-                'password' => Hash::make('012'),
-                'role' => 'akuntan',
-                'id_greenhouse' => 1,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ];
-        
+        // $userData = [
+        //     [
+        //         'name' => fake()->name(),
+        //         'email' => fake()->unique()->safeEmail(),
+        //         'password' => Hash::make('123'),
+        //         'role' => 'admin',
+        //         'id_greenhouse' => 1,
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ],
+        //     [
+        //         'name' => fake()->name(),
+        //         'email' => fake()->unique()->safeEmail(),
+        //         'password' => Hash::make('456'),
+        //         'role' => 'owner',
+        //         'id_greenhouse' => 1,
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ],
+        //     [
+        //         'name' => fake()->name(),
+        //         'email' => fake()->unique()->safeEmail(),
+        //         'password' => Hash::make('789'),
+        //         'role' => 'petani',
+        //         'id_greenhouse' => 1,
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ],
+        //     [
+        //         'name' => fake()->name(),
+        //         'email' => fake()->unique()->safeEmail(),
+        //         'password' => Hash::make('012'),
+        //         'role' => 'akuntan',
+        //         'id_greenhouse' => 1,
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ],
+        // ];
+
         for ($i = 0; $i < 10; $i++) {
             $role = fake()->randomElement(['admin', 'owner', 'petani', 'akuntan']);
             $password = match ($role) {

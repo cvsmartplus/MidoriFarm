@@ -16,17 +16,14 @@ class ProductSeeder extends Seeder
     {
         $faker = Faker::create();
         for ($i = 0; $i < 10; $i++) {
-            $categoryId = $faker->numberBetween(1, 11);
+            $id_cat_product= $faker->numberBetween(1, 10);
         //
 
         DB::table('products')->insert([
             'id_greenhouse' => 1,
+            'id_cat_product' => $id_cat_product,
             'name_product' => $faker->word,
-            'cost_price' => $faker->randomFloat(2, 1, 100),
             'selling_price'=> $faker->randomFloat(2, 1, 100),
-            'stock' => $faker->randomFloat(0, 100),
-            'id_category' => $categoryId,
-            'discount'=> $faker->randomFloat(2, 0, 0.5),
             'created_at' => now(),
             'updated_at' => now(),
         ]);

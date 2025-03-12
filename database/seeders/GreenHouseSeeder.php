@@ -24,7 +24,7 @@ class GreenHouseSeeder extends Seeder
             'location' => 'Location 1',
             'status' => 1, // 1 untuk 'Active'
             'longitude' => $faker->longitude($min = -180, $max = 180),
-            'altitude' => $faker->latitude($min = -90, $max = 90),
+            'latitude' => $faker->latitude($min = -90, $max = 90),
 
         ]);
 
@@ -34,7 +34,7 @@ class GreenHouseSeeder extends Seeder
             'location' => 'Location 2',
             'status' => 0, // 0 untuk 'Inactive'
             'longitude' => $faker->longitude($min = -180, $max = 180),
-            'altitude' => $faker->latitude($min = -90, $max = 90),
+            'latitude' => $faker->latitude($min = -90, $max = 90),
 
         ]);
 
@@ -44,7 +44,7 @@ class GreenHouseSeeder extends Seeder
             'location' => 'Location 3',
             'status' => 1, // 0 untuk 'Inactive'
             'longitude' => $faker->longitude($min = -180, $max = 180),
-            'altitude' => $faker->latitude($min = -90, $max = 90),
+            'latitude' => $faker->latitude($min = -90, $max = 90),
 
         ]);
 

@@ -20,7 +20,6 @@ return new class extends Migration
             $table->foreignId('category_id')->references('id')->on('categories');
             $table->integer('author_id');
             $table->string('thumbnail', 255);
-            $table->string('tags', 255);
             $table->string('status', 50);
         });
     }

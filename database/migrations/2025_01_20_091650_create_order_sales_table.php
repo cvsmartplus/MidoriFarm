@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('green_houses', function (Blueprint $table) {
+        Schema::create('order_sales', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name', 255);
-            $table->string('type_of_plant');
-            $table->text('location');
-            $table->boolean('status');
-            $table->decimal('longitude', 10, 7);
-            $table->decimal('latitude', 10, 7);
+            $table->foreignId('id_product')->references('id')->on('products');
+            $table->foreignId('id_sale')->references('id')->on('sales');
+            $table->integer('quantity');
+            $table->integer('subtotal');
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('green_houses');
+        Schema::dropIfExists('order_sales');
     }
 };
