@@ -61,7 +61,8 @@
     4.13 Overlay Css
     4.14 Position Css
 / ================================= Table Of Contents =================================== **/
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 :root {
   --default-font: ;
   --h1: clamp(2rem, 1.2rem + 4vw, 4.5rem);
@@ -270,6 +271,7 @@
   --indigo: #7F27FF;
   --purple: #8252E9;
   --red: #E30A0A;
+  --green-500: #1CBF13;
   --yellow: #F4941E;
   --orange: #F86624;
   --pink: #DE3ACE;
@@ -373,7 +375,7 @@ html {
 body {
   background-color: #EFFDE8;
   color: #757575;
-  font-family: "Open Sans", Sans-serif;
+  font-family: "Inter", Sans-serif;
   font-size: 1rem;
   padding: 0;
   margin: 0;
@@ -1526,6 +1528,10 @@ th {
 
 /* === color css end === */
 /* === bg css start === */
+.bg-green-500 {
+  background-color: var(--green-500) !important;
+}
+
 .bg-primary-50 {
   background-color: var(--primary-50) !important;
 }
@@ -12921,7 +12927,7 @@ select option {
   fill: #4B5563 !important;
   font-size: 14px;
   font-weight: 700 !important;
-  font-family: Inter, sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .circle-none circle {
@@ -13273,7 +13279,7 @@ select option {
   border-radius: 16px;
   box-shadow: 0px 13px 30px 10px rgba(46, 45, 116, 0.05);
   padding: 16px;
-  background-color: #18A811;
+  background-color: var(--white);
   color: white;
 }
 
@@ -14724,6 +14730,7 @@ td.fc-header-center {
   position: fixed;
   inset-block-start: 0;
   inset-inline-start: -100%;
+  font-family: "Open Sans", sans-serif;
   width: 15.625rem;
   height: 100vh;
   background-color: var(--white);
