@@ -31,7 +31,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::controller(DashboardController::class)->group(function () {;
-    Route::get('/', 'index')->name('index');
     Route::get('/index10','index10')->name('index10');
 });
 
