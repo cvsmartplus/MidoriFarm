@@ -80,8 +80,7 @@
     series: [50, 50],
     chart: {
         type: "donut",
-        height: 300, // Sesuai CSS
-        width: "100%" // Bisa dihapus juga
+        
     },
     labels: ["Diterbitkan", "Diarsipkan"],
     colors: ["#16a34a", "#dc2626"],
@@ -105,13 +104,13 @@ chart.render();
     }],
     chart: {
         type: "bar",
-        height: "150%", 
+        height: "100%", 
         width: "100%",
     },
     plotOptions: {
         bar: {
             horizontal: true,
-            borderRadius: 10,
+            borderRadius: 15,
             distributed: true // Setiap batang memiliki warna berbeda
         }
     },
@@ -153,29 +152,111 @@ chart.render();
 
 <div class="row gy-4">
     <div class="col-md-4">
-        <div class="card w-100 h-100">
+        <div class="card h-100">
+            <div class="d-flex card-header border-bottom bg-base py-16 px-24 justify-content-between align-items-center">
+                <h6 class="text-lg fw-bold mb-0">Overall Report</h6>
+                <select class="form-select form-select-sm w-auto bg-base border-0 text-secondary-light">
+                    <option>Yearly</option>
+                    <option>Monthly</option>
+                    <option>Weekly</option>
+                    <option>Today</option>
+                </select>
+            </div>
+            <div class="card-body d-flex justify-content-center align-items-center">
+                <div id="donutChart" class="" style="display: flex; justify-content: center; align-items: center;"></div>
+            </div>
+        </div>
+    </div>    
+    <div class="col-md-4">
+        <div class="card h-100">
             <div class="d-flex card-header border-bottom bg-base justify-content-between align-items-center">
-                <h6 class="text-lg fw-semibold mb-0">Tag Artikel Terpopuler</h6>
+                <h6 class="text-lg fw-bold mb-0">Tag Artikel Terpopuler</h6>
+                <select class="form-select form-select-sm w-auto bg-base border-0 text-secondary-light">
+                    <option>Yearly</option>
+                    <option>Monthly</option>
+                    <option>Weekly</option>
+                    <option>Today</option>
+                </select>
             </div>
             <div class="card-body p-3">
                 <div id="lineChart" class="w-100" style="height: 100%; min-height: 250px;"></div>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-xxl-4 col-md-4">
+        <div class="card h-100">
+            <div class="card-header border-0 d-flex align-items-center flex-wrap gap-2 justify-content-between">
+                <h6 class="text-lg fw-bold mb-0">Notifikasi Terakhir</h6>
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
+                    <div class="col">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h6 class="text-md mb-0 fw-semibold">Sri Wahyuni</h6>
+                            <h6 class="text-sm text-secondary">10 menit yang lalu</h6>
+                        </div>
+                        <span class="text-sm text-secondary-light fw-normal">Bagus sekali Artikel nya Inspira...</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
+                    <div class="col">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h6 class="text-md mb-0 fw-semibold">Amran Sulaiman</h6>
+                            <h6 class="text-sm text-secondary">20 menit yang lalu</h6>
+                        </div>
+                        <span class="text-sm text-secondary-light fw-normal">Boleh nih idenya... sangat krea...</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
+                    <div class="col">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h6 class="text-md mb-0 fw-semibold">Agus Susanto</h6>
+                            <h6 class="text-sm text-secondary">30 menit yang lalu</h6>
+                        </div>
+                        <span class="text-sm text-secondary-light fw-normal">iya juga ya... kenapa tidak kepi...</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
+                    <div class="col">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h6 class="text-md mb-0 fw-semibold">Nining Waningsih</h6>
+                            <h6 class="text-sm text-secondary">40 menit yang lalu</h6>
+                        </div>
+                        <span class="text-sm text-secondary-light fw-normal">untuk bagian ini sepertinya keli...</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
+                    <div class="col">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h6 class="text-md mb-0 fw-semibold">Meutya Hafid</h6>
+                            <h6 class="text-sm text-secondary">40 menit yang lalu</h6>
+                        </div>
+                        <span class="text-sm text-secondary-light fw-normal">Betul sekali, IoT dibutuhkan un...</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
+                    <div class="col">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h6 class="text-md mb-0 fw-semibold">Meutya Hafid</h6>
+                            <h6 class="text-sm text-secondary">40 menit yang lalu</h6>
+                        </div>
+                        <span class="text-sm text-secondary-light fw-normal">Betul sekali, IoT dibutuhkan un...</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-12">
         <div class="card h-100">
             <div class="d-flex card-header border-bottom bg-base py-16 px-24 justify-content-between align-items-center">
-                <h6 class="text-lg fw-semibold mb-0">Overall Report</h6>
-            </div>
-            <div class="card-body d-flex justify-content-center align-items-center">
-                <div id="donutChart" style="width: 100%; max-width: 300px; height: 300px; display: flex; justify-content: center; align-items: center;"></div>
-            </div>
-        </div>
-    </div>    
-    <div class="col-12">
-        <div class="card h-100 p-0">
-            <div class="d-flex card-header border-bottom bg-base py-16 px-24 justify-content-between align-items-center">
-                <h6 class="text-lg fw-semibold mb-0">Jumlah Artikel</h6>
+                <h6 class="text-lg fw-bold mb-0">Jumlah Artikel</h6>
                 <select class="form-select form-select-sm w-auto bg-base text-secondary-light border-0">
                     <option>Tahun</option>
                     <option>Bulan</option>

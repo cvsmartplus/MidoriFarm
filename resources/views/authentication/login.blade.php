@@ -9,9 +9,7 @@
         <div class="auth-right py-32 px-24 d-flex flex-column justify-content-center position-relative" style="z-index: 1;">
             <div class="max-w-464-px mx-auto w-100">
                 <div>
-                    <a href="{{ route('index') }}" class="mb-40 max-w-290-px">
-                        <img src="{{ asset('assets/images/MidoriFarm_long.png') }}" alt="">
-                    </a>
+                    <img src="{{ asset('assets/images/MidoriFarm_long.png') }}" alt="logo" class="mb-40 max-w-290-px">
                     <h4 class="mb-12">Masuk Ke Akun Anda</h4>
                     <p class="mb-32 text-secondary-light text-lg">Selamat Datang Kembali!</p>
                 </div>
