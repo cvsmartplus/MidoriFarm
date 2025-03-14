@@ -23,6 +23,9 @@ Route::get('/', function () {
 // ADMIN
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->middleware('role:admin')->group(function () {
+        Route::get('/', function () {
+            return redirect()->route('admin.blog');
+        });
         Route::controller(DashboardController::class)->group(function () {
             Route::get('/sensor', 'sensor')->name('admin.sensor');
             Route::get('/keuangan', 'index10')->name('admin.keuangan');
@@ -118,6 +121,9 @@ Route::middleware(['auth'])->group(function () {
 // OWNER
 Route::middleware(['auth'])->group(function () {
     Route::prefix('owner')->middleware('role:owner')->group(function () {
+        Route::get('/', function () {
+            return redirect()->route('owner.sensor');
+        });
         Route::controller(DashboardController::class)->group(function () {
             Route::get('/sensor', 'sensor')->name('owner.sensor');
             Route::get('/keuangan', 'index10')->name('owner.keuangan');
@@ -150,7 +156,7 @@ Route::middleware(['auth'])->group(function () {
 
 // PETANI
 Route::middleware(['auth'])->group(function (){
-    Route::prefix('petani')->group(function () {
+    Route::prefix('petani')->middleware('role:petani')->group(function () {
         Route::controller(DashboardController::class)->group(function () {
             Route::get('/sensor', 'sensor')->name('petani.sensor');
         });
