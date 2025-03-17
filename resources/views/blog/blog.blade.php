@@ -1,272 +1,173 @@
-@extends("layout.layout")
+@extends('layout.layout')
 @php
-    $title="Artikel";
-    $subTitle = "Artikel";
-    $script = '
-        <script>
-            var options = {
-        series: [{
-            name: "Bumi",
-            data: [20000, 16000, 14000, 25000, 45000, 18000, 28000, 11000, 26000, 48000, 18000, 22000]
-        },{
-            name: "Teknologi",
-            data: [15000, 18000, 19000, 20000, 35000, 20000, 18000, 13000, 18000, 38000, 14000, 16000]
-        },{
-            name: "Finansial",
-            data: [10000, 12000, 13000, 15000, 25000, 12000, 15000, 8000, 15000, 28000, 10000, 12000]
-        }],
-        colors: ["#6EDB40", "#1AB6FF", "#F3F62C"],
-        labels: ["Total"],
-        legend: {
-            show: true 
-        },
-        chart: {
-            type: "bar",
-            height: 264,
-            toolbar: {
-            show: true
-            },
-        },
-        grid: {
-            show: true,
-            borderColor: "#D1D5DB",
-            strokeDashArray: 0, // Use a number for dashed style
-            position: "front",
-        },
-        plotOptions: {
-            bar: {
-                borderRadius: 4,
-                columnWidth: 10,
-            },
-        },
-        dataLabels: {
-            enabled: false
-        },
-        stroke: {
-            show: true,
-            width: 2,
-            colors: ["transparent"]
-        },
-        xaxis: {
-            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        },
-        yaxis: {
-            categories: ["0", "5000", "10,000", "20,000", "30,000", "50,000", "60,000", "60,000", "70,000", "80,000", "90,000", "100,000"],
-        },
-        yaxis: {
-          labels: {
-                formatter: function (value) {
-                    return (value / 1000).toFixed(0) + "k";
-                }
-            }
-        },
-        tooltip: {
-            y: {
-                formatter: function (value) {
-                    return value / 1000 + "k";
-                }
-            }
-        },
-        fill: {
-            opacity: 1,
-            width: 18,
-        },
-    };
-
-    var chart = new ApexCharts(document.querySelector("#columnChart"), options);
-    chart.render();
-    
-    var options = {
-    series: [50, 50],
-    chart: {
-        type: "donut",
-        
-    },
-    labels: ["Diterbitkan", "Diarsipkan"],
-    colors: ["#16a34a", "#dc2626"],
-    dataLabels: {
-        enabled: true
-    },
-    legend: {
-        position: "bottom",
-        show: true
-    }
-};
-
-var chart = new ApexCharts(document.querySelector("#donutChart"), options);
-chart.render();
-
-
-
-    var options = {
-    series: [{
-        data: [25, 18, 22, 17, 20, 18, 16] // Data jumlah tag artikel
-    }],
-    chart: {
-        type: "bar",
-        height: "100%", 
-        width: "100%",
-    },
-    plotOptions: {
-        bar: {
-            horizontal: true,
-            borderRadius: 15,
-            distributed: true // Setiap batang memiliki warna berbeda
-        }
-    },
-    colors: [
-        "#487FFF", // IoT
-        "#2AE020", // Pertanian
-        "#1AB6FF", // Teknologi
-        "#F3F62C", // Finansial
-        "#25CB1C", // Agrikultur
-        "#04FF00", // Tumbuhan
-        "#6EDB40"  // Bumi
-    ],
-    dataLabels: {
-        enabled: false
-    },
-    xaxis: {
-        categories: ["IOT", "Pertanian", "Teknologi", "Finansial", "Agrikultur", "Tumbuhan", "Bumi"]
-    },
-    tooltip: {
-    custom: function({ series, seriesIndex, dataPointIndex, w }) {
-        let category = w.globals.labels[dataPointIndex]; // Ambil nama kategori
-        let value = series[seriesIndex][dataPointIndex]; // Ambil nilai
-
-        return `<div class="apexcharts-tooltip-custom" 
-                    style="background: white; padding: 8px; border-radius: 5px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
-                    <strong>${category}</strong>: ${value}
-                </div>`;
-    }
-}
-};
-
-var chart = new ApexCharts(document.querySelector("#lineChart"), options);
-chart.render();
-
-    </script>';
+    $title='Blog';
+    $subTitle = 'Blog';
 @endphp
 
-@section("content")
-
+@section('content')
 <div class="row gy-4">
-    <div class="col-md-4">
-        <div class="card h-100">
-            <div class="d-flex card-header border-bottom bg-base py-16 px-24 justify-content-between align-items-center">
-                <h6 class="text-lg fw-bold mb-0">Overall Report</h6>
-                <select class="form-select form-select-sm w-auto bg-base border-0 text-secondary-light">
-                    <option>Yearly</option>
-                    <option>Monthly</option>
-                    <option>Weekly</option>
-                    <option>Today</option>
-                </select>
+    <div class="col-lg-8">
+        <div class="row gy-4">
+            <div class="col-xxl-4 col-lg-4 col-sm-6">
+                <div class="card h-100 p-0 radius-12 overflow-hidden">
+                    <div class="card-body p-24">
+                        <a  href="{{ route('admin.blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
+                            <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                        </a>
+                        <div class="mt-20">
+                            <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
+                                <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
+                                <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
+                                    <i class="ri-calendar-2-line"></i>
+                                    Jan 17, 2024
+                                </div>
+                            </div>
+                            <h6 class="mb-16">
+                                <a  href="{{ route('admin.blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Your satisfaction is our top the best priority</a>
+                            </h6>
+                            <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                            <a  href="{{ route('admin.blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
+                                Read More
+                                <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body d-flex justify-content-center align-items-center">
-                <div id="donutChart" class="" style="display: flex; justify-content: center; align-items: center;"></div>
+            <div class="col-xxl-4 col-lg-4 col-sm-6">
+                <div class="card h-100 p-0 radius-12 overflow-hidden">
+                    <div class="card-body p-24">
+                        <a  href="{{ route('admin.blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
+                            <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                        </a>
+                        <div class="mt-20">
+                            <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
+                                <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
+                                <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
+                                    <i class="ri-calendar-2-line"></i>
+                                    Jan 17, 2024
+                                </div>
+                            </div>
+                            <h6 class="mb-16">
+                                <a  href="{{ route('admin.blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Your satisfaction is our top the best priority</a>
+                            </h6>
+                            <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                            <a  href="{{ route('admin.blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
+                                Read More
+                                <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>    
-    <div class="col-md-4">
-        <div class="card h-100">
-            <div class="d-flex card-header border-bottom bg-base justify-content-between align-items-center">
-                <h6 class="text-lg fw-bold mb-0">Tag Artikel Terpopuler</h6>
-                <select class="form-select form-select-sm w-auto bg-base border-0 text-secondary-light">
-                    <option>Yearly</option>
-                    <option>Monthly</option>
-                    <option>Weekly</option>
-                    <option>Today</option>
-                </select>
+            <div class="col-xxl-4 col-lg-4 col-sm-6">
+                <div class="card h-100 p-0 radius-12 overflow-hidden">
+                    <div class="card-body p-24">
+                        <a  href="{{ route('admin.blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
+                            <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                        </a>
+                        <div class="mt-20">
+                            <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
+                                <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
+                                <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
+                                    <i class="ri-calendar-2-line"></i>
+                                    Jan 17, 2024
+                                </div>
+                            </div>
+                            <h6 class="mb-16">
+                                <a  href="{{ route('admin.blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Your satisfaction is our top the best priority</a>
+                            </h6>
+                            <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                            <a  href="{{ route('admin.blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
+                                Read More
+                                <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body p-3">
-                <div id="lineChart" class="w-100" style="height: 100%; min-height: 250px;"></div>
+            <div class="col-xxl-4 col-lg-4 col-sm-6">
+                <div class="card h-100 p-0 radius-12 overflow-hidden">
+                    <div class="card-body p-24">
+                        <a  href="{{ route('admin.blogDetails') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
+                            <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                        </a>
+                        <div class="mt-20">
+                            <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
+                                <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
+                                <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
+                                    <i class="ri-calendar-2-line"></i>
+                                    Jan 17, 2024
+                                </div>
+                            </div>
+                            <h6 class="mb-16">
+                                <a  href="{{ route('admin.blogDetails') }}" class="text-line-2 text-hover-primary-600 text-xl transition-2">Your satisfaction is our top the best priority</a>
+                            </h6>
+                            <p class="text-line-3 text-neutral-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
+                            <a  href="{{ route('admin.blogDetails') }}" class="d-flex align-items-center gap-8 fw-semibold text-neutral-900 text-hover-primary-600 transition-2">
+                                Read More
+                                <i class="ri-arrow-right-double-line text-xl d-flex line-height-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-xxl-4 col-md-4">
-        <div class="card h-100">
-            <div class="card-header border-0 d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                <h6 class="text-lg fw-bold mb-0">Notifikasi Terakhir</h6>
+    <!-- Latest Blog -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header border-bottom">
+                <h6 class="text-xl mb-0">Latest Posts</h6>
             </div>
-            <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
-                    <div class="col">
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <h6 class="text-md mb-0 fw-semibold">Sri Wahyuni</h6>
-                            <h6 class="text-sm text-secondary">10 menit yang lalu</h6>
-                        </div>
-                        <span class="text-sm text-secondary-light fw-normal">Bagus sekali Artikel nya Inspira...</span>
+            <div class="card-body d-flex flex-column gap-24 p-24">
+                <div class="d-flex flex-wrap">
+                    <a  href="{{ route('admin.blogDetails') }}" class="blog__thumb w-100 radius-12 overflow-hidden">
+                        <img src="{{ asset('assets/images/blog/blog5.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                    </a>
+                    <div class="blog__content">
+                        <h6 class="mb-8">
+                            <a  href="{{ route('admin.blogDetails') }}" class="text-line-2 text-hover-primary-600 text-md transition-2">How to hire a right business executive for your company</a>
+                        </h6>
+                        <p class="text-line-2 text-sm text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
                     </div>
                 </div>
-                <div class="d-flex align-items-center mb-3">
-                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
-                    <div class="col">
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <h6 class="text-md mb-0 fw-semibold">Amran Sulaiman</h6>
-                            <h6 class="text-sm text-secondary">20 menit yang lalu</h6>
-                        </div>
-                        <span class="text-sm text-secondary-light fw-normal">Boleh nih idenya... sangat krea...</span>
+                <div class="d-flex flex-wrap">
+                    <a  href="{{ route('admin.blogDetails') }}" class="blog__thumb w-100 radius-12 overflow-hidden">
+                        <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                    </a>
+                    <div class="blog__content">
+                        <h6 class="mb-8">
+                            <a  href="{{ route('admin.blogDetails') }}" class="text-line-2 text-hover-primary-600 text-md transition-2">The Gig Economy: Adapting to a Flexible Workforce</a>
+                        </h6>
+                        <p class="text-line-2 text-sm text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
                     </div>
                 </div>
-                <div class="d-flex align-items-center mb-3">
-                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
-                    <div class="col">
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <h6 class="text-md mb-0 fw-semibold">Agus Susanto</h6>
-                            <h6 class="text-sm text-secondary">30 menit yang lalu</h6>
-                        </div>
-                        <span class="text-sm text-secondary-light fw-normal">iya juga ya... kenapa tidak kepi...</span>
+                <div class="d-flex flex-wrap">
+                    <a  href="{{ route('admin.blogDetails') }}" class="blog__thumb w-100 radius-12 overflow-hidden">
+                        <img src="{{ asset('assets/images/blog/blog7.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                    </a>
+                    <div class="blog__content">
+                        <h6 class="mb-8">
+                            <a  href="{{ route('admin.blogDetails') }}" class="text-line-2 text-hover-primary-600 text-md transition-2">The Future of Remote Work: Strategies for Success</a>
+                        </h6>
+                        <p class="text-line-2 text-sm text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
                     </div>
                 </div>
-                <div class="d-flex align-items-center mb-3">
-                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
-                    <div class="col">
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <h6 class="text-md mb-0 fw-semibold">Nining Waningsih</h6>
-                            <h6 class="text-sm text-secondary">40 menit yang lalu</h6>
-                        </div>
-                        <span class="text-sm text-secondary-light fw-normal">untuk bagian ini sepertinya keli...</span>
+                <div class="d-flex flex-wrap">
+                    <a  href="{{ route('admin.blogDetails') }}" class="blog__thumb w-100 radius-12 overflow-hidden">
+                        <img src="{{ asset('assets/images/blog/blog6.png') }}" alt="" class="w-100 h-100 object-fit-cover">
+                    </a>
+                    <div class="blog__content">
+                        <h6 class="mb-8">
+                            <a  href="{{ route('admin.blogDetails') }}" class="text-line-2 text-hover-primary-600 text-md transition-2">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
+                        </h6>
+                        <p class="text-line-2 text-sm text-neutral-500 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores explicabo corrupti, fuga necessitatibus fugiat adipisci quidem eveniet enim minus.</p>
                     </div>
                 </div>
-                <div class="d-flex align-items-center mb-3">
-                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
-                    <div class="col">
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <h6 class="text-md mb-0 fw-semibold">Meutya Hafid</h6>
-                            <h6 class="text-sm text-secondary">40 menit yang lalu</h6>
-                        </div>
-                        <span class="text-sm text-secondary-light fw-normal">Betul sekali, IoT dibutuhkan un...</span>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                    <img src="{{ asset('assets/images/nft/nft-items-img1.png') }}" alt="" class="flex-shrink-0 me-3 w-40-px h-40-px rounded-circle">
-                    <div class="col">
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <h6 class="text-md mb-0 fw-semibold">Meutya Hafid</h6>
-                            <h6 class="text-sm text-secondary">40 menit yang lalu</h6>
-                        </div>
-                        <span class="text-sm text-secondary-light fw-normal">Betul sekali, IoT dibutuhkan un...</span>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    <div class="col-12">
-        <div class="card h-100">
-            <div class="d-flex card-header border-bottom bg-base py-16 px-24 justify-content-between align-items-center">
-                <h6 class="text-lg fw-bold mb-0">Jumlah Artikel</h6>
-                <select class="form-select form-select-sm w-auto bg-base text-secondary-light border-0">
-                    <option>Tahun</option>
-                    <option>Bulan</option>
-                    <option>Minggu</option>
-                </select>
-            </div>
-            <div class="card-body p-24">
-                <div id="columnChart" class=""></div>
             </div>
         </div>
     </div>
 </div>
+            
 @endsection

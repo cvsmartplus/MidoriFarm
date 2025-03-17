@@ -268,7 +268,7 @@
                             <div class="px-20 py-16 shadow-none radius-8 h-100 gradient-deep-1 left-line line-bg-primary position-relative overflow-hidden">
                                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
                                     <div>
-                                        <span class="mb-2 fw-medium text-secondary-light text-md">Gross Sales</span>
+                                        <span class="mb-2 fw-medium text-secondary-light text-md">Pemasukan</span>
                                         <h6 class="fw-semibold mb-1">$40,000</h6>
                                     </div>
                                     <span class="w-44-px h-44-px radius-8 d-inline-flex justify-content-center align-items-center text-2xl mb-12 bg-primary-100 text-primary-600">
@@ -282,44 +282,30 @@
                             <div class="px-20 py-16 shadow-none radius-8 h-100 gradient-deep-2 left-line line-bg-lilac position-relative overflow-hidden">
                                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
                                     <div>
-                                        <span class="mb-2 fw-medium text-secondary-light text-md">Total Purchase</span>
+                                        <span class="mb-2 fw-medium text-secondary-light text-md">Pengeluaran</span>
                                         <h6 class="fw-semibold mb-1">$35,000</h6>
                                     </div>
                                     <span class="w-44-px h-44-px radius-8 d-inline-flex justify-content-center align-items-center text-2xl mb-12 bg-lilac-200 text-lilac-600">
                                         <i class="ri-handbag-fill"></i>
                                     </span>
                                 </div>
-                                <p class="text-sm mb-0"><span class="bg-success-focus px-1 rounded-2 fw-medium text-success-main text-sm"><i class="ri-arrow-right-up-line"></i> 95%</span> From last month </p>
+                                <p class="text-sm mb-0"><span class="bg-danger-focus px-1 rounded-2 fw-medium text-danger-main text-sm"><i class="ri-arrow-right-up-line"></i> 95%</span> From last month </p>
                             </div>
                         </div>
                         <div class="col-xxl-3 col-xl-4 col-sm-6">
                             <div class="px-20 py-16 shadow-none radius-8 h-100 gradient-deep-3 left-line line-bg-success position-relative overflow-hidden">
                                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
                                     <div>
-                                        <span class="mb-2 fw-medium text-secondary-light text-md">Total Income</span>
+                                        <span class="mb-2 fw-medium text-secondary-light text-md">Dana</span>
                                         <h6 class="fw-semibold mb-1">$30,000</h6>
                                     </div>
                                     <span class="w-44-px h-44-px radius-8 d-inline-flex justify-content-center align-items-center text-2xl mb-12 bg-success-200 text-success-600">
                                         <i class="ri-shopping-cart-fill"></i>
                                     </span>
                                 </div>
-                                <p class="text-sm mb-0"><span class="bg-danger-focus px-1 rounded-2 fw-medium text-danger-main text-sm"><i class="ri-arrow-right-down-line"></i> 30%</span> From last month </p>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-xl-4 col-sm-6">
-                            <div class="px-20 py-16 shadow-none radius-8 h-100 gradient-deep-4 left-line line-bg-warning position-relative overflow-hidden">
-                                <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
-                                    <div>
-                                        <span class="mb-2 fw-medium text-secondary-light text-md">Total Expense</span>
-                                        <h6 class="fw-semibold mb-1">$7,000</h6>
-                                    </div>
-                                    <span class="w-44-px h-44-px radius-8 d-inline-flex justify-content-center align-items-center text-2xl mb-12 bg-warning-focus text-warning-600">
-                                        <i class="ri-shopping-cart-fill"></i>
-                                    </span>
                                 </div>
-                                <p class="text-sm mb-0"><span class="bg-success-focus px-1 rounded-2 fw-medium text-success-main text-sm"><i class="ri-arrow-right-up-line"></i> 60%</span> From last month </p>
-                            </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
     </button>
     <div>
         @if (Auth::check() && Auth::user()->role == 'admin')
-        <a href="{{ route('admin.blog') }}" class="sidebar-logo">
+        <a href="{{ route('admin.blogStat') }}" class="sidebar-logo">
             <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="light-logo">
             <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="dark-logo">
             <img src="{{ asset('assets/images/MidoriFarm.png') }}" alt="site logo" class="logo-icon">
@@ -41,7 +41,7 @@
                     <ul class="sidebar-submenu">
                         <li>
                             <li>
-                                <a  href="{{ route('admin.blog') }}"><iconify-icon icon="bi:bar-chart-line-fill" class="menu-icon"></iconify-icon> Artikel</a>
+                                <a  href="{{ route('admin.blogStat') }}"><iconify-icon icon="bx:stats" class="menu-icon"></iconify-icon>Statistik Artikel</a>
                             </li>
                             <li>
                                 <a href="{{ route('admin.sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
@@ -64,7 +64,7 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="javascript:void(0)"><iconify-icon icon="bx:stats" class="menu-icon"></iconify-icon>Statistik Artikel</a>
+                        <a  href="{{ route('admin.blog') }}"><iconify-icon icon="mdi:book-outline" class="menu-icon"></iconify-icon> Artikel</a>
                     </li>
                     <li>
                         <a  href="{{ route('admin.addBlog') }}"><iconify-icon icon="mdi:book-plus-outline" class="menu-icon"></iconify-icon> Buat Artikel</a>

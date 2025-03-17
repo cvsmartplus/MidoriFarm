@@ -139,7 +139,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-brand-2 radius-8">Submit</button>
+                                <button type="submit" class="btn btn-primary-500 text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32">Submit</button>
                             </form>
                         </div>
                     </div>

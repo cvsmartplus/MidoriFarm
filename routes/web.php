@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->middleware('role:admin')->group(function () {
         Route::get('/', function () {
-            return redirect()->route('admin.blog');
+            return redirect()->route('admin.blogStat');
         });
         Route::controller(DashboardController::class)->group(function () {
             Route::get('/sensor', 'sensor')->name('admin.sensor');
@@ -33,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
         Route::controller(BlogController::class)->group(function () {
             Route::get('/addBlog', 'addBlog')->name('admin.addBlog');
             Route::get('/blog', 'blog')->name('admin.blog');
+            Route::get('/blogstats', 'blogStat')->name('admin.blogStat');
             Route::get('/blogDetails', 'blogDetails')->name('admin.blogDetails');
         });
         Route::controller(BarangController::class)->group(function () {

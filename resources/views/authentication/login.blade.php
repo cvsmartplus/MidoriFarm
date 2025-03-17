@@ -54,7 +54,7 @@
                             <a href="javascript:void(0)" class="text-secondary-600 fw-medium" id="forgotPass">Lupa kata sandi?</a>
                         </div>
                     </div>
-                    <button type="submit"pe class="btn btn-success-500 text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32">Masuk</button>
+                    <button type="submit" class="btn btn-primary-500 text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32">Masuk</button>
                 </form>
             </div>
         </div>
