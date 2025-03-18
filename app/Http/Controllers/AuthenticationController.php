@@ -34,10 +34,10 @@ class AuthenticationController extends Controller
         if(Auth::attempt($infologin)) {
             $role = Auth::user()->role;
             return match ($role) {
-                'admin' => redirect('admin/blog'),
-                'owner' => redirect('owner/sensor'),
-                'petani' => redirect('petani/sensor'),
-                'akuntan' => redirect('akuntan/keuangan')
+                'admin' => redirect()->route('admin.blogStat'),
+                'owner' => redirect()->route('owner.sensor'),
+                'petani' => redirect()->route('petani.sensor'),
+                'akuntan' => redirect()->route('akuntan.keuangan'),
             };
         } else {
             return redirect()->route('login')->with('error', 'Email atau Password salah!')->withInput();
@@ -46,6 +46,6 @@ class AuthenticationController extends Controller
 
     public function logout() {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('login')->with(['logout' => 'Anda telah logout!']);
     }
 }

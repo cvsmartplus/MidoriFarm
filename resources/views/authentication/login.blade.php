@@ -11,7 +11,12 @@
                 <div>
                     <img src="{{ asset('assets/images/MidoriFarm_long.png') }}" alt="logo" class="mb-40 max-w-290-px">
                     <h4 class="mb-12">Masuk Ke Akun Anda</h4>
-                    <p class="mb-32 text-secondary-light text-lg">Selamat Datang Kembali!</p>
+                        @if ($logout = Session::get('logout'))
+                            <div class="text-danger">
+                                {{ $logout }}
+                            </div>
+                        @endif
+                    <marquee class="mb-32 text-secondary-light text-lg">Selamat Datang Kembali!</marquee>
                 </div>
                 <form action="{{route('loginPost')}}" method="POST">
                     @csrf

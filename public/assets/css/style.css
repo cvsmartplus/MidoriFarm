@@ -14629,8 +14629,8 @@ td.fc-header-center {
 }
 
 
-.sidebar-toggle:focus-within .icon,
-.sidebar-mobile-toggle:focus-within .icon {
+.sidebar-toggle:hover .icon,
+.sidebar-mobile-toggle:hover .icon {
   font-size: 1.375rem;
   color: var(--primary-500);
 }
