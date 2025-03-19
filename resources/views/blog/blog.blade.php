@@ -15,9 +15,9 @@
                             <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                         </a>
                         <div class="mt-20">
-                            <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
-                                <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
-                                <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
+                            <div class="d-flex flex-column gap-2 mb-16">
+                                <a  href="{{ route('admin.blogDetails') }}" class="pr-4 py-6 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
+                                <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium text-sm">
                                     <i class="ri-calendar-2-line"></i>
                                     Jan 17, 2024
                                 </div>
@@ -41,9 +41,9 @@
                             <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                         </a>
                         <div class="mt-20">
-                            <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
-                                <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
-                                <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
+                            <div class="d-flex flex-column gap-2 mb-16">
+                                <a  href="{{ route('admin.blogDetails') }}" class="pr-4 py-6 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
+                                <div class="align-items-center gap-8 text-neutral-500 fw-medium text-sm">
                                     <i class="ri-calendar-2-line"></i>
                                     Jan 17, 2024
                                 </div>
@@ -67,9 +67,9 @@
                             <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                         </a>
                         <div class="mt-20">
-                            <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
-                                <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
-                                <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
+                            <div class="d-flex flex-column gap-2 mb-16">
+                                <a  href="{{ route('admin.blogDetails') }}" class="pr-4 py-6 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
+                                <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium text-sm">
                                     <i class="ri-calendar-2-line"></i>
                                     Jan 17, 2024
                                 </div>
@@ -93,9 +93,9 @@
                             <img src="{{ asset('assets/images/blog/blog3.png') }}" alt="" class="w-100 h-100 object-fit-cover">
                         </a>
                         <div class="mt-20">
-                            <div class="d-flex align-items-center gap-6 justify-content-between flex-wrap mb-16">
-                                <a  href="blog-details" class="pr-4 py-6 bg-neutral-100 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
-                                <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium">
+                            <div class="d-flex flex-column gap-2 mb-16">
+                                <a  href="{{ route('admin.blogDetails') }}" class="pr-4 py-6 rounded-pill bg-hover-neutral-300 text-neutral-600 fw-medium">Workshop</a>
+                                <div class="d-flex align-items-center gap-8 text-neutral-500 fw-medium text-sm">
                                     <i class="ri-calendar-2-line"></i>
                                     Jan 17, 2024
                                 </div>

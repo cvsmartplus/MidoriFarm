@@ -95,10 +95,10 @@
                     </a>
                     <ul class="sidebar-submenu">
                         <li>
-                            <a href="javascript:void(0)"><iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Tagihan Pelanggan</a>
+                            <a href="javascript:void(0)"><iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)"><iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Tagihan Pemasok</a>
+                            <a href="javascript:void(0)"><iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok</a>
                         </li>
                     </ul>
                 </li>
