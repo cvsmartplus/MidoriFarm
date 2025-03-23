@@ -15,6 +15,10 @@ class BlogController extends Controller
     {
         return view('blog/blog');
     }
+    public function blogStat()
+    {
+        return view('blog/blogStat');
+    }
     
     public function blogDetails()
     {

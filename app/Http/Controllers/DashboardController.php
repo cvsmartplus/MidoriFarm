@@ -13,4 +13,8 @@ class DashboardController extends Controller
     {
         return view('dashboard/sensor');
     }
+    public function index10()
+    {
+        return view('dashboard/index10');
+    }
 }

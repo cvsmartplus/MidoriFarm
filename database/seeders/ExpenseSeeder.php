@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
-class FinancialSeeder extends Seeder
+class ExpenseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,25 +16,20 @@ class FinancialSeeder extends Seeder
     {
         $faker = Faker::create();
         for ($i = 0; $i < 10; $i++) {
-            $id_product = $faker->numberBetween(1, 3);
-            $id_asset = $faker->numberBetween(1, 3);
-            $id_supplier = $faker->numberBetween(1, 3);
             $id_user = $faker->numberBetween(1,3);
+            $id_asset = $faker->numberBetween(1, 3);
+            $id_cat_exp = $faker->numberBetween(1, 3);
             $id_category = $faker->numberBetween(1,3);
         //
-        DB::table('financials')->insert([
-            'id_product' => $id_product,
-            'id_asset' => $id_asset,
-            'id_supplier' => $id_supplier,
+        DB::table('expenses')->insert([
             'id_user' => $id_user,
+            'id_asset' => $id_asset,
+            'id_cat_exp' => $id_cat_exp,
             'id_category' => $id_category,
-            'quantity' => $faker->numberBetween(1, 100),
             'subtotal' => $faker->numberBetween(1, 100),
-            'total_price' => $faker->numberBetween(),
+            'description' => $faker->sentence(),
             'date' => $faker->date(),
-
         ]);
-
         }
     }
 }

@@ -9,12 +9,12 @@ class AuthenticationController extends Controller
 {
     public function forgotPassword()
     {
-        return view('authentication/forgotPassword');
+        return view('authentication.forgotPassword');
     }
 
     public function loginPage()
     {
-        return view(view: 'authentication/login');
+        return view(view: 'authentication.login');
     }
     public function loginPost(Request $request)
     {
@@ -32,14 +32,20 @@ class AuthenticationController extends Controller
         ];
 
         if(Auth::attempt($infologin)) {
-            return redirect()->route('index');
-        }else {
+            $role = Auth::user()->role;
+            return match ($role) {
+                'admin' => redirect()->route('admin.blogStat'),
+                'owner' => redirect()->route('owner.sensor'),
+                'petani' => redirect()->route('petani.sensor'),
+                'akuntan' => redirect()->route('akuntan.keuangan'),
+            };
+        } else {
             return redirect()->route('login')->with('error', 'Email atau Password salah!')->withInput();
         }
     }
 
     public function logout() {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('login')->with(['logout' => 'Anda telah logout!']);
     }
 }

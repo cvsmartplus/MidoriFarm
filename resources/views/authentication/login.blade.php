@@ -9,11 +9,14 @@
         <div class="auth-right py-32 px-24 d-flex flex-column justify-content-center position-relative" style="z-index: 1;">
             <div class="max-w-464-px mx-auto w-100">
                 <div>
-                    <a href="{{ route('index') }}" class="mb-40 max-w-290-px">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="">
-                    </a>
+                    <img src="{{ asset('assets/images/MidoriFarm_long.png') }}" alt="logo" class="mb-40 max-w-290-px">
                     <h4 class="mb-12">Masuk Ke Akun Anda</h4>
-                    <p class="mb-32 text-secondary-light text-lg">Selamat Datang Kembali!</p>
+                        @if ($logout = Session::get('logout'))
+                            <div class="text-danger">
+                                {{ $logout }}
+                            </div>
+                        @endif
+                    <marquee class="mb-32 text-secondary-light text-lg">Selamat Datang Kembali!</marquee>
                 </div>
                 <form action="{{route('loginPost')}}" method="POST">
                     @csrf
@@ -53,10 +56,10 @@
                                 <input class="form-check-input border border-neutral-300" type="checkbox" value="" id="remember">
                                 <label class="form-check-label" for="remember">Ingat Saya</label>
                             </div>
-                            <a href="javascript:void(0)" class="text-primary-600 fw-medium">Lupa kata sandi?</a>
+                            <a href="javascript:void(0)" class="text-secondary-600 fw-medium" id="forgotPass">Lupa kata sandi?</a>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32">Masuk</button>
+                    <button type="submit" class="btn btn-primary-500 text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32">Masuk</button>
                 </form>
             </div>
         </div>
@@ -77,6 +80,13 @@
             } else {
                 password.type = 'password';
             }
+        });
+
+        document.getElementById('forgotPass').addEventListener('mouseenter', function() {
+            this.style.color = '#66BAFF'
+        });
+        document.getElementById('forgotPass').addEventListener('mouseleave', function() {
+            this.style.color = ''
         });
     </script>
     <x-script />

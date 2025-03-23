@@ -11,17 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('revenues', function (Blueprint $table) {
+        Schema::create('category_assets', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('id_sale')->references('id')->on('sales');
-            $table->foreignid('id_user')->references(column: 'id')->on('users');
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
-            $table->date('date');
-            $table->integer('total_price');
-            $table->integer('total_discount');
-            $table->integer('revenue');
-
+            $table->string('name_category', 255);
         });
     }
 
@@ -30,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('revenues');
+        Schema::dropIfExists('category_assets');
     }
 };

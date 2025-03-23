@@ -15,6 +15,7 @@ class SupplierSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
+        for ($i = 0; $i < 10; $i++) {
         //
         DB::table('suppliers')->insert([
             'id_greenhouse' => 1,
@@ -25,17 +26,6 @@ class SupplierSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-
-        for ($i = 0; $i < 10; $i++) {
-            DB::table('suppliers')->insert([
-                'id_greenhouse' => $faker->numberBetween(1, 3),
-                'name' => $faker->company,
-                'address' => $faker->address,
-                'email' => $faker->unique()->safeEmail,
-                'phone_number' => $faker->phoneNumber,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
         }
     }
 }

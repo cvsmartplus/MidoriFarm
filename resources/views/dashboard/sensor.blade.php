@@ -236,13 +236,13 @@
         </div>
         <div class="container-fluid">
             <div class="row gy-4">
-                <div class="col-xxl-8 col-md-8">
+                <div class="col-xxl-9 col-md-9">
                     <div class="card h-100">
                         <div class="card-header d-flex align-items-center justify-content-between" style="border-bottom: none;">
+                            <h6 class="fw-bold text-lg mb-0">Pemantauan Perangkat IOT</h6>
                             <div class="d-flex align-items-center">
-                                <h6 class="fw-bold text-lg mb-0">Pemantauan Perangkat IOT</h6>
                                 <!-- Nav tabs: panel navigasi dipindahkan ke header -->
-                                <ul class="nav nav-tabs ms-3" id="sensorTab" role="tablist">
+                                <ul class="nav nav-tabs" id="sensorTab" role="tablist" style="border-bottom: none;">
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="sensor1-tab" data-bs-toggle="tab" data-bs-target="#sensor1" type="button" role="tab" aria-controls="sensor1" aria-selected="true">Sensor Suhu</button>
                                     </li>
@@ -259,19 +259,222 @@
                             <!-- Tab panes: konten untuk setiap tab -->
                             <div class="tab-content" id="sensorTabContent">
                                 <div class="tab-pane fade show active" id="sensor1" role="tabpanel" aria-labelledby="sensor1-tab">
-                                    <p>Data Sensor Suhu akan ditampilkan di sini.</p>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="container text-start">
+                                                <div class="row align-items-start justify-content-between mb-24" style="margin-inline: 10px">
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 mx-0 d-flex rounded-2" style="background-color: #EFF6FF;">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-0" style="background-color: #EFF6FF; ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-0" style="background-color: #EFF6FF; ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-0" style="background-color: #EFF6FF; ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-start justify-content-evenly">
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="sensor2" role="tabpanel" aria-labelledby="sensor2-tab">
-                                    <p>Data Sensor Kelembaban akan ditampilkan di sini.</p>
+                                    <div class="container ">
+                                        <div class="row">
+                                            <div class="container text-start">
+                                                <div class="row align-items-start justify-content-between mb-24">
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-start justify-content-evenly">
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="sensor3" role="tabpanel" aria-labelledby="sensor3-tab">
-                                    <p>Data Sensor Cahaya akan ditampilkan di sini.</p>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="container text-start">
+                                                <div class="row align-items-start justify-content-between mb-24">
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-start justify-content-evenly">
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
+                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="container p-0">
+                                                                    <p class="m-0">Suhu Udara</p>
+                                                                    <h4>30°C</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-4 col-md-4">
+                <div class="col-xxl-3 col-md-3">
                     <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
                             <h6 class="fw-bold text-lg mb-0">Lokasi Green House</h6>

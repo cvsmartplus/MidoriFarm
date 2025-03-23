@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('location');
             $table->boolean('status');
             $table->decimal('longitude', 10, 7);
-            $table->decimal('altitude', 10, 7);
+            $table->decimal('latitude', 10, 7);
         });
     }
 

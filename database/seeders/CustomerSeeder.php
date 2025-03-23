@@ -15,19 +15,8 @@ class CustomerSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        //
-        DB::table('customers')->insert([
-            'id_greenhouse' => 1,
-            'name'=> $faker->name,
-            'address' => $faker->address,
-            'email'=> $faker->unique()->safeEmail,
-            'phone_number' => $faker->phoneNumber,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
         for($i = 0; $i < 10; $i++) {
-
+        //
         DB::table('customers')->insert([
             'id_greenhouse' => 1,
             'name'=> $faker->name,
