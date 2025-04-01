@@ -45,7 +45,7 @@
                             </li>
                             <li>
                                 <a href="{{ route('admin.sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
-                                IOT</a>
+                                Sensor IOT</a>
                             </li>
                             <li>
                                 <a href="{{ route('admin.keuangan') }}"><iconify-icon icon="material-symbols-light:finance-mode-rounded" class="menu-icon"></iconify-icon>
@@ -79,10 +79,10 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="javascript:void(0)"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon>Laporan</a>
+                        <a  href="{{ route("admin.laporanIOT") }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon>Laporan</a>
                     </li>
                     <li>
-                        <a  href="javascript:void(0)"><iconify-icon icon="grommet-icons:system" class="menu-icon"></iconify-icon>Monitoring IOT</a>
+                        <a  href="{{ route("admin.monitoring") }}"><iconify-icon icon="grommet-icons:system" class="menu-icon"></iconify-icon>Monitoring IOT</a>
                     </li>
                 </ul>
             </li>
@@ -95,7 +95,7 @@
                     </a>
                     <ul class="sidebar-submenu">
                         <li>
-                            <a href="javascript:void(0)"><iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan</a>
+                            <a href="{{ route('admin.tagihan.index') }}"><iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan</a>
                         </li>
                         <li>
                             <a href="javascript:void(0)"><iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok</a>
@@ -406,7 +406,7 @@
                     <li>
                         <li>
                             <a href="{{ route('owner.sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
-                                IOT
+                                Sensor IOT
                             </a>
                         </li>
                         <li>
@@ -517,7 +517,7 @@
                     <li>
                         <li>
                         <a href="{{ route('petani.sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
-                            IOT
+                            Sensor IOT
                         </a>
                         </li>
                     </li>

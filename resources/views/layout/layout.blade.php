@@ -18,7 +18,7 @@
         <div class="dashboard-main-body">
             
             <!-- ..::  breadcrumb  start ::.. -->
-            <x-breadcrumb title='{{ isset($title) ? $title : ''}}' subTitle='{{ isset($subTitle) ? $subTitle : "" }}' />
+            <x-breadcrumb :title="$title ?? ''" :subTitle="$subTitle ?? ''" />
             <!-- ..::  header area end ::.. -->
 
             @yield('content')

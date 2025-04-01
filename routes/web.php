@@ -10,11 +10,12 @@ use App\Http\Controllers\TableController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\BarangController;
-use App\Http\Controllers\TagihanController;
+use App\Http\Controllers\TagihanPelangganController;
+use App\Http\Controllers\TagihanPemasokController;
 use App\Http\Controllers\ComponentpageController;
 use App\Http\Controllers\RoleandaccessController;
 use App\Http\Controllers\AuthenticationController;
-
+use App\Http\Controllers\IOTController;
 
 Route::get('/', function () {
     return auth()->check() ? redirect('/admin') : redirect('/login');
@@ -30,6 +31,10 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/sensor', 'sensor')->name('admin.sensor');
             Route::get('/keuangan', 'index10')->name('admin.keuangan');
         });
+        Route::controller(IOTController::class)->group(function () {
+            Route::get('/laporan-iot', 'laporan')->name('admin.laporanIOT');
+            Route::get('/monitoring', 'monitoring')->name('admin.monitoring');
+        });
         Route::controller(BlogController::class)->group(function () {
             Route::get('/addBlog', 'addBlog')->name('admin.addBlog');
             Route::get('/blog', 'blog')->name('admin.blog');
@@ -42,11 +47,13 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/produkbarang', 'barangList')->name('admin.barangList');
             Route::get('/barang-preview', 'barangPreview')->name('admin.barangPreview');
         });
-        Route::controller(TagihanController::class)->group(function () {
-            // Route::get('/tagihan', 'Financetagihan')->name('Financetagihan');
-            Route::get('/tagihan-edit', 'tagihanEdit')->name('admin.tagihanEdit');
-            Route::get('/tagihan-list', 'tagihanList')->name('admin.tagihanList');
-            Route::get('/tagihan-preview', 'tagihanPreview')->name('admin.tagihanPreview');
+        Route::controller(TagihanPelangganController::class)->group(function () {
+            Route::post('/tagihan', 'store')->name('admin.tagihan.store');
+            Route::get('/tagihan', 'index')->name('admin.tagihan.index');
+            Route::get('/tagihan-preview', 'show')->name('admin.tagihan.show');
+            Route::get('/tagihan/id/edit', 'edit')->name('admin.tagihan.edit');
+            Route::put('/tagihan/id', 'update')->name('admin.tagihan.update');
+            Route::delete('/tagihan/id', 'destroy')->name('admin.tagihan.destroy');
         });
         Route::controller(RoleandaccessController::class)->group(function () {
             Route::get('/assignRole', 'assignRole')->name('admin.assignRole');
@@ -129,16 +136,23 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/sensor', 'sensor')->name('owner.sensor');
             Route::get('/keuangan', 'index10')->name('owner.keuangan');
         });
+        Route::controller(IOTController::class)->group(function () {
+            Route::get('/laporan-iot', 'laporan')->name('owner.laporanIOT');
+            Route::get('/monitoring', 'monitoring')->name('owner.monitoring');
+        });
         Route::controller(BarangController::class)->group(function () {
             Route::get('/barang', 'barang')->name('owner.barang');
             Route::get('/barang-edit', 'barangEdit')->name('owner.barangEdit');
             Route::get('/produkbarang', 'barangList')->name('owner.barangList');
             Route::get('/barang-preview', 'barangPreview')->name('owner.barangPreview');
         });
-        Route::controller(TagihanController::class)->group(function () {
-            Route::get('/tagihan-edit', 'tagihanEdit')->name('owner.tagihanEdit');
-            Route::get('/tagihan-list', 'tagihanList')->name('owner.tagihanList');
-            Route::get('/tagihan-preview', 'tagihanPreview')->name('owner.tagihanPreview');
+        Route::controller(TagihanPelangganController::class)->group(function () {
+            Route::post('/tagihan', 'store')->name('owner.tagihan.store');
+            Route::get('/tagihan', 'index')->name('owner.tagihan.index');
+            Route::get('/tagihan-preview', 'show')->name('owner.tagihan.show');
+            Route::get('/tagihan/id/edit', 'edit')->name('owner.tagihan.edit');
+            Route::put('/tagihan/id', 'update')->name('owner.tagihan.update');
+            Route::delete('/tagihan/id', 'destroy')->name('owner.tagihan.destroy');
         });
         Route::controller(RoleandaccessController::class)->group(function () {
             Route::get('/assignRole', 'assignRole')->name('owner.assignRole');
@@ -168,12 +182,15 @@ Route::middleware(['auth'])->group(function (){
 Route::middleware(['auth'])->group(function () {
     Route::prefix('akuntan')->middleware('role:akuntan')->group(function () {
         Route::controller(DashboardController::class)->group(function () {
-            Route::get('/keuangan', 'index10')->name('akuntan.keuangan');
+            Route::get('/keuangan', 'p10')->name('akuntan.keuangan');
         });
-        Route::controller(TagihanController::class)->group(function () {
-            Route::get('/tagihan-edit', 'tagihanEdit')->name('akuntan.tagihanEdit');
-            Route::get('/tagihan-list', 'tagihanList')->name('akuntan.tagihanList');
-            Route::get('/tagihan-preview', 'tagihanPreview')->name('akuntan.tagihanPreview');
+        Route::controller(TagihanPelangganController::class)->group(function () {
+            Route::post('/tagihan', 'store')->name('akuntan.tagihan.store');
+            Route::get('/tagihan', 'index')->name('akuntan.tagihan.index');
+            Route::get('/tagihan-preview', 'show')->name('akuntan.tagihan.show');
+            Route::get('/tagihan/id/edit', 'edit')->name('akuntan.tagihan.edit');
+            Route::put('/tagihan/id', 'update')->name('akuntan.tagihan.update');
+            Route::delete('/tagihan/id', 'destroy')->name('akuntan.tagihan.destroy');
         });
     });
 });

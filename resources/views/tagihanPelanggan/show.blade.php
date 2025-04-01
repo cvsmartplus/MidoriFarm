@@ -29,10 +29,22 @@
                             <iconify-icon icon="solar:download-linear" class="text-xl"></iconify-icon>
                             Download
                         </a>
-                        <a href="{{route('tagihanEdit')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
+                        @if (auth()->user()->role == 'admin') 
+                        <a href="{{route('admin.tagihan.update')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
                             <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
                             Edit
                         </a>
+                        @elseif (auth()->user()->role == 'owner')
+                        <a href="{{route('owner.tagihan.update')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
+                            <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
+                            Edit
+                        </a>
+                        @else (auth()->user()->role == 'akuntan')
+                        <a href="{{route('akuntan.tagihan.update')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
+                            <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
+                            Edit
+                        </a>
+                        @endif
                         <button type="button" class="btn btn-sm btn-danger radius-8 d-inline-flex align-items-center gap-1" onclick="printInvoice()">
                             <iconify-icon icon="basil:printer-outline" class="text-xl"></iconify-icon>
                             Print

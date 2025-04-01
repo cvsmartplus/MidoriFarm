@@ -1,14 +1,12 @@
 @extends('layout.layout')
 @php
-    $title='Basic Table';
-    $subTitle = 'Basic Table';
+    $title = 'Laporan Sensor IOT';
+    $subTitle = 'Laporan Sensor IOT';
     $script = '<script>
                     let table = new DataTable("#dataTable");
                </script>';
 @endphp
-
 @section('content')
-
 <div class="card basic-data-table">
     <div class="card-header">
         <h5 class="card-title mb-0">Default Datatables</h5>
@@ -658,5 +656,4 @@
         </table>
     </div>
 </div>
-            
 @endsection
