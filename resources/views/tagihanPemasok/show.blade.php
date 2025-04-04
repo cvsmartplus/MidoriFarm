@@ -1,6 +1,6 @@
 @extends('layout.layout')
 @php
-    $title='Tagihan Pelanggan';
+    $title='Tagihan Pemasok';
     $subTitle = 'Tagihan - Detail Tagihan';
     $script = '<script>
                     function printInvoice() {
@@ -61,7 +61,7 @@
                             <p class="mb-0 text-sm">Date Due: 29/08/2020</p>
                         </div>
                         <div>
-                            <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}"" alt="image" class="mb-8" style="width: 168px; length: 40px;">
+                            <img src="{{ asset('assets/images/midorifarm.png') }}" alt="image" class="mb-8">
                             <p class="mb-1 text-sm">4517 Washington Ave. Manchester, Kentucky 39495</p>
                             <p class="mb-0 text-sm">random@gmail.com, +1 543 2198</p>
                         </div>

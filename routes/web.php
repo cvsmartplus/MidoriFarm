@@ -48,12 +48,18 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/barang-preview', 'barangPreview')->name('admin.barangPreview');
         });
         Route::controller(TagihanPelangganController::class)->group(function () {
-            Route::post('/tagihan', 'store')->name('admin.tagihan.store');
-            Route::get('/tagihan', 'index')->name('admin.tagihan.index');
-            Route::get('/tagihan-preview', 'show')->name('admin.tagihan.show');
-            Route::get('/tagihan/id/edit', 'edit')->name('admin.tagihan.edit');
-            Route::put('/tagihan/id', 'update')->name('admin.tagihan.update');
-            Route::delete('/tagihan/id', 'destroy')->name('admin.tagihan.destroy');
+            Route::post('/tagihan/pelanggan', 'store')->name('admin.tagihanPelanggan.store');
+            Route::get('/tagihan/pelanggan', 'index')->name('admin.tagihanPelanggan.index');
+            Route::get('/tagihan/pelanggan/view', 'show')->name('admin.tagihanPelanggan.show');
+            Route::put('/tagihan/pelanggan/id', 'update')->name('admin.tagihanPelanggan.update');
+            Route::delete('/tagihan/pelanggan/id', 'destroy')->name('admin.tagihanPelanggan.destroy');
+        });
+        Route::controller(TagihanPemasokController::class)->group(function () {
+            Route::post('/tagihan/pemasok', 'store')->name('admin.tagihanPemasok.store');
+            Route::get('/tagihan/pemasok', 'index')->name('admin.tagihanPemasok.index');
+            Route::get('/tagihan/pemasok/view', 'show')->name('admin.tagihanPemasok.show');
+            Route::put('/tagihan/pemasok/id', 'update')->name('admin.tagihanPemasok.update');
+            Route::delete('/tagihan/pemasok/id', 'destroy')->name('admin.tagihanPemasok.destroy');
         });
         Route::controller(RoleandaccessController::class)->group(function () {
             Route::get('/assignRole', 'assignRole')->name('admin.assignRole');
@@ -147,12 +153,18 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/barang-preview', 'barangPreview')->name('owner.barangPreview');
         });
         Route::controller(TagihanPelangganController::class)->group(function () {
-            Route::post('/tagihan', 'store')->name('owner.tagihan.store');
-            Route::get('/tagihan', 'index')->name('owner.tagihan.index');
-            Route::get('/tagihan-preview', 'show')->name('owner.tagihan.show');
-            Route::get('/tagihan/id/edit', 'edit')->name('owner.tagihan.edit');
-            Route::put('/tagihan/id', 'update')->name('owner.tagihan.update');
-            Route::delete('/tagihan/id', 'destroy')->name('owner.tagihan.destroy');
+            Route::post('/tagihan/pelanggan', 'store')->name('owner.tagihanPelanggan.store');
+            Route::get('/tagihan/pelanggan', 'index')->name('owner.tagihanPelanggan.index');
+            Route::get('/tagihan/pelanggan/view', 'show')->name('owner.tagihanPelanggan.show');
+            Route::put('/tagihan/pelanggan/id', 'update')->name('owner.tagihanPelanggan.update');
+            Route::delete('/tagihan/pelanggan/id', 'destroy')->name('owner.tagihanPelanggan.destroy');
+        });
+        Route::controller(TagihanPemasokController::class)->group(function () {
+            Route::post('/tagihan/pemasok', 'store')->name('owner.tagihanPemasok.store');
+            Route::get('/tagihan/pemasok', 'index')->name('owner.tagihanPemasok.index');
+            Route::get('/tagihan/pemasok/view', 'show')->name('owner.tagihanPemasok.show');
+            Route::put('/tagihan/pemasok/id', 'update')->name('owner.tagihanPemasok.update');
+            Route::delete('/tagihan/pemasok/id', 'destroy')->name('owner.tagihanPemasok.destroy');
         });
         Route::controller(RoleandaccessController::class)->group(function () {
             Route::get('/assignRole', 'assignRole')->name('owner.assignRole');
@@ -185,12 +197,18 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/keuangan', 'p10')->name('akuntan.keuangan');
         });
         Route::controller(TagihanPelangganController::class)->group(function () {
-            Route::post('/tagihan', 'store')->name('akuntan.tagihan.store');
-            Route::get('/tagihan', 'index')->name('akuntan.tagihan.index');
-            Route::get('/tagihan-preview', 'show')->name('akuntan.tagihan.show');
-            Route::get('/tagihan/id/edit', 'edit')->name('akuntan.tagihan.edit');
-            Route::put('/tagihan/id', 'update')->name('akuntan.tagihan.update');
-            Route::delete('/tagihan/id', 'destroy')->name('akuntan.tagihan.destroy');
+            Route::post('/tagihan/pelanggan', 'store')->name('akuntan.tagihanPelanggan.store');
+            Route::get('/tagihan/pelanggan', 'index')->name('akuntan.tagihanPelanggan.index');
+            Route::get('/tagihan/pelanggan/view', 'show')->name('akuntan.tagihanPelanggan.show');
+            Route::put('/tagihan/pelanggan/id', 'update')->name('akuntan.tagihanPelanggan.update');
+            Route::delete('/tagihan/pelanggan/id', 'destroy')->name('akuntan.tagihanPelanggan.destroy');
+        });
+        Route::controller(TagihanPemasokController::class)->group(function () {
+            Route::post('/tagihan/pemasok', 'store')->name('akuntan.tagihanPemasok.store');
+            Route::get('/tagihan/pemasok', 'index')->name('akuntan.tagihanPemasok.index');
+            Route::get('/tagihan/pemasok/view', 'show')->name('akuntan.tagihanPemasok.show');
+            Route::put('/tagihan/pemasok/id', 'update')->name('akuntan.tagihanPemasok.update');
+            Route::delete('/tagihan/pemasok/id', 'destroy')->name('akuntan.tagihanPemasok.destroy');
         });
     });
 });

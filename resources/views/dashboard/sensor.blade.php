@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
-    $title='Dashboard';
-    $subTitle = 'Internet Of Things';
+    $title='Sensor IOT';
+    $subTitle = 'Sensor IOT';
     $script = '<script>
                 // ===================== Average Enrollment Rate Start =============================== 
                 function createChartTwo(chartId, color1, color2) {
@@ -236,250 +236,218 @@
         </div>
         <div class="container-fluid">
             <div class="row gy-4">
-                <div class="col-xxl-9 col-md-9">
-                    <div class="card h-100">
-                        <div class="card-header d-flex align-items-center justify-content-between" style="border-bottom: none;">
-                            <h6 class="fw-bold text-lg mb-0">Pemantauan Perangkat IOT</h6>
-                            <div class="d-flex align-items-center">
-                                <!-- Nav tabs: panel navigasi dipindahkan ke header -->
-                                <ul class="nav nav-tabs" id="sensorTab" role="tablist" style="border-bottom: none;">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="sensor1-tab" data-bs-toggle="tab" data-bs-target="#sensor1" type="button" role="tab" aria-controls="sensor1" aria-selected="true">Sensor Suhu</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="sensor2-tab" data-bs-toggle="tab" data-bs-target="#sensor2" type="button" role="tab" aria-controls="sensor2" aria-selected="false">Sensor Kelembaban</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="sensor3-tab" data-bs-toggle="tab" data-bs-target="#sensor3" type="button" role="tab" aria-controls="sensor3" aria-selected="false">Sensor Cahaya</button>
-                                    </li>
-                                </ul>
-                            </div>
+                <div class="card p-0 overflow-hidden position-relative radius-12 h-100">
+                    <div class="col-xxl-12">
+                        <div class="card-header pt-16 pb-0 px-24 bg-base border border-end-0 border-start-0 border-top-0 d-flex align-items-center flex-wrap justify-content-between">
+                            <h6 class="text-lg mb-0">Pemantauan Perangkat IoT</h6>
+                            <ul class="nav bordered-tab d-inline-flex nav-pills mb-0" id="pills-tab-six" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link px-16 py-10 active" id="pills-header-home-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-header-home" type="button" role="tab"
+                                        aria-controls="pills-header-home" aria-selected="true">Sensor Udara</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link px-16 py-10" id="pills-header-details-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-header-details" type="button" role="tab"
+                                        aria-controls="pills-header-details" aria-selected="false">Sensor Tanah</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link px-16 py-10" id="pills-header-profile-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-header-profile" type="button" role="tab"
+                                        aria-controls="pills-header-profile" aria-selected="false">Sensor Air</button>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="card-body">
-                            <!-- Tab panes: konten untuk setiap tab -->
-                            <div class="tab-content" id="sensorTabContent">
-                                <div class="tab-pane fade show active" id="sensor1" role="tabpanel" aria-labelledby="sensor1-tab">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="container text-start">
-                                                <div class="row align-items-start justify-content-between mb-24" style="margin-inline: 10px">
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 mx-0 d-flex rounded-2" style="background-color: #EFF6FF;">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-0" style="background-color: #EFF6FF; ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-0" style="background-color: #EFF6FF; ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-0" style="background-color: #EFF6FF; ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                        <div class="card-body p-24">
+                            <div class="tab-content" id="pills-tabContent-six">
+                                <div class="tab-pane fade show active" id="pills-header-home" role="tabpanel"
+                                    aria-labelledby="pills-header-home-tab" tabindex="0">
+                                    <div class="row  justify-content-evenly  gy-4">
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div
+                                                class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
+                                                <div class="me-3 text-black">
+                                                    <iconify-icon icon="solar:temperature-bold" height="73"></iconify-icon>
                                                 </div>
-                                                <div class="row align-items-start justify-content-evenly">
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                <div>
+                                                <h6 class="text-primary-light text-md mb-8">Suhu Udara</h6>
+                                                <h1 class="fs-1 mb-0 fw-bolder">30°C</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div
+                                                class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
+                                                <div class="me-3 text-black">
+                                                    <iconify-icon icon="mdi:humidity-outline" height="73"></iconify-icon>
+                                                </div>
+                                                <div>
+                                                <h6 class="text-primary-light text-md mb-8">Kelembapan Udara</h6>
+                                                <h1 class="fs-1 mb-0 fw-bolder">70%</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div
+                                                class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
+                                                <div class="me-3 text-black">
+                                                    <iconify-icon icon="mdi:uv-ray-outline" height="73"></iconify-icon>
+                                                </div>
+                                                <div>
+                                                <h6 class="text-primary-light text-md mb-8">Nilai UV</h6>
+                                                <h1 class="fs-1 mb-0 fw-bolder">30%</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div
+                                                class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
+                                                <div class="me-3 text-black">
+                                                    <iconify-icon icon="mi:rain" height="73"></iconify-icon>
+                                                </div>
+                                                <div>
+                                                <h6 class="text-primary-light text-md mb-8">Curah Hujan</h6>
+                                                <h1 class="fs-1 mb-0 fw-bolder">50%</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div
+                                                class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
+                                                <div class="me-3 text-black">
+                                                    <iconify-icon icon="material-symbols:air-rounded" height="73"></iconify-icon>
+                                                </div>
+                                                <div>
+                                                <h6 class="text-primary-light text-md mb-8">Kualitas Udara</h6>
+                                                <h1 class="fs-1 mb-0 fw-bolder">1000ppm</h1>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="sensor2" role="tabpanel" aria-labelledby="sensor2-tab">
-                                    <div class="container ">
-                                        <div class="row">
-                                            <div class="container text-start">
-                                                <div class="row align-items-start justify-content-between mb-24">
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row align-items-start justify-content-evenly">
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="tab-pane fade" id="pills-header-details" role="tabpanel"
+                                    aria-labelledby="pills-header-details-tab" tabindex="0">
+                                    <div>
+                                        <h6 class="text-lg mb-8">Title</h6>
+                                        <p class="text-secondary-light mb-16">Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen book. It has survived not </p>
+                                        <p class="text-secondary-light mb-0">It was popularised in the 1960s with the release of
+                                            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop</p>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="sensor3" role="tabpanel" aria-labelledby="sensor3-tab">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="container text-start">
-                                                <div class="row align-items-start justify-content-between mb-24">
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row align-items-start justify-content-evenly">
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-xxl-3 col-lg-3 col-md-3 col-sm-3 d-flex rounded-2 mx-6" style="background-color: #EFF6FF ">
-                                                        <iconify-icon icon="ion:thermometer" class="fs-1 align-items-center d-flex" style="color: black;"></iconify-icon>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="container p-0">
-                                                                    <p class="m-0">Suhu Udara</p>
-                                                                    <h4>30°C</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="tab-pane fade" id="pills-header-profile" role="tabpanel"
+                                    aria-labelledby="pills-header-profile-tab" tabindex="0">
+                                    <div>
+                                        <h6 class="text-lg mb-8">Title</h6>
+                                        <p class="text-secondary-light mb-16">Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen book. It has survived not </p>
+                                        <p class="text-secondary-light mb-0">It was popularised in the 1960s with the release of
+                                            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xxl-3 col-md-3">
-                    <div class="card h-100">
-                        <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
-                            <h6 class="fw-bold text-lg mb-0">Lokasi Green House</h6>
+                    <div class="col-xxl-12">
+                        <div class="card-body p-24">
+                                <div class="tab-content" id="pills-tabContent-six">
+                                    <div class="tab-pane fade show active" id="pills-header-home" role="tabpanel"
+                                        aria-labelledby="pills-header-home-tab" tabindex="0">
+                                        <div class="row  justify-content-evenly  gy-4">
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div
+                                                    class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
+                                                    <div class="me-3 text-black">
+                                                        <iconify-icon icon="solar:temperature-bold" height="73"></iconify-icon>
+                                                    </div>
+                                                    <div>
+                                                    <h6 class="text-primary-light text-md mb-8">Suhu Udara</h6>
+                                                    <h1 class="fs-1 mb-0 fw-bolder">30°C</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div
+                                                    class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
+                                                    <div class="me-3 text-black">
+                                                        <iconify-icon icon="mdi:humidity-outline" height="73"></iconify-icon>
+                                                    </div>
+                                                    <div>
+                                                    <h6 class="text-primary-light text-md mb-8">Kelembapan Udara</h6>
+                                                    <h1 class="fs-1 mb-0 fw-bolder">70%</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div
+                                                    class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
+                                                    <div class="me-3 text-black">
+                                                        <iconify-icon icon="mdi:uv-ray-outline" height="73"></iconify-icon>
+                                                    </div>
+                                                    <div>
+                                                    <h6 class="text-primary-light text-md mb-8">Nilai UV</h6>
+                                                    <h1 class="fs-1 mb-0 fw-bolder">30%</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div
+                                                    class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
+                                                    <div class="me-3 text-black">
+                                                        <iconify-icon icon="mi:rain" height="73"></iconify-icon>
+                                                    </div>
+                                                    <div>
+                                                    <h6 class="text-primary-light text-md mb-8">Curah Hujan</h6>
+                                                    <h1 class="fs-1 mb-0 fw-bolder">50%</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div
+                                                    class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
+                                                    <div class="me-3 text-black">
+                                                        <iconify-icon icon="material-symbols:air-rounded" height="73"></iconify-icon>
+                                                    </div>
+                                                    <div>
+                                                    <h6 class="text-primary-light text-md mb-8">Kualitas Udara</h6>
+                                                    <h1 class="fs-1 mb-0 fw-bolder">1000ppm</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-header-details" role="tabpanel"
+                                        aria-labelledby="pills-header-details-tab" tabindex="0">
+                                        <div>
+                                            <h6 class="text-lg mb-8">Title</h6>
+                                            <p class="text-secondary-light mb-16">Lorem Ipsum is simply dummy text of the printing and
+                                                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                                                the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                                                specimen book. It has survived not </p>
+                                            <p class="text-secondary-light mb-0">It was popularised in the 1960s with the release of
+                                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-header-profile" role="tabpanel"
+                                        aria-labelledby="pills-header-profile-tab" tabindex="0">
+                                        <div>
+                                            <h6 class="text-lg mb-8">Title</h6>
+                                            <p class="text-secondary-light mb-16">Lorem Ipsum is simply dummy text of the printing and
+                                                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                                                the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                                                specimen book. It has survived not </p>
+                                            <p class="text-secondary-light mb-0">It was popularised in the 1960s with the release of
+                                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop</p>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d881.2124232847582!2d107.28624019522965!3d-6.2838345360442345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6982aca5fe0815%3A0xa7ea3fae1f54165b!2sSMK%20Negeri%201%20Karawang!5e0!3m2!1sid!2sid!4v1739171150060!5m2!1sid!2sid" width="100%" height="100%"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="row">
                     </div>
                 </div>
             </div>
@@ -536,7 +504,7 @@
                         
                     </div>
                 </div>
-                <div class="col-xxl-8 col-md-8">
+                <div class="col-xxl-4 col-md-4">
                     <div class="card h-100">
                         <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
                             <h6 class="fw-bold text-lg mb-0">Riwayat Data Sensor</h6>
@@ -560,9 +528,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xxl-4 col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header border-bottom d-flex align-items-center flex-wrap gap-2 justify-content-between">
+                            <h6 class="fw-bold text-lg mb-0">Lokasi Green House</h6>
+                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d881.2124232847582!2d107.28624019522965!3d-6.2838345360442345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6982aca5fe0815%3A0xa7ea3fae1f54165b!2sSMK%20Negeri%201%20Karawang!5e0!3m2!1sid!2sid!4v1739171150060!5m2!1sid!2sid" width="100%" height="100%"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
             </div>
         </div>
-        
     </div>
 
 @endsection

@@ -1,12 +1,11 @@
 @extends('layout.layout')
 @php
-    $title='Tagihan Pelanggan';
-    $subTitle = 'Tagihan - Pelanggan';
+    $title = 'Tagihan Pemasok';
+    $subTitle = 'Tagihan - Pemasok';
     $script = '<script>
                     let table = new DataTable("#dataTable");
                </script>';
 @endphp
-
 @section('content')
 {{-- tinggal bikin modal buat nambahin tagihan --}}
 <div class="card basic-data-table">
@@ -55,18 +54,19 @@
                     <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
                     <td>
                         @if (Auth::user()->role == 'admin')
-                        <a  href="{{ route('admin.tagihanPelanggan.show') }}" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
+                        <a  href="{{ route('admin.tagihanPemasok.show') }}" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
                             <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
                         </a>
                         @elseif(Auth::user()->role = 'owner')
-                        <a  href="{{ route('owner.tagihanPelanggan.show') }}" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
+                        <a  href="{{ route('owner.tagihanPemasok.show') }}" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
                             <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
                         </a>  
                         @elseif(Auth::user()->role = 'akuntan')
-                        <a  href="{{ route('akuntan.tagihanPelanggan.show') }}" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
+                        <a  href="{{ route('akuntan.tagihanPemasok.show') }}" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
                             <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
                         </a>
                         @endif
+                        
                         <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
                             <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
                         </a>
@@ -295,10 +295,19 @@
                     <td>$250.00</td>
                     <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
                     <td>
-                        <a  href="javascript:void(0)" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
+                        @if (Auth::user()->role == 'admin')
+                        <a  href="{{ route('admin.tagihanPemasok.show') }}" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
                             <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
                         </a>
-                        
+                        @elseif(Auth::user()->role = 'owner')
+                        <a  href="{{ route('owner.tagihanPemasok.show') }}" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
+                            <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+                        </a>  
+                        @elseif(Auth::user()->role = 'akuntan')
+                        <a  href="{{ route('akuntan.tagihanPemasok.show') }}" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
+                            <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+                        </a>
+                        @endif
                         <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
                             <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
                         </a>
@@ -617,7 +626,6 @@
                         <a  href="javascript:void(0)" class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center">
                             <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
                         </a>
-                        
                         <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
                             <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
                         </a>
@@ -627,5 +635,4 @@
         </table>
     </div>
 </div>
-
 @endsection

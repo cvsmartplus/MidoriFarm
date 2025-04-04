@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
-    $title='POS & Inventory';
-    $subTitle = 'POS & Inventory';
+    $title='Keuangan';
+    $subTitle = 'Keuangan';
     $script = '<script>
             // ===================== Income VS Expense Start =============================== 
             function createChartTwo(chartId, color1, color2) {

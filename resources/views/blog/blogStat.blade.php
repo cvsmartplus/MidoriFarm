@@ -1,7 +1,7 @@
 @extends("layout.layout")
 @php
-    $title="Artikel";
-    $subTitle = "Artikel";
+    $title="Statistik Artikel";
+    $subTitle = "Statistik Artikel";
     $script = '
         <script>
             var options = {

@@ -11,7 +11,7 @@ class TagihanPemasokController extends Controller
      */
     public function index()
     {
-        //
+        return view('tagihanPemasok.index');
     }
 
     /**
@@ -35,7 +35,7 @@ class TagihanPemasokController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view ('tagihanPemasok.show');
     }
 
     /**
@@ -43,7 +43,7 @@ class TagihanPemasokController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view ('tagihanPemasok.edit');
     }
 
     /**
