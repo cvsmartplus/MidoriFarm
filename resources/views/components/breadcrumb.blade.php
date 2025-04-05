@@ -3,16 +3,25 @@
     <ul class="d-flex align-items-center gap-2">
         <li class="fw-medium">
             @if (Auth::user()->role == 'admin')
-                <a href="{{ route('admin.sensor') }}" class="d-flex align-items-center gap-1 hover-text-primary">
-                    <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
-                    Beranda
-                </a>
+            <a href="{{ route('admin.sensor') }}" class="d-flex align-items-center gap-1 hover-text-primary">
+                <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
+                Beranda
+            </a>
             @elseif (Auth::user()->role == 'owner')
-                <a href="{{ route('owner.sensor') }}" class="d-flex align-items-center gap-1 hover-text-primary">
-                    <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
-                    Dashboard
-                </a>
-            @elseif (Auth::user()->role == 'user')
+            <a href="{{ route('owner.sensor') }}" class="d-flex align-items-center gap-1 hover-text-primary">
+                <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
+                Beranda
+            </a>
+            @elseif (Auth::user()->role == 'akuntan')
+            <a href="{{ route('akuntan.keuangan') }}" class="d-flex align-items-center gap-1 hover-text-primary">
+                <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
+                Beranda
+            </a>
+            @elseif (Auth::user()->role == 'petani')
+            <a href="{{ route('petani.sensor') }}" class="d-flex align-items-center gap-1 hover-text-primary">
+                <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
+                Beranda
+            </a>
             @endif
         </li>
         <li>-</li>

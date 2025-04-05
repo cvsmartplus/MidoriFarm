@@ -7,7 +7,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\TableController;
-use App\Http\Controllers\UsersController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\TagihanPelangganController;
@@ -16,6 +15,10 @@ use App\Http\Controllers\ComponentpageController;
 use App\Http\Controllers\RoleandaccessController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\IOTController;
+use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\PemasokController;
+use App\Http\Controllers\ProdukKelolaController;
+use App\Http\Controllers\ProdukKategoriController;
 
 Route::get('/', function () {
     return auth()->check() ? redirect('/admin') : redirect('/login');
@@ -32,8 +35,8 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/keuangan', 'index10')->name('admin.keuangan');
         });
         Route::controller(IOTController::class)->group(function () {
-            Route::get('/laporan-iot', 'laporan')->name('admin.laporanIOT');
-            Route::get('/monitoring', 'monitoring')->name('admin.monitoring');
+            Route::get('/iot/laporan', 'laporan')->name('admin.laporanIOT');
+            Route::get('/iot/monitoring', 'monitoring')->name('admin.monitoring');
         });
         Route::controller(BlogController::class)->group(function () {
             Route::get('/addBlog', 'addBlog')->name('admin.addBlog');
@@ -41,11 +44,15 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/blogstats', 'blogStat')->name('admin.blogStat');
             Route::get('/blogDetails', 'blogDetails')->name('admin.blogDetails');
         });
-        Route::controller(BarangController::class)->group(function () {
-            Route::get('/barang', 'barang')->name('admin.barang');
-            Route::get('/barang-edit', 'barangEdit')->name('admin.barangEdit');
-            Route::get('/produkbarang', 'barangList')->name('admin.barangList');
-            Route::get('/barang-preview', 'barangPreview')->name('admin.barangPreview');
+        Route::controller(ProdukKelolaController::class)->group(function () {
+            Route::get('/produk/kelola', 'index')->name('admin.produkKelola.index');
+            Route::put('/produk/kelola', 'update')->name('admin.produkKelola.update');
+            Route::delete('/produk/kelola', 'destroy')->name('admin.produkKelola.destroy');
+        });
+        Route::controller(ProdukKategoriController::class)->group(function () {
+            Route::get('/produk/kategori', 'index')->name('admin.produkKategori.index');
+            Route::put('/produk/kategori', 'update')->name('admin.produkKategori.update');
+            Route::delete('/produk/kategori', 'destroy')->name('admin.produkKategori.destroy');
         });
         Route::controller(TagihanPelangganController::class)->group(function () {
             Route::post('/tagihan/pelanggan', 'store')->name('admin.tagihanPelanggan.store');
@@ -65,13 +72,15 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/assignRole', 'assignRole')->name('admin.assignRole');
             Route::get('/roleAccess', 'roleAccess')->name('admin.roleAccess');
         });
-        Route::controller(UsersController::class)->group(function () {
-            Route::get('/add-user', 'addUser')->name('admin.addUser');
-            Route::get('/add-supplier', 'addSupplier')->name('admin.addSupplier');
-            Route::get('/users-list', 'usersList')->name('admin.usersList');
-            Route::get('/supplier-list', 'supplierList')->name('admin.supplierList');
-            Route::get('/view-profile-customer', 'viewProfileCustomer')->name('admin.viewProfileCustomer');
-            Route::get('/view-profile-supplier', 'viewProfileSupplier')->name('admin.viewProfileSupplier');
+        Route::controller(PelangganController::class)->group(function () {
+            Route::post('/pelanggan-pemasok/pelanggan/add-invoice', 'store')->name('admin.pelanggan.store');
+            Route::get('/pelanggan-pemasok/pelanggan', 'index')->name('admin.pelanggan.index');
+            Route::delete('/tagihan/pemasok/id', 'destroy')->name('admin.tagihanPemasok.destroy');
+        });
+        Route::controller(PemasokController::class)->group(function () {
+            Route::post('/pemasok-pemasok/pemasok/add-invoice', 'store')->name('admin.pemasok.store');
+            Route::get('/pemasok-pemasok/pemasok', 'index')->name('admin.pemasok.index');
+            Route::delete('/tagihan/pemasok/id', 'destroy')->name('admin.tagihanPemasok.destroy');
         });
         // diluar fitur website (komponen pendukung pengembangan)
         Route::controller(SettingsController::class)->group(function () {
@@ -143,14 +152,18 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/keuangan', 'index10')->name('owner.keuangan');
         });
         Route::controller(IOTController::class)->group(function () {
-            Route::get('/laporan-iot', 'laporan')->name('owner.laporanIOT');
-            Route::get('/monitoring', 'monitoring')->name('owner.monitoring');
+            Route::get('/iot/laporan', 'laporan')->name('owner.laporanIOT');
+            Route::get('/iot/monitoring', 'monitoring')->name('owner.monitoring');
         });
-        Route::controller(BarangController::class)->group(function () {
-            Route::get('/barang', 'barang')->name('owner.barang');
-            Route::get('/barang-edit', 'barangEdit')->name('owner.barangEdit');
-            Route::get('/produkbarang', 'barangList')->name('owner.barangList');
-            Route::get('/barang-preview', 'barangPreview')->name('owner.barangPreview');
+        Route::controller(ProdukKelolaController::class)->group(function () {
+            Route::get('/produk/kelola', 'index')->name('owner.produkKelola.index');
+            Route::put('/produk/kelola', 'update')->name('owner.produkKelola.update');
+            Route::delete('/produk/kelola', 'destroy')->name('owner.produkKelola.destroy');
+        });
+        Route::controller(ProdukKategoriController::class)->group(function () {
+            Route::get('/produk/kategori', 'index')->name('owner.produkKategori.index');
+            Route::put('/produk/kategori', 'update')->name('owner.produkKategori.update');
+            Route::delete('/produk/kategori', 'destroy')->name('owner.produkKategori.destroy');
         });
         Route::controller(TagihanPelangganController::class)->group(function () {
             Route::post('/tagihan/pelanggan', 'store')->name('owner.tagihanPelanggan.store');
@@ -170,13 +183,15 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/assignRole', 'assignRole')->name('owner.assignRole');
             Route::get('/roleAccess', 'roleAccess')->name('owner.roleAccess');
         });
-        Route::controller(UsersController::class)->group(function () {
-            Route::get('/add-user', 'addUser')->name('owner.addUser');
-            Route::get('/add-supplier', 'addSupplier')->name('owner.addSupplier');
-            Route::get('/users-list', 'usersList')->name('owner.usersList');
-            Route::get('/supplier-list', 'supplierList')->name('owner.supplierList');
-            Route::get('/view-profile-customer', 'viewProfileCustomer')->name('owner.viewProfileCustomer');
-            Route::get('/view-profile-supplier', 'viewProfileSupplier')->name('owner.viewProfileSupplier');
+        Route::controller(PelangganController::class)->group(function () {
+            Route::post('/pelanggan-pemasok/pelanggan/add-invoice', 'store')->name('owner.pelanggan.store');
+            Route::get('/pelanggan-pemasok/pelanggan', 'index')->name('owner.pelanggan.index');
+            Route::delete('/pelanggan-pemasok/pelanggan', 'destroy')->name('owner.pelanggan.destroy');
+        });
+        Route::controller(PemasokController::class)->group(function () {
+            Route::post('/pelanggan-pemasok/pemasok', 'store')->name('owner.pemasok.store');
+            Route::get('/pelanggan-pemasok/pemasok', 'index')->name('owner.pemasok.index');
+            Route::delete('/pelanggan-pemasok/pemasok', 'destroy')->name('owner.tagihanPemasok.destroy');
         });
     });
 });

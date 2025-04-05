@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TagihanPemasokController extends Controller
+class ProdukKelolaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('tagihan.pemasok.index');
+        return view('produk.kelola.index');
     }
 
     /**
@@ -35,7 +35,7 @@ class TagihanPemasokController extends Controller
      */
     public function show(string $id)
     {
-        return view ('tagihan.pemasok.show');
+        //
     }
 
     /**
@@ -43,7 +43,7 @@ class TagihanPemasokController extends Controller
      */
     public function edit(string $id)
     {
-        return view ('tagihan.pemasok.edit');
+        //
     }
 
     /**

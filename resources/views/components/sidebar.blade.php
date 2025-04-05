@@ -95,7 +95,7 @@
                         <a href="{{ route('admin.tagihanPelanggan.index') }}"><iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok</a>
+                        <a href="{{ route('admin.tagihanPemasok.index') }}"><iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok</a>
                     </li>
                 </ul>
             </li>
@@ -106,10 +106,10 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan</a>
+                        <a href="{{ route('admin.pelanggan.index') }}"><iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok</a>
+                        <a href="{{ route('admin.pemasok.index') }}"><iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok</a>
                     </li>
                 </ul>
             </li>
@@ -120,10 +120,10 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>Kelola (ganti icon)</a>
+                        <a href="{{ route('admin.produkKelola.index') }}"><iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon>Kategori (ganti icon)</a>
+                        <a href="{{ route('admin.produkKategori.index') }}"><iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori</a>
                     </li>
                 </ul>
             </li>
@@ -134,10 +134,10 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="{{ route('admin.usersList') }}"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>Kelola (ganti icon)</a>
+                        <a href="javascript:void(0)"><iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon>Kategori (ganti icon)</a>
+                        <a href="javascript:void(0)"><iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori</a>
                     </li>
                 </ul>
             </li>
@@ -162,10 +162,10 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>Kelola (ganti icon)</a>
+                        <a href="javascript:void(0)"><iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon>Kategori (ganti icon)</a>
+                        <a href="javascript:void(0)"><iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori</a>
                     </li>
                 </ul>
             </li>
@@ -442,10 +442,10 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan</a>
+                        <a href="{{ route('owner.pelanggan.index') }}"><iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok</a>
+                        <a href="{{ route(name: 'owner.pemasok.index') }}"><iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok</a>
                     </li>
                 </ul>
             </li>
@@ -456,10 +456,10 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>Kelola (ganti icon)</a>
+                        <a href="{{ route('owner.produkKelola.index') }}"><iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon>Kategori (ganti icon)</a>
+                        <a href="{{ route('owner.produkKategori.index') }}"><iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori</a>
                     </li>
                 </ul>
             </li>
@@ -470,10 +470,10 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="{{ route('admin.usersList') }}"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>Kelola (ganti icon)</a>
+                        <a href="javascript:void(0)"><iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon>Kategori (ganti icon)</a>
+                        <a href="javascript:void(0)"><iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori</a>
                     </li>
                 </ul>
             </li>
@@ -498,10 +498,10 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>Kelola (ganti icon)</a>
+                        <a href="javascript:void(0)"><iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon>Kategori (ganti icon)</a>
+                        <a href="javascript:void(0)"><iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori</a>
                     </li>
                 </ul>
             </li>
