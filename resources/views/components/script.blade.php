@@ -5,7 +5,7 @@
     <!-- Apex Chart js -->
     <script src="{{ asset('assets/js/lib/apexcharts.min.js') }}"></script>
     <!-- Data Table js -->
-    <script src="{{ asset('assets/js/lib/dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/datatables.min.js') }}"></script>
     <!-- Iconify Font js -->
     <script src="{{ asset('assets/js/lib/iconify-icon.min.js') }}"></script>
     <!-- jQuery UI js -->
@@ -26,5 +26,19 @@
 
     <!-- main js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
+    <!-- DataTables Buttons JS -->
+    <script src="https://cdn.datatables.net/buttons/3.2.1/js/buttons.dataTables.js"></script>
 
-    <?php echo (isset($script) ? $script   : '')?>
+    <!-- JSZip (required for Excel export) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- PDFMake (required for PDF export) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+    <!-- DataTables Buttons HTML5 and Print JS -->
+    <script src="https://cdn.datatables.net/buttons/3.2.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.1/js/buttons.print.min.js"></script>
+    @stack('scripts')
+
+    {!! isset($script) ? $script : '' !!}

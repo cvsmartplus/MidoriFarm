@@ -92,17 +92,17 @@ let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme });
 * 3. If the button exists, update the theme setting and button text according to current settings.
 */
 if (button) {
-  updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
+  updateButton({ buttonEl: button, isDark: currentThemeSetting === "light" });
   updateThemeOnHtmlEl({ theme: currentThemeSetting });
 
   /**
   * 4. Add an event listener to toggle the theme.
   */
   button.addEventListener("click", (event) => {
-    const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+    const newTheme = currentThemeSetting === "dark" ? "light" : "light";
 
     localStorage.setItem("theme", newTheme);
-    updateButton({ buttonEl: button, isDark: newTheme === "dark" });
+    updateButton({ buttonEl: button, isDark: newTheme === "light" });
     updateThemeOnHtmlEl({ theme: newTheme });
 
     currentThemeSetting = newTheme;

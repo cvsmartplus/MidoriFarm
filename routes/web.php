@@ -2,13 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AssetKelolaController;
+use App\Http\Controllers\AssetKategoriController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\SettingsController;
-use App\Http\Controllers\BarangController;
 use App\Http\Controllers\TagihanPelangganController;
 use App\Http\Controllers\TagihanPemasokController;
 use App\Http\Controllers\ComponentpageController;
@@ -17,11 +18,14 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\IOTController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PemasokController;
+use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\PengeluaranKelolaController;
+use App\Http\Controllers\PengeluaranKategoriController;
 use App\Http\Controllers\ProdukKelolaController;
 use App\Http\Controllers\ProdukKategoriController;
 
 Route::get('/', function () {
-    return auth()->check() ? redirect('/admin') : redirect('/login');
+    return Auth::check() ? redirect('/admin') : redirect('/login');
 });
 
 // ADMIN
@@ -46,13 +50,23 @@ Route::middleware(['auth'])->group(function () {
         });
         Route::controller(ProdukKelolaController::class)->group(function () {
             Route::get('/produk/kelola', 'index')->name('admin.produkKelola.index');
-            Route::put('/produk/kelola', 'update')->name('admin.produkKelola.update');
-            Route::delete('/produk/kelola', 'destroy')->name('admin.produkKelola.destroy');
+            Route::put('/produk/kelola/{id}', 'update')->name('admin.produkKelola.update');
+            Route::post('/produk/kelola', 'store')->name('admin.produkKelola.store');
+            Route::delete('/produk/kelola/{id}', 'destroy')->name('admin.produkKelola.destroy');
         });
         Route::controller(ProdukKategoriController::class)->group(function () {
             Route::get('/produk/kategori', 'index')->name('admin.produkKategori.index');
-            Route::put('/produk/kategori', 'update')->name('admin.produkKategori.update');
-            Route::delete('/produk/kategori', 'destroy')->name('admin.produkKategori.destroy');
+            Route::put('/produk/kategori/{id}', 'update')->name('admin.produkKategori.update');
+            Route::delete('/produk/kategori/{id}', 'destroy')->name('admin.produkKategori.destroy');
+        });
+        Route::controller(AssetKategoriController::class)->group(function () {
+            Route::get('/asset/kategori', 'index')->name('admin.assetKategori.index');
+            Route::put('/asset/kategori', 'update')->name('admin.assetKategori.update');
+            Route::delete('/asset/kategori/id', 'destroy')->name('admin.assetKategori.destroy');
+        });
+        Route::controller(AssetKelolaController::class)->group(function () {
+            Route::get('/asset/kelola', 'index')->name('admin.assetKelola.index');
+            Route::delete('/asset/kelola/id', 'destroy')->name('admin.assetKelola.destroy');
         });
         Route::controller(TagihanPelangganController::class)->group(function () {
             Route::post('/tagihan/pelanggan', 'store')->name('admin.tagihanPelanggan.store');
@@ -76,6 +90,16 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/pelanggan-pemasok/pelanggan/add-invoice', 'store')->name('admin.pelanggan.store');
             Route::get('/pelanggan-pemasok/pelanggan', 'index')->name('admin.pelanggan.index');
             Route::delete('/tagihan/pemasok/id', 'destroy')->name('admin.tagihanPemasok.destroy');
+        });
+        Route::controller(PengeluaranKelolaController::class)->group(function () {
+            Route::get('/pengeluaran/kelola', 'index')->name('admin.pengeluaranKelola.index');
+            Route::put('/pengeluaran/kelola', 'update')->name('admin.pengeluaranKelola.update');
+            Route::delete('/pengeluaran/kelola/id', 'destroy')->name('admin.pengeluaranKelola.destroy');
+        });
+        Route::controller(PengeluaranKategoriController::class)->group(function () {
+            Route::get('/pengeluaran/kategori', 'index')->name('admin.pengeluaranKategori.index');
+            Route::put('/pengeluaran/kategori', 'update')->name('admin.pengeluaranKategori.update');
+            Route::delete('/pengeluaran/kategori/id', 'destroy')->name('admin.pengeluaranKategori.destroy');
         });
         Route::controller(PemasokController::class)->group(function () {
             Route::post('/pemasok-pemasok/pemasok/add-invoice', 'store')->name('admin.pemasok.store');
@@ -157,13 +181,33 @@ Route::middleware(['auth'])->group(function () {
         });
         Route::controller(ProdukKelolaController::class)->group(function () {
             Route::get('/produk/kelola', 'index')->name('owner.produkKelola.index');
-            Route::put('/produk/kelola', 'update')->name('owner.produkKelola.update');
-            Route::delete('/produk/kelola', 'destroy')->name('owner.produkKelola.destroy');
+            Route::post('/produk/kelola', 'store')->name('owner.produkKelola.store');
+            Route::put('/produk/kelola/{id}', 'update')->name('owner.produkKelola.update');
+            Route::delete('/produk/kelola/{id}', 'destroy')->name('owner.produkKelola.destroy');
         });
         Route::controller(ProdukKategoriController::class)->group(function () {
             Route::get('/produk/kategori', 'index')->name('owner.produkKategori.index');
             Route::put('/produk/kategori', 'update')->name('owner.produkKategori.update');
             Route::delete('/produk/kategori', 'destroy')->name('owner.produkKategori.destroy');
+        });
+        Route::controller(AssetKategoriController::class)->group(function () {
+            Route::get('/asset/kategori', 'index')->name('owner.assetKategori.index');
+            Route::put('/asset/kategori', 'update')->name('owner.assetKategori.update');
+            Route::delete('/asset/kategori/id', 'destroy')->name('owner.assetKategori.destroy');
+        });
+        Route::controller(AssetKelolaController::class)->group(function () {
+            Route::get('/asset/kelola', 'index')->name('owner.assetKelola.index');
+            Route::delete('/asset/kelola/id', 'destroy')->name('owner.assetKelola.destroy');
+        });
+        Route::controller(PengeluaranKelolaController::class)->group(function () {
+            Route::get('/pengeluaran/kelola', 'index')->name('owner.pengeluaranKelola.index');
+            Route::put('/pengeluaran/kelola', 'update')->name('owner.pengeluaranKelola.update');
+            Route::delete('/pengeluaran/kelola/id', 'destroy')->name('owner.pengeluaranKelola.destroy');
+        });
+        Route::controller(PengeluaranKategoriController::class)->group(function () {
+            Route::get('/pengeluaran/kategori', 'index')->name('owner.pengeluaranKategori.index');
+            Route::put('/pengeluaran/kategori', 'update')->name('owner.pengeluaranKategori.update');
+            Route::delete('/pengeluaran/kategori/id', 'destroy')->name('owner.pengeluaranKategori.destroy');
         });
         Route::controller(TagihanPelangganController::class)->group(function () {
             Route::post('/tagihan/pelanggan', 'store')->name('owner.tagihanPelanggan.store');
@@ -191,7 +235,7 @@ Route::middleware(['auth'])->group(function () {
         Route::controller(PemasokController::class)->group(function () {
             Route::post('/pelanggan-pemasok/pemasok', 'store')->name('owner.pemasok.store');
             Route::get('/pelanggan-pemasok/pemasok', 'index')->name('owner.pemasok.index');
-            Route::delete('/pelanggan-pemasok/pemasok', 'destroy')->name('owner.tagihanPemasok.destroy');
+            Route::delete('/pelanggan-pemasok/pemasok', 'destroy')->name('owner.Pemasok.destroy');
         });
     });
 });
@@ -224,6 +268,25 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/tagihan/pemasok/view', 'show')->name('akuntan.tagihanPemasok.show');
             Route::put('/tagihan/pemasok/id', 'update')->name('akuntan.tagihanPemasok.update');
             Route::delete('/tagihan/pemasok/id', 'destroy')->name('akuntan.tagihanPemasok.destroy');
+        });
+        Route::controller(AssetKategoriController::class)->group(function () {
+            Route::get('/asset/kategori', 'index')->name('akuntan.assetKategori.index');
+            Route::put('/asset/kategori', 'update')->name('akuntan.assetKategori.update');
+            Route::delete('/asset/kategori/id', 'destroy')->name('akuntan.assetKategori.destroy');
+        });
+        Route::controller(AssetKelolaController::class)->group(function () {
+            Route::get('/asset/kelola', 'index')->name('akuntan.assetKelola.index');
+            Route::delete('/asset/kelola/id', 'destroy')->name('akuntan.assetKelola.destroy');
+        });
+        Route::controller(PengeluaranKelolaController::class)->group(function () {
+            Route::get('/pengeluaran/kelola', 'index')->name('akuntan.pengeluaranKelola.index');
+            Route::put('/pengeluaran/kelola', 'update')->name('akuntan.pengeluaranKelola.update');
+            Route::delete('/pengeluaran/kelola/id', 'destroy')->name('akuntan.pengeluaranKelola.destroy');
+        });
+        Route::controller(PengeluaranKategoriController::class)->group(function () {
+            Route::get('/pengeluaran/kategori', 'index')->name('akuntan.pengeluaranKategori.index');
+            Route::put('/pengeluaran/kategori', 'update')->name('akuntan.pengeluaranKategori.update');
+            Route::delete('/pengeluaran/kategori/id', 'destroy')->name('akuntan.pengeluaranKategori.destroy');
         });
     });
 });

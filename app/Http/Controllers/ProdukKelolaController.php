@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\CategoryProduct;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProdukKelolaController extends Controller
 {
@@ -11,15 +15,10 @@ class ProdukKelolaController extends Controller
      */
     public function index()
     {
-        return view('produk.kelola.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $kategori = CategoryProduct::where('id_greenhouse', Auth::user()->id_greenhouse)
+        ->pluck('name_category', 'id');
+        $produk = Product::with('category')->where('id_greenhouse', Auth::user()->id_greenhouse)->get();
+        return view('produk.kelola.index', ['produk' => $produk], compact('kategori'));
     }
 
     /**
@@ -27,23 +26,17 @@ class ProdukKelolaController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        $produk = new Product();
+        $produk->id_greenhouse = Auth::user()->id_greenhouse;
+        $produk->id_cat_product = $request->id_cat_product;
+        $produk->name_product = $request->name_product;
+        $produk->selling_price = $request->selling_price;
+        $produk->save();
+        if($produk){
+            return redirect()->back()->with('success', 'Data berhasil disimpan');
+        } else{
+            return redirect()->back()->with('error', 'Data gagal disimpan');
+        }
     }
 
     /**
@@ -51,7 +44,14 @@ class ProdukKelolaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $produk = Product::find($id);
+        $produk->update($request->all());
+        $produk->save();
+        if($produk){
+            return redirect()->back()->with('success', 'Data berhasil diubah');
+        } else{
+            return redirect()->back()->with('error', 'Data gagal diubah');
+        }
     }
 
     /**

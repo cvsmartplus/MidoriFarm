@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CategoryProduct;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProdukKategoriController extends Controller
 {
@@ -11,7 +14,8 @@ class ProdukKategoriController extends Controller
      */
     public function index()
     {
-        return view('produk.kategori.index');
+        $catprod = CategoryProduct::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
+        return view('produk/kategoriProduk', ['kategori_produk' => $catprod]);
     }
 
     /**
