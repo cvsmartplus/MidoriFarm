@@ -44,9 +44,8 @@ class ProdukKelolaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $produk = Product::find($id);
+        $produk = Product::findOrFail($id);
         $produk->update($request->all());
-        $produk->save();
         if($produk){
             return redirect()->back()->with('success', 'Data berhasil diubah');
         } else{
@@ -59,6 +58,7 @@ class ProdukKelolaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $produk = Product::select('id')->where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }
