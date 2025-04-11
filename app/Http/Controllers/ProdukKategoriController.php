@@ -14,16 +14,8 @@ class ProdukKategoriController extends Controller
      */
     public function index()
     {
-        $catprod = CategoryProduct::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
-        return view('produk/kategoriProduk', ['kategori_produk' => $catprod]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $kategori = CategoryProduct::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
+        return view('produk.kategori.index', ['name_category' => $kategori], compact('kategori'));
     }
 
     /**
@@ -31,7 +23,8 @@ class ProdukKategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kategori = CategoryProduct::create($request->all( ));
+        return redirect()->back()->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -55,7 +48,9 @@ class ProdukKategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $kategori = CategoryProduct::findOrFail($id);
+        $kategori->update($request->all());
+        return redirect()->back()->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -63,6 +58,8 @@ class ProdukKategoriController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $kategori = CategoryProduct::findOrFail($id);
+        $kategori->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }
