@@ -57,6 +57,7 @@ Route::middleware(['auth'])->group(function () {
         });
         Route::controller(ProdukKategoriController::class)->group(function () {
             Route::get('/produk/kategori', 'index')->name('admin.produkKategori.index');
+            Route::post('/produk/kategori', 'store')->name('admin.produkKategori.store');
             Route::put('/produk/kategori/{id}', 'update')->name('admin.produkKategori.update');
             Route::delete('/produk/kategori/{id}', 'destroy')->name('admin.produkKategori.destroy');
         });
@@ -188,6 +189,7 @@ Route::middleware(['auth'])->group(function () {
         });
         Route::controller(ProdukKategoriController::class)->group(function () {
             Route::get('/produk/kategori', 'index')->name('owner.produkKategori.index');
+            Route::post('/produk/kategori/', 'store')->name('owner.produkKategori.store');
             Route::put('/produk/kategori', 'update')->name('owner.produkKategori.update');
             Route::delete('/produk/kategori', 'destroy')->name('owner.produkKategori.destroy');
         });

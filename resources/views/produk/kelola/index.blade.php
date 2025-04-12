@@ -42,12 +42,11 @@
                     </tr>
 
                     <!-- Modal Update -->
-                    <div class="modal fade" id="editModal{{$produk->id}}" tabindex="-1"
-                        aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="editModal{{$produk->id}}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="editModalLabel">Tambah Produk</h1>
+                                    <h1 class="modal-title fs-5" id="editModalLabel">Update Produk</h1>
                                 </div>
                                 <div class="modal-body p-24">
                                     <form action="{{ routeByRole('admin.produkKelola.update', 'owner.produkKelola.update', $produk->id) }}" method="POST">
@@ -61,30 +60,24 @@
                                             </div>
                                             <div class="col-12">
                                                 <label class="form-label">Harga Jual</label>
-                                                    <input type="number" id="selling_price" name="selling_price" 
-                                                        class="form-control" value="{{$produk->selling_price}}"
-                                                        placeholder="Harga Jual" required>
+                                                <input type="number" id="selling_price" name="selling_price" class="form-control"
+                                                    value="{{$produk->selling_price}}" placeholder="Harga Jual" required>
                                             </div>
                                             <div class="col-12">
                                                 <label class="form-label">Kategori</label>
-                                                <select id="id_cat_product" name="id_cat_product"
-                                                    class="form-control radius-8 form-select" required>
+                                                <select id="id_cat_product" name="id_cat_product" class="form-control radius-8 form-select" required>
                                                     @foreach ($kategori as $key => $item)
-                                                    <option value="{{ $key }}"
-                                                        {{ $produk->id_cat_product == $key ? 'selected' : '' }}>
-                                                        {{ $item }}
-                                                    </option>
+                                                        <option value="{{ $key }}" {{ $produk->id_cat_product == $key ? 'selected' : '' }}>
+                                                            {{ $item }}
+                                                        </option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-center gap-3 mt-24">
-                                                <button type="reset"
-                                                    class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-40 py-11 radius-8"
-                                                    data-bs-dismiss="modal">
+                                                <button type="reset" class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-40 py-11 radius-8" data-bs-dismiss="modal">
                                                     Cancel
                                                 </button>
-                                                <button type="submit"
-                                                    class="btn btn-primary-500 text-md px-48 py-12 radius-8">
+                                                <button type="submit" class="btn btn-primary-500 text-md px-48 py-12 radius-8">
                                                     Save
                                                 </button>
                                             </div>
@@ -95,6 +88,7 @@
                         </div>
                     </div>
                     <!-- Modal Update -->
+
 
                     <!-- Modal Warning-->
                     <div class="modal fade" id="deleteModal{{$produk->id}}" data-bs-backdrop="static"

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Middleware;
 
 use Closure;
@@ -16,13 +15,15 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next, ...$role): Response
     {
-        if (!auth()->check() || !in_array(auth()->user()->role, $role)) {
-            abort(403, 'Unauthorized access.');
+        if (!Auth::check()) {
+            return redirect()->route('login');
         }
-        $userRole = Auth::user()->role;
-        if (!in_array($userRole, $role)) {
-            abort(403, 'Unauthorized access.');
+
+        if (!in_array(Auth::user()->role, $role)) {
+            return abort(403, 'Unauthorized access');
         }
+
         return $next($request);
     }
 }
+?>

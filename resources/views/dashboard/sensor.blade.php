@@ -357,6 +357,7 @@
                                                     <h1 class="fs-1 mb-0 fw-bolder">70%</h1>
                                                     </div>
                                                 </div>
+                                                
                                             </div>
                                             <div class="col-lg-4 col-sm-6">
                                                 <div
