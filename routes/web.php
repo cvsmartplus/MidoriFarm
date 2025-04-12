@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AssetKelolaController;
 use App\Http\Controllers\AssetKategoriController;
@@ -57,8 +56,8 @@ Route::middleware(['auth'])->group(function () {
         });
         Route::controller(ProdukKategoriController::class)->group(function () {
             Route::get('/produk/kategori', 'index')->name('admin.produkKategori.index');
-            Route::post('/produk/kategori', 'store')->name('admin.produkKategori.store');
             Route::put('/produk/kategori/{id}', 'update')->name('admin.produkKategori.update');
+            Route::post('/produk/kategori', 'store')->name('admin.produkKategori.store');
             Route::delete('/produk/kategori/{id}', 'destroy')->name('admin.produkKategori.destroy');
         });
         Route::controller(AssetKategoriController::class)->group(function () {

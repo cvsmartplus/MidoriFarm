@@ -16,9 +16,9 @@
                     </tr>
                 </thead>
                 <tbody id="table">
-                    @foreach($kategori as $i => $kategori)
+                    @foreach($kategori as $key => $kategori)
                     <tr>
-                        <td class="text-center">{{$kategori->id}}</td>
+                        <td class="text-center">{{$key + 1}}</td>
                         <td class="text-center">{{$kategori->name_category}}</td>
                         <td class="text-center">
                             <div class="d-flex align-items-center gap-10 justify-content-center">
@@ -37,23 +37,22 @@
                     </tr>
 
                     <!-- Modal Update -->
-                    <div class="modal fade" id="editModal{{$kategori->id}}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="editModal{{ $kategori->id }}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="editModalLabel">Ubah Kategori</h1>
                                 </div>
                                 <div class="modal-body p-24">
-                                    <form action="{{ auth()->user()->role === 'admin' 
-                                        ? route('admin.produkKategori.update', $kategori->id) 
-                                        : route('owner.produkKategori.update', $kategori->id) }}" method="POST">                                    
-                                        
+                                    <form></form>
+                                    <form action="{{ route('admin.produkKategori.update', $kategori->id) }}" method="POST">
+                                        @csrf
                                         @method('PUT')
                                         <div class="row">
                                             <div class="col-12">
                                                 <label class="form-label">Nama Kategori</label>
                                                 <input type="text" id="name_category" name="name_category" class="form-control"
-                                                    value="{{$kategori->name_category}}" placeholder="Masukkan Nama Kategori" required>
+                                                    placeholder="Masukkan Nama Kategori" value="{{ $kategori->name_category }}" required>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-center gap-3 mt-24">
                                                 <button type="reset" class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-40 py-11 radius-8" data-bs-dismiss="modal">
@@ -62,7 +61,7 @@
                                                 <button type="submit" class="btn btn-primary-500 text-md px-48 py-12 radius-8">
                                                     Simpan
                                                 </button>
-                                            </div>
+                                            </div>  
                                         </div>
                                     </form>
                                 </div>
@@ -86,8 +85,8 @@
                                 <div class="modal-footer">
                                     <form action="{{ auth()->user()->role === 'admin' 
                                         ? route('admin.produkKategori.destroy', $kategori->id) 
-                                        : route('owner.produkKategori.destroy', $kategori->id) }}" method="POST">                                    
-                                        
+                                        : route('owner.produkKategori.destroy', $kategori->id) }}" method="POST">
+                                        @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Tidak</button>
@@ -110,14 +109,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="addModalLabel">Tambah Produk</h1>
+                <h1 class="modal-title fs-5" id="addModalLabel">Tambah Kategori Produk</h1>
             </div>
             <div class="modal-body p-24">
-                @if (Auth::user()->role === 'admin')
-                    <form action="{{ route('admin.produkKategori.store') }}" method="POST">
-                @else
-                    <form action="{{ route('owner.produkKategori.store') }}" method="POST">
-                @endif
+                <form action="{{ route('admin.produkKategori.store') }}" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-12">
@@ -132,7 +127,7 @@
                             <button type="submit" class="btn btn-primary-500 text-md px-48 py-12 radius-8">
                                 Simpan
                             </button>
-                        </div>
+                        </div>  
                     </div>
                 </form>
             </div>
@@ -165,7 +160,7 @@
                 topStart: ["search", "buttons"],
                 topEnd: {
                     div: {
-                        html: '<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah Produk</button>'
+                        html: '<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-8" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah Kategori</button>'
                     }
                 }
             },

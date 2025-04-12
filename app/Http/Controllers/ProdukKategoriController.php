@@ -18,13 +18,21 @@ class ProdukKategoriController extends Controller
         return view('produk.kategori.index', ['name_category' => $kategori], compact('kategori'));
     }
 
+    public function create()
+    {
+        // return view('produk.kategori.create');
+    }
+    
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        $kategori = CategoryProduct::create($request->all( ));
-        return redirect()->back()->with('success', 'Data berhasil disimpan');
+        $kategori = new CategoryProduct();
+        $kategori->id_greenhouse = Auth::user()->id_greenhouse;
+        $kategori->name_category = $request->name_category;
+        $kategori->save();
+            return redirect()->back()->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -48,8 +56,9 @@ class ProdukKategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $kategori = CategoryProduct::findOrFail($id);
+        $kategori = CategoryProduct::find($id);
         $kategori->update($request->all());
+        $kategori->save();
         return redirect()->back()->with('success', 'Data berhasil diupdate');
     }
 
