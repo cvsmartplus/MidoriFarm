@@ -2,291 +2,183 @@
 @php
     $title = 'Daftar Pelanggan';
     $subTitle = 'Pelanggan & Pemasok - Pelanggan';
-    // $script = tambahin script buat modal untuk nyimpan data disini
 @endphp
-@section('content')
-<div class="card">
-    <div class="card-header d-flex flex-wrap align-items-center justify-content-between gap-3">
-        <div class="d-flex flex-wrap align-items-center gap-3">
-            <div class="d-flex align-items-center gap-2">
-                <span>Show</span>
-                <select class="form-select form-select-sm w-auto">
-                    <option>10</option>
-                    <option>15</option>
-                    <option>20</option>
-                </select>
-            </div>
-            <div class="icon-field">
-                <input type="text" name="#0" class="form-control form-control-sm w-auto" placeholder="Cari">
-                <span class="icon">
-                    <iconify-icon icon="ion:search-outline"></iconify-icon>
-                </span>
-            </div>
-        </div>
-        <div class="d-flex flex-wrap align-items-center gap-3">
-            <select id="category" class="form-select form-select-sm w-auto">
-                <option id="cat-1">Status</option>
-                <option id="cat-2">Paid</option>
-                <option id="cat-3">Pending</option>
-            </select>
-            <button type="button" class="btn btn-sm btn-primary-400"><i class="ri-add-line"></i> Buat Nota</button>
-        </div>
-    </div>
-    <div class="card-body">
-        <table class="table bordered-table mb-0">
-            <thead>
-                <tr>
-                    
-                    <th scope="col">Invoice</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Debt Date</th>
-                    <th scope="col">Due Date</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    
-                    <td><a  href="javascript:void(0)" class="text-primary-600">#526534</a></td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/images/user-list/user-list1.png') }}" alt="" class="flex-shrink-0 me-12 radius-8">
-                            <h6 class="text-md mb-0 fw-medium flex-grow-1">Kathryn Murphy</h6>
-                        </div>
-                    </td>
-                    <td>25 Jan 2024</td>
-                    <td> 30 Jan 2025</td>
-                    <td>$200.00</td>
-                    <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
-                    <td>
-                        @if (Auth::user()->role == 'admin')
-                            <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                                <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                            </a>
-                        @elseif (Auth::user()->role == 'owner')
-                            <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                                <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                            </a>
-                        @endif
-                    </td>
-                </tr>
-                <tr>
-                    <td><a  href="javascript:void(0)" class="text-primary-600">#696589</a></td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/images/user-list/user-list2.png') }}" alt="" class="flex-shrink-0 me-12 radius-8">
-                            <h6 class="text-md mb-0 fw-medium flex-grow-1">Annette Black</h6>
-                        </div>
-                    </td>
-                    <td>25 Jan 2024</td>
-                    <td> 30 Jan 2025</td>
-                    <td>$200.00</td>                      
-                    <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
-                    <td>
-                        
-                        
-                        <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td><a  href="javascript:void(0)" class="text-primary-600">#256584</a></td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/images/user-list/user-list3.png') }}" alt="" class="flex-shrink-0 me-12 radius-8">
-                            <h6 class="text-md mb-0 fw-medium flex-grow-1">Ronald Richards</h6>
-                        </div>
-                    </td>
-                    <td>10 Feb 2024</td>
-                    <td> 15 Feb 2025</td>
-                    <td>$200.00</td>
-                    <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
-                    <td>
-                        
-                        
-                        <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td><a  href="javascript:void(0)" class="text-primary-600">#526587</a></td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/images/user-list/user-list4.png') }}" alt="" class="flex-shrink-0 me-12 radius-8">
-                            <h6 class="text-md mb-0 fw-medium flex-grow-1">Eleanor Pena</h6>
-                        </div>
-                    </td>
-                    <td>10 Feb 2024</td>
-                    <td> 15 Feb 2025</td>
-                    <td>$150.00</td>
-                    <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
-                    <td>
-                        
-                        
-                        <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td><a  href="javascript:void(0)" class="text-primary-600">#105986</a></td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/images/user-list/user-list5.png') }}" alt="" class="flex-shrink-0 me-12 radius-8">
-                            <h6 class="text-md mb-0 fw-medium flex-grow-1">Leslie Alexander</h6>
-                        </div>
-                    </td>
-                    <td>15 March 2024</td>
-                    <td> 20 March 2025</td>
-                    <td>$150.00</td>
-                    <td> <span class="bg-warning-focus text-warning-main px-24 py-4 rounded-pill fw-medium text-sm">Pending</span> </td>
-                    <td>
-                        
-                        
-                        <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td><a  href="javascript:void(0)" class="text-primary-600">#526589</a></td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/images/user-list/user-list6.png') }}" alt="" class="flex-shrink-0 me-12 radius-8">
-                            <h6 class="text-md mb-0 fw-medium flex-grow-1">Albert Flores</h6>
-                        </div>
-                    </td>
-                    <td>15 March 2024</td>
-                    <td> 20 March 2025</td>
-                    <td>$150.00</td>
-                    <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
-                    <td>
-                        
-                        
-                        <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td><a  href="javascript:void(0)" class="text-primary-600">#526520</a></td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/images/user-list/user-list7.png') }}" alt="" class="flex-shrink-0 me-12 radius-8">
-                            <h6 class="text-md mb-0 fw-medium flex-grow-1">Jacob Jones</h6>
-                        </div>
-                    </td>
-                    <td>27 April 2024</td>
-                    <td> 1 May 2025</td>
-                    <td>$250.00</td>
-                    <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
-                    <td>
-                        
-                        
-                        <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td><a  href="javascript:void(0)" class="text-primary-600">#256584</a></td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/images/user-list/user-list8.png') }}" alt="" class="flex-shrink-0 me-12 radius-8">
-                            <h6 class="text-md mb-0 fw-medium flex-grow-1">Jerome Bell</h6>
-                        </div>
-                    </td>
-                    <td>27 April 2024</td>
-                    <td> 1 May 2025</td>
-                    <td>$250.00</td>
-                    <td> <span class="bg-warning-focus text-warning-main px-24 py-4 rounded-pill fw-medium text-sm">Pending</span> </td>
-                    <td>
-                        
-                        
-                        <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td><a  href="javascript:void(0)" class="text-primary-600">#200257</a></td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/images/user-list/user-list9.png') }}" alt="" class="flex-shrink-0 me-12 radius-8">
-                            <h6 class="text-md mb-0 fw-medium flex-grow-1">Marvin McKinney</h6>
-                        </div>
-                    </td>
-                    <td>30 April 2024</td>
-                    <td> 6 May 2025</td>
-                    <td>$250.00</td>
-                    <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
-                    <td>
-                        
-                        
-                        <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td><a  href="javascript:void(0)" class="text-primary-600">#526525</a></td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/images/user-list/user-list10.png') }}" alt="" class="flex-shrink-0 me-12 radius-8">
-                            <h6 class="text-md mb-0 fw-medium flex-grow-1">Cameron Williamson</h6>
-                        </div>
-                    </td>
-                    <td>30 April 2024</td>
-                    <td> 6 May 2025</td>
-                    <td>$250.00</td>
-                    <td> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
-                    <td>
-                        
-                        
-                        <a  href="javascript:void(0)" class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
-        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-24">
-            <span>Showing 1 to 10 of 12 entries</span>
-            <ul class="pagination d-flex flex-wrap align-items-center gap-2 justify-content-center">
-                <li class="page-item">
-                    <a class="page-link text-secondary-light fw-medium radius-4 border-0 px-10 py-10 d-flex align-items-center justify-content-center h-32-px w-32-px bg-base"  href="javascript:void(0)">
-                        <iconify-icon icon="ep:d-arrow-left" class="text-xl"></iconify-icon>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link bg-primary-600 text-white fw-medium radius-4 border-0 px-10 py-10 d-flex align-items-center justify-content-center h-32-px w-32-px"  href="javascript:void(0)">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link bg-primary-50 text-secondary-light fw-medium radius-4 border-0 px-10 py-10 d-flex align-items-center justify-content-center h-32-px w-32-px"  href="javascript:void(0)">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link bg-primary-50 text-secondary-light fw-medium radius-4 border-0 px-10 py-10 d-flex align-items-center justify-content-center h-32-px w-32-px"  href="javascript:void(0)">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link text-secondary-light fw-medium radius-4 border-0 px-10 py-10 d-flex align-items-center justify-content-center h-32-px w-32-px bg-base"  href="javascript:void(0)">
-                        <iconify-icon icon="ep:d-arrow-right" class="text-xl"></iconify-icon>
-                    </a>
-                </li>
-            </ul>
+@section('content')
+<div class="card h-100 p-0 radius-12">
+    <div class="card-body">
+        <div class="table-responsive scroll-sm">
+            <table class="table bordered-table sm-table mb-0" id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">Barcode</th>
+                        <th scope="col" class="text-center">Nama Pelanggan</th>
+                        <th scope="col" class="text-center">Email</th>
+                        <th scope="col" class="text-center">Alamat</th>
+                        <th scope="col" class="text-center">No.Telp</th>
+                        <th scope="col" class="text-center">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                    @foreach($pelanggan as $i => $item)
+                    <tr>
+                        <td class="text-center">{{ $item->id}}</td>
+                        <td class="text-center">{{ $item->name}}</td>
+                        <td class="text-center">{{ $item->email}}</td>
+                        <td class="text-center">{{ $item->address}}</td>
+                        <td class="text-center">{{ $item->phone_number}}</td>
+                        <td class="text-center">
+                            <div class="d-flex align-items-center gap-10 justify-content-center">
+                                <button type="button" class="bg-success-focus text-success-600 bg-hover-success-200 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle" data-bs-toggle="modal" data-bs-target="#editModal{{ $item->id }}">
+                                    <iconify-icon icon="lucide:edit" class="menu-icon"></iconify-icon>
+                                </button>
+                                <button type="button" class="bg-danger-focus bg-hover-danger-200 text-danger-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $item->id }}">
+                                    <iconify-icon icon="fluent:delete-24-regular" class="menu-icon"></iconify-icon>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Modal Edit -->
+                    <div class="modal fade" id="editModal{{ $item->id }}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="editModalLabel">Edit Pelanggan</h1>
+                                </div>
+                                <div class="modal-body p-24">
+                                    <form></form>
+                                    <form action="{{ route('admin.pelanggan.update', $item->id) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label class="form-label">Nama Pelanggan</label>
+                                                <input type="text" name="name" class="form-control" value="{{ $item->name }}" required>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">Email</label>
+                                                <input type="text" name="email" class="form-control" value="{{ $item->email }}" required>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">Alamat</label>
+                                                <input type="text" name="address" class="form-control" value="{{ $item->address }}" required>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">No. Telp</label>
+                                                <input type="text" name="phone_number" class="form-control" value="{{ $item->phone_number }}" required>
+                                            </div>
+                                            <div class="d-flex justify-content-end gap-3 mt-3">
+                                                <button type="reset" class="btn btn-outline-danger" data-bs-dismiss="modal">Batal</button>
+                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Delete -->
+                    <div class="modal fade" id="deleteModal{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Peringatan</h5>
+                                </div>
+                                <div class="modal-body">
+                                    Apakah anda yakin data ingin dihapus?
+                                </div>
+                                <div class="modal-footer">
+                                    <form></form>
+                                    <form action="{{ route('admin.pelanggan.destroy', $item->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                                        <button type="submit" class="btn btn-danger">Iya</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
+
+<!-- Modal Add -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addModalLabel">Tambah Pelanggan</h1>
+            </div>
+            <div class="modal-body p-24">
+                <form action=""></form>
+                <form action="{{ route('admin.pelanggan.store') }}" method="POST" class="needs-validation" novalidate>
+                    @csrf
+                    @method('post')
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="form-label">Nama Pelanggan</label>
+                            <input type="text" name="name" class="form-control" placeholder="Masukkan Nama Pelanggan" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Masukkan Email" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Alamat</label>
+                            <input type="text" name="address" class="form-control" placeholder="Masukkan Alamat" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">No. Telp</label>
+                            <input type="text" name="phone_number" class="form-control" placeholder="Masukkan Nomor Telepon" required>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center gap-3 mt-24">
+                            <button type="reset" class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-40 py-11 radius-8" data-bs-dismiss="modal">
+                                Cancel
+                            </button>
+                            <button type="submit" class="btn btn-primary-500 text-md px-48 py-12 radius-8">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+</div>
+<!-- Modal Add End -->
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new DataTable("#dataTable", {
+            paging: true,
+            autoWidth: true,
+            fixedHeader: false,
+            buttons: ["excelHtml5", "csvHtml5", "pdfHtml5", "print"],
+            initComplete: function () {
+                var btns = document.querySelectorAll(".dt-button");
+                btns.forEach(function (btn) {
+                    btn.classList.add("btn", "btn-success", "btn-sm");
+                    btn.classList.remove("dt-button");
+                });
+            },
+            layout: {
+                topStart: ["search", "buttons"],
+                topEnd: {
+                    div: {
+                        html: '<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah Produk</button>'
+                    }
+                }
+            },
+            responsive: true
+        });
+    });
+</script>
+@endpush

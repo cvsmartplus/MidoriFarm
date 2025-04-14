@@ -90,7 +90,9 @@ Route::middleware(['auth'])->group(function () {
         Route::controller(PelangganController::class)->group(function () {
             Route::post('/pelanggan-pemasok/pelanggan/add-invoice', 'store')->name('admin.pelanggan.store');
             Route::get('/pelanggan-pemasok/pelanggan', 'index')->name('admin.pelanggan.index');
-            Route::delete('/tagihan/pemasok/id', 'destroy')->name('admin.tagihanPemasok.destroy');
+            Route::post('/pelanggan-pemasok/pelanggan', 'store')->name('admin.pelanggan.store');
+            Route::put('/pelanggan-pemasok/pelanggan/{id}', 'update')->name('admin.pelanggan.update');
+            Route::delete('/pelanggan-pemasok/pelanggan/{id}', 'destroy')->name('admin.pelanggan.destroy');
         });
         Route::controller(PengeluaranKelolaController::class)->group(function () {
             Route::get('/pengeluaran/kelola', 'index')->name('admin.pengeluaranKelola.index');
@@ -232,7 +234,9 @@ Route::middleware(['auth'])->group(function () {
         Route::controller(PelangganController::class)->group(function () {
             Route::post('/pelanggan-pemasok/pelanggan/add-invoice', 'store')->name('owner.pelanggan.store');
             Route::get('/pelanggan-pemasok/pelanggan', 'index')->name('owner.pelanggan.index');
-            Route::delete('/pelanggan-pemasok/pelanggan', 'destroy')->name('owner.pelanggan.destroy');
+            Route::post('/pelanggan-pemasok/pelanggan', 'store')->name('owner.pelanggan.store');
+            Route::put('/pelanggan-pemasok/pelanggan/{id}', 'update')->name('owner.pelanggan.update');
+            Route::delete('/tagihan/pemasok/{id}', 'destroy')->name('owner.tagihanPemasok.destroy');
         });
         Route::controller(PemasokController::class)->group(function () {
             Route::post('/pelanggan-pemasok/pemasok', 'store')->name('owner.pemasok.store');
