@@ -107,7 +107,8 @@ Route::middleware(['auth'])->group(function () {
         Route::controller(PemasokController::class)->group(function () {
             Route::post('/pemasok-pemasok/pemasok/add-invoice', 'store')->name('admin.pemasok.store');
             Route::get('/pemasok-pemasok/pemasok', 'index')->name('admin.pemasok.index');
-            Route::delete('/tagihan/pemasok/id', 'destroy')->name('admin.tagihanPemasok.destroy');
+            Route::put('/pelanggan-pemasok/pemasok/{id}', 'update')->name('admin.pemasok.update');
+            Route::delete('/pelanggan-pemasok/pemasok/{id}', 'destroy')->name('admin.pemasok.destroy');
         });
         // diluar fitur website (komponen pendukung pengembangan)
         Route::controller(SettingsController::class)->group(function () {
@@ -241,7 +242,8 @@ Route::middleware(['auth'])->group(function () {
         Route::controller(PemasokController::class)->group(function () {
             Route::post('/pelanggan-pemasok/pemasok', 'store')->name('owner.pemasok.store');
             Route::get('/pelanggan-pemasok/pemasok', 'index')->name('owner.pemasok.index');
-            Route::delete('/pelanggan-pemasok/pemasok', 'destroy')->name('owner.Pemasok.destroy');
+            Route::put('/pelanggan-pemasok/pemasok/{id}', 'update')->name('owner.pemasok.update');
+            Route::delete('/pelanggan-pemasok/pemasok/{id}', 'destroy')->name('owner.pemasok.destroy');
         });
     });
 });

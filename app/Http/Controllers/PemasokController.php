@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pemasok;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class PemasokController extends Controller
@@ -11,7 +13,8 @@ class PemasokController extends Controller
      */
     public function index()
     {
-        return view('pemasok.index');
+        $pemasok = Pemasok::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
+        return view('pemasok.index', ['pemasok' => $pemasok]);
     }
 
     /**
@@ -28,6 +31,18 @@ class PemasokController extends Controller
     public function store(Request $request)
     {
         //
+        $pemasok = new Pemasok();
+        $pemasok->id_greenhouse = Auth::user()->id_greenhouse;
+        $pemasok->name = $request->name;
+        $pemasok->address = $request->address;
+        $pemasok->email = $request->email;
+        $pemasok->phone_number = $request->phone_number;
+        $pemasok->save();
+        if($pemasok){
+            return redirect()->back()->with("Pemasok berhasil di tambahkan");
+        } else{
+            return redirect()->back()->with("Pemasok Gagal di tambahkan");
+        }
     }
 
     /**
@@ -36,6 +51,8 @@ class PemasokController extends Controller
     public function show(string $id)
     {
         //
+        $pemasok = Pemasok::find($id);
+        return response()->json($pemasok);
     }
 
     /**
@@ -52,6 +69,11 @@ class PemasokController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $pemasok = Pemasok::find($id);
+        $pemasok->update($request->all());
+        $pemasok->save();
+
+        return redirect()->back()->with('success', "Pemasok berhasil di ubah");
     }
 
     /**
@@ -60,5 +82,9 @@ class PemasokController extends Controller
     public function destroy(string $id)
     {
         //
+        $pemasok = Pemasok::find($id);
+        $pemasok->delete();
+
+        return redirect()->back()->with('success', "Pemasok berhasil dihapus");
     }
 }
