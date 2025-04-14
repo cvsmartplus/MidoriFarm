@@ -19,7 +19,6 @@ class CategoryExpenseSeeder extends Seeder
         //
         DB::table('category_expenses')->insert([
             'name_category' => $faker->word,
-            'description' => $faker->sentence,
             'created_at' => now(),
         ]);
 

@@ -16,13 +16,9 @@ class ExpenseSeeder extends Seeder
     {
         $faker = Faker::create();
         for ($i = 0; $i < 10; $i++) {
-            $id_user = $faker->numberBetween(1,3);
-            $id_asset = $faker->numberBetween(1, 3);
             $id_cat_exp = $faker->numberBetween(1, 3);
         //
         DB::table('expenses')->insert([
-            'id_user' => $id_user,
-            'id_asset' => $id_asset,
             'id_cat_exp' => $id_cat_exp,
             'subtotal' => $faker->numberBetween(1, 100),
             'description' => $faker->sentence(),

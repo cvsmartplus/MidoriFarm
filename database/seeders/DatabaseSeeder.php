@@ -32,17 +32,17 @@ class DatabaseSeeder extends Seeder
             CategoryAssetSeeder::class,
             AssetSeeder::class,
             ArticleSeeder::class,
-            LogHistorySeeder::class,
             SaleSeeder::class,
             OrderSaleSeeder::class,
             CategoryExpenseSeeder::class,
             ExpenseSeeder::class,
-            IndebtSeeder::class,
-            OutdebtSeeder::class,
-            IotSeeder::class,
+            SupplierDebtSeeder::class,
+            CustomerDebtSeeder::class,
+            CategoryNotificationSeeder::class,
             NotificationSeeder::class,
+            IotSeeder::class,
             IsOutputEnableSeeder::class,
-            SensorConfigSeeder::class,
+            // SensorConfigSeeder::class,
         ]);
     }
 }

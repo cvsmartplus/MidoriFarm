@@ -21,6 +21,8 @@ class IotSeeder extends Seeder
             'id_greenhouse' => 1,
             'sensor_id'=> $faker->numberBetween(1,3),
             'value' => $faker->randomFloat(2,0,100),
+            'id_cat_notif' => $faker->numberBetween(1, 3),
+            'log' => $faker->sentence,
             'created_at' => $faker->dateTimeBetween('-30 days', 'now'),
             'updated_at' => $faker->dateTimeBetween('-30 days', 'now'),
         ]);

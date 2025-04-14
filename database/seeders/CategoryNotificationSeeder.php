@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
-class IndebtSeeder extends Seeder
+class CategoryNotificationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,13 +17,9 @@ class IndebtSeeder extends Seeder
         $faker = Faker::create();
         for ($i = 0; $i < 10; $i++) {
         //
-        DB::table('indebts')->insert([
-            'id_greenhouse' => 1,
-            'id_supplier' => $faker->numberBetween(1, 3),
-            'amount' => $faker->randomFloat(2, 0, 1000),
-            'status' => $faker->numberBetween(0, 1),
-            'date' => $faker->date,
-            'due_date' => $faker->date,
+        DB::table('category_notifications')->insert([
+            'name' => $faker->name,
+            'content' => $faker->sentence,
         ]);
         }
     }

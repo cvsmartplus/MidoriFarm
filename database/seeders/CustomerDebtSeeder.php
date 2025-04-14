@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
-class OutdebtSeeder extends Seeder
+class CustomerDebtSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,13 +17,15 @@ class OutdebtSeeder extends Seeder
         $faker = Faker::create();
         for ($i = 0; $i < 10; $i++) {
         //
-        DB::table('outdebts')->insert([
+        DB::table('customer_debts')->insert([
             'id_greenhouse' => 1,
             'id_customer' => $faker->numberBetween(1, 3),
+            'name' =>$faker->name,
             'amount' => $faker->randomFloat(2, 10, 1000),
             'status' => $faker->numberBetween(0, 1),
             'date' => $faker->date,
             'due_date' => $faker->date,
+            'debt_date' => $faker->date,
         ]);
         }
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
-class IsOutputEnableSeeder extends Seeder
+class SupplierDebtSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,12 +17,15 @@ class IsOutputEnableSeeder extends Seeder
         $faker = Faker::create();
         for ($i = 0; $i < 10; $i++) {
         //
-        DB::table('is_output_enables')->insert([
+        DB::table('supplier_debts')->insert([
             'id_greenhouse' => 1,
-            'pump_water' => $faker->boolean,
-            'pump_waterdrop' => $faker->boolean,
-            'rolling_roof' => $faker->boolean,
-            'updated_at' => now(),
+            'id_supplier' => $faker->numberBetween(1, 3),
+            'name' => $faker->name,
+            'amount' => $faker->randomFloat(2, 0, 1000),
+            'status' => $faker->numberBetween(0, 1),
+            'date' => $faker->date,
+            'due_date' => $faker->date,
+            'debt_date' => $faker->date,
         ]);
         }
     }
