@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->foreignId('sensor_id')->references('id')->on('sensors');
             $table->float('value');
+            $table->foreignId('id_cat_notif')->references('id')->on('category_notifications');
+            $table->string('log');
         });
     }
 

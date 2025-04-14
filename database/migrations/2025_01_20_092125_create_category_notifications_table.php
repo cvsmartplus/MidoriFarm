@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category_assets', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
-            $table->string('name_category', 255);
+        Schema::create('category_notifications', function (Blueprint $table) {
+        $table->id();
+        $table->timestamps();
+        $table->string('name');
+        $table->text('content');
         });
     }
 
@@ -24,7 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('assets');
-        Schema::dropIfExists('category_assets');
+        Schema::dropIfExists('category_notifications');
     }
 };

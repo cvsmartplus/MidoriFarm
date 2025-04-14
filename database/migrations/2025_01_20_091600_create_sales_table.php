@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('id_user')->references('id')->on('users');
             $table->foreignId('id_product')->references('id')->on('products');
+            $table->integer('price');
+            $table->integer('quantity');
             $table->integer('subtotal');
-            $table->integer('pay');
-            $table->integer('payment_methods');
             $table->date('date');
         });
     }

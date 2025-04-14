@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('is_output_enables', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
-            $table->boolean('pump_waters');
-            $table->boolean('pump_waterdrops');
+            $table->boolean('pump_water');
+            $table->boolean('pump_waterdrop');
+            $table->boolean('rolling_roof');
             $table->timestamp('updated_at');
         });
     }

@@ -11,25 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('outdebts', function (Blueprint $table) {
+        Schema::create('supplier_debts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
-            $table->foreignId('id_customer')->references('id')->on('customers');
+            $table->foreignId('id_supplier')->references('id')->on('suppliers');
+            $table->string('name');
             $table->decimal('amount');
             $table->boolean('status');
             $table->date('date');
             $table->date('due_date');
-
-
-
-
-
-
-
-
-
-
+            $table->date('debt_date');
         });
     }
 
@@ -38,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('outdebts');
+        Schema::dropIfExists('indebts');
     }
 };
