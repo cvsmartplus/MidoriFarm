@@ -44,8 +44,7 @@
                                     <h1 class="modal-title fs-5" id="editModalLabel">Ubah Kategori</h1>
                                 </div>
                                 <div class="modal-body p-24">
-                                    <form></form>
-                                    <form action="{{ route('admin.produkKategori.update', $kategori->id) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.produkKategori.update', 'owner.produkKategori.update',null, null, ['id' => $kategori->id]) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="row">
@@ -83,9 +82,7 @@
                                     Apakah anda yakin data ingin dihapus?
                                 </div>
                                 <div class="modal-footer">
-                                    <form action="{{ auth()->user()->role === 'admin' 
-                                        ? route('admin.produkKategori.destroy', $kategori->id) 
-                                        : route('owner.produkKategori.destroy', $kategori->id) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.produkKategori.destroy', 'owner.produkKategori.update', null, null, ['id' => $kategori->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary"
@@ -112,7 +109,7 @@
                 <h1 class="modal-title fs-5" id="addModalLabel">Tambah Kategori Produk</h1>
             </div>
             <div class="modal-body p-24">
-                <form action="{{ route('admin.produkKategori.store') }}" method="POST">
+                <form action="{{ routeByRole('admin.produkKategori.store','owner.produkKategori.store', null, null) }}" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-12">

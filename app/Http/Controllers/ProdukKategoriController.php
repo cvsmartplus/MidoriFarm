@@ -18,11 +18,6 @@ class ProdukKategoriController extends Controller
         return view('produk.kategori.index', ['name_category' => $kategori], compact('kategori'));
     }
 
-    public function create()
-    {
-        // return view('produk.kategori.create');
-    }
-    
     /**
      * Store a newly created resource in storage.
      */
@@ -33,22 +28,6 @@ class ProdukKategoriController extends Controller
         $kategori->name_category = $request->name_category;
         $kategori->save();
             return redirect()->back()->with('success', 'Data berhasil disimpan');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
     }
 
     /**

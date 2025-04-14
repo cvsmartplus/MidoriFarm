@@ -19,9 +19,9 @@
                     </tr>
                 </thead>
                 <tbody id="table">
-                    @foreach($produk as $i => $produk)
+                    @foreach($produk as $key => $produk)
                     <tr>
-                        <td class="text-center">{{$produk->id}}</td>
+                        <td class="text-center">{{$key + 1}}</td>
                         <td class="text-center">{{$produk->category->name_category}}</td>
                         <td class="text-center">{{$produk->name_product}}</td>
                         <td class="text-center">{{format_uang($produk->selling_price)}}</td>
@@ -49,8 +49,9 @@
                                     <h1 class="modal-title fs-5" id="editModalLabel">Update Produk</h1>
                                 </div>
                                 <div class="modal-body p-24">
-                                    <form action="{{ routeByRole('admin.produkKelola.update', 'owner.produkKelola.update', $produk->id) }}" method="POST">
-                                        @csrf
+                                    <form action=""></form>
+                                    <form action="{{ routeByRole('admin.produkKelola.update','owner.produkKelola.update', null, null, ['id' => $produk->id]) }}" method="POST">
+                                        @csrf  
                                         @method('PUT')
                                         <div class="row">
                                             <div class="col-12">
@@ -102,7 +103,7 @@
                                     Apakah anda yakin data ingin dihapus?
                                 </div>
                                 <div class="modal-footer">
-                                    <form action="{{ routeByRole('admin.produkKelola.destroy', 'owner.produkKelola.destroy', $produk->id) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.produkKelola.destroy','owner.produkKelola.destroy'  , null, null, ['id' => $produk->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary"
@@ -129,7 +130,7 @@
                 <h1 class="modal-title fs-5" id="addModalLabel">Tambah Produk</h1>
             </div>
             <div class="modal-body p-24">
-                <form action="{{ routeByRole('admin.produkKelola.store', 'owner.produkKelola.store') }}" method="POST" class="needs-validation" novalidate>
+                <form action="{{ routeByRole('admin.produkKelola.store', 'owner.produkKelola.store', null, null) }}" method="POST" class="needs-validation" novalidate>
                     @csrf
                     @method('post') 
                     <div class="row">
