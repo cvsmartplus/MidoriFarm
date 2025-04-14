@@ -236,7 +236,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/pelanggan-pemasok/pelanggan', 'index')->name('owner.pelanggan.index');
             Route::post('/pelanggan-pemasok/pelanggan', 'store')->name('owner.pelanggan.store');
             Route::put('/pelanggan-pemasok/pelanggan/{id}', 'update')->name('owner.pelanggan.update');
-            Route::delete('/tagihan/pemasok/{id}', 'destroy')->name('owner.tagihanPemasok.destroy');
+            Route::delete('/pelanggan-pemasok/pelanggan/{id}', 'destroy')->name('owner.pelanggan.destroy');
         });
         Route::controller(PemasokController::class)->group(function () {
             Route::post('/pelanggan-pemasok/pemasok', 'store')->name('owner.pemasok.store');
