@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('category_expenses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->string('name_category');
         });
     }

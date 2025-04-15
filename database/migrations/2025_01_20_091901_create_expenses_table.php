@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->foreignId('id_cat_exp')->references('id')->on('category_expenses');
             $table->integer('subtotal');
             $table->string('description', 255);

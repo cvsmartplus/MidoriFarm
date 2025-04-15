@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->foreignId('id_cat_notif')->references('id')->on('category_notifications');
             $table->text('content');
         });
