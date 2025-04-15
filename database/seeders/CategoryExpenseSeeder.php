@@ -18,6 +18,7 @@ class CategoryExpenseSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
         //
         DB::table('category_expenses')->insert([
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'name_category' => $faker->word,
             'created_at' => now(),
         ]);

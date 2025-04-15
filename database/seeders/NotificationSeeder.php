@@ -18,6 +18,7 @@ class NotificationSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
         //
         DB::table('notifications')->insert([
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'id_cat_notif' => $faker->numberBetween(1, 3),
             'content' => $faker->sentence,
         ]);

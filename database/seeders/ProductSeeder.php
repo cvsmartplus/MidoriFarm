@@ -20,7 +20,7 @@ class ProductSeeder extends Seeder
         //
 
         DB::table('products')->insert([
-            'id_greenhouse' => 1,
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'id_cat_product' => $id_cat_product,
             'name_product' => $faker->word,
             'selling_price'=> $faker->randomFloat(2, 1, 100),
