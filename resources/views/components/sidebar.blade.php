@@ -187,13 +187,13 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="{{ routeByRole('admin.penjualan.create', 'owner.penjualan.create', null, 'akuntan.penjualan.create') }}">
                             <iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
-                            <iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori
+                        <a href="{{ routeByRole('admin.penjualan.index', 'owner.penjualan.index', null, 'akuntan.penjualan.index') }}">
+                            <iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Laporan
                         </a>
                     </li>
                 </ul>
