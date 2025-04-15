@@ -96,19 +96,28 @@ Route::middleware(['auth'])->group(function () {
         });
         Route::controller(PengeluaranKelolaController::class)->group(function () {
             Route::get('/pengeluaran/kelola', 'index')->name('admin.pengeluaranKelola.index');
-            Route::put('/pengeluaran/kelola', 'update')->name('admin.pengeluaranKelola.update');
-            Route::delete('/pengeluaran/kelola/id', 'destroy')->name('admin.pengeluaranKelola.destroy');
+            Route::put('/pengeluaran/kelola/{id}', 'update')->name('admin.pengeluaranKelola.update');
+            Route::post('/pengeluaran/kelola', 'store')->name('admin.pengeluaranKelola.store');
+            Route::delete('/pengeluaran/kelola/{id}', 'destroy')->name('admin.pengeluaranKelola.destroy');
         });
         Route::controller(PengeluaranKategoriController::class)->group(function () {
             Route::get('/pengeluaran/kategori', 'index')->name('admin.pengeluaranKategori.index');
-            Route::put('/pengeluaran/kategori', 'update')->name('admin.pengeluaranKategori.update');
-            Route::delete('/pengeluaran/kategori/id', 'destroy')->name('admin.pengeluaranKategori.destroy');
+            Route::put('/pengeluaran/kategori', 'store')->name('admin.pengeluaranKategori.store');
+            Route::post('/pengeluaran/kategori/{id}', 'update')->name('admin.pengeluaranKategori.update');
+            Route::delete('/pengeluaran/kategori/{id}', 'destroy')->name('admin.pengeluaranKategori.destroy');
         });
         Route::controller(PemasokController::class)->group(function () {
             Route::post('/pemasok-pemasok/pemasok/add-invoice', 'store')->name('admin.pemasok.store');
             Route::get('/pemasok-pemasok/pemasok', 'index')->name('admin.pemasok.index');
             Route::put('/pelanggan-pemasok/pemasok/{id}', 'update')->name('admin.pemasok.update');
             Route::delete('/pelanggan-pemasok/pemasok/{id}', 'destroy')->name('admin.pemasok.destroy');
+        });
+        Route::controller(PenjualanController::class)->group(function () {
+            Route::get('/penjualan', 'create')->name('admin.penjualan.create');
+            Route::post('/penjualan', 'store')->name('admin.penjualan.store');
+            Route::get('/penjualan/laporan', 'index')->name('admin.penjualan.index');
+            Route::get('/penjualan/{id}', 'show')->name('admin.penjualan.show');
+            Route::delete('/penjualan/{id}', 'destroy')->name('admin.penjualan.destroy');
         });
         // diluar fitur website (komponen pendukung pengembangan)
         Route::controller(SettingsController::class)->group(function () {
@@ -207,13 +216,15 @@ Route::middleware(['auth'])->group(function () {
         });
         Route::controller(PengeluaranKelolaController::class)->group(function () {
             Route::get('/pengeluaran/kelola', 'index')->name('owner.pengeluaranKelola.index');
-            Route::put('/pengeluaran/kelola', 'update')->name('owner.pengeluaranKelola.update');
-            Route::delete('/pengeluaran/kelola/id', 'destroy')->name('owner.pengeluaranKelola.destroy');
+            Route::post('/pengeluaran/kelola', 'store')->name('owner.pengeluaranKelola.store');
+            Route::put('/pengeluaran/kelola/{id}', 'update')->name('owner.pengeluaranKelola.update');
+            Route::delete('/pengeluaran/kelola/{id}', 'destroy')->name('owner.pengeluaranKelola.destroy');
         });
         Route::controller(PengeluaranKategoriController::class)->group(function () {
             Route::get('/pengeluaran/kategori', 'index')->name('owner.pengeluaranKategori.index');
-            Route::put('/pengeluaran/kategori', 'update')->name('owner.pengeluaranKategori.update');
-            Route::delete('/pengeluaran/kategori/id', 'destroy')->name('owner.pengeluaranKategori.destroy');
+            Route::post('/pengeluaran/kategori', 'store')->name('owner.pengeluaranKategori.store');
+            Route::put('/pengeluaran/kategori/{id}', 'update')->name('owner.pengeluaranKategori.update');
+            Route::delete('/pengeluaran/kategori/{id}', 'destroy')->name('owner.pengeluaranKategori.destroy');
         });
         Route::controller(TagihanPelangganController::class)->group(function () {
             Route::post('/tagihan/pelanggan', 'store')->name('owner.tagihanPelanggan.store');
@@ -245,6 +256,13 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/pelanggan-pemasok/pemasok', 'index')->name('owner.pemasok.index');
             Route::put('/pelanggan-pemasok/pemasok/{id}', 'update')->name('owner.pemasok.update');
             Route::delete('/pelanggan-pemasok/pemasok/{id}', 'destroy')->name('owner.pemasok.destroy');
+        });
+        Route::controller(PenjualanController::class)->group(function () {
+            Route::get('/penjualan', 'create')->name('owner.penjualan.create');
+            Route::post('/penjualan', 'store')->name('owner.penjualan.store');
+            Route::get('/penjualan/laporan', 'index')->name('owner.penjualan.index');
+            Route::get('/penjualan/{id}', 'show')->name('owner.penjualan.show');
+            Route::delete('/penjualan/{id}', 'destroy')->name('owner.penjualan.destroy');
         });
     });
 });
@@ -289,13 +307,21 @@ Route::middleware(['auth'])->group(function () {
         });
         Route::controller(PengeluaranKelolaController::class)->group(function () {
             Route::get('/pengeluaran/kelola', 'index')->name('akuntan.pengeluaranKelola.index');
-            Route::put('/pengeluaran/kelola', 'update')->name('akuntan.pengeluaranKelola.update');
+            Route::put('/pengeluaran/kelola/{id}', 'update')->name('akuntan.pengeluaranKelola.update');
+            Route::post('/pengeluaran/kelola', 'store')->name('akuntan.pengeluaranKelola.store');
             Route::delete('/pengeluaran/kelola/id', 'destroy')->name('akuntan.pengeluaranKelola.destroy');
         });
         Route::controller(PengeluaranKategoriController::class)->group(function () {
             Route::get('/pengeluaran/kategori', 'index')->name('akuntan.pengeluaranKategori.index');
             Route::put('/pengeluaran/kategori', 'update')->name('akuntan.pengeluaranKategori.update');
             Route::delete('/pengeluaran/kategori/id', 'destroy')->name('akuntan.pengeluaranKategori.destroy');
+        });
+        Route::controller(PenjualanController::class)->group(function () {
+            Route::get('/penjualan', 'create')->name('akuntan.penjualan.create');
+            Route::post('/penjualan', 'store')->name('akuntan.penjualan.store');
+            Route::get('/penjualan/laporan', 'index')->name('akuntan.penjualan.index');
+            Route::get('/penjualan/{id}', 'show')->name('akuntan.penjualan.show');
+            Route::delete('/penjualan/{id}', 'destroy')->name('akuntan.penjualan.destroy');
         });
     });
 });

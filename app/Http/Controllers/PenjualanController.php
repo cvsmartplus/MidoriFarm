@@ -11,7 +11,7 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        return view('penjualan.penjualan.index');
+        return view('penjualan.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class PenjualanController extends Controller
      */
     public function create()
     {
-        //
+        return view('penjualan.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class PenjualanController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('penjualan.show');
     }
 
     /**
