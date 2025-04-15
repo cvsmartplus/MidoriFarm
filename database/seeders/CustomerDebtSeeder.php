@@ -18,7 +18,7 @@ class CustomerDebtSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
         //
         DB::table('customer_debts')->insert([
-            'id_greenhouse' => 1,
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'id_customer' => $faker->numberBetween(1, 3),
             'name' =>$faker->name,
             'amount' => $faker->randomFloat(2, 10, 1000),

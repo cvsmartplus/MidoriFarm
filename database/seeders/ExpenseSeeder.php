@@ -19,6 +19,7 @@ class ExpenseSeeder extends Seeder
             $id_cat_exp = $faker->numberBetween(1, 3);
         //
         DB::table('expenses')->insert([
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'id_cat_exp' => $id_cat_exp,
             'subtotal' => $faker->numberBetween(1, 100),
             'description' => $faker->sentence(),

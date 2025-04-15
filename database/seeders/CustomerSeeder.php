@@ -18,7 +18,7 @@ class CustomerSeeder extends Seeder
         for($i = 0; $i < 10; $i++) {
         //
         DB::table('customers')->insert([
-            'id_greenhouse' => 1,
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'name'=> $faker->name,
             'address' => $faker->address,
             'email'=> $faker->unique()->safeEmail,

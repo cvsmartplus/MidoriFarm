@@ -21,7 +21,7 @@ class GreenHouseSeeder extends Seeder
         DB::table('green_houses')->insert([
             'name' => 'Green House 1',
             'type_of_plant' => 'potato',
-            'location' => 'Location 1',
+            'location' => $faker->streetAddress,
             'status' => 1, // 1 untuk 'Active'
             'longitude' => $faker->longitude($min = -180, $max = 180),
             'latitude' => $faker->latitude($min = -90, $max = 90),
@@ -30,8 +30,8 @@ class GreenHouseSeeder extends Seeder
 
         DB::table('green_houses')->insert([
             'name' => 'Green House 2',
-            'type_of_plant' => 'potato',
-            'location' => 'Location 2',
+            'type_of_plant' => 'tomato',
+            'location' => $faker->streetAddress,
             'status' => 0, // 0 untuk 'Inactive'
             'longitude' => $faker->longitude($min = -180, $max = 180),
             'latitude' => $faker->latitude($min = -90, $max = 90),
@@ -40,19 +40,34 @@ class GreenHouseSeeder extends Seeder
 
         DB::table('green_houses')->insert([
             'name' => 'Green House 3',
-            'type_of_plant' => 'potato',
-            'location' => 'Location 3',
-            'status' => 1, // 0 untuk 'Inactive'
+            'type_of_plant' => 'corn',
+            'location' => $faker->streetAddress,
+            'status' => 1,
             'longitude' => $faker->longitude($min = -180, $max = 180),
             'latitude' => $faker->latitude($min = -90, $max = 90),
 
         ]);
 
-            // DB::table('green_houses')->insert([
-            //     'name' => fake()->company(),
-            //     'location' => fake()->address(),
-            //     'status' => fake()->randomElement([0, 1]),
-            // ]);
+        DB::table('green_houses')->insert([
+            'name' => 'Green House 4',
+            'type_of_plant' => 'potato',
+            'location' => $faker->streetAddress,
+            'status' => 0,
+            'longitude' => $faker->longitude($min = -180, $max = 180),
+            'latitude' => $faker->latitude($min = -90, $max = 90),
+
+        ]);
+
+        DB::table('green_houses')->insert([
+            'name' => 'Green House 5',
+            'type_of_plant' => 'tomato',
+            'location' => $faker->streetAddress,
+            'status' => 1,
+            'longitude' => $faker->longitude($min = -180, $max = 180),
+            'latitude' => $faker->latitude($min = -90, $max = 90),
+
+        ]);
+
         }
     }
 }
