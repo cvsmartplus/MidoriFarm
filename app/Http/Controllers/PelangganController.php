@@ -38,7 +38,7 @@ class PelangganController extends Controller
         $pelanggan->phone_number = $request->phone_number;
         $pelanggan->save();
         if($pelanggan){
-            return redirect()->back()->with('success', 'Pelanggan berhasil disimpan');
+            return redirect()->back()->with('success', 'Pelanggan berhasil di simpan');
         } else{
             return redirect()->back()->with('error', 'Pelanggan gagal di tambahkan');
         }

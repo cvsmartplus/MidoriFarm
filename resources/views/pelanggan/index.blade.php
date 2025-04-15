@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="modal-body p-24">
                                     <form></form>
-                                    <form action="{{ route('admin.pelanggan.update', $item->id) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.pelanggan.update', 'owner.pelanggan.update', null, null, ['id' => $item->id]) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="row">
@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <form></form>
-                                    <form action="{{ route('admin.pelanggan.destroy', $item->id) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.pelanggan.destroy', 'owner.pelanggan.destroy', null, null, ['id' => $item->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
@@ -117,7 +117,7 @@
             </div>
             <div class="modal-body p-24">
                 <form action=""></form>
-                <form action="{{ route('admin.pelanggan.store') }}" method="POST" class="needs-validation" novalidate>
+                <form action="{{ routeByRole('admin.pelanggan.store', 'owner.pelanggan.store', null, null,) }}" method="POST" class="needs-validation" novalidate>
                     @csrf
                     @method('post')
                     <div class="row">
