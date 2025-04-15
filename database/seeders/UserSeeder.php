@@ -17,13 +17,14 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = Faker::create('id_ID');
         //
         DB::table('users')->insert([
             'name' => 'Nazwha',
             'email' =>  'nazwhaawa1864@gmail.com',
             'password' => Hash::make('123'),
             'role' => 'admin',
-            'id_greenhouse' => 1,
+            'id_greenhouse' => $faker->numberBetween(1, 5),
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -33,7 +34,7 @@ class UserSeeder extends Seeder
             'email' =>  'sultanurulloh08@gmail.com',
             'password' => Hash::make('123'),
             'role' => 'admin',
-            'id_greenhouse' => 1,
+            'id_greenhouse' => $faker->numberBetween(1, 5),
             'created_at' => now(),
             'updated_at' => now(),
             ]);
@@ -41,14 +42,43 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Agan',
             'email' =>  'reyfhan58@gmail.com',
-            'password' => Hash::make('123'),
+            'password' => Hash::make('$faker->numberBetween(1, 5)23'),
             'role' => 'admin',
-            'id_greenhouse' => 1,
+            'id_greenhouse' => $faker->numberBetween(1, 5),
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
-        $faker = Faker::create('id_ID');
+        DB::table('users')->insert([
+            'name' => 'Naz',
+            'email' =>  'waw@gmail.com',
+            'password' => Hash::make('456'),
+            'role' => 'owner',
+            'id_greenhouse' => $faker->numberBetween(1, 5),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Sul',
+            'email' =>  'sul@gmail.com',
+            'password' => Hash::make('456'),
+            'role' => 'owner',
+            'id_greenhouse' => $faker->numberBetween(1, 5),
+            'created_at' => now(),
+            'updated_at' => now(),
+            ]);
+
+        DB::table('users')->insert([
+            'name' => 'Rey',
+            'email' =>  'gan@gmail.com',
+            'password' => Hash::make('456'),
+            'role' => 'owner',
+            'id_greenhouse' => $faker->numberBetween(1, 5),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
         for ($i = 0; $i < 10; $i++) {
             DB::table('users')->insert([
                 'name' => $faker->name,
