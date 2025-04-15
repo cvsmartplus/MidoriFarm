@@ -13,7 +13,7 @@
     </div>
     <div class="sidebar-menu-area">
         <ul class="sidebar-menu" id="sidebar-menu">
-            @if(Auth::check())
+            {{-- @if(Auth::check()) --}}
             <!-- Beranda -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
@@ -167,7 +167,7 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="{{ routeByRole('admin.pengeluaranKelola.index', ' owner.pengeluaranKelola.index', null, 'akuntan.pengeluaranKelola.index') }}">
+                        <a href="{{ routeByRole('admin.pengeluaranKelola.index', 'owner.pengeluaranKelola.index', null, 'akuntan.pengeluaranKelola.index') }}">
                             <iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola
                         </a>
                     </li>
@@ -220,6 +220,7 @@
             </li>
 
             {{-- ELEMENTS BUAT DEVELOPMENT --}}
+            @if (Auth::user()->role == 'admin')
             <li class="sidebar-menu-group-title">UI Elements</li>
             <li class="dropdown">
                 <a  href="javascript:void(0)">
@@ -405,7 +406,7 @@
                     </li>
                 </ul>
             </li>
-        @endif
+            @endif
         @endauth
         </ul>
     </div>

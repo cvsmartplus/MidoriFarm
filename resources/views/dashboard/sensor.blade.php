@@ -109,66 +109,7 @@
                                 <div class="tab-pane fade show active" id="pills-header-home" role="tabpanel"
                                     aria-labelledby="pills-header-home-tab" tabindex="0">
                                     <div class="row  justify-content-evenly  gy-4">
-                                        <div class="col-lg-4 col-sm-6">
-                                            <div
-                                                class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
-                                                <div class="me-3 text-black">
-                                                    <iconify-icon icon="solar:temperature-bold" height="73"></iconify-icon>
-                                                </div>
-                                                <div>
-                                                <h6 class="text-primary-light text-md mb-8">Suhu Udara</h6>
-                                                <h1 class="fs-1 mb-0 fw-bolder">30°C</h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-6">
-                                            <div
-                                                class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
-                                                <div class="me-3 text-black">
-                                                    <iconify-icon icon="mdi:humidity-outline" height="73"></iconify-icon>
-                                                </div>
-                                                <div>
-                                                <h6 class="text-primary-light text-md mb-8">Kelembapan Udara</h6>
-                                                <h1 class="fs-1 mb-0 fw-bolder">70%</h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-6">
-                                            <div
-                                                class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
-                                                <div class="me-3 text-black">
-                                                    <iconify-icon icon="mdi:uv-ray-outline" height="73"></iconify-icon>
-                                                </div>
-                                                <div>
-                                                <h6 class="text-primary-light text-md mb-8">Nilai UV</h6>
-                                                <h1 class="fs-1 mb-0 fw-bolder">30%</h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-6">
-                                            <div
-                                                class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
-                                                <div class="me-3 text-black">
-                                                    <iconify-icon icon="mi:rain" height="73"></iconify-icon>
-                                                </div>
-                                                <div>
-                                                <h6 class="text-primary-light text-md mb-8">Curah Hujan</h6>
-                                                <h1 class="fs-1 mb-0 fw-bolder">50%</h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-6">
-                                            <div
-                                                class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info border-top-0 border-end-0 border-bottom-0">
-                                                <div class="me-3 text-black">
-                                                    <iconify-icon icon="material-symbols:air-rounded" height="73"></iconify-icon>
-                                                </div>
-                                                <div>
-                                                <h6 class="text-primary-light text-md mb-8">Kualitas Udara</h6>
-                                                <h1 class="fs-1 mb-0 fw-bolder">1000ppm</h1>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
