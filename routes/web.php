@@ -197,8 +197,9 @@ Route::middleware(['auth'])->group(function () {
         });
         Route::controller(AssetKategoriController::class)->group(function () {
             Route::get('/asset/kategori', 'index')->name('owner.assetKategori.index');
-            Route::put('/asset/kategori', 'update')->name('owner.assetKategori.update');
-            Route::delete('/asset/kategori/id', 'destroy')->name('owner.assetKategori.destroy');
+            Route::put('/asset/kategori/{id}', 'update')->name('owner.assetKategori.update');
+            Route::post('/asset/kategori', 'store')->name('owner.assetKategori.store');
+            Route::delete('/asset/kategori/{id}', 'destroy')->name('owner.assetKategori.destroy');
         });
         Route::controller(AssetKelolaController::class)->group(function () {
             Route::get('/asset/kelola', 'index')->name('owner.assetKelola.index');

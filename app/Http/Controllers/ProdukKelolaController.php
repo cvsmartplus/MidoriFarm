@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-use App\Models\CategoryProduct;
+use App\Models\ProdukKategori;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +15,7 @@ class ProdukKelolaController extends Controller
      */
     public function index()
     {
-        $kategori = CategoryProduct::where('id_greenhouse', Auth::user()->id_greenhouse)
+        $kategori = ProdukKategori::where('id_greenhouse', Auth::user()->id_greenhouse)
         ->pluck('name_category', 'id');
         $produk = Product::with('category')->where('id_greenhouse', Auth::user()->id_greenhouse)->get();
         return view('produk.kelola.index', ['produk' => $produk], compact('kategori'));

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\AssetKategori;
+use Illuminate\Support\Facades\Auth;
 
 class AssetKategoriController extends Controller
 {
@@ -11,15 +13,8 @@ class AssetKategoriController extends Controller
      */
     public function index()
     {
-        return view('asset.kategori.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $kategori = AssetKategori::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
+        return view('asset.kategori.index', ['name_category' => $kategori], compact('kategori'));
     }
 
     /**
@@ -27,23 +22,11 @@ class AssetKategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        $kategori = new AssetKategori();
+        $kategori->id_greenhouse = Auth::user()->id_greenhouse;
+        $kategori->name_category = $request->name_category;
+        $kategori->save();
+            return redirect()->back()->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -51,7 +34,10 @@ class AssetKategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $kategori = AssetKategori::find($id);
+        $kategori->update($request->all());
+        $kategori->save();
+        return redirect()->back()->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -59,6 +45,8 @@ class AssetKategoriController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $kategori = AssetKategori::findOrFail($id);
+        $kategori->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }

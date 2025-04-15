@@ -2,161 +2,7 @@
 @php
     $title='Sensor IOT';
     $subTitle = 'Sensor IOT';
-    $script = '<script>
-                // ===================== Average Enrollment Rate Start =============================== 
-                function createChartTwo(chartId, color1, color2) {
-                    var options = {
-                        series: [{
-                            name: "series2",
-                            data: [20000, 45000, 30000, 50000, 32000, 40000, 30000, 42000, 28000, 34000, 38000, 26000]
-                        }],
-                        legend: {
-                            show: false
-                        },
-                        chart: {
-                            type: "area",
-                            width: "100%",
-                            height: 240,
-                            toolbar: {
-                                show: false
-                            },
-                            padding: {
-                                left: 0,
-                                right: 0,
-                                top: 0,
-                                bottom: 0
-                            }
-                        },
-                        dataLabels: {
-                            enabled: false
-                        },
-                        stroke: {
-                            curve: "straight",
-                            width: 3,
-                            colors: [color1], // Use two colors for the lines
-                            lineCap: "round"
-                        },
-                        grid: {
-                            show: true,
-                            borderColor: "#D1D5DB",
-                            strokeDashArray: 1,
-                            position: "back",
-                            xaxis: {
-                                lines: {
-                                    show: false
-                                }
-                            },
-                            yaxis: {
-                                lines: {
-                                    show: true
-                                }
-                            },
-                            row: {
-                                colors: undefined,
-                                opacity: 0.5
-                            },
-                            column: {
-                                colors: undefined,
-                                opacity: 0.5
-                            },
-                            padding: {
-                                top: -20,
-                                right: 0,
-                                bottom: 0,
-                                left: 0
-                            },
-                        },
-                        fill: {
-                            type: "gradient",
-                            colors: [color1], // Use two colors for the gradient
-                            // gradient: {
-                            //     shade: "light",
-                            //     type: "vertical",
-                            //     shadeIntensity: 0.5,
-                            //     gradientToColors: [`${color1}`, `${color2}00`], // Bottom gradient colors with transparency
-                            //     inverseColors: false,
-                            //     opacityFrom: .6,
-                            //     opacityTo: 0.3,
-                            //     stops: [0, 100],
-                            // },
-                            gradient: {
-                                shade: "light",
-                                type: "vertical",
-                                shadeIntensity: 0.5,
-                                gradientToColors: [undefined, `${color2}00`], // Apply transparency to both colors
-                                inverseColors: false,
-                                opacityFrom: [0.4, 0.4], // Starting opacity for both colors
-                                opacityTo: [0.1, 0.1], // Ending opacity for both colors
-                                stops: [0, 100],
-                            },
-                        },
-                        markers: {
-                            colors: [color1], // Use two colors for the markers
-                            strokeWidth: 3,
-                            size: 0,
-                            hover: {
-                                size: 10
-                            }
-                        },
-                        xaxis: {
-                            labels: {
-                                show: false
-                            },
-                            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                            tooltip: {
-                                enabled: false
-                            },
-                            labels: {
-                                formatter: function(value) {
-                                    return value;
-                                },
-                                style: {
-                                    fontSize: "12px"
-                                }
-                            }
-                        },
-                        yaxis: {
-                            labels: {
-                                // formatter: function (value) {
-                                //     return "$" + value + "k";
-                                // },
-                                style: {
-                                    fontSize: "12px"
-                                }
-                            },
-                        },
-                        tooltip: {
-                            x: {
-                                format: "dd/MM/yy HH:mm"
-                            }
-                        }
-                    };
-
-                    var chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
-                    chart.render();
-                }
-
-                createChartTwo("enrollmentChart", "#487FFF");
-                // ===================== Average Enrollment Rate End =============================== 
-
-
-                // ===================== Delete Table Item Start =============================== 
-                $(".remove-btn").on("click", function() {
-                    $(this).closest("tr").addClass("d-none");
-                });
-                // ===================== Delete Table Item End =============================== 
-
-                // ================================ Follow Btn Start ================================ 
-                $(".follow-btn").on("click", function() {
-                    if ($(this).text() === "Follow") {
-                        $(this).text("Unfollow");
-                    } else {
-                        $(this).text("Follow");
-                    }
-                    $(this).toggleClass("bg-neutral-200 border-neutral-200 text-neutral-900");
-                });
-                // ================================ Follow Btn End ================================ 
-                </script>';
+    $script = '';
 @endphp
 
 @section('content')
@@ -495,3 +341,162 @@
     </div>
 
 @endsection
+
+@push('scripts')
+
+<script>
+    // ===================== Average Enrollment Rate Start =============================== 
+    function createChartTwo(chartId, color1, color2) {
+        var options = {
+            series: [{
+                name: "series2",
+                data: [20000, 45000, 30000, 50000, 32000, 40000, 30000, 42000, 28000, 34000, 38000, 26000]
+            }],
+            legend: {
+                show: false
+            },
+            chart: {
+                type: "area",
+                width: "100%",
+                height: 240,
+                toolbar: {
+                    show: false
+                },
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: "straight",
+                width: 3,
+                colors: [color1], // Use two colors for the lines
+                lineCap: "round"
+            },
+            grid: {
+                show: true,
+                borderColor: "#D1D5DB",
+                strokeDashArray: 1,
+                position: "back",
+                xaxis: {
+                    lines: {
+                        show: false
+                    }
+                },
+                yaxis: {
+                    lines: {
+                        show: true
+                    }
+                },
+                row: {
+                    colors: undefined,
+                    opacity: 0.5
+                },
+                column: {
+                    colors: undefined,
+                    opacity: 0.5
+                },
+                padding: {
+                    top: -20,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+            },
+            fill: {
+                type: "gradient",
+                colors: [color1], // Use two colors for the gradient
+                // gradient: {
+                //     shade: "light",
+                //     type: "vertical",
+                //     shadeIntensity: 0.5,
+                //     gradientToColors: [`${color1}`, `${color2}00`], // Bottom gradient colors with transparency
+                //     inverseColors: false,
+                //     opacityFrom: .6,
+                //     opacityTo: 0.3,
+                //     stops: [0, 100],
+                // },
+                gradient: {
+                    shade: "light",
+                    type: "vertical",
+                    shadeIntensity: 0.5,
+                    gradientToColors: [undefined, `${color2}00`], // Apply transparency to both colors
+                    inverseColors: false,
+                    opacityFrom: [0.4, 0.4], // Starting opacity for both colors
+                    opacityTo: [0.1, 0.1], // Ending opacity for both colors
+                    stops: [0, 100],
+                },
+            },
+            markers: {
+                colors: [color1], // Use two colors for the markers
+                strokeWidth: 3,
+                size: 0,
+                hover: {
+                    size: 10
+                }
+            },
+            xaxis: {
+                labels: {
+                    show: false
+                },
+                categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                tooltip: {
+                    enabled: false
+                },
+                labels: {
+                    formatter: function(value) {
+                        return value;
+                    },
+                    style: {
+                        fontSize: "12px"
+                    }
+                }
+            },
+            yaxis: {
+                labels: {
+                    // formatter: function (value) {
+                    //     return "$" + value + "k";
+                    // },
+                    style: {
+                        fontSize: "12px"
+                    }
+                },
+            },
+            tooltip: {
+                x: {
+                    format: "dd/MM/yy HH:mm"
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
+        chart.render();
+    }
+
+    createChartTwo("enrollmentChart", "#487FFF");
+    // ===================== Average Enrollment Rate End =============================== 
+
+
+    // ===================== Delete Table Item Start =============================== 
+    $(".remove-btn").on("click", function() {
+        $(this).closest("tr").addClass("d-none");
+    });
+    // ===================== Delete Table Item End =============================== 
+
+    // ================================ Follow Btn Start ================================ 
+    $(".follow-btn").on("click", function() {
+        if ($(this).text() === "Follow") {
+            $(this).text("Unfollow");
+        } else {
+            $(this).text("Follow");
+        }
+        $(this).toggleClass("bg-neutral-200 border-neutral-200 text-neutral-900");
+    });
+    // ================================ Follow Btn End ================================ 
+    </script>
+@endpush

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AssetKelola;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class AssetKelolaController extends Controller
 {
@@ -11,15 +14,8 @@ class AssetKelolaController extends Controller
      */
     public function index()
     {
-        return view('asset.kelola.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $asset = AssetKelola::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
+        return view('asset.kelola.index',['assets' => $asset], compact('asset'));
     }
 
     /**
@@ -27,23 +23,9 @@ class AssetKelolaController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        $asset = AssetKelola::create($request->all());
+        $asset->id_greenhouse = Auth::user()->id_greenhouse;
+        return redirect()->back()->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -51,7 +33,10 @@ class AssetKelolaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $asset = AssetKelola::find($id);
+        $asset->update($request->all());
+        $asset->save();
+        return redirect()->back()->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -59,6 +44,8 @@ class AssetKelolaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $asset = AssetKelola::finOrFail($id);
+        $asset->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }

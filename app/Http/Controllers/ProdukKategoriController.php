@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\CategoryProduct;
+use App\Models\ProdukKategori;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +14,7 @@ class ProdukKategoriController extends Controller
      */
     public function index()
     {
-        $kategori = CategoryProduct::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
+        $kategori = ProdukKategori::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
         return view('produk.kategori.index', ['name_category' => $kategori], compact('kategori'));
     }
 
@@ -23,7 +23,7 @@ class ProdukKategoriController extends Controller
      */
     public function store(Request $request)
     {
-        $kategori = new CategoryProduct();
+        $kategori = new ProdukKategori();
         $kategori->id_greenhouse = Auth::user()->id_greenhouse;
         $kategori->name_category = $request->name_category;
         $kategori->save();
@@ -35,7 +35,7 @@ class ProdukKategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $kategori = CategoryProduct::find($id);
+        $kategori = ProdukKategori::find($id);
         $kategori->update($request->all());
         $kategori->save();
         return redirect()->back()->with('success', 'Data berhasil diupdate');
@@ -46,7 +46,7 @@ class ProdukKategoriController extends Controller
      */
     public function destroy(string $id)
     {
-        $kategori = CategoryProduct::findOrFail($id);
+        $kategori = ProdukKategori::findOrFail($id);
         $kategori->delete();
         return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
