@@ -9,7 +9,7 @@
             <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="dark-logo">
             <img src="{{ asset('assets/images/MidoriFarm.png') }}" alt="site logo" class="logo-icon">
         </a>
-        @endauth
+        
     </div>
     <div class="sidebar-menu-area">
         <ul class="sidebar-menu" id="sidebar-menu">
@@ -167,12 +167,12 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="{{ routeByRole('admin.pengeluaranKelola.index', ' owner.pengeluaranKelola.index', null, 'akuntan.pengeluaranKelola.index') }}">
                             <iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="{{ routeByRole('admin.pengeluaranKategori.index', 'owner.pengeluaranKategori.index', null, 'akuntan.pengeluaranKategori.index') }}">
                             <iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori
                         </a>
                     </li>
@@ -182,18 +182,18 @@
             <!-- Penjualan -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
-                    <iconify-icon icon="streamline:subscription-cashflow" class="menu-icon"></iconify-icon>
+                    <iconify-icon icon="flowbite:chart-line-down-outline" class="menu-icon"></iconify-icon>
                     <span>Penjualan</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
                         <a href="javascript:void(0)">
-                            <iconify-icon icon="streamline:subscription-cashflow" class="menu-icon"></iconify-icon>Penjualan
+                            <iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <iconify-icon icon="carbon:report" class="menu-icon"></iconify-icon>Laporan
+                            <iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori
                         </a>
                     </li>
                 </ul>
@@ -406,6 +406,7 @@
                 </ul>
             </li>
         @endif
+        @endauth
         </ul>
     </div>
 </aside>
