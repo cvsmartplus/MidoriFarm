@@ -3,7 +3,7 @@
     <ul class="d-flex align-items-center gap-2">
         <li class="fw-medium">
             @if (Auth::user()->role == 'admin')
-            <a href="{{ route('admin.sensor') }}" class="d-flex align-items-center gap-1 hover-text-primary">
+            <a href="{{ route('admin.blogStat') }}" class="d-flex align-items-center gap-1 hover-text-primary">
                 <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
                 Beranda
             </a>
