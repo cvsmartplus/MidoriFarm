@@ -20,12 +20,25 @@ use App\Http\Controllers\{
     PenjualanController
 };
 
-Route::get('/', fn() => match (Auth::user()->role) {
-    'admin'   => redirect()->route('admin.blogStat'),
-    'owner'   => redirect()->route('owner.sensor'),
-    'petani'  => redirect()->route('petani.sensor'),
-    'akuntan' => redirect()->route('akuntan.keuangan'),
-    default   => redirect()->route('login'),
+Route::middleware('guest')
+->group( function () {
+    Route::controller(AuthenticationController::class)->group(function () {
+        Route::get('/login',  'loginPage')->name('login');
+        Route::post('/login',  'loginPost')->name('loginPost');
+    });
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', function () {
+        return match (auth()->user()->role) {
+            'admin'   => redirect()->route('admin.blogStat'),
+            'owner'   => redirect()->route('owner.sensor'),
+            'petani'  => redirect()->route('petani.sensor'),
+            'akuntan' => redirect()->route('akuntan.keuangan'),
+            default   => redirect()->route('login'),
+        };
+    });
+    Route::post('/logout',  [AuthenticationController::class,'logout'])->name('logout');
 });
 
 // === ADMIN ROUTES ===
@@ -121,9 +134,4 @@ Route::middleware(['auth','role:akuntan'])
         Route::resource('penjualan', PenjualanController::class)->names('penjualan');
     });
 
-Route::controller(AuthenticationController::class)->group(function () {
-    Route::get('/forgotpassword', 'forgotPassword')->name('forgotPassword');
-    Route::get('/login',  'loginPage')->name('login');
-    Route::post('/login',  'loginPost')->name('loginPost');
-    Route::post('/logout',  'logout')->name('logout');
-});
+?>

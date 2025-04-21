@@ -53,7 +53,7 @@
                     <div class="">
                         <div class="d-flex justify-content-between gap-2">
                             <div class="form-check style-check d-flex align-items-center">
-                                <input class="form-check-input border border-neutral-300" type="checkbox" value="" id="remember">
+                                <input class="form-check-input border border-neutral-300" type="checkbox" value="1" name="remember" id="remember">
                                 <label class="form-check-label" for="remember">Ingat Saya</label>
                             </div>
                             <a href="javascript:void(0)" class="text-secondary-600 fw-medium" id="forgotPass">Lupa kata sandi?</a>
