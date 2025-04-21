@@ -8,6 +8,7 @@ class AssetKelola extends Model
 {
     protected $table = 'assets';
     protected $fillable = [
+        'id_greenhouse',
         'name_product',
         'purchase',
         'id_cat_asset',

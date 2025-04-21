@@ -130,6 +130,7 @@
                 <h1 class="modal-title fs-5" id="addModalLabel">Tambah Produk</h1>
             </div>
             <div class="modal-body p-24">
+                <form action=""></form>
                 <form action="{{ routeByRole('admin.produkKelola.store', 'owner.produkKelola.store', null, null) }}" method="POST" class="needs-validation" novalidate>
                     @csrf
                     @method('post') 

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ProdukKategori;
 use App\Models\PengeluaranKategori;
 use Illuminate\Support\Facades\Auth;
 
