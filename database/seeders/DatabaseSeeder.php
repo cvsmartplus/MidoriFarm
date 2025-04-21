@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             GreenHouseSeeder::class,
+            RolesSeeder::class,
             UserSeeder::class,
             CategorySeeder::class,
             SensorSeeder::class,

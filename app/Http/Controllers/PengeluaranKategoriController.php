@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ProdukKategori;
+use App\Models\PengeluaranKategori;
+use Illuminate\Support\Facades\Auth;
 
 class PengeluaranKategoriController extends Controller
 {
@@ -11,15 +14,8 @@ class PengeluaranKategoriController extends Controller
      */
     public function index()
     {
-        return view('pengeluaran.kategori.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $kategori = PengeluaranKategori::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
+        return view('pengeluaran.kategori.index', ['name_category' => $kategori], compact('kategori'));
     }
 
     /**
@@ -27,23 +23,19 @@ class PengeluaranKategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        $kategori = new PengeluaranKategori();
+        $kategori->id_greenhouse = Auth::user()->id_greenhouse;
+        $kategori->name_category = $request->name_category;
+        // $kategori = ProdukKategori::create([
+        //     'id_greenhouse' => Auth::user()->id_greenhouse,
+        //     'name_category' => $request->name_category,
+        // ]);
+        $kategori->save();
+        if($kategori){
+            return redirect()->back()->with('success', 'Data berhasil disimpan');
+        } else{
+            return redirect()->back()->with('error', 'Data gagal disimpan');
+        }
     }
 
     /**
@@ -51,7 +43,10 @@ class PengeluaranKategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $kategori = PengeluaranKategori::find($id);
+        $kategori->update($request->all());
+        $kategori->save();
+        return redirect()->back()->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -59,6 +54,8 @@ class PengeluaranKategoriController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $kategori = PengeluaranKategori::findOrFail($id);
+        $kategori->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }
