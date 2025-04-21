@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
     $title = 'Laporan Penjualan';
-    $subTitle = 'Penjualan - Laporan';
+    $subTitle = 'Pengeluaran - Kelola';
     // $script = tambahin script buat modal untuk nyimpan data disini
 @endphp
 @section('content')

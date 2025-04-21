@@ -5,6 +5,7 @@
 @endphp
 
 @section('content')
+<<<<<<< HEAD
 <div class="card h-100 p-0 radius-12">
     <div class="card-body">
         <div class="table-responsive scroll-sm">
@@ -193,3 +194,5 @@
     });
 </script>
 @endpush
+=======
+>>>>>>> 4fef1c58ad7d7d227fb2d2aa349d5142fd885aef
