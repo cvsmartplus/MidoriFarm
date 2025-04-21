@@ -17,7 +17,7 @@ class PenjualanController extends Controller
         $produk = Product::where('id_greenhouse', Auth::user()->id_greenhouse)
         ->pluck('name_product', 'id');
         $penjualan = Penjualan::with('produk')->where('id_greenhouse', Auth::user()->id_greenhouse)->get();
-        return view('penjualan.index', ['penjualan' => $penjualan], compact('produk'));
+        return view('penjualan.index', ['penjualan' => $penjualan], mergeData: compact('produk'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PenjualanController extends Controller
      */
     public function create()
     {
-        return view('penjualan.create');
+        return view('penjualan.create',compact('produk'));
     }
 
     /**

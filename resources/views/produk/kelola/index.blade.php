@@ -21,7 +21,7 @@
                 <tbody id="table">
                     @foreach($produk as $key => $produk)
                     <tr>
-                        <td class="text-center">{{$key + 1}}</td>
+                        <td class="text-center">{{$key + 1 }}</td>
                         <td class="text-center">{{$produk->category->name_category}}</td>
                         <td class="text-center">{{$produk->name_product}}</td>
                         <td class="text-center">{{format_uang($produk->selling_price)}}</td>
@@ -51,7 +51,7 @@
                                 <div class="modal-body p-24">
                                     <form action=""></form>
                                     <form action="{{ routeByRole('admin.produkKelola.update','owner.produkKelola.update', null, null, ['id' => $produk->id]) }}" method="POST">
-                                        @csrf  
+                                        @csrf
                                         @method('PUT')
                                         <div class="row">
                                             <div class="col-12">
@@ -132,7 +132,7 @@
             <div class="modal-body p-24">
                 <form action="{{ routeByRole('admin.produkKelola.store', 'owner.produkKelola.store', null, null) }}" method="POST" class="needs-validation" novalidate>
                     @csrf
-                    @method('post') 
+                    @method('post')
                     <div class="row">
                         <div class="col-12">
                             <label class="form-label">Nama Produk</label>
