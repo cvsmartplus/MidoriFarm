@@ -21,6 +21,7 @@ class SaleSeeder extends Seeder
             $quantity = $faker->numberBetween(1, 100);
         //
         DB::table('sales')->insert([
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'id_product' => $id_product,
             'price' => $price,
             'quantity' => $quantity,

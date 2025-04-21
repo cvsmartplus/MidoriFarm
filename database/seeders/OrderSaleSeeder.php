@@ -21,6 +21,7 @@ class OrderSaleSeeder extends Seeder
         //
         DB::table('order_sales')->insert([
             'name' => $faker->name,
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'id_product' => $id_product,
             'id_sale' => $id_sale,
             'quantity' => $faker->numberBetween(1, 10),

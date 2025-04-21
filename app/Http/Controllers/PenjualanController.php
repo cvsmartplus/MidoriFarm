@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Penjualan;
+use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class PenjualanController extends Controller
@@ -11,7 +14,10 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        return view('penjualan.index');
+        $produk = Product::where('id_greenhouse', Auth::user()->id_greenhouse)
+        ->pluck('name_product', 'id');
+        $penjualan = Penjualan::with('produk')->where('id_greenhouse', Auth::user()->id_greenhouse)->get();
+        return view('penjualan.index', ['penjualan' => $penjualan], compact('produk'));
     }
 
     /**

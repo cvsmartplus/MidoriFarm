@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->foreignId('id_product')->references('id')->on('products');
             $table->integer('price');
             $table->integer('quantity');
