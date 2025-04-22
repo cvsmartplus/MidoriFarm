@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="modal-body p-24">
                                     <form></form>
-                                    <form action="{{ routeByRole('admin.pelanggan.update', 'owner.pelanggan.update', null, null, ['id' => $item->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.pelanggan.update', 'owner.pelanggan.update', null, null, ['pelanggan' => $item->id]) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="row">
@@ -70,7 +70,7 @@
                                             </div>
                                             <div class="d-flex justify-content-end gap-3 mt-3">
                                                 <button type="reset" class="btn btn-outline-danger" data-bs-dismiss="modal">Batal</button>
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                <button type="submit" class="btn btn-primary-500">Simpan</button>
                                             </div>
                                         </div>
                                     </form>
@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <form></form>
-                                    <form action="{{ routeByRole('admin.pelanggan.destroy', 'owner.pelanggan.destroy', null, null, ['id' => $item->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.pelanggan.destroy', 'owner.pelanggan.destroy', null, null, ['pelanggan' => $item->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
@@ -173,7 +173,7 @@
                 topStart: ["search", "buttons"],
                 topEnd: {
                     div: {
-                        html: '<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah Produk</button>'
+                        html: '<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah Pelanggan</button>'
                     }
                 }
             },

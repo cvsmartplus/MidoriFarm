@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="modal-body p-24">
                                     <form></form>
-                                    <form action="{{ routeByRole('admin.assetKategori.update', 'owner.assetKategori.update',null, null, ['id' => $kategori->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.assetKategori.update', 'owner.assetKategori.update',null, null, ['kategori' => $kategori->id]) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="row">
@@ -84,7 +84,7 @@
                                     Apakah anda yakin data ingin dihapus?
                                 </div>
                                 <div class="modal-footer">
-                                    <form action="{{ routeByRole('admin.assetKategori.destroy', 'owner.assetKategori.destroy', null, null, ['id' => $kategori->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.assetKategori.destroy', 'owner.assetKategori.destroy', null, null, ['kategori' => $kategori->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary"

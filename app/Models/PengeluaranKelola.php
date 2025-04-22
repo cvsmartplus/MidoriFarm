@@ -16,8 +16,18 @@ class PengeluaranKelola extends Model
     ];
     protected $primaryKey = 'id';
     protected $guarded = [];
-    public function category(){
-        return $this->belongsTo(PengeluaranKategori::class, 'id_cat_exp');
+    public function kategori(){
+        return $this->belongsTo(PengeluaranKategori::class, 'id_cat_exp', 'id');
     }
 
+    public function pemasok() {
+        return $this->belongsTo(Pemasok::class, 'id_supplier', 'id');
+    }
+    public function asset() {
+        return $this->belongsTo(AssetKelola::class, 'id_asset', 'id');
+    }
+    
+    public function user() {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    } 
 }

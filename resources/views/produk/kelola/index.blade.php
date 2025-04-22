@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="modal-body p-24">
                                     <form action=""></form>
-                                    <form action="{{ routeByRole('admin.produkKelola.update','owner.produkKelola.update', null, null, ['id' => $produk->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.produkKelola.update','owner.produkKelola.update', null, null, ['kelola' => $produk->id]) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="row">
@@ -103,7 +103,7 @@
                                     Apakah anda yakin data ingin dihapus?
                                 </div>
                                 <div class="modal-footer">
-                                    <form action="{{ routeByRole('admin.produkKelola.destroy','owner.produkKelola.destroy'  , null, null, ['id' => $produk->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.produkKelola.destroy','owner.produkKelola.destroy'  , null, null, ['kelola' => $produk->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary"

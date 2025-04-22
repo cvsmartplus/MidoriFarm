@@ -1,6 +1,6 @@
 @extends('layout.layout')
 @php
-    $title = 'Kelola Kategori Produk';
+    $title = 'Kategori Produk';
     $subTitle = 'Produk - Kategori';
 @endphp
 @section('content')
@@ -44,7 +44,7 @@
                                     <h1 class="modal-title fs-5" id="editModalLabel">Ubah Kategori</h1>
                                 </div>
                                 <div class="modal-body p-24">
-                                    <form action="{{ routeByRole('admin.produkKategori.update', 'owner.produkKategori.update',null, null, ['id' => $kategori->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.produkKategori.update', 'owner.produkKategori.update',null, null, ['kategori' => $kategori->id]) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="row">
@@ -82,7 +82,7 @@
                                     Apakah anda yakin data ingin dihapus?
                                 </div>
                                 <div class="modal-footer">
-                                    <form action="{{ routeByRole('admin.produkKategori.destroy', 'owner.produkKategori.update', null, null, ['id' => $kategori->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.produkKategori.destroy', 'owner.produkKategori.update', null, null, ['kategori' => $kategori->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary"

@@ -22,11 +22,11 @@
                 <tbody id="table">
                     @foreach($pemasok as $i => $item)
                     <tr>
-                        <td class="text-center">{{ $item->id}}</td>
-                        <td class="text-center">{{ $item->name}}</td>
-                        <td class="text-center">{{ $item->email}}</td>
-                        <td class="text-center">{{ $item->address}}</td>
-                        <td class="text-center">{{ $item->phone_number}}</td>
+                        <td class="text-center">{{ $item->id }}</td>
+                        <td class="text-center">{{ $item->name }}</td>
+                        <td class="text-center">{{ $item->email }}</td>
+                        <td class="text-center">{{ $item->address }}</td>
+                        <td class="text-center">{{ $item->phone_number }}</td>
                         <td class="text-center">
                             <div class="d-flex align-items-center gap-10 justify-content-center">
                                 <button type="button" class="bg-success-focus text-success-600 bg-hover-success-200 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle" data-bs-toggle="modal" data-bs-target="#editModal{{ $item->id }}">
@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="modal-body p-24">
                                     <form></form>
-                                    <form action="{{ routeByRole('admin.pemasok.update', 'owner.pemasok.update', null, null, ['id' => $item->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.pemasok.update', 'owner.pemasok.update', null, null, ['pemasok' => $item->id]) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="row">
@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <form></form>
-                                    <form action="{{ routeByRole('admin.pemasok.destroy', 'owner.pemasok.destroy', null, null, ['id' => $item->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.pemasok.destroy', 'owner.pemasok.destroy', null, null, ['pemasok' => $item->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
@@ -173,7 +173,7 @@
                 topStart: ["search", "buttons"],
                 topEnd: {
                     div: {
-                        html: '<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah Produk</button>'
+                        html: '<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah Pemasok</button>'
                     }
                 }
             },

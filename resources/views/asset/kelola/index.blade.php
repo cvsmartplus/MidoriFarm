@@ -11,7 +11,7 @@
             <table class="table bordered-table sm-table mb-0" id="dataTable" cellspacing="0">
                 <thead>
                     <tr>
-                        <th scope="col" claphpss="text-center">Nomor</th>
+                        <th scope="col" class="text-center">No.</th>
                         <th scope="col" class="text-center">Kategori</th>
                         <th scope="col" class="text-center">Nama</th>
                         <th scope="col" class="text-center">Harga Beli</th>
@@ -46,18 +46,18 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="editModalLabel">Update asset</h1>
+                                    <h1 class="modal-title fs-5" id="editModalLabel">Update Asset</h1>
                                 </div>
                                 <div class="modal-body p-24">
                                     <form action=""></form>
-                                    <form action="{{ routeByRole('admin.assetKelola.update','owner.assetKelola.update', null, null, ['id' => $asset->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.assetKelola.update','owner.assetKelola.update', null, null, ['kelola' => $asset->id]) }}" method="POST">
                                         @csrf  
                                         @method('PUT')
                                         <div class="row">
                                             <div class="col-12">
-                                                <label class="form-label">Nama asset</label>
+                                                <label class="form-label">Nama Asset</label>
                                                 <input type="text" id="name_product" name="name_product" class="form-control"
-                                                    value="{{$asset->name_product}}" placeholder="Masukkan Nama asset" required>
+                                                    value="{{$asset->name_product}}" placeholder="Masukkan Nama Asset" required>
                                             </div>
                                             <div class="col-12">
                                                 <label class="form-label">Harga Beli</label>
@@ -76,10 +76,10 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-center gap-3 mt-24">
                                                 <button type="reset" class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-40 py-11 radius-8" data-bs-dismiss="modal">
-                                                    Cancel
+                                                    Batal
                                                 </button>
                                                 <button type="submit" class="btn btn-primary-500 text-md px-48 py-12 radius-8">
-                                                    Save
+                                                    Simpan
                                                 </button>
                                             </div>
                                         </div>
@@ -103,12 +103,12 @@
                                     Apakah anda yakin data ingin dihapus?
                                 </div>
                                 <div class="modal-footer">
-                                    <form action="{{ routeByRole('admin.assetKelola.destroy','owner.assetKelola.destroy'  , null, null, ['id' => $asset->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.assetKelola.destroy','owner.assetKelola.destroy'  , null, null, ['kelola' => $asset->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Tidak</button>
-                                        <button type="submit" class="btn btn-danger">Iya</button>
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
                                     </form>
                                 </div>
                             </div>
@@ -136,9 +136,9 @@
                     @method('post') 
                     <div class="row">
                         <div class="col-12">
-                            <label class="form-label">Nama asset</label>
+                            <label class="form-label">Nama Asset</label>
                             <input type="text" id="name_product" name="name_product"  class="form-control"
-                            placeholder="Masukkan Nama Aset" required>
+                            placeholder="Masukkan Nama Asset" required>
                         </div>
                         <div class="col-12">
                             <label class="form-label">Harga Beli</label>
@@ -159,11 +159,11 @@
                             <button type="reset"
                                 class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-40 py-11 radius-8"
                                 data-bs-dismiss="modal">
-                                Cancel
+                                Batal
                             </button>
                             <button type="submit"
                                 class="btn btn-primary-500  text-md px-48 py-12 radius-8">
-                                Save
+                                Simpan
                             </button>
                         </div>
                     </div>
@@ -197,7 +197,7 @@
                 topStart: ["search", "buttons"],
                 topEnd: {
                     div: {
-                        html: '<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah asset</button>'
+                        html: '<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah Asset</button>'
                     }
                 }
             },
