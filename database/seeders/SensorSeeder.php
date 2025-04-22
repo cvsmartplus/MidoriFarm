@@ -42,6 +42,7 @@ class SensorSeeder extends Seeder
         };
 
         sensor::create([
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'name' => $name,
             'type' => $type,
             'unit' => $unit,
