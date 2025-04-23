@@ -99,9 +99,9 @@
 
         <!-- SENSOR AIR (2×2 fixed‑width cards, bukan 50%) -->
         <div class="tab-pane fade" id="sensor-air" role="tabpanel" aria-labelledby="sensor-air-tab">
-        <div class="row gy-2 justify-content-center">
+        <div class="row gy-4 justify-content-center">
             <!-- Row 1 -->
-            <div class="col-auto" style="min-width: 120px; max-width: 320px;">
+            <div class="col-lg-6 col-sm-12" style="min-width: 120px; max-width: 320px;">
             <div class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info">
                 <div class="me-3 text-black">
                 <iconify-icon icon="solar:temperature-bold" height="73"></iconify-icon>
@@ -113,7 +113,7 @@
             </div>
             </div>
 
-            <div class="col-auto" style="min-width: 120px; max-width: 320px;">
+            <div class="col-lg-6 col-sm-12" style="min-width: 120px; max-width: 320px;">
             <div class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info">
                 <div class="me-3 text-black">
                 <iconify-icon icon="mdi:water-drop" height="73"></iconify-icon>
@@ -128,14 +128,14 @@
             </div>
             </div>
 
-            <!-- paksa break ke row kedua -->
-            <div class="w-100"></div>
-
+        </div>
+          <!-- paksa break ke row kedua -->
+          <div class="row mt-24 justify-content-center">
             <!-- Row 2 -->
-            <div class="col-auto" style="min-width: 120px; max-width: 320px;">
+            <div class="col-lg-6 col-sm-12" style="min-width: 120px; max-width: 320px;">
             <div class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info">
                 <div class="me-3 text-black">
-                <iconify-icon icon="material-symbols-light:water-ph-outline height="73"></iconify-icon>
+                <iconify-icon icon="material-symbols-light:water-ph-outline" height="73"></iconify-icon>
                 </div>
                 <div>
                 <h6 class="text-primary-light text-md mb-8">pH Air</h6>
@@ -144,7 +144,7 @@
             </div>
             </div>
 
-            <div class="col-auto" style="min-width: 120px; max-width: 320px;">
+            <div class="col-lg-6 col-sm-12" style="min-width: 120px; max-width: 320px;">
             <div class="d-flex p-16 bg-info-50 radius-8 border-start-width-3-px border-info">
                 <div class="me-3 text-black">
                 <iconify-icon icon="mdi:water-percent" height="73"></iconify-icon>
@@ -155,7 +155,7 @@
                 </div>
             </div>
             </div>
-        </div>
+          </div>
         </div>
 
 

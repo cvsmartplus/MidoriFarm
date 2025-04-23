@@ -1,8 +1,4 @@
-@extends('layout.layout')
+@extend('layout.layout')
 @php
-    $title = 'Monitoring Sensor IOT';
-    $subTitle = 'IOT - Monitoring Sensor IOT';
+	$title=
 @endphp
-@section('content')
-        
-@endsection
