@@ -18,7 +18,7 @@ class CategoryProductSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
         //
         DB::table('category_products')->insert([
-            'id_greenhouse' => 1,
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'name_category' => $faker->word,
         ]);
         }

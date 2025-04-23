@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
-    $title='Blog';
-    $subTitle = 'Blog';
+    $title='Artikel';
+    $subTitle = 'Artikel';
 @endphp
 
 @section('content')

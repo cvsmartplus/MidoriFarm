@@ -20,7 +20,7 @@ class CategorySeeder extends Seeder
         //
         DB::table('categories')->insert([
             'name' => $faker->word,
-            'description' => $faker->sentence,
+            'content' => $faker->sentence,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

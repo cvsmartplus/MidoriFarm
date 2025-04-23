@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('id_user')->references('id')->on('users');
-            $table->foreignId('id_asset')->references('id')->on('assets');
+            $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->foreignId('id_cat_exp')->references('id')->on('category_expenses');
-            $table->foreignId('id_category')->references('id')->on('categories');
             $table->integer('subtotal');
             $table->string('description', 255);
             $table->date('date');

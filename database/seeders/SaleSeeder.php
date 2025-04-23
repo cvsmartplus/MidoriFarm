@@ -16,15 +16,16 @@ class SaleSeeder extends Seeder
     {
         $faker = Faker::create();
         for ($i = 0; $i < 10; $i++) {
-            $id_user = $faker->numberBetween(1, 3);
-            $id_product = $faker->numberBetween(1, 3);
+            $id_product = $faker->numberBetween(2, 10);
+            $price = $faker->numberBetween(50000, 200000);
+            $quantity = $faker->numberBetween(1, 100);
         //
         DB::table('sales')->insert([
-            'id_user' => $id_user,
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'id_product' => $id_product,
-            'subtotal' => $faker->numberBetween(2, 100),
-            'pay' => $faker->numberBetween(1000, 100000000),
-            'payment_methods' => $faker->numberBetween(1, 5),
+            'price' => $price,
+            'quantity' => $quantity,
+            'subtotal' => $price * $quantity,
             'date' => $faker->date(),
         ]);
 

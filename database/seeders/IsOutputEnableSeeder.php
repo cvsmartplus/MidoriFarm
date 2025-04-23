@@ -18,9 +18,10 @@ class IsOutputEnableSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
         //
         DB::table('is_output_enables')->insert([
-            'id_greenhouse' => 1,
-            'pump_waters' => $faker->boolean,
-            'pump_waterdrops' => $faker->boolean,
+            'id_greenhouse' => $faker->numberBetween(1,5),
+            'pump_water' => $faker->boolean,
+            'pump_waterdrop' => $faker->boolean,
+            'rolling_roof' => $faker->boolean,
             'updated_at' => now(),
         ]);
         }

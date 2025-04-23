@@ -19,7 +19,7 @@ class AssetSeeder extends Seeder
             $id_cat_asset = $faker->numberBetween(1,3);
         //
         DB::table('assets')->insert([
-            'id_greenhouse' => 1,
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'id_cat_asset' => $id_cat_asset,
             'name_product' => $faker->word,
             'purchase' => $faker->numberBetween(1, 100),

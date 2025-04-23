@@ -20,10 +20,14 @@ class OrderSaleSeeder extends Seeder
             $id_sale = $faker->numberBetween(1, 10);
         //
         DB::table('order_sales')->insert([
+            'name' => $faker->name,
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'id_product' => $id_product,
             'id_sale' => $id_sale,
             'quantity' => $faker->numberBetween(1, 10),
             'subtotal' => $faker->numberBetween(1, 10),
+            'status' => $faker->randomElement(['paid']),
+            'date' => $faker->date,
         ]);
         }
     }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('address');
             $table->string('email', 255);
             $table->string('phone_number', 20);
+            // $table->boolean('status');
         });
     }
 

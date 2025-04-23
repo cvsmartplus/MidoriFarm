@@ -53,7 +53,7 @@
                     <div class="">
                         <div class="d-flex justify-content-between gap-2">
                             <div class="form-check style-check d-flex align-items-center">
-                                <input class="form-check-input border border-neutral-300" type="checkbox" value="" id="remember">
+                                <input class="form-check-input border border-neutral-300" type="checkbox" value="1" name="remember" id="remember">
                                 <label class="form-check-label" for="remember">Ingat Saya</label>
                             </div>
                             <a href="javascript:void(0)" class="text-secondary-600 fw-medium" id="forgotPass">Lupa kata sandi?</a>
@@ -66,7 +66,7 @@
         <!-- Right Section (Image) - Moved to the Right -->
         <div class="auth-left d-lg-block d-none position-relative overflow-hidden">
             <div class="d-flex align-items-center flex-column h-100 justify-content-center position-relative w-100">
-                <img src="{{ asset('assets/images/sign-in/bapak_kentang.jpg') }}" class="img-fluid position-absolute w-100 h-100" style="object-fit: cover;" alt="">
+                <img src="{{ asset('assets/images/auth/login_img.webp') }}" class="img-fluid position-absolute w-100 h-100" style="object-fit: cover;" alt="">
             </div>
         </div>
     </section>

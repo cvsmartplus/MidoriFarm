@@ -23,7 +23,7 @@ return new class extends Migration
             // pake enum biar role nya fix (gabisa diganti ganti)
             $table->enum('role', ['admin', 'owner', 'akuntan', 'petani']);
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses')->nullable();
-            $table->rememberToken(Auth::attempt()->boolean('true'));
+            $table->rememberToken();
             $table->timestamps();
         });
 

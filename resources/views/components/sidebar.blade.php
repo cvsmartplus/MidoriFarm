@@ -3,122 +3,134 @@
         <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
     </button>
     <div>
-        @if (Auth::check() && Auth::user()->role == 'admin')
-        <a href="{{ route('admin.blogStat') }}" class="sidebar-logo">
+        @auth
+        <a href="{{ routeByRole('admin.blogStat', 'owner.sensor', 'petani.sensor', 'akuntan.keuangan') }}" class="sidebar-logo">
             <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="light-logo">
             <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="dark-logo">
             <img src="{{ asset('assets/images/MidoriFarm.png') }}" alt="site logo" class="logo-icon">
         </a>
-        @elseif (Auth::check() && Auth::user()->role == 'owner')
-        <a href="{{ route('owner.sensor') }}" class="sidebar-logo">
-            <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="light-logo">
-            <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="dark-logo">
-            <img src="{{ asset('assets/images/MidoriFarm.png') }}" alt="site logo" class="logo-icon">
-        </a>
-        @elseif (Auth::check() && Auth::user()->role == 'akuntan')
-        <a href="{{ route('akuntan.keuangan') }}" class="sidebar-logo">
-            <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="light-logo">
-            <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="dark-logo">
-            <img src="{{ asset('assets/images/MidoriFarm.png') }}" alt="site logo" class="logo-icon">
-        </a>
-        @elseif (Auth::check() && Auth::user()->role == 'petani')
-        <a href="{{ route('petani.sensor') }}" class="sidebar-logo">
-            <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="light-logo">
-            <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="dark-logo">
-            <img src="{{ asset('assets/images/MidoriFarm.png') }}" alt="site logo" class="logo-icon">
-        </a>
-        @endif
+        
     </div>
     <div class="sidebar-menu-area">
         <ul class="sidebar-menu" id="sidebar-menu">
-            @if(Auth::check())
-                @if(Auth::check() && Auth::user()->role == 'admin')
-                <li class="dropdown">
-                    <a  href="javascript:void(0)">
-                        <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
-                        <span>Beranda</span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li>
-                            <li>
-                                <a  href="{{ route('admin.blogStat') }}"><iconify-icon icon="bx:stats" class="menu-icon"></iconify-icon>Statistik Artikel</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('admin.sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
-                                IOT</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('admin.keuangan') }}"><iconify-icon icon="material-symbols-light:finance-mode-rounded" class="menu-icon"></iconify-icon>
-                                Keuangan</a>
-                            </li>
-                            
-                        </li>
-                    </ul>
-                </li>
-            </li>
-
+            <!-- Beranda -->
             <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="majesticons:article-line" class="menu-icon"></iconify-icon>
-                    <span> Artikel</span>
+                <a href="javascript:void(0)">
+                    <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+                    <span>Beranda</span>
                 </a>
                 <ul class="sidebar-submenu">
+                    @role('admin')
                     <li>
-                        <a  href="{{ route('admin.blog') }}"><iconify-icon icon="mdi:book-outline" class="menu-icon"></iconify-icon> Artikel</a>
+                        <a href="{{ route('admin.blogStat') }}">
+                            <iconify-icon icon="bx:stats" class="menu-icon"></iconify-icon>Statistik Artikel
+                        </a>
                     </li>
+                    @endrole
+                    @hasanyrole('admin|owner|petani')
                     <li>
-                        <a  href="{{ route('admin.addBlog') }}"><iconify-icon icon="mdi:book-plus-outline" class="menu-icon"></iconify-icon> Buat Artikel</a>
+                        <a href="{{ routeByRole('admin.sensor', 'owner.sensor', 'petani.sensor', null) }}">
+                            <iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>Sensor IOT
+                        </a>
                     </li>
+                    @endhasanyrole
+                    @hasanyrole('admin|owner|akuntan')
+                    <li>
+                        <a href="{{ routeByRole('admin.keuangan', 'owner.keuangan', null, 'akuntan.keuangan') }}">
+                            <iconify-icon icon="material-symbols-light:finance-mode-rounded" class="menu-icon"></iconify-icon>Keuangan
+                        </a>
+                    </li>
+                    @endhasanyrole
                 </ul>
             </li>
 
+            <!-- Artikel -->
+            @role('admin')
             <li class="dropdown">
-                <a  href="javascript:void(0)">
+                <a href="javascript:void(0)">
+                    <iconify-icon icon="majesticons:article-line" class="menu-icon"></iconify-icon>
+                    <span>Artikel</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{{ routeByRole('admin.blog', null, null, null) }}">
+                            <iconify-icon icon="mdi:book-outline" class="menu-icon"></iconify-icon>Artikel
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ routeByRole('admin.addBlog', null, null, null) }}">
+                            <iconify-icon icon="mdi:book-plus-outline" class="menu-icon"></iconify-icon>Buat Artikel
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            @endrole
+
+            <!-- IOT -->
+            @hasanyrole('admin|owner|petani')
+            <li class="dropdown">
+                <a href="javascript:void(0)">
                     <iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
                     <span>IOT</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="javascript:void(0)"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon>Laporan</a>
+                        <a href="{{ routeByRole('admin.monitoring', 'owner.monitoring', 'petani.monitoring', null) }}">
+                            <iconify-icon icon="grommet-icons:system" class="menu-icon"></iconify-icon>Monitoring IOT
+                        </a>
                     </li>
                     <li>
-                        <a  href="javascript:void(0)"><iconify-icon icon="grommet-icons:system" class="menu-icon"></iconify-icon>Monitoring IOT</a>
+                        <a href="{{ routeByRole('admin.laporanIOT', 'owner.laporanIOT', 'petani.laporanIOT', null) }}">
+                            <iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon>Laporan
+                        </a>
                     </li>
                 </ul>
             </li>
+            @endhasanyrole
 
-                <li class="sidebar-menu-group-title">Pemilik</li>
-                <li class="dropdown">
-                    <a  href="javascript:void(0)">
-                        <iconify-icon icon="mingcute:bill-2-line" class="menu-icon"></iconify-icon>
-                        <span>Tagihan</span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li>
-                            <a href="javascript:void(0)"><iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok</a>
-                        </li>
-                    </ul>
-                </li>
-
+            {{-- Group untuk Pemilik --}}
+            <li class="sidebar-menu-group-title">Pemilik</li>
+            @hasanyrole('admin|owner|akuntan')
             <li class="dropdown">
-                <a  href="javascript:void(0)">
+                <a href="javascript:void(0)">
+                    <iconify-icon icon="mingcute:bill-2-line" class="menu-icon"></iconify-icon>
+                    <span>Tagihan</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{{ routeByRole('admin.tagihanPelanggan.index', 'owner.tagihanPelanggan.index', null, 'akuntan.tagihanPelanggan.index') }}">
+                            <iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ routeByRole('admin.tagihanPemasok.index', 'owner.tagihanPemasok.index', null, 'akuntan.tagihanPemasok.index') }}">
+                            <iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            @endhasanyrole
+
+            @hasanyrole('admin|owner')
+            <li class="dropdown">
+                <a href="javascript:void(0)">
                     <iconify-icon icon="gg:profile" class="menu-icon"></iconify-icon>
                     <span>Pelanggan & Pemasok</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan</a>
+                        <a href="{{ routeByRole('admin.pelanggan.index', 'owner.pelanggan.index', null, null) }}">
+                            <iconify-icon icon="stash:people-group" class="menu-icon"></iconify-icon>Pelanggan
+                        </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok</a>
+                        <a href="{{ routeByRole('admin.pemasok.index', 'owner.pemasok.index', null, null) }}">
+                            <iconify-icon icon="mdi:hand-truck" class="menu-icon"></iconify-icon>Pemasok
+                        </a>
                     </li>
                 </ul>
             </li>
-
-            <!-- cocok untuk fitur customer & supplier, hapus fitur user grid -->
+            <!-- Produk -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="fluent-mdl2:product-variant" class="menu-icon"></iconify-icon>
@@ -126,14 +138,18 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>Kelola (ganti icon)</a>
+                        <a href="{{ routeByRole('admin.produkKelola.index', 'owner.produkKelola.index', null, null) }}">
+                            <iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola
+                        </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon>Kategori (ganti icon)</a>
+                        <a href="{{ routeByRole('admin.produkKategori.index', 'owner.produkKategori.index', null, null) }}">
+                            <iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori
+                        </a>
                     </li>
                 </ul>
             </li>
-
+            <!-- Asset -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="mage:money-exchange" class="menu-icon"></iconify-icon>
@@ -141,29 +157,21 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="{{ route('admin.usersList') }}"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>Kelola (ganti icon)</a>
+                        <a href="{{ routeByRole('admin.assetKelola.index', 'owner.assetKelola.index', null, null) }}">
+                            <iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola
+                        </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon>Kategori (ganti icon)</a>
+                        <a href="{{ routeByRole('admin.assetKategori.index', 'owner.assetKategori.index', null, null) }}">
+                            <iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori
+                        </a>
                     </li>
                 </ul>
             </li>
+            @endhasanyrole
 
-            <li class="dropdown">
-                <a href="javascript:void(0)">
-                    <iconify-icon icon="fluent:arrow-growth-20-filled" class="menu-icon"></iconify-icon>
-                    <span>Pemasukan</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="fluent:arrow-growth-20-filled" class="menu-icon"></iconify-icon>Pemasukan</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="carbon:report" class="menu-icon"></iconify-icon>Laporan</a>
-                    </li>
-                </ul>
-            </li>
-
+            @hasanyrole('admin|owner|akuntan')
+            <!-- Pengeluaran -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="flowbite:chart-line-down-outline" class="menu-icon"></iconify-icon>
@@ -171,45 +179,63 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="ci:main-component" class="menu-icon"></iconify-icon>Kelola (ganti icon)</a>
+                        <a href="{{ routeByRole('admin.pengeluaranKelola.index', 'owner.pengeluaranKelola.index', null, 'akuntan.pengeluaranKelola.index') }}">
+                            <iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola
+                        </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon>Kategori (ganti icon)</a>
+                        <a href="{{ routeByRole('admin.pengeluaranKategori.index', 'owner.pengeluaranKategori.index', null, 'akuntan.pengeluaranKategori.index') }}">
+                            <iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Kategori
+                        </a>
                     </li>
                 </ul>
             </li>
 
+            <!-- Penjualan -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
-                    <iconify-icon icon="streamline:subscription-cashflow" class="menu-icon"></iconify-icon>
+                    <iconify-icon icon="flowbite:chart-line-down-outline" class="menu-icon"></iconify-icon>
                     <span>Penjualan</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="streamline:subscription-cashflow" class="menu-icon"></iconify-icon>Penjualan</a>
+                        <a href="{{ routeByRole('admin.penjualan.create', 'owner.penjualan.create', null, 'akuntan.penjualan.create') }}">
+                            <iconify-icon icon="ix:maintenance-warning" class="menu-icon"></iconify-icon>Kelola
+                        </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="carbon:report" class="menu-icon"></iconify-icon>Laporan</a>
+                        <a href="{{ routeByRole('admin.penjualan.index', 'owner.penjualan.index', null, 'akuntan.penjualan.index') }}">
+                            <iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Laporan
+                        </a>
                     </li>
                 </ul>
             </li>
+            @endhasanyrole
 
+            @hasanyrole('admin|owner')
+            <!-- Manajemen Akses -->
             <li class="dropdown">
-                <a  href="javascript:void(0)">
+                <a href="javascript:void(0)">
                     <iconify-icon icon="ri-user-settings-line" class="menu-icon"></iconify-icon>
                     <span>Manajemen Akses</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a  href="{{ route('admin.roleAccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
+                        <a href="{{ routeByRole('admin.roleAccess', 'owner.roleAccess', null, null) }}">
+                            <iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon>Daftar Akses
+                        </a>
                     </li>
                     <li>
-                        <a  href="{{ route('admin.assignRole') }}"><iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon> Beri Akses</a>
+                        <a href="{{ routeByRole('admin.assignRole', 'owner.assignRole', null, null) }}">
+                            <iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon>Beri Akses
+                        </a>
                     </li>
                 </ul>
             </li>
+            @endhasanyrole
 
-            {{-- ELEMENTS BUAT DEVELOPMENT --}}
+            {{-- ELEMENTS BUAT DEVELOPMENT
+            @if (Auth::user()->role == 'admin')
             <li class="sidebar-menu-group-title">UI Elements</li>
             <li class="dropdown">
                 <a  href="javascript:void(0)">
@@ -395,173 +421,8 @@
                     </li>
                 </ul>
             </li>
-
-            @elseif(Auth::user()->role == 'owner')
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
-                    <span>Beranda</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <li>
-                            <a href="{{ route('owner.sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
-                                IOT
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('owner.keuangan') }}"><iconify-icon icon="material-symbols-light:finance-mode-rounded" class="menu-icon"></iconify-icon>
-                                Keuangan
-                            </a>
-                        </li>
-                    </li>
-                </ul>
-            </li>
-
-        <li class="sidebar-menu-group-title">Pemilik</li>
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="lsicon:goods-filled" class="menu-icon"></iconify-icon>
-                    <span>Produk & Barang</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                    <a href="{{ route('owner.barangList') }}"><iconify-icon icon="lsicon:goods-search-outline" class="menu-icon"></iconify-icon> Daftar Barang</a>
-                    </li>
-                    <li>
-                    <a href="{{ route('owner.barangPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="tabler:coin-filled" class="menu-icon"></iconify-icon>
-                    <span>Hutang-Piutang</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="{{ route('owner.tagihanList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Hutang</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('owner.tagihanPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon> Pratinjau</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="javascript:void(0)">
-                    <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
-                    <span>Pelanggan</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="{{ route('owner.usersList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Pelanggan</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)"><iconify-icon icon="material-symbols:history-rounded" class="menu-icon"></iconify-icon> Aktivitas Pelanggan (Coming Soon)</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="javascript:void(0)">
-                    <iconify-icon icon="game-icons:hand-truck" class="menu-icon"></iconify-icon>
-                    <span>Pemasok</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a  href="{{ route('owner.supplierList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Pemasok</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="ri-user-settings-line" class="menu-icon"></iconify-icon>
-                    <span>Manajemen Akses</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a  href="{{ route('owner.roleAccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('owner.assignRole') }}"><iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon> Beri Akses</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="carbon:report" class="menu-icon"></iconify-icon>
-                    <span>Pemasukan</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a  href="{{ route('owner.roleAccess') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon> Daftar Akses</a>
-                    </li>
-                    <li>
-                        <a  href="{{ route('owner.assignRole') }}"><iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon> Beri Akses</a>
-                    </li>
-                </ul>
-            </li>
-        </li>
-
-            @elseif(Auth::user()->role == 'petani')
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
-                    <span>Beranda</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <li>
-                        <a href="{{ route('petani.sensor') }}"><iconify-icon icon="fluent:iot-20-regular" class="menu-icon"></iconify-icon>
-                            IOT
-                        </a>
-                        </li>
-                    </li>
-                </ul>
-            </li>
-
-            @elseif(Auth::user()->role == 'akuntan')
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
-                    <span>Beranda</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <li>
-                            <a href="{{ route('akuntan.keuangan') }}"><iconify-icon icon="material-symbols-light:finance-mode-rounded" class="menu-icon"></iconify-icon>
-                                Keuangan 
-                            </a>
-                        </li>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a  href="javascript:void(0)">
-                    <iconify-icon icon="tabler:coin-filled" class="menu-icon"></iconify-icon>
-                    <span>Hutang-Piutang</span>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="{{ route('akuntan.tagihanList') }}"><iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon>
-                            Daftar Hutang
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('akuntan.tagihanPreview') }}"><iconify-icon icon="material-symbols:preview" class="menu-icon"></iconify-icon>
-                            Pratinjau
-                        </a>
-                    </li>
-                    <li>
-                </ul>
-            </li>
-            @endif
-        @endif
+            @endif --}}
+        @endauth
         </ul>
     </div>
 </aside>

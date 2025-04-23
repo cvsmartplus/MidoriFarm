@@ -10,6 +10,7 @@
         "laravel/framework": "^11.0",
         "laravel/installer": "^5.11",
         "laravel/tinker": "^2.9",
+        "spatie/laravel-permission": "^6.17",
         "symfony/asset": "^7.1",
         "symfony/asset-mapper": "^7.1"
     },
@@ -26,7 +27,11 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+        "app/Http/Helpers/helper.php", 
+        "app/Http/Helpers/routeHelper.php" 
+    ]
     },
     "autoload-dev": {
         "psr-4": {

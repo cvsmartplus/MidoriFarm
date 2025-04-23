@@ -18,7 +18,7 @@ class SupplierSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
         //
         DB::table('suppliers')->insert([
-            'id_greenhouse' => 1,
+            'id_greenhouse' => $faker->numberBetween(1,5),
             'name' => $faker->company,
             'address' => $faker->address,
             'email' => $faker->unique()->safeEmail,

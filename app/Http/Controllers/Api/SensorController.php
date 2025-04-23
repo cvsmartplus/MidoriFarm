@@ -15,7 +15,6 @@ class SensorController extends Controller
      */
     public function index()
     {
-        //
         $data = sensor::orderBy('name','asc')->get();
         return response()->json([
             'status'=>true,

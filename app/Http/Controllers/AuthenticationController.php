@@ -14,6 +14,15 @@ class AuthenticationController extends Controller
 
     public function loginPage()
     {
+        if (Auth::check()) {
+            $role = Auth::user()->role;
+            return match ($role) {
+                'admin' => redirect()->route('admin.blogStat'),
+                'owner' => redirect()->route('owner.sensor'),
+                'petani' => redirect()->route('petani.sensor'),
+                'akuntan' => redirect()->route('akuntan.keuangan'),
+            };
+        }
         return view(view: 'authentication.login');
     }
     public function loginPost(Request $request)
@@ -26,12 +35,12 @@ class AuthenticationController extends Controller
             'password.required' => 'Password Wajib Diisi!',
         ]);
 
-        $infologin = [
-            'email'=> $request->email,
-            'password'=> $request->password,
-        ];
+        $credentials = $request->only('email', 'password');
+        $remember = $request->has('remember');
 
-        if(Auth::attempt($infologin)) {
+        if(Auth::attempt($credentials, $remember)) {
+            $request->session()->regenerate();
+            
             $role = Auth::user()->role;
             return match ($role) {
                 'admin' => redirect()->route('admin.blogStat'),
