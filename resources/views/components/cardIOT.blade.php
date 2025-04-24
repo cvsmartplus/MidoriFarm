@@ -24,11 +24,11 @@
         </li>
       </ul>
     </div> --}}
-<div class="container-fluid p-0">
+<div class="container-fluid">
   <div class="card p-0 overflow-hidden position-relative radius-12 h-100">
     
     <!-- HEADER & TABS -->
-    <div class="card-header pt-16 pb-0 px-24 bg-base border border-end-0 border-start-0 border-top-0 d-flex align-items-center justify-content-between">
+    <div class="card-header pt-8 pb-0 px-24 bg-base border border-end-0 border-start-0 border-top-0 d-flex align-items-center justify-content-between">
       <h6 class="text-lg mb-0">Pemantauan Perangkat IoT</h6>
       <ul class="nav bordered-tab nav-pills mb-0" id="sensor-iot-tab" role="tablist">
         <li class="nav-item" role="presentation">
