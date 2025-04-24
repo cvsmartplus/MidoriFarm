@@ -14,41 +14,45 @@ class SaleSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {
-        $faker = Faker::create();
-        for ($i = 0; $i < 10; $i++) {
-            $transaction_id = Str::uuid();
-            $total = 0;
-            $items = [];
+{
+    $faker = Faker::create();
 
-            $product_count = rand(2, 5);
+    for ($i = 0; $i < 10; $i++) {
+        $total = 0;
+        $items = [];
 
-            for ($i = 0; $i < $product_count; $i++) {
-                $id_product = $faker->numberBetween(1, 10);
-                $price = $faker->randomElement([25000, 30000, 35000]);
-                $quantity = $faker->numberBetween(1, 5);
-                $subtotal = $price * $quantity;
+        // Buat ID transaksi yang sama untuk semua item dalam transaksi ini
+        $transaction_id = Str::uuid();
 
-                $total += $subtotal;
+        $product_count = 3;
 
-                $items[] = [
-                    'id_greenhouse' => $faker->numberBetween(1,5),
-                    'id_product' => $id_product,
-                    'transaction_id' => $transaction_id,
-                    'price' => $price,
-                    'quantity' => $quantity,
-                    'subtotal' => $subtotal,
-                    'total' => 0,
-                    'date' => $faker->date(),
-                ];
-            }
+        for ($j = 0; $j < $product_count; $j++) {
+            $id_product = $faker->numberBetween(1, 10);
+            $price = $faker->randomElement([25000, 30000, 35000]);
+            $quantity = $faker->numberBetween(1, 5);
+            $subtotal = $price * $quantity;
 
-            foreach ($items as &$item) {
-                $item['total'] = $total;
-            }
+            $total += $subtotal;
 
-        //
-        DB::table('sales')->insert($items);
+            $items[] = [
+                'id_greenhouse' => $faker->numberBetween(1, 5),
+                'id_product' => $id_product,
+                'transaction_id' => $transaction_id,
+                'price' => $price,
+                'quantity' => $quantity,
+                'subtotal' => $subtotal,
+                'date' => $faker->date(), // optional
+                // 'total' belum diisi dulu
+            ];
         }
+
+        // Assign total ke semua item
+        foreach ($items as &$item) {
+            $item['total'] = $total;
+        }
+
+        DB::table('sales')->insert($items);
     }
+}
+
 }
