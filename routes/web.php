@@ -75,6 +75,7 @@ Route::middleware(['auth', 'role:admin'])
         Route::resource('pelanggan-pemasok/pemasok', PemasokController::class)->names('pemasok');
 
         Route::resource('penjualan', PenjualanController::class)->names('penjualan');
+        Route::resource('penjualan/laporan', PenjualanController::class)->names('penjualanlaporan');
     });
 
 // === OWNER ROUTES ===
