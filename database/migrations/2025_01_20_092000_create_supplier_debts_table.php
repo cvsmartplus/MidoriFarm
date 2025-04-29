@@ -15,11 +15,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
-            $table->foreignId('id_supplier')->references('id')->on('suppliers');
+            // $table->foreignId('id_supplier')->references('id')->on('suppliers');
             $table->string('name');
             $table->decimal('amount');
-            $table->boolean('status');
-            $table->date('date');
+            $table->enum('status', ['Lunas', 'Belum Lunas', 'Tenggat Waktu']);
             $table->date('due_date');
             $table->date('debt_date');
         });
