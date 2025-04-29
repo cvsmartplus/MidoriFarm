@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pemasok;
+use App\Models\TagihanPemasok;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TagihanPemasokController extends Controller
 {
@@ -11,7 +14,14 @@ class TagihanPemasokController extends Controller
      */
     public function index()
     {
-        return view('tagihan.pemasok.index');
+        $pemasok = Pemasok::where('id_greenhouse', Auth::user()->id_greenhouse)
+        ->pluck('name', 'id');
+        $tagihanpemasok = TagihanPemasok::with('supplier')
+        ->where('id_greenhouse', Auth::user()->id_greenhouse)
+        ->get();
+
+
+        return view('tagihan.pemasok.index', compact('pemasok', 'tagihanpemasok'));
     }
 
     /**
@@ -19,7 +29,7 @@ class TagihanPemasokController extends Controller
      */
     public function create()
     {
-        //
+    //
     }
 
     /**
@@ -27,7 +37,19 @@ class TagihanPemasokController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tagihanpemasok = new TagihanPemasok();
+        $tagihanpemasok->id_greenhouse = Auth::user()->id_greenhouse;
+        $tagihanpemasok->name = $request->name;
+        $tagihanpemasok->amount = $request->amount;
+        $tagihanpemasok->debt_date = $request->debt_date;
+        $tagihanpemasok->due_date = $request->due_date;
+        $tagihanpemasok->status = $request->status;
+        $tagihanpemasok->save();
+        if($tagihanpemasok){
+            return redirect()->back()->with('success', 'Data berhasil disimpan');
+        } else{
+            return redirect()->back()->with('error', 'Data gagal disimpan');
+        }
     }
 
     /**
@@ -51,7 +73,13 @@ class TagihanPemasokController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $tagihanpemasok = TagihanPemasok::findOrFail($id);
+        $tagihanpemasok->update($request->all());
+        if($tagihanpemasok){
+            return redirect()->back()->with('success', 'Data berhasil diubah');
+        } else{
+            return redirect()->back()->with('error', 'Data gagal diubah');
+        }
     }
 
     /**
@@ -59,6 +87,7 @@ class TagihanPemasokController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tagihanpemasok = TagihanPemasok::select('id')->where('id', $id)->delete();
+        return redirect()->back()->with('succes', 'Data berhasil dihapus');
     }
 }
