@@ -1,29 +1,3 @@
-    {{-- <div class="card-header pt-16 pb-0 px-24 bg-base border border-end-0 border-start-0 border-top-0 d-flex align-items-center justify-content-between">
-      <h6 class="text-lg mb-0">Pemantauan Perangkat IoT</h6>
-      <ul class="nav bordered-tab nav-pills mb-0" id="sensor-iot-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link px-16 py-10 active" id="sensor-udara-tab" data-bs-toggle="pill"
-                  data-bs-target="#sensor-udara" type="button" role="tab"
-                  aria-controls="sensor-udara" aria-selected="true">
-            Sensor Udara
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link px-16 py-10" id="sensor-air-tab" data-bs-toggle="pill"
-                  data-bs-target="#sensor-air" type="button" role="tab"
-                  aria-controls="sensor-air" aria-selected="false">
-            Sensor Air
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link px-16 py-10" id="sensor-tanah-tab" data-bs-toggle="pill"
-                  data-bs-target="#sensor-tanah" type="button" role="tab"
-                  aria-controls="sensor-tanah" aria-selected="false">
-            Sensor Tanah
-          </button>
-        </li>
-      </ul>
-    </div> --}}
 <div class="container-fluid">
   <div class="card p-0 overflow-hidden position-relative radius-12 h-100">
     
@@ -102,7 +76,7 @@
                   <iconify-icon icon="mdi:uv-ray-outline" height="60" style="color: #5CDB07"></iconify-icon>
                   <div>
                     <h6 class="text-primary-light text-md fw-light mb-4">Nilai UV</h6>
-                    <h1 class="fs-2 mb-0 fw-bolder">30%</h1>
+                    <h1 class="fs-2 mb-0 fw-bolder">30<span class="fs-6">W\m&sup2</span></h1>
                   </div>
                 </div>
                 
@@ -111,7 +85,8 @@
                   <iconify-icon icon="mi:rain" height="60" style="color: #5CDB07"></iconify-icon>
                   <div>
                     <h6 class="text-primary-light text-md fw-light mb-4">Curah Hujan</h6>
-                    <h1 class="fs-2 mb-0 fw-bolder">50%</h1>
+                    <h1 class="fs-2 mb-0 fw-bolder">50<span class="fs-6">mm</span></h1>
+                    
                   </div>
                 </div>
                 
@@ -247,9 +222,9 @@
                 
                 <!-- Kelembapan Tanah -->
                 <div class="d-flex p-16 bg-primary-50 radius-8 border-start-width-3-px border-primary-500" style="align-items: center; gap: 12px;">
-                  <iconify-icon icon="mdi:water-percent" height="60" style="color: #5CDB07"></iconify-icon>
+                  <iconify-icon icon="bi:moisture" height="60" style="color: #5CDB07"></iconify-icon>
                   <div>
-                    <h6 class="text-primary-light text-md fw-light mb-4">Kelembapan Tanah</h6>
+                    <h6 class="text-primary-light text-md fw-light mb-4">Kelembaban Tanah</h6>
                     <h1 class="fs-2 mb-0 fw-bolder">45%</h1>
                   </div>
                 </div>
@@ -263,38 +238,52 @@
                   </div>
                 </div>
                 
-                <!-- Kadar Nutrien -->
+                <!-- Nitrogen Tanah -->
                 <div class="d-flex p-16 bg-primary-50 radius-8 border-start-width-3-px border-primary-500" style="align-items: center; gap: 12px;">
-                  <iconify-icon icon="mdi:leaf" height="60" style="color: #5CDB07"></iconify-icon>
+                  <iconify-icon icon="iconoir:nitrogen" height="60" style="color: #5CDB07"></iconify-icon>
                   <div>
-                    <h6 class="text-primary-light text-md fw-light mb-4">Kadar Nutrien</h6>
-                    <h1 class="fs-2 mb-0 fw-bolder">Medium</h1>
+                    <h6 class="text-primary-light text-md fw-light mb-4">Nitrogen Tanah</h6>
+                    <h1 class="fs-2 mb-0 fw-bolder d-flex align-items-center" style="gap:4px;">
+                      <span>1000</span>
+                      <span style="
+                          writing-mode: vertical-rl;
+                          text-orientation: upright;
+                          font-size:0.75rem;
+                        ">PPM</span>
+                    </h1>
                   </div>
                 </div>
                 
                 <!-- Kadar Nitrogen -->
                 <div class="d-flex p-16 bg-primary-50 radius-8 border-start-width-3-px border-primary-500" style="align-items: center; gap: 12px;">
-                  <iconify-icon icon="mdi:chemical-weapon" height="60" style="color: #5CDB07"></iconify-icon>
+                  <iconify-icon icon="iconoir:soil" height="60" style="color: #5CDB07"></iconify-icon>
                   <div>
-                    <h6 class="text-primary-light text-md fw-light mb-4">Kadar Nitrogen</h6>
-                    <h1 class="fs-2 mb-0 fw-bolder">10%</h1>
+                    <h6 class="text-primary-light text-md fw-light mb-4">EC Tanah</h6>
+                    <h1 class="fs-2 mb-0 fw-bolder">1.4<span class="fs-6">dS/m</span></h1>
                   </div>
                 </div>
                 
-                <!-- Kadar Fosfor -->
+                <!-- Fosfat Tanah -->
                 <div class="d-flex p-16 bg-primary-50 radius-8 border-start-width-3-px border-primary-500" style="align-items: center; gap: 12px;">
-                  <iconify-icon icon="mdi:flask" height="60" style="color: #5CDB07"></iconify-icon>
+                  <iconify-icon icon="iconoir:soil-alt" height="60" style="color: #5CDB07"></iconify-icon>
                   <div>
-                    <h6 class="text-primary-light text-md fw-light mb-4">Kadar Fosfor</h6>
-                    <h1 class="fs-2 mb-0 fw-bolder">50%</h1>
+                    <h6 class="text-primary-light text-md fw-light mb-4">Fosfat Tanah</h6>
+                    <h1 class="fs-2 mb-0 fw-bolder d-flex align-items-center" style="gap:4px;">
+                      <span>1000</span>
+                      <span style="
+                          writing-mode: vertical-rl;
+                          text-orientation: upright;
+                          font-size:0.75rem;
+                        ">PPM</span>
+                    </h1>
                   </div>
                 </div>
                 
-                <!-- Kadar Kalium -->
+                <!-- Kalium Tanah -->
                 <div class="d-flex p-16 bg-primary-50 radius-8 border-start-width-3-px border-primary-500" style="align-items: center; gap: 12px;">
-                  <iconify-icon icon="mdi:pot" height="60" style="color: #5CDB07"></iconify-icon>
+                  <iconify-icon icon="iconoir:soil" height="60" style="color: #5CDB07"></iconify-icon>
                   <div>
-                    <h6 class="text-primary-light text-md fw-light mb-4">Kadar Kalium</h6>
+                    <h6 class="text-primary-light text-md fw-light mb-4">Kalium Tanah</h6>
                     <h1 class="fs-2 mb-0 fw-bolder d-flex align-items-center" style="gap:4px;">
                       <span>300</span>
                       <span style="
