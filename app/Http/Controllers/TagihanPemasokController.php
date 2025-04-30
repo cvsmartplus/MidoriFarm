@@ -14,8 +14,7 @@ class TagihanPemasokController extends Controller
      */
     public function index()
     {
-        $pemasok = Pemasok::where('id_greenhouse', Auth::user()->id_greenhouse)
-        ->pluck('name', 'id');
+        $pemasok = Pemasok::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
         $tagihanpemasok = TagihanPemasok::with('supplier')
         ->where('id_greenhouse', Auth::user()->id_greenhouse)
         ->get();
@@ -39,7 +38,7 @@ class TagihanPemasokController extends Controller
     {
         $tagihanpemasok = new TagihanPemasok();
         $tagihanpemasok->id_greenhouse = Auth::user()->id_greenhouse;
-        $tagihanpemasok->name = $request->name;
+        $tagihanpemasok->id_supplier = $request->id_supplier;
         $tagihanpemasok->amount = $request->amount;
         $tagihanpemasok->debt_date = $request->debt_date;
         $tagihanpemasok->due_date = $request->due_date;

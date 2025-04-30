@@ -11,7 +11,7 @@ class TagihanPemasok extends Model
     protected $table = 'supplier_debts';
     protected $fillable = [
         'id_greenhouse',
-        'name',
+        'id_supplier',
         'amount',
         'debt_date',
         'due_date',
