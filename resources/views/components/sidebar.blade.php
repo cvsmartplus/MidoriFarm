@@ -152,7 +152,7 @@
             <!-- Asset -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
-                    <iconify-icon icon="mage:money-exchange" class="menu-icon"></iconify-icon>
+                    <iconify-icon icon="solar:money-bag-outline" class="menu-icon"></iconify-icon>
                     <span>Asset</span>
                 </a>
                 <ul class="sidebar-submenu">
@@ -194,7 +194,7 @@
             <!-- Penjualan -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
-                    <iconify-icon icon="flowbite:chart-line-down-outline" class="menu-icon"></iconify-icon>
+                    <iconify-icon icon="mage:money-exchange" class="menu-icon"></iconify-icon>
                     <span>Penjualan</span>
                 </a>
                 <ul class="sidebar-submenu">
