@@ -14,13 +14,12 @@ class TagihanPelangganController extends Controller
      */
     public function index()
     {
-        $pelanggan = Pelanggan::where('id_greenhouse', Auth::user()->id_greenhouse)
-        ->pluck('name', 'id');
+        $pelanggan = Pelanggan::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
         $tagihanpelanggan = TagihanPelanggan::with('customer')
         ->where('id_greenhouse', Auth::user()->id_greenhouse)
         ->get();
 
-        return view("tagihan.pelanggan.index", compact('pelanggan', 'tagihanpelanggan'));
+        return view("tagihan.pelanggan.index",  compact( 'pelanggan','tagihanpelanggan'));
     }
 
     /**
@@ -30,11 +29,11 @@ class TagihanPelangganController extends Controller
     {
         $tagihanpelanggan = new TagihanPelanggan();
         $tagihanpelanggan->id_greenhouse = Auth::user()->id_greenhouse;
-        $tagihanpelanggan->name = $request->name;
+        $tagihanpelanggan->id_customer = $request->id_customer;
         $tagihanpelanggan->amount = $request->amount;
-        $tagihanpelanggan->status = $request->status;
         $tagihanpelanggan->date = $request->date;
         $tagihanpelanggan->due_date = $request->due_date;
+        $tagihanpelanggan->status = $request->status;
         $tagihanpelanggan->save();
         if($tagihanpelanggan){
             return redirect()->back()->with('success', 'Data berhasil disimpan');

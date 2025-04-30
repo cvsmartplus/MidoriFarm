@@ -27,7 +27,7 @@
                     @foreach($tagihanpelanggan as $key => $tagihan)
                     <tr>
                         <td class="text-center">{{$key + 1 }}</td>
-                        <td class="text-center">{{$tagihan->name}}</td>
+                        <td class="text-center">{{$tagihan->customer->name}}</td>
                         <td class="text-center">{{$tagihan->date}}</td>
                         <td class="text-center">{{$tagihan->due_date}}</td>
                         <td class="text-center">{{format_uang($tagihan->amount)}}</td>
@@ -63,8 +63,13 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <label class="form-label">Nama Peminjam</label>
-                                                <input type="text" id="name" name="name" class="form-control"
-                                                    value="{{$tagihan->name}}" placeholder="Masukkan Nama Peminjam" required>
+                                                <select id="id_customer" name="id_customer" class="form-control radius-8 form-select" required>
+                                                    @foreach ($pelanggan as $item)
+                                                        <option value="{{ $item->id }}" {{ $item->id == $tagihan->id_customer ? 'selected' : '' }}>
+                                                            {{ $item->name }}
+                                                        </option>
+                                                    @endforeach
+                                                    </select>
                                             </div>
                                             <div class="col-12">
                                                 <label class="form-label">Tanggal Hutang</label>
@@ -149,9 +154,12 @@
                     @csrf
                     <div class="row">
                         <div class="col-12">
-                            <label class="form-label">Nama Peminjam</label>
-                            <input type="text" id="name" name="name" class="form-control"
-                                placeholder="Masukkan Nama Peminjam" required>
+                            <select id="id_customer" name="id_customer" class="form-control radius-8 form-select" required>
+                                <option value="" disabled selected>Pilih Peminjam</option>
+                                @foreach ($pelanggan as $item)
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col-12">
                             <label class="form-label">Tanggal Hutang</label>
