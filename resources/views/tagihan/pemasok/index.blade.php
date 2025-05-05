@@ -44,6 +44,10 @@
                                     data-bs-toggle="modal" data-bs-target="#deleteModal{{$tagihan->id}}">
                                     <iconify-icon icon="fluent:delete-24-regular" class="menu-icon"></iconify-icon>
                                 </button>
+                                <a href='{{ routeByRole('admin.tagihanPemasok.show','owner.tagihanPemasok.show', null, null, ['pemasok' => $tagihan->id]) }}'
+                                    class="bg-info-focus bg-hover-info-200 text-info-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle">
+                                <iconify-icon icon="lucide:eye"></iconify-icon>
+                                </a>
                             </div>
                         </td>
                     </tr>

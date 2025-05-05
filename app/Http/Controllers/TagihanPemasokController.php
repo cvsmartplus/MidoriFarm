@@ -56,7 +56,10 @@ class TagihanPemasokController extends Controller
      */
     public function show(string $id)
     {
-        return view ('tagihan.pemasok.show');
+        $tagihan = TagihanPemasok::with('supplier')
+        ->where('id_greenhouse', Auth::user()->id_greenhouse)
+        ->findOrFail($id);
+        return view ('tagihan.pemasok.show', compact('tagihan'));
     }
 
     /**
