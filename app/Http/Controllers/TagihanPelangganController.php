@@ -45,9 +45,12 @@ class TagihanPelangganController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show($id)
     {
-        return view("tagihan.pelanggan.show");
+        $tagihan = TagihanPelanggan::with('customer')
+        ->where('id_greenhouse', Auth::user()->id_greenhouse)
+        ->findOrFail($id);
+        return view("tagihan.pelanggan.show", compact(var_name: 'tagihan'));
     }
 
     /**
