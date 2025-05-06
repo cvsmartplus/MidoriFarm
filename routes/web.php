@@ -14,6 +14,7 @@ use App\Http\Controllers\{
     PengeluaranKelolaController,
     PengeluaranKategoriController,
     TagihanPelangganController,
+    NotificationController,
     TagihanPemasokController,
     PelangganController,
     PemasokController,
@@ -52,6 +53,7 @@ Route::middleware(['auth', 'role:admin'])
         Route::get('iot/laporan', [IOTController::class, 'laporan'])->name('laporanIOT');
         Route::get('iot/monitoring', [IOTController::class, 'monitoring'])->name('monitoring');
         Route::get('addBlog', [BlogController::class, 'addBlog'])->name('addBlog');
+        Route::get('notification', [NotificationController::class, 'index'])->name('notification');
         Route::get('blog', [BlogController::class, 'blog'])->name('blog');
         Route::get('blogstats', [BlogController::class, 'blogStat'])->name('blogStat');
         Route::get('blogDetails', [BlogController::class, 'blogDetails'])->name('blogDetails');
@@ -87,6 +89,7 @@ Route::middleware(['auth','role:owner'])
         Route::get('keuangan',[DashboardController::class,'index10'])->name('keuangan');
         Route::get('iot/laporan',[IOTController::class,'laporan'])->name('laporanIOT');
         Route::get('iot/monitoring',[IOTController::class,'monitoring'])->name('monitoring');
+        Route::get('notification', [NotificationController::class, 'index'])->name('notification');
         Route::get('assignRole',[RoleandaccessController::class,'assignRole'])->name('assignRole');
         Route::get('roleAccess',[RoleandaccessController::class,'roleAccess'])->name('roleAccess');
 
@@ -115,6 +118,7 @@ Route::middleware(['auth','role:petani'])
     ->group(function(){
         Route::get('sensor',[DashboardController::class,'sensor'])->name('sensor');
         Route::get('iot/laporan',[IOTController::class,'laporan'])->name('laporanIOT');
+        Route::get('notification', [NotificationController::class, 'index'])->name('notification');
         Route::get('iot/monitoring',[IOTController::class,'monitoring'])->name('monitoring');
     });
 
@@ -122,7 +126,9 @@ Route::middleware(['auth','role:petani'])
 Route::middleware(['auth','role:akuntan'])
     ->prefix('akuntan')->name('akuntan.')
     ->group(function(){
+        Route::get('notification', [NotificationController::class, 'index'])->name('notification');
         Route::get('keuangan',[DashboardController::class,'p10'])->name('keuangan');
+        
         Route::resource('asset/kelola', AssetKelolaController::class)->names('assetKelola');
         Route::resource('asset/kategori', AssetKategoriController::class)->names('assetKategori');
 
