@@ -44,7 +44,7 @@
                                     data-bs-toggle="modal" data-bs-target="#deleteModal{{$tagihan->id}}">
                                     <iconify-icon icon="fluent:delete-24-regular" class="menu-icon"></iconify-icon>
                                 </button>
-                                <a href='{{ routeByRole('admin.tagihanPelanggan.show','owner.tagihanPelanggan.show', null, null, ['pelanggan' => $tagihan->id]) }}'
+                                <a href='{{ routeByRole('admin.tagihanPelanggan.show','owner.tagihanPelanggan.show', null, 'akuntan.tagihanPelanggan.show', ['pelanggan' => $tagihan->id]) }}'
                                     class="bg-info-focus bg-hover-info-200 text-info-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle">
                                 <iconify-icon icon="lucide:eye"></iconify-icon>
                                 </a>
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="modal-body p-24">
                                     <form action=""></form>
-                                    <form action="{{ routeByRole('admin.tagihanPelanggan.update','owner.tagihanPelanggan.update', null, null, ['pelanggan' => $tagihan->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.tagihanPelanggan.update','owner.tagihanPelanggan.update', null, 'akuntan.tagihanPelanggan.update', ['pelanggan' => $tagihan->id]) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="row">
@@ -127,7 +127,7 @@
                                     Apakah anda yakin data ingin dihapus?
                                 </div>
                                 <div class="modal-footer">
-                                    <form action="{{ routeByRole('admin.tagihanPelanggan.destroy','owner.tagihanPelanggan.destroy'  , null, null, ['pelanggan' => $tagihan->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.tagihanPelanggan.destroy','owner.tagihanPelanggan.destroy', null, 'akuntan.tagihanPelanggan.destroy', ['pelanggan' => $tagihan->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary"

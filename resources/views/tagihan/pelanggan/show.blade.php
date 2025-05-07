@@ -26,9 +26,9 @@
             </a>
             <a href="javascript:void(0)" class="btn btn-sm btn-warning radius-8 d-inline-flex align-items-center gap-1">
                 <iconify-icon icon="solar:download-linear" class="text-xl"></iconify-icon>
-                Download
+                Downloadp
             </a>
-            <a href="{{routeByRole('admin.tagihanPelanggan.update', 'owner.tagihanPelangan.update',null, null, ['pelanggan' => $tagihan->id])}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
+            <a href="{{routeByRole('admin.tagihanPelanggan.update', 'owner.tagihanPelanggan.update',null, 'akuntan.tagihanPelanggan.update', ['pelanggan' => $pelanggan->id])}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
                 <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
                 Edit
             </a>
@@ -45,13 +45,13 @@
                     <div class="p-20 d-flex flex-wrap justify-content-between gap-3 border-bottom">
                         <div>
                             <h3 class="text-xl">Invoice #3492</h3>
-                            <p class="mb-1 text-sm">Date Issued: 25/08/2020</p>
-                            <p class="mb-0 text-sm">Date Due: 29/08/2020</p>
+                            <p class="mb-1 text-sm">Tanggal Hutang: {{ $tagihan->date }}</p>
+                            <p class="mb-0 text-sm">Jatuh Tempo: {{ $tagihan->due_date }}</p>
                         </div>
                         <div>
                             <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}"" alt="image" class="mb-8" style="width: 168px; length: 40px;">
-                            <p class="mb-1 text-sm">4517 Washington Ave. Manchester, Kentucky 39495</p>
-                            <p class="mb-0 text-sm">random@gmail.com, +1 543 2198</p>                                                                                       
+                            <p class="mb-1 text-sm">Alamat: {{ $pelanggan->address }}</p>
+                            <p class="mb-0 text-sm">random@gmail.com, +1 543 2198</p>
                         </div>
                     </div>
                     <div class="py-28 px-20">

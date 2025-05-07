@@ -45,13 +45,19 @@ class TagihanPelangganController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
-    {
-        $tagihan = TagihanPelanggan::with('customer')
-        ->where('id_greenhouse', Auth::user()->id_greenhouse)
-        ->findOrFail($id);
-        return view("tagihan.pelanggan.show", compact(var_name: 'tagihan'));
+    public function show(TagihanPelanggan $tagihan)
+{
+    // Pastikan data sesuai greenhouse user
+    if ($tagihan->id_greenhouse !== Auth::user()->id_greenhouse) {
+        abort(403);
     }
+
+    // Ambil pelanggan lewat relasi customer
+    $pelanggan = $tagihan->customer;
+
+    return view('tagihan.pelanggan.show', compact('pelanggan', 'tagihan'));
+}
+
 
     /**
      * Show the form for editing the specified resource.
