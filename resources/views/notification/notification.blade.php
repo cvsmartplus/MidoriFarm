@@ -5,13 +5,6 @@
 @endphp
 
 @section('content')
-{{-- <div class="icon">
-    <iconify-icon icon="fxemoji:radiobutton"></iconify-icon>
-</div>
-
-<div class="d-flex mx-6" style="height: 200px;">
-    <div class="vr" style="border-width: 1.5px"></div>
-</div> --}}
 
     {{-- Dummy data untuk demo, nanti di-replace dengan data DB --}}
     @php
@@ -72,7 +65,7 @@
                 <div class="card-body d-flex justify-content-between align-items-start">
                     <div class="d-flex align-items-center">
                         {{-- Bulat kecil di samping judul --}}
-                        <span class="rounded-circle bg-primary-500 mr-2 timeline-point" style="display:inline-block; width:10px; height:10px; position:relative; z-index:1;"></span>
+                        <span class="rounded-circle bg-primary-400 mr-2 timeline-point" style="display:inline-block; width:10px; height:10px; position:relative; z-index:1;"></span>
                         <strong class="mx-6">{{ $note['title'] }}</strong>
                     </div>
                     <small class="text-secondary">{{ $note['time'] }}</small>
