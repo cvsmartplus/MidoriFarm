@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Pelanggan;
+use App\Models\GreenHouse;
+use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\TagihanPelanggan;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 
 class TagihanPelangganController extends Controller
 {
@@ -50,12 +53,16 @@ class TagihanPelangganController extends Controller
      */
     public function show(TagihanPelanggan $tagihan, string $id)
     {
+        // ambil nama pengguna web
+        $user = Auth::user();
+        
+        // ambil no.telp & alamat gh
+        $gh = $user->gh()->first();
 
         $tagihan = TagihanPelanggan::with('customer')->where('id_greenhouse', Auth::user()->id_greenhouse)->where('id', $id)
         ->first();
-        return view('tagihan.pelanggan.show', compact('tagihan'));
+        return view('tagihan.pelanggan.show', compact('user','gh','tagihan'));
     }
-
 
     /**
      * Show the form for editing the specified resource.
