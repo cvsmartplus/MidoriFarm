@@ -19,23 +19,27 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <div class="d-flex flex-wrap align-items-center justify-content-end gap-2">
-            <a href="javascript:void(0)" class="btn btn-sm btn-primary-600 radius-8 d-inline-flex align-items-center gap-1">
-                <iconify-icon icon="pepicons-pencil:paper-plane" class="text-xl"></iconify-icon>
-                Send Invoice
-            </a>
-            <a href="javascript:void(0)" class="btn btn-sm btn-warning radius-8 d-inline-flex align-items-center gap-1">
-                <iconify-icon icon="solar:download-linear" class="text-xl"></iconify-icon>
-                Downloadp
-            </a>
-            <a href="{{routeByRole('admin.tagihanPelanggan.update', 'owner.tagihanPelanggan.update',null, 'akuntan.tagihanPelanggan.update', ['pelanggan' => $pelanggan->id])}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
-                <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
-                Edit
-            </a>
-            <button type="button" class="btn btn-sm btn-danger radius-8 d-inline-flex align-items-center gap-1" onclick="printInvoice()">
-                <iconify-icon icon="basil:printer-outline" class="text-xl"></iconify-icon>
-                Print
-            </button>
+        <div class="d-flex flex-wrap gap-2">
+            <div class="d-flex align-items-center">
+                <a href="{{ routeByRole('admin.tagihanPelanggan.index', 'owner.tagihanPelanggan.index', null, 'akuntan.tagihanPelanggan.index' ) }}" class="btn btn-sm btn-info radius-8 d-inline-flex align-items-center gap-1">
+                    <-
+                    Kembali
+                </a>
+            </div>
+            <div class="align-items-center justify-content-end">
+                <a href="javascript:void(0)" class="btn btn-sm btn-warning radius-8 d-inline-flex align-items-center gap-1">
+                    <iconify-icon icon="solar:download-linear" class="text-xl"></iconify-icon>
+                    Download
+                </a>
+                <a href="{{routeByRole('admin.tagihanPelanggan.update', 'owner.tagihanPelanggan.update',null, 'akuntan.tagihanPelanggan.update', ['pelanggan' => $tagihan->id])}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
+                    <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
+                    Edit
+                </a>
+                <button type="button" class="btn btn-sm btn-danger radius-8 d-inline-flex align-items-center gap-1" onclick="printInvoice()">
+                    <iconify-icon icon="basil:printer-outline" class="text-xl"></iconify-icon>
+                    Print
+                </button>
+            </div>
         </div>
     </div>
     <div class="card-body py-40">
@@ -50,7 +54,7 @@
                         </div>
                         <div>
                             <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}"" alt="image" class="mb-8" style="width: 168px; length: 40px;">
-                            <p class="mb-1 text-sm">Alamat: {{ $pelanggan->address }}</p>
+                            <p class="mb-1 text-sm">Alamat: {{ $tagihan->customer->address }}</p>
                             <p class="mb-0 text-sm">random@gmail.com, +1 543 2198</p>
                         </div>
                     </div>
@@ -62,7 +66,7 @@
                                     <tbody>
                                         <tr>
                                             <td>Name</td>
-                                            <td class="ps-8">:Will Marthas</td>
+                                            <td class="ps-8">:{{ $tagihan->customer->name }}</td>
                                         </tr>
                                         <tr>
                                             <td>Address</td>
@@ -80,7 +84,7 @@
                                     <tbody>
                                         <tr>
                                             <td>Issus Date</td>
-                                            <td class="ps-8">:25 Jan 2024</td>
+                                            <td class="ps-8">:{{ $tagihan->date }}</td>
                                         </tr>
                                         <tr>
                                             <td>Order ID</td>

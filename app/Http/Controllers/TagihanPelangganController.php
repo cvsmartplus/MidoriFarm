@@ -30,7 +30,10 @@ class TagihanPelangganController extends Controller
         $tagihanpelanggan = new TagihanPelanggan();
         $tagihanpelanggan->id_greenhouse = Auth::user()->id_greenhouse;
         $tagihanpelanggan->id_customer = $request->id_customer;
+        $tagihanpelanggan->id_customer = $request->id_customer;
         $tagihanpelanggan->amount = $request->amount;
+        $tagihanpelanggan->created_at = $request->created_at;
+        $tagihanpelanggan->updated_at = $request->updated_at;
         $tagihanpelanggan->date = $request->date;
         $tagihanpelanggan->due_date = $request->due_date;
         $tagihanpelanggan->status = $request->status;
@@ -45,18 +48,13 @@ class TagihanPelangganController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TagihanPelanggan $tagihan)
-{
-    // Pastikan data sesuai greenhouse user
-    if ($tagihan->id_greenhouse !== Auth::user()->id_greenhouse) {
-        abort(403);
+    public function show(TagihanPelanggan $tagihan, string $id)
+    {
+
+        $tagihan = TagihanPelanggan::with('customer')->where('id_greenhouse', Auth::user()->id_greenhouse)->where('id', $id)
+        ->first();
+        return view('tagihan.pelanggan.show', compact('tagihan'));
     }
-
-    // Ambil pelanggan lewat relasi customer
-    $pelanggan = $tagihan->customer;
-
-    return view('tagihan.pelanggan.show', compact('pelanggan', 'tagihan'));
-}
 
 
     /**

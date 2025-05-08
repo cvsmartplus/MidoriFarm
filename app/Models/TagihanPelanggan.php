@@ -13,6 +13,8 @@ class TagihanPelanggan extends Model
         'id_greenhouse',
         'id_customer',
         'amount',
+        'created_at',
+        'updated_at',
         'status',
         'date',
         'due_date',
@@ -21,6 +23,6 @@ class TagihanPelanggan extends Model
     protected $guarded = [];
     public function customer()
     {
-        return $this->belongsTo( Pelanggan::class, 'id_customer', 'id');
+        return $this->belongsTo(Pelanggan::class, 'id_customer', 'id');
     }
 }
