@@ -53,4 +53,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function gh() {
+        return $this->belongsTo(GreenHouse::class, 'id_greenhouse', 'id');
+    }
 }
