@@ -35,8 +35,8 @@ class TagihanPelangganController extends Controller
         $tagihanpelanggan->id_customer = $request->id_customer;
         $tagihanpelanggan->id_customer = $request->id_customer;
         $tagihanpelanggan->amount = $request->amount;
-        $tagihanpelanggan->created_at = $request->created_at;
-        $tagihanpelanggan->updated_at = $request->updated_at;
+        $tagihanpelanggan->created_at = now();
+        $tagihanpelanggan->updated_at = now();
         $tagihanpelanggan->date = $request->date;
         $tagihanpelanggan->due_date = $request->due_date;
         $tagihanpelanggan->status = $request->status;
