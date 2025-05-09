@@ -6,7 +6,7 @@ use App\Http\Controllers\{
     DashboardController,
     IOTController,
     BlogController,
-    RoleandaccessController,
+    KaryawanController,
     ProdukKelolaController,
     ProdukKategoriController,
     AssetKelolaController,
@@ -57,10 +57,10 @@ Route::middleware(['auth', 'role:admin'])
         Route::get('blog', [BlogController::class, 'blog'])->name('blog');
         Route::get('blogstats', [BlogController::class, 'blogStat'])->name('blogStat');
         Route::get('blogDetails', [BlogController::class, 'blogDetails'])->name('blogDetails');
-        Route::get('assignRole',[RoleandaccessController::class,'assignRole'])->name('assignRole');
-        Route::get('roleAccess',[RoleandaccessController::class,'roleAccess'])->name('roleAccess');
 
         // CRUD routes (Resourceful) - Dengan nama unik
+        Route::resource('karyawan', KaryawanController::class)->names('karyawan');
+
         Route::resource('produk/kelola', ProdukKelolaController::class)->names('produkKelola');
         Route::resource('produk/kategori', ProdukKategoriController::class)->names('produkKategori');
 
@@ -90,10 +90,10 @@ Route::middleware(['auth','role:owner'])
         Route::get('iot/laporan',[IOTController::class,'laporan'])->name('laporanIOT');
         Route::get('iot/monitoring',[IOTController::class,'monitoring'])->name('monitoring');
         Route::get('notification', [NotificationController::class, 'index'])->name('notification');
-        Route::get('assignRole',[RoleandaccessController::class,'assignRole'])->name('assignRole');
-        Route::get('roleAccess',[RoleandaccessController::class,'roleAccess'])->name('roleAccess');
 
         // CRUD routes (Resourceful) - Dengan nama unik
+        Route::resource('karyawan', KaryawanController::class)->names('karyawan');
+
         Route::resource('produk/kelola', ProdukKelolaController::class)->names('produkKelola');
         Route::resource('produk/kategori', ProdukKategoriController::class)->names('produkKategori');
 
@@ -128,7 +128,7 @@ Route::middleware(['auth','role:akuntan'])
     ->group(function(){
         Route::get('notification', [NotificationController::class, 'index'])->name('notification');
         Route::get('keuangan',[DashboardController::class,'p10'])->name('keuangan');
-        
+
         Route::resource('asset/kelola', AssetKelolaController::class)->names('assetKelola');
         Route::resource('asset/kategori', AssetKategoriController::class)->names('assetKategori');
 
