@@ -68,6 +68,10 @@
                                             <td>Phone Number</td>
                                             <td class="ps-8">: {{ $tagihan->customer->phone_number }}</td>
                                         </tr>
+                                        <tr>
+                                            <td>Nominal</td>
+                                            <td class="ps-8 text-primary-light">: <strong>Rp. {{ format_uang($tagihan->amount) }}</strong></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -80,103 +84,37 @@
                                         </tr>
                                         <tr>
                                             <td>Issues Date</td>
-                                            <td class="ps-8">: {{ $tagihan->created_at }}</td>
+                                            <td class="ps-8">: {{ $tagihan->updated_at }}</td>
                                         </tr>
                                         <tr>
                                             <td>Status</td>
-                                            <td class="ps-8">: <strong>{{ $tagihan->status }}</strong></td>
+                                            <td class="ps-8 text-primary-light">: <strong>{{ $tagihan->status }}</strong></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
 
-                        <div class="mt-24">
-                            <div class="table-responsive scroll-sm">
-                                <table class="table bordered-table text-sm">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="text-sm">SL.</th>
-                                            <th scope="col" class="text-sm">Items</th>
-                                            <th scope="col" class="text-sm">Qty</th>
-                                            <th scope="col" class="text-sm">Units</th>
-                                            <th scope="col" class="text-sm">Unit Price</th>
-                                            <th scope="col" class="text-end text-sm">Price</th>
-                                        </tr>
-                                    </thead>
+                        <div class="d-flex mt-32 flex-wrap justify-content-between gap-3">
+                            <div>
+                                <p class="text-sm mb-0"><span class="text-primary-light fw-semibold">Sales By:</span> {{ $gh->name }}</p>
+                            </div>
+                            <div>
+                                <table class="text-sm">
                                     <tbody>
                                         <tr>
-                                            <td>01</td>
-                                            <td>Kentang</td>
-                                            <td>5</td>
-                                            <td>Tons</td>
-                                            <td>Rp200.000</td>
-                                            <td class="text-end">Rp1.000.000</td>
+                                            <td class="pe-64 fw-bold text-primary-light">Total:</td>
+                                            <td class="pe-16">
+                                                <span class="text-primary-light"><strong>Rp. {{ format_uang($tagihan->amount) }}</strong></span>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td>02</td>
-                                            <td>Kentang</td>
-                                            <td>5</td>
-                                            <td>Tons</td>
-                                            <td>Rp200.000</td>
-                                            <td class="text-end">Rp1.000.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>03</td>
-                                            <td>Kentang</td>
-                                            <td>5</td>
-                                            <td>Tons</td>
-                                            <td>Rp200.000</td>
-                                            <td class="text-end">Rp1.000.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>04</td>
-                                            <td>Kentang</td>
-                                            <td>5</td>
-                                            <td>Tons</td>
-                                            <td>Rp200.000</td>
-                                            <td class="text-end">Rp1.000.000</td>
+                                            <td class="border-bottom">
+                                            <td class="border-bottom">
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="d-flex flex-wrap justify-content-between gap-3">
-                                <div>
-                                    <p class="text-sm mb-0"><span class="text-primary-light fw-semibold">Sales By:</span> {{ $gh->name }}</p>
-                                    <p class="text-sm mb-0">Thanks for your business!</p>
-                                </div>
-                                <div>
-                                    <table class="text-sm">
-                                        <tbody>
-                                            <tr>
-                                                <td class="pe-64">Subtotal:</td>
-                                                <td class="pe-16">
-                                                    <span class="text-primary-light fw-semibold">Rp4.000.000</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pe-64">Discount:</td>
-                                                <td class="pe-16">
-                                                    <span class="text-primary-light fw-semibold">Rp0</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pe-64 border-bottom pb-4">Tax:</td>
-                                                <td class="pe-16 border-bottom pb-4">
-                                                    <span class="text-primary-light fw-semibold">0.00</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pe-64 pt-4">
-                                                    <span class="text-primary-light fw-semibold">Total:</span>
-                                                </td>
-                                                <td class="pe-16 pt-4">
-                                                    <span class="text-primary-light fw-semibold">Rp4.000.000</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
                         </div>
 
