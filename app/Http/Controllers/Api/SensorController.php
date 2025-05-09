@@ -21,6 +21,8 @@ class SensorController extends Controller
             'message'=>'Data ditemukan',
             'data'=>$data,
         ],200);
+        $sensorData = sensor::where;
+        return view('dashboard.sensor', compact('data'));
     }
 
     /**

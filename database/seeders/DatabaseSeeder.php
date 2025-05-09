@@ -43,7 +43,6 @@ class DatabaseSeeder extends Seeder
             NotificationSeeder::class,
             IotSeeder::class,
             IsOutputEnableSeeder::class,
-            // SensorConfigSeeder::class,
         ]);
     }
 }

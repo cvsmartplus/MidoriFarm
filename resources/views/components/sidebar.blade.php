@@ -9,7 +9,7 @@
             <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}" alt="site logo" class="dark-logo">
             <img src="{{ asset('assets/images/MidoriFarm.png') }}" alt="site logo" class="logo-icon">
         </a>
-        
+
     </div>
     <div class="sidebar-menu-area">
         <ul class="sidebar-menu" id="sidebar-menu">
@@ -152,7 +152,7 @@
             <!-- Asset -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
-                    <iconify-icon icon="mage:money-exchange" class="menu-icon"></iconify-icon>
+                    <iconify-icon icon="solar:money-bag-outline" class="menu-icon"></iconify-icon>
                     <span>Asset</span>
                 </a>
                 <ul class="sidebar-submenu">
@@ -194,7 +194,7 @@
             <!-- Penjualan -->
             <li class="dropdown">
                 <a href="javascript:void(0)">
-                    <iconify-icon icon="flowbite:chart-line-down-outline" class="menu-icon"></iconify-icon>
+                    <iconify-icon icon="mage:money-exchange" class="menu-icon"></iconify-icon>
                     <span>Penjualan</span>
                 </a>
                 <ul class="sidebar-submenu">
@@ -217,17 +217,12 @@
             <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="ri-user-settings-line" class="menu-icon"></iconify-icon>
-                    <span>Manajemen Akses</span>
+                    <span>Karyawan</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="{{ routeByRole('admin.roleAccess', 'owner.roleAccess', null, null) }}">
-                            <iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon>Daftar Akses
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ routeByRole('admin.assignRole', 'owner.assignRole', null, null) }}">
-                            <iconify-icon icon="mdi:key-plus" class="menu-icon"></iconify-icon>Beri Akses
+                        <a href="{{ routeByRole('admin.karyawan.index', 'owner.karyawan.index', null, null) }}">
+                            <iconify-icon icon="el:list-alt" class="menu-icon"></iconify-icon>Daftar Karyawan
                         </a>
                     </li>
                 </ul>

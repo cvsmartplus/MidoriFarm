@@ -20,6 +20,8 @@ class GreenHouseSeeder extends Seeder
         //
         DB::table('green_houses')->insert([
             'name' => 'Green House 1',
+            'phone_number' => $faker->phoneNumber,
+            'email'=> $faker->unique()->safeEmail,
             'type_of_plant' => 'potato',
             'location' => $faker->streetAddress,
             'status' => 1, // 1 untuk 'Active'
@@ -30,6 +32,8 @@ class GreenHouseSeeder extends Seeder
 
         DB::table('green_houses')->insert([
             'name' => 'Green House 2',
+            'phone_number' => $faker->phoneNumber,
+            'email'=> $faker->unique()->safeEmail,
             'type_of_plant' => 'tomato',
             'location' => $faker->streetAddress,
             'status' => 0, // 0 untuk 'Inactive'
@@ -40,6 +44,8 @@ class GreenHouseSeeder extends Seeder
 
         DB::table('green_houses')->insert([
             'name' => 'Green House 3',
+            'phone_number' => $faker->phoneNumber,
+            'email'=> $faker->unique()->safeEmail,
             'type_of_plant' => 'corn',
             'location' => $faker->streetAddress,
             'status' => 1,
@@ -50,6 +56,8 @@ class GreenHouseSeeder extends Seeder
 
         DB::table('green_houses')->insert([
             'name' => 'Green House 4',
+            'phone_number' => $faker->phoneNumber,
+            'email'=> $faker->unique()->safeEmail,
             'type_of_plant' => 'potato',
             'location' => $faker->streetAddress,
             'status' => 0,
@@ -60,6 +68,8 @@ class GreenHouseSeeder extends Seeder
 
         DB::table('green_houses')->insert([
             'name' => 'Green House 5',
+            'phone_number' => $faker->phoneNumber,
+            'email'=> $faker->unique()->safeEmail,
             'type_of_plant' => 'tomato',
             'location' => $faker->streetAddress,
             'status' => 1,

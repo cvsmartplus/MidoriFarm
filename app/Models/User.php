@@ -12,7 +12,6 @@ class User extends Authenticatable
 {
 
     use HasRoles;
-    
     use HasFactory, Notifiable;
 
     /**
@@ -20,6 +19,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'users';
     protected $fillable = [
         'name',
         'email',
@@ -30,7 +30,7 @@ class User extends Authenticatable
 
 
     ];
-
+    protected $primaryKey = 'id';
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -52,5 +52,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function gh()
+    {
+        return $this->belongsTo(GreenHouse::class, 'id_greenhouse', 'id');
     }
 }

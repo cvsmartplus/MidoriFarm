@@ -11,6 +11,7 @@ class Pelanggan extends Model
     //
     protected $table = 'customers';
     protected $fillable = [
+        'id_greenhouse',
         'name',
         'address',
         'email',
@@ -18,6 +19,10 @@ class Pelanggan extends Model
     ];
     protected $primaryKey = 'id';
     protected $guarded = [];
-    
+    public function tagihan()
+{
+    return $this->hasMany(TagihanPelanggan::class, 'id_customer', 'id');
+}
+
 }
 

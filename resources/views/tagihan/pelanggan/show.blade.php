@@ -19,35 +19,19 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <div class="d-flex flex-wrap align-items-center justify-content-end gap-2">
-            <a href="javascript:void(0)" class="btn btn-sm btn-primary-600 radius-8 d-inline-flex align-items-center gap-1">
-                <iconify-icon icon="pepicons-pencil:paper-plane" class="text-xl"></iconify-icon>
-                Send Invoice
-            </a>
-            <a href="javascript:void(0)" class="btn btn-sm btn-warning radius-8 d-inline-flex align-items-center gap-1">
-                <iconify-icon icon="solar:download-linear" class="text-xl"></iconify-icon>
-                Download
-            </a>
-            @if (auth()->user()->role == 'admin') 
-            <a href="{{route('admin.tagihanPelanggan.update')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
-                <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
-                Edit
-            </a>
-            @elseif (auth()->user()->role == 'owner')
-            <a href="{{route('owner.tagihanPelanggan.update')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
-                <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
-                Edit
-            </a>
-            @else (auth()->user()->role == 'akuntan')
-            <a href="{{route('akuntan.tagihanPelanggan.update')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
-                <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
-                Edit
-            </a>
-            @endif
-            <button type="button" class="btn btn-sm btn-danger radius-8 d-inline-flex align-items-center gap-1" onclick="printInvoice()">
-                <iconify-icon icon="basil:printer-outline" class="text-xl"></iconify-icon>
-                Print
-            </button>
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <div>
+                <a href="{{ routeByRole('admin.tagihanPelanggan.index', 'owner.tagihanPelanggan.index', null, 'akuntan.tagihanPelanggan.index' ) }}" class="btn btn-sm btn-danger-500 radius-8 d-inline-flex align-items-center gap-1">
+                    <-
+                    Kembali
+                </a>
+            </div>
+            <div class="gap-2">
+                <button type="button" class="btn btn-sm btn-warning radius-8 d-inline-flex align-items-center gap-1" onclick="printInvoice()">
+                    <iconify-icon icon="basil:printer-outline" class="text-xl"></iconify-icon>
+                    Print/Download
+                </button>
+            </div>
         </div>
     </div>
     <div class="card-body py-40">
@@ -57,32 +41,36 @@
                     <div class="p-20 d-flex flex-wrap justify-content-between gap-3 border-bottom">
                         <div>
                             <h3 class="text-xl">Invoice #3492</h3>
-                            <p class="mb-1 text-sm">Date Issued: 25/08/2020</p>
-                            <p class="mb-0 text-sm">Date Due: 29/08/2020</p>
+                            <p class="mb-1 text-sm">Debt Date: {{ $tagihan->date }}</p>
+                            <p class="mb-0 text-sm">Due Date: {{ $tagihan->due_date }}</p>
                         </div>
                         <div>
                             <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}"" alt="image" class="mb-8" style="width: 168px; length: 40px;">
-                            <p class="mb-1 text-sm">4517 Washington Ave. Manchester, Kentucky 39495</p>
-                            <p class="mb-0 text-sm">random@gmail.com, +1 543 2198</p>
+                            <p class="mb-1 text-sm">{{ $gh->location }}</p>
+                            <p class="mb-0 text-sm">{{ $gh->email }}, {{ $gh->phone_number }}</p>
                         </div>
                     </div>
                     <div class="py-28 px-20">
                         <div class="d-flex flex-wrap justify-content-between align-items-end gap-3">
                             <div>
-                                <h6 class="text-md">Issus For:</h6>
+                                <h6 class="text-md">Issues For:</h6>
                                 <table class="text-sm text-secondary-light">
                                     <tbody>
                                         <tr>
                                             <td>Name</td>
-                                            <td class="ps-8">:Will Marthas</td>
+                                            <td class="ps-8">: {{ $tagihan->customer->name }}</td>
                                         </tr>
                                         <tr>
                                             <td>Address</td>
-                                            <td class="ps-8">:4517 Washington Ave.USA</td>
+                                            <td class="ps-8">: {{ $tagihan->customer->address }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Phone number</td>
-                                            <td class="ps-8">:+1 543 2198</td>
+                                            <td>Phone Number</td>
+                                            <td class="ps-8">: {{ $tagihan->customer->phone_number }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nominal</td>
+                                            <td class="ps-8 text-primary-light">: <strong>Rp. {{ format_uang($tagihan->amount) }}</strong></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -91,108 +79,42 @@
                                 <table class="text-sm text-secondary-light">
                                     <tbody>
                                         <tr>
-                                            <td>Issus Date</td>
-                                            <td class="ps-8">:25 Jan 2024</td>
+                                            <td>Issued By</td>
+                                            <td class="ps-8">: {{ auth()->user()->name }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Order ID</td>
-                                            <td class="ps-8">:#653214</td>
+                                            <td>Issues Date</td>
+                                            <td class="ps-8">: {{ $tagihan->updated_at }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Shipment ID</td>
-                                            <td class="ps-8">:#965215</td>
+                                            <td>Status</td>
+                                            <td class="ps-8 text-primary-light">: <strong>{{ $tagihan->status }}</strong></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
 
-                        <div class="mt-24">
-                            <div class="table-responsive scroll-sm">
-                                <table class="table bordered-table text-sm">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="text-sm">SL.</th>
-                                            <th scope="col" class="text-sm">Items</th>
-                                            <th scope="col" class="text-sm">Qty</th>
-                                            <th scope="col" class="text-sm">Units</th>
-                                            <th scope="col" class="text-sm">Unit Price</th>
-                                            <th scope="col" class="text-end text-sm">Price</th>
-                                        </tr>
-                                    </thead>
+                        <div class="d-flex mt-32 flex-wrap justify-content-between gap-3">
+                            <div>
+                                <p class="text-sm mb-0"><span class="text-primary-light fw-semibold">Sales By:</span> {{ $gh->name }}</p>
+                            </div>
+                            <div>
+                                <table class="text-sm">
                                     <tbody>
                                         <tr>
-                                            <td>01</td>
-                                            <td>Kentang</td>
-                                            <td>5</td>
-                                            <td>Tons</td>
-                                            <td>Rp200.000</td>
-                                            <td class="text-end">Rp1.000.000</td>
+                                            <td class="pe-64 fw-bold text-primary-light">Total:</td>
+                                            <td class="pe-16">
+                                                <span class="text-primary-light"><strong>Rp. {{ format_uang($tagihan->amount) }}</strong></span>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td>02</td>
-                                            <td>Kentang</td>
-                                            <td>5</td>
-                                            <td>Tons</td>
-                                            <td>Rp200.000</td>
-                                            <td class="text-end">Rp1.000.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>03</td>
-                                            <td>Kentang</td>
-                                            <td>5</td>
-                                            <td>Tons</td>
-                                            <td>Rp200.000</td>
-                                            <td class="text-end">Rp1.000.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>04</td>
-                                            <td>Kentang</td>
-                                            <td>5</td>
-                                            <td>Tons</td>
-                                            <td>Rp200.000</td>
-                                            <td class="text-end">Rp1.000.000</td>
+                                            <td class="border-bottom">
+                                            <td class="border-bottom">
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="d-flex flex-wrap justify-content-between gap-3">
-                                <div>
-                                    <p class="text-sm mb-0"><span class="text-primary-light fw-semibold">Sales By:</span> SmartPlus</p>
-                                    <p class="text-sm mb-0">Thanks for your business!</p>
-                                </div>
-                                <div>
-                                    <table class="text-sm">
-                                        <tbody>
-                                            <tr>
-                                                <td class="pe-64">Subtotal:</td>
-                                                <td class="pe-16">
-                                                    <span class="text-primary-light fw-semibold">Rp4.000.000</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pe-64">Discount:</td>
-                                                <td class="pe-16">
-                                                    <span class="text-primary-light fw-semibold">Rp0</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pe-64 border-bottom pb-4">Tax:</td>
-                                                <td class="pe-16 border-bottom pb-4">
-                                                    <span class="text-primary-light fw-semibold">0.00</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="pe-64 pt-4">
-                                                    <span class="text-primary-light fw-semibold">Total:</span>
-                                                </td>
-                                                <td class="pe-16 pt-4">
-                                                    <span class="text-primary-light fw-semibold">Rp4.000.000</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
                         </div>
 

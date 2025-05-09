@@ -16,9 +16,11 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
             $table->foreignId('id_product')->references('id')->on('products');
+            $table->uuid('transaction_id');
             $table->integer('price');
             $table->integer('quantity');
             $table->integer('subtotal');
+            $table->integer('total');
             $table->date('date');
         });
     }

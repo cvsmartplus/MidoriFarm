@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pelanggan;
 use Illuminate\Http\Request;
+use App\Models\TagihanPelanggan;
+use Illuminate\Support\Facades\Auth;
 
 class TagihanPelangganController extends Controller
 {
@@ -11,7 +14,12 @@ class TagihanPelangganController extends Controller
      */
     public function index()
     {
-        return view("tagihan.pelanggan.index");
+        $pelanggan = Pelanggan::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
+        $tagihanpelanggan = TagihanPelanggan::with('customer')
+        ->where('id_greenhouse', Auth::user()->id_greenhouse)
+        ->get();
+
+        return view("tagihan.pelanggan.index",  compact( 'pelanggan','tagihanpelanggan'));
     }
 
     /**
@@ -19,15 +27,38 @@ class TagihanPelangganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tagihanpelanggan = new TagihanPelanggan();
+        $tagihanpelanggan->id_greenhouse = Auth::user()->id_greenhouse;
+        $tagihanpelanggan->id_customer = $request->id_customer;
+        $tagihanpelanggan->id_customer = $request->id_customer;
+        $tagihanpelanggan->amount = $request->amount;
+        $tagihanpelanggan->created_at = now();
+        $tagihanpelanggan->updated_at = now();
+        $tagihanpelanggan->date = $request->date;
+        $tagihanpelanggan->due_date = $request->due_date;
+        $tagihanpelanggan->status = $request->status;
+        $tagihanpelanggan->save();
+        if($tagihanpelanggan){
+            return redirect()->back()->with('success', 'Data berhasil disimpan');
+        } else{
+            return redirect()->back()->with('error', 'Data gagal disimpan');
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(TagihanPelanggan $tagihan, string $id)
     {
-        return view("tagihan.pelanggan.show");
+        // ambil nama pengguna web
+        $user = Auth::user();
+        
+        // ambil no.telp & alamat gh
+        $gh = $user->gh()->first();
+
+        $tagihan = TagihanPelanggan::with('customer')->where('id_greenhouse', Auth::user()->id_greenhouse)->where('id', $id)
+        ->first();
+        return view('tagihan.pelanggan.show', compact('user','gh','tagihan'));
     }
 
     /**
@@ -43,7 +74,13 @@ class TagihanPelangganController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $tagihanpelanggan = TagihanPelanggan::findOrFail($id);
+        $tagihanpelanggan->update($request->all());
+        if($tagihanpelanggan){
+            return redirect()->back()->with('success', 'Data berhasil diubah');
+        } else{
+            return redirect()->back()->with('error', 'Data gagal diubah');
+        }
     }
 
     /**
@@ -51,6 +88,7 @@ class TagihanPelangganController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tagihanpelanggan = TagihanPelanggan::select('id')->where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name', 255);
+            $table->string('phone_number', 20);
+            $table->string('email', 255);
             $table->string('type_of_plant');
             $table->text('location');
             $table->boolean('status');

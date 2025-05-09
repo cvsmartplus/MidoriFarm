@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Penjualan;
+use App\Models\PenjualanLaporan;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -14,10 +15,13 @@ class PenjualanController extends Controller
      */
     public function index()
     {
+        $laporan = Penjualan::where('id_greenhouse', Auth::user()->id_greenhouse)
+        ->select('id', 'price', 'quantity', 'subtotal', 'date')
+        ->get();
         $produk = Product::where('id_greenhouse', Auth::user()->id_greenhouse)
         ->pluck('name_product', 'id');
-        $penjualan = Penjualan::with('produk')->where('id_greenhouse', Auth::user()->id_greenhouse)->get();
-        return view('penjualan.index', ['penjualan' => $penjualan], mergeData: compact('produk'));
+
+    return view('penjualan.index', compact('laporan'));
     }
 
     /**
@@ -25,9 +29,15 @@ class PenjualanController extends Controller
      */
     public function create()
     {
-        return view('penjualan.create',compact('produk'));
-    }
+        $produk = Product::where('id_greenhouse', Auth::user()->id_greenhouse)
+                    ->pluck('name_product', 'id');
 
+        $penjualan = Penjualan::with('produk')
+                    ->where('id_greenhouse', Auth::user()->id_greenhouse)
+                    ->get();
+
+        return view('penjualan.create', compact('produk', 'penjualan'));
+    }
     /**
      * Store a newly created resource in storage.
      */

@@ -19,13 +19,13 @@ class CustomerDebtSeeder extends Seeder
         //
         DB::table('customer_debts')->insert([
             'id_greenhouse' => $faker->numberBetween(1,5),
-            'id_customer' => $faker->numberBetween(1, 3),
-            'name' =>$faker->name,
+            'id_customer' =>$faker->numberBetween(1,5),
+            'created_at' =>now(),
+            'updated_at' =>now(),
             'amount' => $faker->randomFloat(2, 10, 1000),
-            'status' => $faker->numberBetween(0, 1),
+            'status' => $faker->randomElement(['Lunas', 'Belum Lunas', 'Tenggat Waktu']),
             'date' => $faker->date,
             'due_date' => $faker->date,
-            'debt_date' => $faker->date,
         ]);
         }
     }

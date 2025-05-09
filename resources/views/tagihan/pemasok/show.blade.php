@@ -28,22 +28,10 @@
                 <iconify-icon icon="solar:download-linear" class="text-xl"></iconify-icon>
                 Download
             </a>
-            @if (auth()->user()->role == 'admin') 
-            <a href="{{route('admin.tagihanPelanggan.update')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
+            <a href="{{routeByRole('admin.tagihanPemasok.update', 'owner.tagihanPemasok.update',null, null, ['pemasok' => $tagihan->id])}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
                 <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
                 Edit
             </a>
-            @elseif (auth()->user()->role == 'owner')
-            <a href="{{route('owner.tagihanPelanggan.update')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
-                <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
-                Edit
-            </a>
-            @else (auth()->user()->role == 'akuntan')
-            <a href="{{route('akuntan.tagihanPelanggan.update')}}" class="btn btn-sm btn-success radius-8 d-inline-flex align-items-center gap-1">
-                <iconify-icon icon="uil:edit" class="text-xl"></iconify-icon>
-                Edit
-            </a>
-            @endif
             <button type="button" class="btn btn-sm btn-danger radius-8 d-inline-flex align-items-center gap-1" onclick="printInvoice()">
                 <iconify-icon icon="basil:printer-outline" class="text-xl"></iconify-icon>
                 Print
@@ -61,7 +49,7 @@
                             <p class="mb-0 text-sm">Date Due: 29/08/2020</p>
                         </div>
                         <div>
-                            <img src="{{ asset('assets/images/midorifarm.png') }}" alt="image" class="mb-8">
+                            <img src="{{ asset('assets/images/MidoriFarm_logo_text.png') }}"" alt="image" class="mb-8" style="width: 168px; length: 40px;">
                             <p class="mb-1 text-sm">4517 Washington Ave. Manchester, Kentucky 39495</p>
                             <p class="mb-0 text-sm">random@gmail.com, +1 543 2198</p>
                         </div>

@@ -18,4 +18,8 @@ class Pemasok extends Model
     ];
     protected $primaryKey = 'id';
     protected $guarded = [];
+    public function tagihan()
+    {
+        return $this->hasMany(TagihanPemasok::class, 'id_supplier', 'id');
+    }
 }

@@ -22,15 +22,20 @@
                         <iconify-icon icon="iconoir:bell" class="text-primary-light text-xl"></iconify-icon>
                     </button>
                     <div class="dropdown-menu to-top dropdown-menu-lg p-0">
-                        <div class="m-16 py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
-                            <div>
-                                <h6 class="text-lg text-primary-light fw-semibold mb-0">Notifications</h6>
+                        <div class="py-0 border-bottom radius-8 d-flex align-items-center justify-content-between gap-2">
+                            <div class="m-16">
+                                <h6 class="text-lg text-primary-light fw-semibold mb-0">Notifikasi</h6>
                             </div>
-                            <span class="text-primary-600 fw-semibold text-lg w-40-px h-40-px rounded-circle bg-base d-flex justify-content-center align-items-center">05</span>
+                            <div>
+                                <button type="button" class=" text-primary-500 d-flex m-16 align-items-center text-body-tertiary btn p-6">
+                                    <iconify-icon icon="meteor-icons:check-double" class="icon"></iconify-icon>
+                                    <span class="justify-content-center align-items-center" style="font-size: 12px">Tandai semua telah dibaca</span>
+                                </button>
+                            </div>
                         </div>
 
                         <div class="max-h-400-px overflow-y-auto scroll-sm pe-4">
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
+                            <div href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
                                 <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
                                     <span class="w-44-px h-44-px bg-success-subtle text-success-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
                                         <iconify-icon icon="bitcoin-icons:verify-outline" class="icon text-xxl"></iconify-icon>
@@ -41,9 +46,9 @@
                                     </div>
                                 </div>
                                 <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
-                            </a>
+                            </div>
 
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between bg-neutral-50">
+                            <div href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between bg-neutral-50">
                                 <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
                                     <span class="w-44-px h-44-px bg-success-subtle text-success-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
                                         <img src="{{ asset('assets/images/notification/profile-1.png') }}" alt="">
@@ -54,9 +59,9 @@
                                     </div>
                                 </div>
                                 <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
-                            </a>
+                            </div>
 
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
+                            <div href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
                                 <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
                                     <span class="w-44-px h-44-px bg-info-subtle text-info-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
                                         AM
@@ -67,9 +72,9 @@
                                     </div>
                                 </div>
                                 <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
-                            </a>
+                            </div>
 
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between bg-neutral-50">
+                            <div href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between bg-neutral-50">
                                 <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
                                     <span class="w-44-px h-44-px bg-success-subtle text-success-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
                                         <img src="{{ asset('assets/images/notification/profile-2.png') }}" alt="">
@@ -80,9 +85,9 @@
                                     </div>
                                 </div>
                                 <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
-                            </a>
+                            </div>
 
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
+                            <div href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
                                 <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
                                     <span class="w-44-px h-44-px bg-info-subtle text-info-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
                                         DR
@@ -93,11 +98,11 @@
                                     </div>
                                 </div>
                                 <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
-                            </a>
+                            </div>
                         </div>
 
-                        <div class="text-center py-12 px-16">
-                            <a href="javascript:void(0)" class="text-primary-600 fw-semibold text-md">See All Notification</a>
+                        <div class="text-center py-12 px-16 border-top">
+                            <a href="javascript:void(0)" class="btn text-primary-500 fw-semibold text-md">See All Notification</a>
                         </div>
 
                     </div>
