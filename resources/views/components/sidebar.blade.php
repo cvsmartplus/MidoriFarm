@@ -204,7 +204,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ routeByRole('admin.penjualan.index', 'owner.penjualan.index', null, 'akuntan.penjualan.index') }}">
+                        <a href="javascript:void(0)">   
                             <iconify-icon icon="bx:category" class="menu-icon"></iconify-icon>Laporan
                         </a>
                     </li>
