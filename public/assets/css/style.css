@@ -12252,7 +12252,6 @@ div.dt-container .dt-paging .dt-paging-button:hover:hover, div.dt-container .dt-
 }
 
 .form-check .form-check-input:checked::before {
-  transform: translate(-50%, -50%) scale(1);
   visibility: visible;
   opacity: 1;
 }
@@ -12378,7 +12377,8 @@ div.dt-container .dt-paging .dt-paging-button:hover:hover, div.dt-container .dt-
   position: relative;
   background-color: var(--neutral-400);
   border: 0;
-  background-image: none !important;
+  background-repeat: no-repeat;
+  background-image: var(--bs-form-switch-bg);
   width: 36px;
   height: 20px;
 }
@@ -12389,7 +12389,7 @@ div.dt-container .dt-paging .dt-paging-button:hover:hover, div.dt-container .dt-
 
 .form-switch .form-check-input:checked::before {
   left: calc(100% - 18px);
-  transition: 0.2s linear;
+  transition: all 0.2s;
 }
 
 .form-switch .form-check-input:checked ~ .form-check-label {
@@ -12406,7 +12406,7 @@ div.dt-container .dt-paging .dt-paging-button:hover:hover, div.dt-container .dt-
   top: 50%;
   transform: translateY(-50%);
   left: 2px;
-  transition: 0.2s linear;
+  transition: all 0.2s;
 }
 
 /* Switch Css End */
