@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
-    $title = 'Penjualan';
-    $subTitle = 'Penjualan';
+    $title = 'Kategori Pengeluaran';
+    $subTitle = 'Pengeluaran - Kategori';
 @endphp
 @section('content')
 <div class="card h-100 p-0 radius-12">
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="modal-body p-24">
                                     <form></form>
-                                    <form action="{{ routeByRole('admin.pengeluaranKategori.update', 'owner.pengeluaranKategori.update',null, null, ['kategori' => $kategori->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.pengeluaranKategori.update', 'owner.pengeluaranKategori.update',null, 'akuntan.pengeluaranKategori.update', ['kategori' => $kategori->id]) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="row">
@@ -67,7 +67,7 @@
                                                 <button type="submit" class="btn btn-primary-500 text-md px-48 py-12 radius-8">
                                                     Simpan
                                                 </button>
-                                            </div>  
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <form action=""></form>
-                                    <form action="{{ routeByRole('admin.pengeluaranKategori.destroy', 'owner.pengeluaranKategori.destroy', null, null, ['kategori' => $kategori->id]) }}" method="POST">
+                                    <form action="{{ routeByRole('admin.pengeluaranKategori.destroy', 'owner.pengeluaranKategori.destroy', null, 'akuntan.pengeluaranKategori.destroy', ['kategori' => $kategori->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="button" class="btn btn-secondary"
@@ -133,7 +133,7 @@
                             <button type="submit" class="btn btn-primary-500 text-md px-48 py-12 radius-8">
                                 Simpan
                             </button>
-                        </div>  
+                        </div>
                     </div>
                 </form>
             </div>
