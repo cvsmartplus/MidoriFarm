@@ -21,42 +21,42 @@
                 <form action="{{route('loginPost')}}" method="POST">
                     @csrf
                     @if ($message = Session::get('error'))
-                        <div class="text-danger text-sm mb-2">
+                        <div class="text-danger text-sm mb-3">
                             {{ $message }}
                         </div>
                     @endif
-                    @if ($errors->all())
-                    <div class="text-danger text-sm mb-2">
-                        {{ $errors->first() }}
-                    </div>
-                    @endif
+                    @error ('email')
+                        <div class="text-danger text-sm mb-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="icon-field mb-16">
                         <span class="icon top-50 translate-middle-y">
                             <iconify-icon icon="mage:email"></iconify-icon>
                         </span>
                         <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" name="email" placeholder="Email" value="{{ old('email') }}" autocomplete="email">
                     </div>
-                    @if ($errors->all())
-                    <div class="text-danger text-sm mb-2">
-                        {{ $errors->first('password') }}
-                    </div>
-                    @endif
+                    @error ('password')
+                        <div class="text-danger text-sm mb-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="position-relative mb-20">
                         <div class="icon-field">
                             <span class="icon top-50 translate-middle-y">
                                 <iconify-icon icon="solar:lock-password-outline"></iconify-icon>
                             </span>
-                            <input type="password" name="password" value="{{ old('password') }}" class="form-control h-56-px bg-neutral-50 radius-12" id="password" placeholder="Kata Sandi" autocomplete="current-password">
+                            <input type="password" name="password" value="" class="form-control h-56-px bg-neutral-50 radius-12" id="password" placeholder="Kata Sandi" autocomplete="current-password">
                         </div>
                         <button type="button" class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 top-50 translate-middle-y me-16 text-secondary-light" id="togglePassword"></button>
                     </div>
                     <div class="">
                         <div class="d-flex justify-content-between gap-2">
                             <div class="form-check style-check d-flex align-items-center">
-                                <input class="form-check-input border border-neutral-300" type="checkbox" value="1" name="remember" id="remember">
+                                <input class="form-check-input border border-neutral-300" type="checkbox" value="1" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                 <label class="form-check-label" for="remember">Ingat Saya</label>
                             </div>
-                            <a href="javascript:void(0)" class="text-secondary-600 fw-medium" id="forgotPass">Lupa kata sandi?</a>
+                            {{-- <a href="javascript:void(0)" class="text-secondary-600 fw-medium" id="forgotPass">Lupa kata sandi?</a> --}}
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary-500 text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32">Masuk</button>
