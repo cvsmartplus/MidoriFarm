@@ -13,6 +13,8 @@ class TagihanPemasok extends Model
         'id_greenhouse',
         'id_supplier',
         'amount',
+        'created_at',
+        'updated_at',
         'debt_date',
         'due_date',
         'status',

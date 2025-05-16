@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pemasok;
 use App\Models\TagihanPemasok;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,13 +13,11 @@ class TagihanPemasokController extends Controller
      */
     public function index()
     {
-        $pemasok = Pemasok::where('id_greenhouse', Auth::user()->id_greenhouse)->get();
         $tagihanpemasok = TagihanPemasok::with('supplier')
         ->where('id_greenhouse', Auth::user()->id_greenhouse)
         ->get();
 
-
-        return view('tagihan.pemasok.index', compact('pemasok', 'tagihanpemasok'));
+        return view('tagihan.pemasok.index', compact( 'tagihanpemasok'));
     }
 
     /**
@@ -40,6 +37,8 @@ class TagihanPemasokController extends Controller
         $tagihanpemasok->id_greenhouse = Auth::user()->id_greenhouse;
         $tagihanpemasok->id_supplier = $request->id_supplier;
         $tagihanpemasok->amount = $request->amount;
+        $tagihanpemasok->created_at = now();
+        $tagihanpemasok->updated_at = now();
         $tagihanpemasok->debt_date = $request->debt_date;
         $tagihanpemasok->due_date = $request->due_date;
         $tagihanpemasok->status = $request->status;
@@ -54,20 +53,17 @@ class TagihanPemasokController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(TagihanPemasok $tagihan, string $id)
     {
+        $user = Auth::user();
+
+        $gh = $user->gh()->first();
+
         $tagihan = TagihanPemasok::with('supplier')
         ->where('id_greenhouse', Auth::user()->id_greenhouse)
-        ->findOrFail($id);
-        return view ('tagihan.pemasok.show', compact('tagihan'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        return view ('tagihan.pemasok.edit');
+        ->where('id', $id)
+        ->first();
+        return view ('tagihan.pemasok.show', compact('tagihan', 'user', 'gh'));
     }
 
     /**
@@ -89,7 +85,9 @@ class TagihanPemasokController extends Controller
      */
     public function destroy(string $id)
     {
-        $tagihanpemasok = TagihanPemasok::select('id')->where('id', $id)->delete();
-        return redirect()->back()->with('succes', 'Data berhasil dihapus');
+        $tagihanpemasok = TagihanPemasok::select('id')
+        ->where('id', $id)
+        ->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }
