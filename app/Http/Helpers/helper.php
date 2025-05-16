@@ -25,25 +25,41 @@ function terbilang($angka){
     } elseif ($angka < 1000000000) {
         $terbilang = terbilang($angka / 1000000) . ' juta' . terbilang($angka % 1000000);
     }
-    
+
     return $terbilang;
 
 }
 
-function tanggal_indonesia($tgl,$tampil_hari = true){
-    $nama_hari = array('Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu');
-    $nama_bulan = array(1=>'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
+function tanggal_indonesia($tgl, $tampil_hari = true) {
+    if (!$tgl || strlen($tgl) < 10) {
+        return '-';
+    }
+
+    $nama_hari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    $nama_bulan = [
+        1 => 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+        'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+    ];
 
     $tahun = substr($tgl, 0, 4);
-    $bulan = $nama_bulan[(int) substr($tgl, 5, 2)];
+    $bulan_num = (int) substr($tgl, 5, 2);
     $tanggal = substr($tgl, 8, 2);
+
+    if ($bulan_num < 1 || $bulan_num > 12) {
+        return '-';
+    }
+
+    $bulan = $nama_bulan[$bulan_num];
     $text = '';
 
-    if($tampil_hari){
-        $urutan_hari = date('w', mktime(0,0,0, substr($tgl, 5, 2), $tanggal, $tahun));
+    if ($tampil_hari) {
+        $urutan_hari = date('w', mktime(0, 0, 0, $bulan_num, $tanggal, $tahun));
         $hari = $nama_hari[$urutan_hari];
-        $text .= $tanggal . " " . $bulan . " " . $tahun;
-        return $text;
+        $text = "$hari, $tanggal $bulan $tahun";
+    } else {
+        $text = "$tanggal $bulan $tahun";
     }
+
+    return $text;
 }
 ?>
