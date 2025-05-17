@@ -86,6 +86,8 @@ Route::middleware(['auth','role:owner'])
         // Non-CRUD routes
         Route::get('sensor',[DashboardController::class,'sensor'])->name('sensor');
         Route::get('keuangan',[DashboardController::class,'index10'])->name('keuangan');
+        Route::get('blog',[BlogController::class,'blog'])->name('blog');
+        Route::get('blogDetails',[BlogController::class,'blogDetails'])->name('blogDetails');
         Route::get('iot/laporan',[IOTController::class,'laporan'])->name('laporanIOT');
         Route::get('iot/monitoring',[IOTController::class,'monitoring'])->name('monitoring');
         Route::get('notification', [NotificationController::class, 'index'])->name('notification');
