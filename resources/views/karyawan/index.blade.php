@@ -67,6 +67,11 @@
                         <td class="text-center">{{ $item->role }}</td>
                         <td class="text-center">
                             <div class="d-flex align-items-center gap-10 justify-content-center">
+                                <button type="button"
+                                    class="bg-success-focus text-success-600 bg-hover-success-200 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle"
+                                    data-bs-toggle="modal" data-bs-target="#editModal{{ $item->id }}">
+                                    <iconify-icon icon="lucide:edit" class="menu-icon"></iconify-icon>
+                                </button>
                                 <button type="button" class="bg-danger-focus bg-hover-danger-200 text-danger-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $item->id }}">
                                     <iconify-icon icon="fluent:delete-24-regular" class="menu-icon"></iconify-icon>
                                 </button>
@@ -96,16 +101,11 @@
                                                 <input type="text" name="email" class="form-control" value="{{ $item->email }}" required>
                                             </div>
                                             <div class="col-12">
-                                                <label class="form-label">Password</label>
-                                                <input type="text" name="password" class="form-control" value="{{ $item->password }}" required>
-                                            </div>
-                                            <div class="col-12">
                                                 <label class="form-label">Peran</label>
                                                 <select name="role" class="form-control radius-8 form-select" required>
-                                                    <option value="admin" {{ $item->role == 'admin' ? 'selected' : '' }}>admin</option>
-                                                    <option value="owner" {{ $item->role == 'owner' ? 'selected' : '' }}>owner</option>
-                                                    <option value="akuntan" {{ $item->role == 'akuntan' ? 'selected' : '' }}>akuntan</option>
-                                                    <option value="petani" {{ $item->role == 'petani' ? 'selected' : '' }}>petani</option>
+                                                    @foreach ($user as $key => $value)
+                                                    <option value="{{ $value->id }}">{{ $value->role }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="d-flex justify-content-end gap-3 mt-3">
@@ -212,7 +212,7 @@
             initComplete: function () {
                 var btns = document.querySelectorAll(".dt-button");
                 btns.forEach(function (btn) {
-                    btn.classList.add("btn", "btn-success", "btn-sm");
+                    btn.classList.add("btn", "btn-primary-500", "btn-sm");
                     btn.classList.remove("dt-button");
                 });
             },
