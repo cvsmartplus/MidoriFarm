@@ -2,9 +2,6 @@
 @php
     $title='Tagihan Pemasok';
     $subTitle = 'Tagihan - Pemasok';
-    $script = '<script>
-                    let table = new DataTable("#dataTable");
-               </script>';
 @endphp
 
 @section('content')
@@ -39,15 +36,15 @@
                                     data-bs-toggle="modal" data-bs-target="#editModal{{$tagihan->id}}">
                                     <iconify-icon icon="lucide:edit" class="menu-icon"></iconify-icon>
                                 </button>
+                                <a href='{{ routeByRole('admin.tagihanPemasok.show','owner.tagihanPemasok.show', null, null, ['pemasok' => $tagihan->id]) }}'
+                                    class="bg-info-focus bg-hover-info-200 text-info-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle">
+                                <iconify-icon icon="lucide:eye"></iconify-icon>
+                                </a>
                                 <button type="button"
                                     class="bg-danger-focus bg-hover-danger-200 text-danger-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle"
                                     data-bs-toggle="modal" data-bs-target="#deleteModal{{$tagihan->id}}">
                                     <iconify-icon icon="fluent:delete-24-regular" class="menu-icon"></iconify-icon>
                                 </button>
-                                <a href='{{ routeByRole('admin.tagihanPemasok.show','owner.tagihanPemasok.show', null, null, ['pemasok' => $tagihan->id]) }}'
-                                    class="bg-info-focus bg-hover-info-200 text-info-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle">
-                                <iconify-icon icon="lucide:eye"></iconify-icon>
-                                </a>
                             </div>
                         </td>
                     </tr>
@@ -67,8 +64,8 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <label class="form-label">Nama Peminjam</label>
-                                                <select id="id_customer" name="id_customer" class="form-control radius-8 form-select" required>
-                                                    @foreach ($pemasok as $item)
+                                                <select id="id_supplier" name="id_supplier" class="form-control radius-8 form-select" required>
+                                                    @foreach ($tagihanpemasok as $item)
                                                         <option value="{{ $item->id }}" {{ $item->id == $tagihan->id_supplier ? 'selected' : '' }}>
                                                             {{ $item->name }}
                                                         </option>
@@ -160,7 +157,7 @@
                         <div class="col-12">
                             <select id="id_supplier" name="id_supplier" class="form-control radius-8 form-select" required>
                                 <option value="" disabled selected>Pilih Peminjam</option>
-                                @foreach ($pemasok as $item)
+                                @foreach ($tagihanpemasok as $item)
                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
                                 @endforeach
                             </select>
@@ -234,7 +231,7 @@
                 topStart: ["search", "buttons"],
                 topEnd: {
                     div: {
-                        html: '<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah Produk</button>'
+                        html: '<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah Tagihan</button>'
                     }
                 }
             },

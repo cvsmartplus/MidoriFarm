@@ -40,7 +40,7 @@
                 <div class="shadow-4 border radius-8">
                     <div class="p-20 d-flex flex-wrap justify-content-between gap-3 border-bottom">
                         <div>
-                            <h3 class="text-xl">Invoice #3492</h3>
+                            <h3 class="text-xl">Invoice #{{ $tagihan->id }}</h3>
                             <p class="mb-1 text-sm">Debt Date: {{ $tagihan->date }}</p>
                             <p class="mb-0 text-sm">Due Date: {{ $tagihan->due_date }}</p>
                         </div>
