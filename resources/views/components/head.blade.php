@@ -33,4 +33,7 @@
     <link rel="stylesheet"  href="{{ asset('assets/css/lib/audioplayer.css') }}">
     <!-- main css -->
     <link rel="stylesheet"  href="{{ asset('assets/css/style.css') }}">
+    {{-- Select2 CSS --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/lib/select2.min.css') }}">
+    @stack('style')
 </head>
