@@ -1,220 +1,282 @@
 @extends('layout.layout')
+
 @php
     $title = 'Penjualan';
-    $subTitle = 'Penjualan';
+    $subTitle = 'Buat Penjualan';
 @endphp
 
 @section('content')
-<div class="card h-100 p-0 radius-12">
-    <div class="card-body">
-        <div class="table-responsive scroll-sm">
-            <table class="table bordered-table sm-table mb-0" id="dataTable" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th class="text-center">Produk</th>
-                        <th class="text-center">Harga per-kilo</th>
-                        <th class="text-center">Kuantitas</th>
-                        <th class="text-center">Total</th>
-                        <th class="text-center">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($penjualan as $i => $item)
-                    <tr>
-                        <td class="text-center">{{ $item->produk->name_product }}</td>
-                        <td class="text-center">{{ $item->price }}</td>
-                        <td class="text-center">{{ $item->quantity }}</td>
-                        <td class="text-center">Rp{{ number_format($item->subtotal, 0, ',', '.') }}</td>
-                        <td class="text-center">
-                            <div class="d-flex align-items-center gap-10 justify-content-center">
-                                <button type="button" class="bg-success-focus text-success-600 bg-hover-success-200 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle" data-bs-toggle="modal" data-bs-target="#editModal{{ $item->id }}">
-                                    <iconify-icon icon="lucide:edit" class="menu-icon"></iconify-icon>
-                                </button>
-                                <button type="button" class="bg-danger-focus bg-hover-danger-200 text-danger-600 fw-medium w-40-px h-40-px d-flex justify-content-center align-items-center rounded-circle" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $item->id }}">
-                                    <iconify-icon icon="fluent:delete-24-regular" class="menu-icon"></iconify-icon>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+@push('style')
+  <style>
+    .select2-container--default .select2-selection--single {
+  height: 32px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+}
 
-                    <!-- Modal Edit -->
-                    <div class="modal fade" id="editModal{{ $item->id }}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="editModalLabel">Edit Penjualan</h1>
-                                </div>
-                                <div class="modal-body p-24">
-                                    <form action="{{ routeByRole('admin.penjualan.update', 'owner.penjualan.update', null, 'akuntan.penjualan.update', ['penjualan' => $item->id]) }}" method="POST">
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <label class="form-label">Produk</label>
-                                                <select name="id_product" class="form-control radius-8 form-select" required>
-                                                    @foreach ($produk as $key => $namaProduk)
-                                                        <option value="{{ $key }}" {{ $item->id_product == $key ? 'selected' : '' }}>
-                                                            {{ $namaProduk }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="col-12">
-                                                <label class="form-label">Harga per-kilo</label>
-                                                <input type="text" name="price" class="form-control" value="{{ $item->price }}" required>
-                                            </div>
-                                            <div class="col-12">
-                                                <label class="form-label">Kuantitas</label>
-                                                <input type="text" name="quantity" class="form-control" value="{{ $item->quantity }}" required>
-                                            </div>
-                                            <div class="col-12">
-                                                <label class="form-label">Total</label>
-                                                <input type="text" name="subtotal" class="form-control" value="{{ $item->subtotal }}" required>
-                                            </div>
-                                            <div class="d-flex justify-content-end gap-3 mt-3">
-                                                <button type="reset" class="btn btn-outline-danger" data-bs-dismiss="modal">Batal</button>
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: normal; /* biar teks nggak kegencet */
+  padding-left: 0;
+}
 
-                    <!-- Modal Delete -->
-                    <div class="modal fade" id="deleteModal{{ $item->id }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Peringatan</h5>
-                                </div>
-                                <div class="modal-body">
-                                    Apakah anda yakin ingin menghapus data ini?
-                                </div>
-                                <div class="modal-footer">
-                                    <form action="{{ routeByRole('admin.penjualan.destroy', 'owner.penjualan.destroy', null, 'akuntan.penjualan.destroy', ['penjualan' => $item->id]) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                                        <button type="submit" class="btn btn-danger">Iya</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </tbody>
-            </table>
+  </style>
+@endpush
+<div class="row gy-4">
+  <div class="col-12">
+
+    {{-- Pilih Pelanggan --}}
+    <div class="d-inline-block mb-3">
+      <div class="card radius-12">
+        <div class="card-body d-flex align-items-center gap-3">
+          <label class="mb-0 fw-semibold">Pelanggan:</label>
+          <select id="customerSelect" name="id_customer" class="form-select form-select-sm" style="width:100%;" required>
+            <option value="" disabled selected></option>
+            @foreach($pelanggan as $cust)
+              <option value="{{ $cust->id }}">{{ $cust->name }}</option>
+            @endforeach
+          </select>
+        </div>    
+      </div>
+    </div>
+
+    {{-- Tabel Keranjang --}}
+    <div class="card radius-12 mb-3">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table id="dataTable" class="table bordered-table sm-table mb-0">
+            <thead class="bg-secondary-light">
+              <tr>
+                <th class="text-center">Produk</th>
+                <th class="text-center">Harga per-kilo</th>
+                <th class="text-center">Kuantitas</th>
+                <th class="text-center">Subtotal</th>
+                <th class="text-center">Aksi</th>
+              </tr>
+            </thead>
+            <tbody><!-- baris akan di-render JS --></tbody>
             <tfoot>
-                <tr>
-                    <td colspan="5" class="text-end pt-3">
-                        <button type="button"
-                            class="btn d-flex justify-content-center align-items-center px-4 py-2 shadow fw-semibold text-white ms-auto"
-                            style="background-color: #8da9f1; border: none; font-size: 1rem; height: 48px; min-width: 160px; border-radius: 12px;">
-                            <iconify-icon icon="fluent:checkmark-square-24-regular" class="me-2" style="font-size: 20px;"></iconify-icon>
-                            Simpan
-                        </button>
-                    </td>
-                </tr>
+              <tr>
+                <td colspan="3" class="text-end pe-4"><strong>Total :</strong></td>
+                <td class="text-center"><strong id="footer-total">Rp0</strong></td>
+                <td></td>
+              </tr>
             </tfoot>
+          </table>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
-
-<!-- Modal Add -->
-<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="addModalLabel">Tambah Penjualan</h1>
-            </div>
-            <div class="modal-body p-24">
-                <form action="{{ routeByRole('admin.penjualan.store', 'owner.penjualan.store', null, 'akuntan.penjualan.store') }}" method="POST" class="needs-validation" novalidate>
-                    @csrf
-                    <div class="row">
-                        <div class="col-12">
-                            <label class="form-label">Produk</label>
-                            <select name="id_product" class="form-control radius-8 form-select" required>
-                                @foreach ($produk as $key => $namaProduk)
-                                    <option value="{{ $key }}">{{ $namaProduk }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">Harga per-kilo</label>
-                            <input type="text" name="price" class="form-control" required>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">Kuantitas</label>
-                            <input type="text" name="quantity" class="form-control" required>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">Total</label>
-                            <input type="text" name="subtotal" class="form-control" required>
-                        </div>
-                        <div class="d-flex justify-content-center gap-3 mt-4">
-                            <button type="reset" class="btn btn-outline-danger" data-bs-dismiss="modal">Batal</button>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+{{-- Modal Add --}}
+<div class="modal fade" id="addModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="addForm" onsubmit="return addToCart()">
+        <div class="modal-header">
+          <h5 class="modal-title">Tambah Penjualan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
+        <div class="modal-body">
+          @csrf
+          <div class="mb-3">
+            <label class="form-label">Produk</label>
+            <select id="id_product" class="form-select" required>
+              <option value="" disabled selected>Pilih Produk</option>
+              @foreach($produk as $item)
+                <option value="{{ $item->id }}" data-price="{{ $item->selling_price }}">
+                  {{ $item->name_product }}
+                </option>
+              @endforeach
+            </select>
+          </div>
+          <div class="mb-3 row gx-2">
+            <div class="col">
+              <label class="form-label">Harga</label>
+              <input type="number" id="price" class="form-control" readonly>
+            </div>
+            <div class="col">
+              <label class="form-label">Qty</label>
+              <input type="number" id="quantity" class="form-control" min="1" value="1" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Subtotal</label>
+            <input type="number" id="total" class="form-control" readonly>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn bg-primary-500 text-white">Tambah</button>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
-<!-- Modal Add End -->
+
+{{-- Form tersembunyi --}}
+<form id="cartForm"
+      action="{{ routeByRole('admin.penjualan.store','owner.penjualan.store',null,'akuntan.penjualan.store') }}"
+      method="POST" style="display:none;">
+  @csrf
+  <input type="hidden" name="id_customer" id="cartCustomer">
+  <div id="cartItemsInput"></div>
+</form>
 @endsection
 
 @push('scripts')
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        new DataTable("#dataTable", {
-            paging: false,
-            autoWidth: true,
-            fixedHeader: false,
-            initComplete: function () {
-                var btns = document.querySelectorAll(".dt-button");
-                btns.forEach(function (btn) {
-                    btn.classList.add("btn", "btn-success", "btn-sm");
-                    btn.classList.remove("dt-button");
-                });
-            },
-           layout: {
-                topStart: {
-                    div: {
-                        html: `
-                            <div style="position: relative; display: inline-block; margin-right: 16px; margin-bottom: 16px;">
-                                <input type="search" id="customSearch" class="form-control"
-                                    placeholder="Cari Produk"
-                                    style="width: 250px; height: 40px; border-radius: 8px; padding-left: 36px;">
-                                <iconify-icon icon="mingcute:search-line"
-                                    style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 18px; color: #888;">
-                                </iconify-icon>
-                            </div>
-                        `
-                    }
-                },
-                topEnd: {
-                    div: {
-                        html: `
-                            <input type="date" id="tanggalInput" class="form-control"
-                                style="width: 250px; height: 40px; border-radius: 8px; margin-left: 16px; margin-bottom: 16px;">
-                        `
-                    }
-                }
-            },
-            language: {
-                search: "",
-            },
-            responsive: true
+document.addEventListener('DOMContentLoaded', function() {
+  // 1. Select pelanggan wajib
+  $('#customerSelect').select2({
+    placeholder: "Pilih Pelanggan",
+    allowClear: true,
+    width: 'resolve',
+  });
+  
+  // 2. DataTable inisialisasi sekali saja
+  if ($.fn.DataTable.isDataTable('#dataTable')) {
+    $('#dataTable').DataTable().destroy();
+  }
+  $('#dataTable').DataTable({
+    paging: false,
+    info: false,
+    autoWidth: true,
+    fixedHeader: false,
+    initComplete: function () {
+        var btns = document.querySelectorAll(".dt-button");
+        btns.forEach(function (btn) {
+            btn.classList.add("btn", "btn-primary-500", "btn-sm");
+            btn.classList.remove("dt-button");
         });
+    },
+    layout: {
+        topEnd: [],
+        bottomStart: {
+          div: {
+            html: `
+                    <div class="text-end mb-4 justify-content-end">
+                    <button id="saveAll" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" >
+                    <iconify-icon icon="la:save-solid" class="icon text-xl line-height-1"></iconify-icon>
+                    Simpan
+                    </button>
+                    </div>
+                  `
+          }
+        },
+        topStart: {
+            div: {
+                html: `<button type="button" class="btn btn-primary-500 text-sm btn-sm px-12 py-12 radius-8 d-flex align-items-center gap-2 mb-6" data-bs-toggle="modal" data-bs-target="#addModal"><iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>Tambah Produk</button`
+            }
+        }
+    },
+    responsive: true
+  });
 
-        const table = $('#dataTable').DataTable();
-        document.getElementById("customSearch").addEventListener("keyup", function () {
-            table.search(this.value).draw();
-        });
+  // 3. Keranjang & Render tabel
+  const cart = [];
+  const tbody = document.querySelector('#dataTable tbody');
+  const footerTotal = document.getElementById('footer-total');
+
+  function renderCart() {
+    tbody.innerHTML = '';
+    let sum = 0;
+    cart.forEach((item,i) => {
+      const sub = item.price * item.qty;
+      sum += sub;
+      tbody.insertAdjacentHTML('beforeend', `
+        <tr data-index="${i}">
+          <td class="text-center">${item.name}</td>
+          <td class="text-center">Rp${item.price.toLocaleString()}</td>
+          <td class="text-center">
+            <input type="number" class="qty-input form-control form-control-sm text-center"
+                   data-index="${i}" value="${item.qty}" min="1">
+          </td>
+          <td class="text-center">Rp${sub.toLocaleString()}</td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-danger btn-remove" data-index="${i}">×</button>
+          </td>
+        </tr>`);
     });
+    footerTotal.textContent = 'Rp'+ sum.toLocaleString();
+
+    // bind events
+    document.querySelectorAll('.qty-input').forEach(el=>{
+      el.oninput = ()=> {
+        cart[el.dataset.index].qty = parseInt(el.value) || 1;
+        renderCart();
+      };
+    });
+    document.querySelectorAll('.btn-remove').forEach(el=>{
+      el.onclick = ()=> {
+        cart.splice(el.dataset.index,1);
+        renderCart();
+      };
+    });
+  }
+
+  // 4. Modal Add logic
+  const prodSelect = document.getElementById('id_product');
+  const priceIn   = document.getElementById('price');
+  const qtyIn     = document.getElementById('quantity');
+  const totalIn   = document.getElementById('total');
+
+  function updateTotal() {
+    totalIn.value = (parseFloat(priceIn.value)||0) * (parseInt(qtyIn.value)||0);
+  }
+  prodSelect.onchange = () => {
+    const opt = prodSelect.selectedOptions[0];
+    priceIn.value = opt.dataset.price || 0;
+    qtyIn.value = 1;
+    updateTotal();
+  };
+  qtyIn.oninput = updateTotal;
+
+  window.addToCart = function() {
+    const opt = prodSelect.selectedOptions[0];
+    if (!opt) return false;
+    cart.push({
+      product_id: opt.value,
+      name: opt.text,
+      price: parseFloat(opt.dataset.price) || 0,
+      qty: parseInt(qtyIn.value) || 1
+    });
+    renderCart();
+    bootstrap.Modal.getInstance(document.getElementById('addModal')).hide();
+    return false;
+  };
+
+  // 5. Simpan keranjang
+  document.getElementById('saveAll').onclick = () => {
+    const selectedCustomer = $('#customerSelect').val();
+    if (!selectedCustomer) {
+      alert('Pilih pelanggan terlebih dahulu!');
+      return;
+    }
+    if (cart.length === 0) {
+      alert('Tambah minimal satu produk!');
+      return;
+    }
+    document.getElementById('cartCustomer').value = selectedCustomer;
+    const container = document.getElementById('cartItemsInput');
+    container.innerHTML = '';
+    cart.forEach((item,i) => {
+      container.insertAdjacentHTML('beforeend', `
+        <input type="hidden" name="items[${i}][product_id]" value="${item.product_id}">
+        <input type="hidden" name="items[${i}][price]"      value="${item.price}">
+        <input type="hidden" name="items[${i}][quantity]"   value="${item.qty}">
+      `);
+    });
+    document.getElementById('cartForm').submit();
+  };
+});
 </script>
 @endpush
+
+
+
+
+
+
+
