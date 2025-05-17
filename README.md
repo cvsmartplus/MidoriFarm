@@ -1,3 +1,7 @@
+<p><strong><NOTE/strong>: pastikan APP_TIMEZONE=Asia/Jakarta agar waktu pada fitur penjualan bisa akurat </p<>
+<br>
+<p><i>opsional: ubah juga APP_LOCALE=id jadi id, supaya laravel mendeteksi region app ada di indonesia (atau apalah itu fungsinya, supaya nasionalis mungkin) </i></p>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
