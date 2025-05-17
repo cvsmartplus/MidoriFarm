@@ -155,7 +155,7 @@
             initComplete: function () {
                 var btns = document.querySelectorAll(".dt-button");
                 btns.forEach(function (btn) {
-                    btn.classList.add("btn", "btn-success", "btn-sm");
+                    btn.classList.add("btn", "btn-primary-500", "btn-sm");
                     btn.classList.remove("dt-button");
                 });
             },
