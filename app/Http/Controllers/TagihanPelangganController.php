@@ -56,17 +56,11 @@ class TagihanPelangganController extends Controller
         // ambil no.telp & alamat gh
         $gh = $user->gh()->first();
 
-        $tagihan = TagihanPelanggan::with('customer')->where('id_greenhouse', Auth::user()->id_greenhouse)->where('id', $id)
+        $tagihan = TagihanPelanggan::with('customer')
+        ->where('id_greenhouse', Auth::user()->id_greenhouse)
+        ->where('id', $id)
         ->first();
         return view('tagihan.pelanggan.show', compact('user','gh','tagihan'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        return view("tagihan.pelanggan.edit");
     }
 
     /**

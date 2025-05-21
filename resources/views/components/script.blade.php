@@ -39,6 +39,11 @@
     <!-- DataTables Buttons HTML5 and Print JS -->
     <script src="https://cdn.datatables.net/buttons/3.2.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.2.1/js/buttons.print.min.js"></script>
+
+    {{-- Select2 JS --}}
+    <script src="{{ asset('assets/js/lib/select2.full.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/select2.min.js') }}"></script>
+    
     @stack('scripts')
 
     {!! isset($script) ? $script : '' !!}

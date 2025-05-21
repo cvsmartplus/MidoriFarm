@@ -70,7 +70,7 @@
                                             </div>
                                             <div class="d-flex justify-content-end gap-3 mt-3">
                                                 <button type="reset" class="btn btn-outline-danger" data-bs-dismiss="modal">Batal</button>
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                <button type="submit" class="btn btn-primary-500">Simpan</button>
                                             </div>
                                         </div>
                                     </form>
@@ -165,7 +165,7 @@
             initComplete: function () {
                 var btns = document.querySelectorAll(".dt-button");
                 btns.forEach(function (btn) {
-                    btn.classList.add("btn", "btn-success", "btn-sm");
+                    btn.classList.add("btn", "btn-primary-500", "btn-sm");
                     btn.classList.remove("dt-button");
                 });
             },

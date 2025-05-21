@@ -1,4 +1,4 @@
-<?php
+psa<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,13 +15,11 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('id_greenhouse')->references('id')->on('green_houses');
-            $table->foreignId('id_product')->references('id')->on('products');
-            $table->uuid('transaction_id');
-            $table->integer('price');
-            $table->integer('quantity');
-            $table->integer('subtotal');
-            $table->integer('total');
-            $table->date('date');
+            $table->foreignId('id_customer')->references('id')->on('customers');
+            $table->integer('price')->default(0);
+            $table->integer('quantity')->default(0);
+            $table->integer('subtotal')->default(0);
+            $table->integer('total')->default(0);
         });
     }
 

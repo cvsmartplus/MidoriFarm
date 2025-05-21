@@ -34,7 +34,6 @@ class DatabaseSeeder extends Seeder
             AssetSeeder::class,
             ArticleSeeder::class,
             SaleSeeder::class,
-            OrderSaleSeeder::class,
             CategoryExpenseSeeder::class,
             ExpenseSeeder::class,
             SupplierDebtSeeder::class,

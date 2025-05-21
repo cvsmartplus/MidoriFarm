@@ -14,10 +14,9 @@ class Penjualan extends Model
     protected $fillable = [
         'id_greenhouse',
         'id_product',
-        'price',
-        'quantity',
+        'id_customer',
         'subtotal',
-        'date',
+        'total',
     ];
     protected $primaryKey = 'id';
     protected $guarded = [];
@@ -25,5 +24,13 @@ class Penjualan extends Model
     public function produk()
     {
         return $this->belongsTo(Product::class, 'id_product', 'id');
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Pelanggan::class, 'id_customer','id');
+    }
+    public function items() {
+        return $this->hasMany(PenjualanItem::class, 'id_sale', 'id');
     }
 }

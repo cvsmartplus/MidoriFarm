@@ -25,16 +25,8 @@ class PengeluaranKategoriController extends Controller
         $kategori = new PengeluaranKategori();
         $kategori->id_greenhouse = Auth::user()->id_greenhouse;
         $kategori->name_category = $request->name_category;
-        // $kategori = ProdukKategori::create([
-        //     'id_greenhouse' => Auth::user()->id_greenhouse,
-        //     'name_category' => $request->name_category,
-        // ]);
         $kategori->save();
-        if($kategori){
             return redirect()->back()->with('success', 'Data berhasil disimpan');
-        } else{
-            return redirect()->back()->with('error', 'Data gagal disimpan');
-        }
     }
 
     /**

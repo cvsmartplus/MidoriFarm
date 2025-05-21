@@ -20,9 +20,12 @@ class Pelanggan extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
     public function tagihan()
-{
-    return $this->hasMany(TagihanPelanggan::class, 'id_customer', 'id');
-}
+    {
+        return $this->hasMany(TagihanPelanggan::class, 'id_customer', 'id');
+    }
 
+    public function customer() {
+        return $this->hasMany(Penjualan::class, 'id_customer', 'id');
+    }
 }
 

@@ -9,10 +9,10 @@
                 <button type="button" class="sidebar-mobile-toggle">
                     <iconify-icon icon="heroicons:bars-3-solid" class="icon-sidebar"></iconify-icon>
                 </button>
-                <form class="navbar-search">
+                {{-- <form class="navbar-search">
                     <input type="text" name="search" placeholder="Cari sesuatu...">
                     <iconify-icon icon="ion:search-outline" class="icon"></iconify-icon>
-                </form>
+                </form> --}}
             </div>
         </div>
         <div class="col-auto">
@@ -117,21 +117,8 @@
                                 <h6 class="text-lg text-white fw-semibold mb-2">{{ auth()->user()->name }}</h6>
                                 <span class="text-primary-300 text-uppercase fw-medium text-sm">{{ auth()->user()->role}}</span>
                             </div>
-                            <button type="button" class="hover-text-danger">
-                                <iconify-icon icon="radix-icons:cross-1" class="icon text-xl"></iconify-icon>
-                            </button>
                         </div>
                         <ul class="to-top-list">
-                            <li>
-                                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="javascript:void(0)">
-                                    <iconify-icon icon="tabler:message-check" class="icon text-xl"></iconify-icon> Inbox
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="javascript:void(0)">
-                                    <iconify-icon icon="icon-park-outline:setting-two" class="icon text-xl"></iconify-icon> Setting
-                                </a>
-                            </li>
                             <li>
                                 <form action="{{ route('logout') }}" method="POST">
                                 @csrf

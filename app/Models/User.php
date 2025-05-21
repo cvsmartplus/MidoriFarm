@@ -25,10 +25,10 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'created_at',
+        'updated_at',
         'foto_profile',
         'id_greenhouse',
-
-
     ];
     protected $primaryKey = 'id';
     /**

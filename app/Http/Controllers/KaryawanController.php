@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Http\Requests\KaryawanRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,27 +18,39 @@ class KaryawanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(KaryawanRequest $request)
 {
-    $user = new User();
-    $user->id_greenhouse = Auth::user()->id_greenhouse;
-    $user->name = $request->name;
-    $user->email = $request->email;
-    $user->password = Hash::make($request->password);
-    $user->role = $request->role;
-    $user->save();
-     if($user){
-            return redirect()->back()->with('success', 'Data berhasil di simpan');
-        } else{
-            return redirect()->back()->with('error', 'Data gagal di tambahkan');
-        }
+    // Ambil password asli buat nanti ditampilin
+    $plainPassword = $request->password;
+
+    // Simpan user baru
+    $user = User::create([
+        'id_greenhouse' => Auth::user()->id_greenhouse,
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($plainPassword),
+        'role' => $request->role,
+    ]);
+
+    // Cek hasil dan redirect
+    if ($user) {
+        // Assign role menggunakan Spatie
+        $user->assignRole($request->role);
+        
+        // Simpan password asli untuk ditampilkan sekali di view
+        session()->flash('plain_password', $plainPassword);
+
+        return redirect()->back()->with(['success' => 'Data berhasil disimpan']);
+    } else {
+        return redirect()->back()->with(['error' => 'Data gagal ditambahkan']);
+    }
 }
 
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $karyawan)
+    public function update(KaryawanRequest $request, User $karyawan)
 {
     $karyawan->update($request->all());
 
@@ -54,6 +66,6 @@ class KaryawanController extends Controller
        $user = User::findOrFail($id);
        $user->delete();
 
-        return redirect()->back()->with('success', 'Data berhasil dihapus');
+        return redirect()->back()->with(['success' => 'Data berhasil dihapus']);
     }
 }

@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     AuthenticationController,
-    DashboardController,
     IOTController,
     BlogController,
     KaryawanController,
@@ -11,6 +10,7 @@ use App\Http\Controllers\{
     ProdukKategoriController,
     AssetKelolaController,
     AssetKategoriController,
+    KeuanganController,
     PengeluaranKelolaController,
     PengeluaranKategoriController,
     TagihanPelangganController,
@@ -31,13 +31,12 @@ Route::middleware('guest')
 
 Route::middleware('auth')->group(function () {
     Route::get('/', function () {
-        return match (auth()->user()->role) {
-            'admin'   => redirect()->route('admin.blogStat'),
-            'owner'   => redirect()->route('owner.sensor'),
-            'petani'  => redirect()->route('petani.sensor'),
-            'akuntan' => redirect()->route('akuntan.keuangan'),
-            default   => redirect()->route('login'),
-        };
+        $user = Auth::user();
+
+        if ($user->hasRole('admin')) return redirect()->route('admin.blogStat');
+        if ($user->hasRole('owner')) return redirect()->route('owner.sensor');
+        if ($user->hasRole('petani')) return redirect()->route('petani.sensor');
+        if ($user->hasRole('akuntan')) return redirect()->route('akuntan.keuangan');
     });
     Route::post('/logout',  [AuthenticationController::class,'logout'])->name('logout');
 });
@@ -48,8 +47,8 @@ Route::middleware(['auth', 'role:admin'])
     ->name('admin.')
     ->group(function () {
         // Non-CRUD routes
-        Route::get('sensor', [DashboardController::class, 'sensor'])->name('sensor');
-        Route::get('keuangan', [DashboardController::class, 'index10'])->name('keuangan');
+        Route::get('sensor', [IOTController::class, 'index'])->name('sensor');
+        Route::get('keuangan', [KeuanganController::class, 'index'])->name('keuangan');
         Route::get('iot/laporan', [IOTController::class, 'laporan'])->name('laporanIOT');
         Route::get('iot/monitoring', [IOTController::class, 'monitoring'])->name('monitoring');
         Route::get('addBlog', [BlogController::class, 'addBlog'])->name('addBlog');
@@ -85,8 +84,10 @@ Route::middleware(['auth','role:owner'])
     ->prefix('owner')->name('owner.')
     ->group(function(){
         // Non-CRUD routes
-        Route::get('sensor',[DashboardController::class,'sensor'])->name('sensor');
-        Route::get('keuangan',[DashboardController::class,'index10'])->name('keuangan');
+        Route::get('sensor', [IOTController::class, 'index'])->name('sensor');
+        Route::get('keuangan', [KeuanganController::class, 'index'])->name('keuangan');
+        Route::get('blog',[BlogController::class,'blog'])->name('blog');
+        Route::get('blogDetails',[BlogController::class,'blogDetails'])->name('blogDetails');
         Route::get('iot/laporan',[IOTController::class,'laporan'])->name('laporanIOT');
         Route::get('iot/monitoring',[IOTController::class,'monitoring'])->name('monitoring');
         Route::get('notification', [NotificationController::class, 'index'])->name('notification');
@@ -116,7 +117,7 @@ Route::middleware(['auth','role:owner'])
 Route::middleware(['auth','role:petani'])
     ->prefix('petani')->name('petani.')
     ->group(function(){
-        Route::get('sensor',[DashboardController::class,'sensor'])->name('sensor');
+        Route::get('sensor', [IOTController::class, 'index'])->name('sensor');
         Route::get('iot/laporan',[IOTController::class,'laporan'])->name('laporanIOT');
         Route::get('notification', [NotificationController::class, 'index'])->name('notification');
         Route::get('iot/monitoring',[IOTController::class,'monitoring'])->name('monitoring');
@@ -127,7 +128,7 @@ Route::middleware(['auth','role:akuntan'])
     ->prefix('akuntan')->name('akuntan.')
     ->group(function(){
         Route::get('notification', [NotificationController::class, 'index'])->name('notification');
-        Route::get('keuangan',[DashboardController::class,'p10'])->name('keuangan');
+        Route::get('keuangan', [KeuanganController::class, 'index'])->name('keuangan');
 
         Route::resource('asset/kelola', AssetKelolaController::class)->names('assetKelola');
         Route::resource('asset/kategori', AssetKategoriController::class)->names('assetKategori');
